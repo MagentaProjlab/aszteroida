@@ -558,7 +558,7 @@
 <XPD:OBJ name="NameCompartment" type="UMLNameCompartmentView" guid="XPCR7RIn10mVWC/XYXloLwAA">
 <XPD:OBJ name="NameLabel" type="LabelView" guid="5Yt8x60Q4ECpMISQL7/6jgAA">
 <XPD:ATTR name="FontStyle" type="integer">1</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">SolarWind</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">SolarStorm</XPD:ATTR>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="LabelView" guid="hsnzM+3xgkaHtgxgL6xM0QAA">
 <XPD:ATTR name="Text" type="string">&lt;&lt;singleton&gt;&gt;</XPD:ATTR>
@@ -996,8 +996,8 @@
 <XPD:REF name="Model">XyxTfSLaQ0CnQv49wcs75wAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="HeadRoleNameLabel" type="EdgeLabelView" guid="xmnW74nPoUWHAWMeLtf5mAAA">
-<XPD:ATTR name="Alpha" type="real">-0,390017176674567</XPD:ATTR>
-<XPD:ATTR name="Distance" type="real">50,6951674225463</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">5,1492126676593</XPD:ATTR>
+<XPD:ATTR name="Distance" type="real">57,2013985843004</XPD:ATTR>
 <XPD:ATTR name="EdgePosition" type="EdgePositionKind">epHead</XPD:ATTR>
 <XPD:ATTR name="Text" type="string">-sentientbeings</XPD:ATTR>
 <XPD:REF name="Model">YTNE/4g7ZUyeBo8/MTwIiwAA</XPD:REF>
@@ -3484,7 +3484,7 @@
 </XPD:OBJ>
 </XPD:OBJ>
 <XPD:OBJ name="OwnedElements[14]" type="UMLClass" guid="u24iyXMj00uu3lxrfvgNpwAA">
-<XPD:ATTR name="Name" type="string">SolarWind</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">SolarStorm</XPD:ATTR>
 <XPD:ATTR name="StereotypeName" type="string">singleton</XPD:ATTR>
 <XPD:REF name="Namespace">uJuaditY6kiwcOqOSZyezgAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>

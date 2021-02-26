@@ -549,7 +549,7 @@
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="Left" type="integer">1280</XPD:ATTR>
-<XPD:ATTR name="Top" type="integer">288</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">284</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">85</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">69</XPD:ATTR>
 <XPD:REF name="Model">u24iyXMj00uu3lxrfvgNpwAA</XPD:REF>
@@ -731,7 +731,7 @@
 <XPD:ATTR name="Text" type="string">RadioactiveMaterialVisitor</XPD:ATTR>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="LabelView" guid="Ao5Mh68q9EOqaghk1HohpAAA">
-<XPD:ATTR name="Text" type="string">&lt;&lt;inteface&gt;&gt;</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">&lt;&lt;singleton&gt;&gt;</XPD:ATTR>
 </XPD:OBJ>
 <XPD:OBJ name="PropertyLabel" type="LabelView" guid="26heav7rKEayk6mfg7vx0AAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
@@ -971,7 +971,7 @@
 <XPD:OBJ name="OwnedViews[23]" type="UMLAssociationView" guid="6IgGkjeD20q4yBWAWY3fUQAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
-<XPD:ATTR name="Points" type="Points">1329,356;1349,444</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">1329,352;1349,444</XPD:ATTR>
 <XPD:REF name="Model">XyxTfSLaQ0CnQv49wcs75wAA</XPD:REF>
 <XPD:REF name="Head">Y014+8rhhEe5qsXFybNGBgAA</XPD:REF>
 <XPD:REF name="Tail">1fbyV+wRIE2KGP3Gabf0PAAA</XPD:REF>
@@ -1516,7 +1516,7 @@
 <XPD:ATTR name="Text" type="string">EvaporatingMaterialVisitor</XPD:ATTR>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="LabelView" guid="Kmiy8S6BeUOn4LSrZexhgAAA">
-<XPD:ATTR name="Text" type="string">&lt;&lt;interface&gt;&gt;</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">&lt;&lt;singleton&gt;&gt;</XPD:ATTR>
 </XPD:OBJ>
 <XPD:OBJ name="PropertyLabel" type="LabelView" guid="S71ZK2LaIUmCKjJRkfoe3QAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
@@ -3534,7 +3534,6 @@
 <XPD:ATTR name="#Operations" type="integer">1</XPD:ATTR>
 <XPD:OBJ name="Operations[0]" type="UMLOperation" guid="bGQZj8JF206+ZpWRY0M10wAA">
 <XPD:ATTR name="Name" type="string">RandomTick</XPD:ATTR>
-<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
 <XPD:REF name="Owner">u24iyXMj00uu3lxrfvgNpwAA</XPD:REF>
 <XPD:ATTR name="#CallActions" type="integer">1</XPD:ATTR>
 <XPD:REF name="CallActions[0]">vgc21BhLGUOKJHRX9MVb+gAA</XPD:REF>
@@ -3632,7 +3631,7 @@
 </XPD:OBJ>
 <XPD:OBJ name="OwnedElements[19]" type="UMLClass" guid="4O4p+FJQ8km7FtAs1bDwGgAA">
 <XPD:ATTR name="Name" type="string">RadioactiveMaterialVisitor</XPD:ATTR>
-<XPD:ATTR name="StereotypeName" type="string">inteface</XPD:ATTR>
+<XPD:ATTR name="StereotypeName" type="string">singleton</XPD:ATTR>
 <XPD:REF name="Namespace">uJuaditY6kiwcOqOSZyezgAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
 <XPD:REF name="Views[0]">AUzWc2RACEiYpk7oaLu8SgAA</XPD:REF>
@@ -3684,13 +3683,12 @@
 <XPD:REF name="Type_">2SWaWruS3UCM01H3dyPwtQAA</XPD:REF>
 </XPD:OBJ>
 </XPD:OBJ>
-<XPD:ATTR name="#TypedParameters" type="integer">6</XPD:ATTR>
-<XPD:REF name="TypedParameters[0]" pathname="visitor">hJ26ib2lEEW9nwo6qEtcfAAA</XPD:REF>
-<XPD:REF name="TypedParameters[1]">f05ogFeFYE+1WNr5mUZMtwAA</XPD:REF>
-<XPD:REF name="TypedParameters[2]">rukb0QsO4k2OJLbofjhMXAAA</XPD:REF>
-<XPD:REF name="TypedParameters[3]">d8MOEGZigUSNuOdX/AsYzgAA</XPD:REF>
-<XPD:REF name="TypedParameters[4]">biSXI+5trUau52LO27mNoAAA</XPD:REF>
-<XPD:REF name="TypedParameters[5]">bxRcfNH3OUyfu/XPoqSYcAAA</XPD:REF>
+<XPD:ATTR name="#TypedParameters" type="integer">5</XPD:ATTR>
+<XPD:REF name="TypedParameters[0]">f05ogFeFYE+1WNr5mUZMtwAA</XPD:REF>
+<XPD:REF name="TypedParameters[1]">rukb0QsO4k2OJLbofjhMXAAA</XPD:REF>
+<XPD:REF name="TypedParameters[2]">d8MOEGZigUSNuOdX/AsYzgAA</XPD:REF>
+<XPD:REF name="TypedParameters[3]">biSXI+5trUau52LO27mNoAAA</XPD:REF>
+<XPD:REF name="TypedParameters[4]">bxRcfNH3OUyfu/XPoqSYcAAA</XPD:REF>
 <XPD:ATTR name="#Associations" type="integer">2</XPD:ATTR>
 <XPD:REF name="Associations[0]">QZt4YWIUP0isdoQx3J/o4wAA</XPD:REF>
 <XPD:REF name="Associations[1]">f5g1iY/TXkGlXtnJK/F3xAAA</XPD:REF>
@@ -4619,7 +4617,7 @@
 </XPD:OBJ>
 <XPD:OBJ name="OwnedElements[71]" type="UMLClass" guid="gWHoC1zJW0isYuFdDaX/CAAA">
 <XPD:ATTR name="Name" type="string">EvaporatingMaterialVisitor</XPD:ATTR>
-<XPD:ATTR name="StereotypeName" type="string">interface</XPD:ATTR>
+<XPD:ATTR name="StereotypeName" type="string">singleton</XPD:ATTR>
 <XPD:REF name="Namespace">uJuaditY6kiwcOqOSZyezgAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
 <XPD:REF name="Views[0]">dg8Lu/wF90qWKmeM5hd49gAA</XPD:REF>
@@ -8851,7 +8849,7 @@
 <XPD:OBJ name="NameCompartment" type="UMLNameCompartmentView" guid="g/baBE+LP0ip8idAaj3cfwAA">
 <XPD:OBJ name="NameLabel" type="LabelView" guid="sGOSLmveLk+JfY6hTCrC/gAA">
 <XPD:ATTR name="FontStyle" type="integer">4</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">sw : SolarStorm</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">sw : SolarWind</XPD:ATTR>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="LabelView" guid="EgszZGZ0bEqnoPAoSamM2wAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>

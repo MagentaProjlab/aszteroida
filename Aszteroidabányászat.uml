@@ -202,10 +202,10 @@
 <XPD:REF name="Model">NtBzceyC40K0CnkQcWVFQAAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="HeadRoleNameLabel" type="EdgeLabelView" guid="rsBRLvJfPUKPRxhGfVAbcgAA">
-<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
 <XPD:ATTR name="Alpha" type="real">-0,523598775598299</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">30</XPD:ATTR>
 <XPD:ATTR name="EdgePosition" type="EdgePositionKind">epHead</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">-Robots</XPD:ATTR>
 <XPD:REF name="Model">d40ZXq0WQkqXoZhh34VZzwAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="TailRoleNameLabel" type="EdgeLabelView" guid="U77tLjZMsUChpnyXPIQ5CwAA">
@@ -1988,7 +1988,7 @@
 <XPD:ATTR name="Alpha" type="real">-0,523598775598299</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">30</XPD:ATTR>
 <XPD:ATTR name="EdgePosition" type="EdgePositionKind">epHead</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">+Settlers</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">-Settlers</XPD:ATTR>
 <XPD:REF name="Model">DpGfIYtn6UO4pSJqq1ahyAAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="TailRoleNameLabel" type="EdgeLabelView" guid="J56JLsEN20eVULXpFzU7ugAA">
@@ -1999,10 +1999,10 @@
 <XPD:REF name="Model">MRCXRiLWGkK8zG7SB2GFtgAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="HeadMultiplicityLabel" type="EdgeLabelView" guid="Zv++MYuKR0WpOtS2+YqlpAAA">
-<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
 <XPD:ATTR name="Alpha" type="real">0,523598775598299</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">25</XPD:ATTR>
 <XPD:ATTR name="EdgePosition" type="EdgePositionKind">epHead</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">0..1</XPD:ATTR>
 <XPD:REF name="Model">DpGfIYtn6UO4pSJqq1ahyAAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="TailMultiplicityLabel" type="EdgeLabelView" guid="dBet4chst0295rEnL1jAogAA">
@@ -3710,6 +3710,8 @@
 <XPD:REF name="Views[3]">l57vbSg7PEuWY98CJ2rVIwAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Connections[1]" type="UMLAssociationEnd" guid="d40ZXq0WQkqXoZhh34VZzwAA">
+<XPD:ATTR name="Name" type="string">Robots</XPD:ATTR>
+<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
 <XPD:ATTR name="Multiplicity" type="string">0..*</XPD:ATTR>
 <XPD:REF name="Association">NtBzceyC40K0CnkQcWVFQAAA</XPD:REF>
 <XPD:REF name="Participant">bvRpeEmOD0uNBJXWwBczgAAA</XPD:REF>
@@ -5341,6 +5343,8 @@
 </XPD:OBJ>
 <XPD:OBJ name="Connections[1]" type="UMLAssociationEnd" guid="DpGfIYtn6UO4pSJqq1ahyAAA">
 <XPD:ATTR name="Name" type="string">Settlers</XPD:ATTR>
+<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
+<XPD:ATTR name="Multiplicity" type="string">0..1</XPD:ATTR>
 <XPD:REF name="Association">RRJe72PD1UKI8QVEy2LJagAA</XPD:REF>
 <XPD:REF name="Participant">uirJr8M3d0KOoUmoY44j8AAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>

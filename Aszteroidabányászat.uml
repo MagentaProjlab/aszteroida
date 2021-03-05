@@ -4314,7 +4314,7 @@
 </XPD:OBJ>
 <XPD:ATTR name="#OwnedCollaborationInstanceSets" type="integer">20</XPD:ATTR>
 <XPD:OBJ name="OwnedCollaborationInstanceSets[0]" type="UMLCollaborationInstanceSet" guid="tb79Gvl7RECOH2UlUoiIVgAA">
-<XPD:ATTR name="Name" type="string">CollaborationInstanceSet1</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">Settler moves</XPD:ATTR>
 <XPD:REF name="RepresentedClassifier">uJuaditY6kiwcOqOSZyezgAA</XPD:REF>
 <XPD:ATTR name="#InteractionInstanceSets" type="integer">1</XPD:ATTR>
 <XPD:OBJ name="InteractionInstanceSets[0]" type="UMLInteractionInstanceSet" guid="QsUJftkJGUSWm/J1ZHbfcwAA">
@@ -5003,7 +5003,7 @@
 </XPD:OBJ>
 </XPD:OBJ>
 <XPD:OBJ name="OwnedCollaborationInstanceSets[1]" type="UMLCollaborationInstanceSet" guid="Mu1S3WLj7Ey24NDTYWeQkgAA">
-<XPD:ATTR name="Name" type="string">CollaborationInstanceSet2</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">Robot moves</XPD:ATTR>
 <XPD:REF name="RepresentedClassifier">uJuaditY6kiwcOqOSZyezgAA</XPD:REF>
 <XPD:ATTR name="#InteractionInstanceSets" type="integer">1</XPD:ATTR>
 <XPD:OBJ name="InteractionInstanceSets[0]" type="UMLInteractionInstanceSet" guid="eKNGTcKJAU20GCX2PTRHygAA">
@@ -5698,7 +5698,7 @@
 </XPD:OBJ>
 </XPD:OBJ>
 <XPD:OBJ name="OwnedCollaborationInstanceSets[2]" type="UMLCollaborationInstanceSet" guid="+TOo0vzqM0GxTIcEB6fLCAAA">
-<XPD:ATTR name="Name" type="string">CollaborationInstanceSet3</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">Settler drills</XPD:ATTR>
 <XPD:REF name="RepresentedClassifier">uJuaditY6kiwcOqOSZyezgAA</XPD:REF>
 <XPD:ATTR name="#InteractionInstanceSets" type="integer">1</XPD:ATTR>
 <XPD:OBJ name="InteractionInstanceSets[0]" type="UMLInteractionInstanceSet" guid="hTyh+Li8v0qXV8YqBqUhBgAA">
@@ -6244,7 +6244,7 @@
 </XPD:OBJ>
 </XPD:OBJ>
 <XPD:OBJ name="OwnedCollaborationInstanceSets[3]" type="UMLCollaborationInstanceSet" guid="Iy8mLwsQ2kWRlVGCrQRhJAAA">
-<XPD:ATTR name="Name" type="string">CollaborationInstanceSet4</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">Robot drills</XPD:ATTR>
 <XPD:REF name="RepresentedClassifier">uJuaditY6kiwcOqOSZyezgAA</XPD:REF>
 <XPD:ATTR name="#InteractionInstanceSets" type="integer">1</XPD:ATTR>
 <XPD:OBJ name="InteractionInstanceSets[0]" type="UMLInteractionInstanceSet" guid="Sx1Y6pg9Pku5okJNAA//JQAA">
@@ -6790,7 +6790,7 @@
 </XPD:OBJ>
 </XPD:OBJ>
 <XPD:OBJ name="OwnedCollaborationInstanceSets[4]" type="UMLCollaborationInstanceSet" guid="oRZ6YIMoYU+UQ+syMrlWEAAA">
-<XPD:ATTR name="Name" type="string">CollaborationInstanceSet5</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">Settler mines</XPD:ATTR>
 <XPD:REF name="RepresentedClassifier">uJuaditY6kiwcOqOSZyezgAA</XPD:REF>
 <XPD:ATTR name="#InteractionInstanceSets" type="integer">1</XPD:ATTR>
 <XPD:OBJ name="InteractionInstanceSets[0]" type="UMLInteractionInstanceSet" guid="fDZIKNfGI0u4jn6FY62vewAA">
@@ -7545,7 +7545,7 @@
 </XPD:OBJ>
 </XPD:OBJ>
 <XPD:OBJ name="OwnedCollaborationInstanceSets[5]" type="UMLCollaborationInstanceSet" guid="9IboNodPg0e4I4jy75vf+wAA">
-<XPD:ATTR name="Name" type="string">CollaborationInstanceSet6</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">Settler dies</XPD:ATTR>
 <XPD:REF name="RepresentedClassifier">uJuaditY6kiwcOqOSZyezgAA</XPD:REF>
 <XPD:ATTR name="#InteractionInstanceSets" type="integer">1</XPD:ATTR>
 <XPD:OBJ name="InteractionInstanceSets[0]" type="UMLInteractionInstanceSet" guid="FDC7XNUT4keFa14X5mttBwAA">
@@ -8267,7 +8267,7 @@
 </XPD:OBJ>
 </XPD:OBJ>
 <XPD:OBJ name="OwnedCollaborationInstanceSets[6]" type="UMLCollaborationInstanceSet" guid="29Zd+OasDU2tYmsao9eUagAA">
-<XPD:ATTR name="Name" type="string">CollaborationInstanceSet7</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">Robot dies</XPD:ATTR>
 <XPD:REF name="RepresentedClassifier">uJuaditY6kiwcOqOSZyezgAA</XPD:REF>
 <XPD:ATTR name="#InteractionInstanceSets" type="integer">1</XPD:ATTR>
 <XPD:OBJ name="InteractionInstanceSets[0]" type="UMLInteractionInstanceSet" guid="+EnEFJnQpUasgL9uE5EfAgAA">
@@ -8624,7 +8624,7 @@
 </XPD:OBJ>
 </XPD:OBJ>
 <XPD:OBJ name="OwnedCollaborationInstanceSets[7]" type="UMLCollaborationInstanceSet" guid="LwsBbfHXw02iwH09V8Nz5wAA">
-<XPD:ATTR name="Name" type="string">CollaborationInstanceSet8</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">Settler explodes</XPD:ATTR>
 <XPD:REF name="RepresentedClassifier">uJuaditY6kiwcOqOSZyezgAA</XPD:REF>
 <XPD:ATTR name="#InteractionInstanceSets" type="integer">1</XPD:ATTR>
 <XPD:OBJ name="InteractionInstanceSets[0]" type="UMLInteractionInstanceSet" guid="n51NTSbiLEiJp9BTOA8f9QAA">
@@ -8927,7 +8927,7 @@
 </XPD:OBJ>
 </XPD:OBJ>
 <XPD:OBJ name="OwnedCollaborationInstanceSets[8]" type="UMLCollaborationInstanceSet" guid="7aFS9iE/50my+cO6hIYPbQAA">
-<XPD:ATTR name="Name" type="string">CollaborationInstanceSet9</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">Robot explodes</XPD:ATTR>
 <XPD:REF name="RepresentedClassifier">uJuaditY6kiwcOqOSZyezgAA</XPD:REF>
 <XPD:ATTR name="#InteractionInstanceSets" type="integer">1</XPD:ATTR>
 <XPD:OBJ name="InteractionInstanceSets[0]" type="UMLInteractionInstanceSet" guid="CNMB9p2Sz0WZUxxvzFwxKQAA">
@@ -9355,7 +9355,7 @@
 </XPD:OBJ>
 </XPD:OBJ>
 <XPD:OBJ name="OwnedCollaborationInstanceSets[9]" type="UMLCollaborationInstanceSet" guid="qIN8y+Odc0mAo1tukptpMgAA">
-<XPD:ATTR name="Name" type="string">CollaborationInstanceSet10</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">Solar wind happens</XPD:ATTR>
 <XPD:REF name="RepresentedClassifier">uJuaditY6kiwcOqOSZyezgAA</XPD:REF>
 <XPD:ATTR name="#InteractionInstanceSets" type="integer">1</XPD:ATTR>
 <XPD:OBJ name="InteractionInstanceSets[0]" type="UMLInteractionInstanceSet" guid="2QYKgkLrfEuDfkt4UuRXCAAA">
@@ -10120,7 +10120,7 @@
 </XPD:OBJ>
 </XPD:OBJ>
 <XPD:OBJ name="OwnedCollaborationInstanceSets[10]" type="UMLCollaborationInstanceSet" guid="PpRIlcmqQ0iTHUfpqHwhQQAA">
-<XPD:ATTR name="Name" type="string">CollaborationInstanceSet11</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">Settler fills empty asteroid</XPD:ATTR>
 <XPD:REF name="RepresentedClassifier">uJuaditY6kiwcOqOSZyezgAA</XPD:REF>
 <XPD:ATTR name="#InteractionInstanceSets" type="integer">1</XPD:ATTR>
 <XPD:OBJ name="InteractionInstanceSets[0]" type="UMLInteractionInstanceSet" guid="PdWTdR0NP0S+n+KzB1vJjQAA">
@@ -10956,7 +10956,7 @@
 </XPD:OBJ>
 </XPD:OBJ>
 <XPD:OBJ name="OwnedCollaborationInstanceSets[11]" type="UMLCollaborationInstanceSet" guid="Af7r9Ts1CUyWQHabwiMrhwAA">
-<XPD:ATTR name="Name" type="string">CollaborationInstanceSet12</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">Settler builds teleport gate pair</XPD:ATTR>
 <XPD:REF name="RepresentedClassifier">uJuaditY6kiwcOqOSZyezgAA</XPD:REF>
 <XPD:ATTR name="#InteractionInstanceSets" type="integer">1</XPD:ATTR>
 <XPD:OBJ name="InteractionInstanceSets[0]" type="UMLInteractionInstanceSet" guid="d/CPndQNIEakHqQoMtIZywAA">
@@ -11691,7 +11691,7 @@
 </XPD:OBJ>
 </XPD:OBJ>
 <XPD:OBJ name="OwnedCollaborationInstanceSets[12]" type="UMLCollaborationInstanceSet" guid="qWop9SAmxkGUyEAFvh2dBwAA">
-<XPD:ATTR name="Name" type="string">CollaborationInstanceSet13</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">Settler puts teleport on asteroid</XPD:ATTR>
 <XPD:REF name="RepresentedClassifier">uJuaditY6kiwcOqOSZyezgAA</XPD:REF>
 <XPD:ATTR name="#InteractionInstanceSets" type="integer">1</XPD:ATTR>
 <XPD:OBJ name="InteractionInstanceSets[0]" type="UMLInteractionInstanceSet" guid="Slwl6Pl2Oka3LWee6ym+hwAA">
@@ -12665,7 +12665,7 @@
 </XPD:OBJ>
 </XPD:OBJ>
 <XPD:OBJ name="OwnedCollaborationInstanceSets[13]" type="UMLCollaborationInstanceSet" guid="yFpFJ5PZwUK2N0GMMbJZNAAA">
-<XPD:ATTR name="Name" type="string">CollaborationInstanceSet14</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">Settler uses teleport</XPD:ATTR>
 <XPD:REF name="RepresentedClassifier">uJuaditY6kiwcOqOSZyezgAA</XPD:REF>
 <XPD:ATTR name="#InteractionInstanceSets" type="integer">1</XPD:ATTR>
 <XPD:OBJ name="InteractionInstanceSets[0]" type="UMLInteractionInstanceSet" guid="daUxDc6roUq2ebzbX72REwAA">
@@ -13507,7 +13507,7 @@
 </XPD:OBJ>
 </XPD:OBJ>
 <XPD:OBJ name="OwnedCollaborationInstanceSets[14]" type="UMLCollaborationInstanceSet" guid="eMhYwqJo4UmZGU9oawBLIwAA">
-<XPD:ATTR name="Name" type="string">CollaborationInstanceSet15</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">Robot uses teleport</XPD:ATTR>
 <XPD:REF name="RepresentedClassifier">uJuaditY6kiwcOqOSZyezgAA</XPD:REF>
 <XPD:ATTR name="#InteractionInstanceSets" type="integer">1</XPD:ATTR>
 <XPD:OBJ name="InteractionInstanceSets[0]" type="UMLInteractionInstanceSet" guid="GRx8+3Wo4Eag6FHdBKYvCgAA">
@@ -14353,7 +14353,7 @@
 </XPD:OBJ>
 </XPD:OBJ>
 <XPD:OBJ name="OwnedCollaborationInstanceSets[15]" type="UMLCollaborationInstanceSet" guid="QXw/7nXhOUWNjbxnuOCGxwAA">
-<XPD:ATTR name="Name" type="string">CollaborationInstanceSet16</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">Teleport explodes</XPD:ATTR>
 <XPD:REF name="RepresentedClassifier">uJuaditY6kiwcOqOSZyezgAA</XPD:REF>
 <XPD:ATTR name="#InteractionInstanceSets" type="integer">1</XPD:ATTR>
 <XPD:OBJ name="InteractionInstanceSets[0]" type="UMLInteractionInstanceSet" guid="Kcxokd7hIESNHcixXuhufgAA">
@@ -15145,7 +15145,7 @@
 </XPD:OBJ>
 </XPD:OBJ>
 <XPD:OBJ name="OwnedCollaborationInstanceSets[16]" type="UMLCollaborationInstanceSet" guid="7IyNNqM1RkWRR+Jlp9FJMAAA">
-<XPD:ATTR name="Name" type="string">CollaborationInstanceSet17</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">Asteroids are at perihelion</XPD:ATTR>
 <XPD:REF name="RepresentedClassifier">uJuaditY6kiwcOqOSZyezgAA</XPD:REF>
 <XPD:ATTR name="#InteractionInstanceSets" type="integer">1</XPD:ATTR>
 <XPD:OBJ name="InteractionInstanceSets[0]" type="UMLInteractionInstanceSet" guid="vCYRVzcF0kShSq28zu0iawAA">
@@ -16162,7 +16162,7 @@
 </XPD:OBJ>
 </XPD:OBJ>
 <XPD:OBJ name="OwnedCollaborationInstanceSets[17]" type="UMLCollaborationInstanceSet" guid="a8whQD3dr0ytWY/OiQYV3wAA">
-<XPD:ATTR name="Name" type="string">CollaborationInstanceSet18</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">Settler builds robot</XPD:ATTR>
 <XPD:REF name="RepresentedClassifier">uJuaditY6kiwcOqOSZyezgAA</XPD:REF>
 <XPD:ATTR name="#InteractionInstanceSets" type="integer">1</XPD:ATTR>
 <XPD:OBJ name="InteractionInstanceSets[0]" type="UMLInteractionInstanceSet" guid="R/5u8ueLgUiVsN6PRCFx6AAA">
@@ -16416,7 +16416,7 @@
 </XPD:OBJ>
 </XPD:OBJ>
 <XPD:OBJ name="OwnedCollaborationInstanceSets[18]" type="UMLCollaborationInstanceSet" guid="AgreF2NnXEiQWAGk4r6ISQAA">
-<XPD:ATTR name="Name" type="string">CollaborationInstanceSet19</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">Asteroid explodes</XPD:ATTR>
 <XPD:REF name="RepresentedClassifier">uJuaditY6kiwcOqOSZyezgAA</XPD:REF>
 <XPD:ATTR name="#InteractionInstanceSets" type="integer">1</XPD:ATTR>
 <XPD:OBJ name="InteractionInstanceSets[0]" type="UMLInteractionInstanceSet" guid="NiWr4apZa02TzDAI6kV/fQAA">
@@ -17474,7 +17474,7 @@
 </XPD:OBJ>
 </XPD:OBJ>
 <XPD:OBJ name="OwnedCollaborationInstanceSets[19]" type="UMLCollaborationInstanceSet" guid="hjab35uM0k6rPB19cXRZlQAA">
-<XPD:ATTR name="Name" type="string">CollaborationInstanceSet20</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">Core made of ice evaporates</XPD:ATTR>
 <XPD:REF name="RepresentedClassifier">uJuaditY6kiwcOqOSZyezgAA</XPD:REF>
 <XPD:ATTR name="#InteractionInstanceSets" type="integer">1</XPD:ATTR>
 <XPD:OBJ name="InteractionInstanceSets[0]" type="UMLInteractionInstanceSet" guid="cKs01mPK/UuSwxCNcpJ+IQAA">

@@ -2806,7 +2806,7 @@
 </XPD:OBJ>
 <XPD:ATTR name="#Behaviors" type="integer">2</XPD:ATTR>
 <XPD:OBJ name="Behaviors[0]" type="UMLStateMachine" guid="aS1tGGx7VkitTvAvf9UCTgAA">
-<XPD:ATTR name="Name" type="string">The life of the little asteroid</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">The life of an asteroid</XPD:ATTR>
 <XPD:REF name="Context">uJuaditY6kiwcOqOSZyezgAA</XPD:REF>
 <XPD:OBJ name="Top" type="UMLCompositeState" guid="Vxnuz8qFp0WynX3V+r0lpAAA">
 <XPD:ATTR name="Name" type="string">TOP</XPD:ATTR>
@@ -2830,7 +2830,7 @@
 <XPD:REF name="Incomings[0]">KLcaqLMhSEanXwsjXuBkUgAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Subvertices[2]" type="UMLCompositeState" guid="3deHUY9yF0O6FsyWK3/PDwAA">
-<XPD:ATTR name="Name" type="string">Not At Perihelion And Has Crumb</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">Not At Perihelion And Has Crust</XPD:ATTR>
 <XPD:REF name="ContainerState">Vxnuz8qFp0WynX3V+r0lpAAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">2</XPD:ATTR>
 <XPD:REF name="Views[0]">V+rpYQIl1UuxnyPhgXvqlQAA</XPD:REF>
@@ -2843,7 +2843,7 @@
 <XPD:REF name="Incomings[1]">dI27W8IhO0G9ecQBoL4pJwAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Subvertices[3]" type="UMLCompositeState" guid="TNRgLp+UPEeFvqhumZCZsAAA">
-<XPD:ATTR name="Name" type="string">Not At Perihelion And No Crumb</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">Not At Perihelion And No Crust</XPD:ATTR>
 <XPD:REF name="ContainerState">Vxnuz8qFp0WynX3V+r0lpAAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">2</XPD:ATTR>
 <XPD:REF name="Views[0]">tQ/6n37zOkKLD6veqmirbQAA</XPD:REF>
@@ -2903,7 +2903,7 @@
 <XPD:REF name="Model">3deHUY9yF0O6FsyWK3/PDwAA</XPD:REF>
 <XPD:OBJ name="NameCompartment" type="UMLNameCompartmentView" guid="/M5LVOnCu0qsYtdd0OZJxQAA">
 <XPD:OBJ name="NameLabel" type="LabelView" guid="EYk2QmEk/Uq7AAsZXdb3vQAA">
-<XPD:ATTR name="Text" type="string">Not At Perihelion And Has Crumb</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">Not At Perihelion And Has Crust</XPD:ATTR>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="LabelView" guid="6tEmSRnfoUaHaNDnF5/BHAAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
@@ -2926,7 +2926,7 @@
 <XPD:REF name="Model">TNRgLp+UPEeFvqhumZCZsAAA</XPD:REF>
 <XPD:OBJ name="NameCompartment" type="UMLNameCompartmentView" guid="xVWP7mq89EGY1909Z3gGNQAA">
 <XPD:OBJ name="NameLabel" type="LabelView" guid="465BAKieWEOaVmDA4LOOrwAA">
-<XPD:ATTR name="Text" type="string">Not At Perihelion And No Crumb</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">Not At Perihelion And No Crust</XPD:ATTR>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="LabelView" guid="waXJk/JbpEGJOpUfUIa3VwAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
@@ -3191,7 +3191,7 @@
 </XPD:OBJ>
 </XPD:OBJ>
 <XPD:OBJ name="Behaviors[1]" type="UMLStateMachine" guid="2wbVmScw7UmQgQqDzT+vKwAA">
-<XPD:ATTR name="Name" type="string">The life of the teleport bros</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">The life of a teleport pair</XPD:ATTR>
 <XPD:REF name="Context">uJuaditY6kiwcOqOSZyezgAA</XPD:REF>
 <XPD:OBJ name="Top" type="UMLCompositeState" guid="fTP3+TZQJUG2yA2mp8YyfwAA">
 <XPD:ATTR name="Name" type="string">TOP</XPD:ATTR>
@@ -4084,14 +4084,12 @@
 <XPD:ATTR name="#Operations" type="integer">13</XPD:ATTR>
 <XPD:OBJ name="Operations[0]" type="UMLOperation" guid="uI0j0W78/Uu1ABAw6DaR2gAA">
 <XPD:ATTR name="Name" type="string">Drill</XPD:ATTR>
-<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
 <XPD:REF name="Owner">uirJr8M3d0KOoUmoY44j8AAA</XPD:REF>
 <XPD:ATTR name="#CallActions" type="integer">1</XPD:ATTR>
 <XPD:REF name="CallActions[0]">V/bI8qkbYkukjXW5TK/BfgAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Operations[1]" type="UMLOperation" guid="se4KFCGe1ESfgQZWdALqPgAA">
 <XPD:ATTR name="Name" type="string">Mine</XPD:ATTR>
-<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
 <XPD:REF name="Owner">uirJr8M3d0KOoUmoY44j8AAA</XPD:REF>
 <XPD:ATTR name="#CallActions" type="integer">1</XPD:ATTR>
 <XPD:REF name="CallActions[0]">o7Jio5yQXkCfqL1ylILvJQAA</XPD:REF>
@@ -4123,21 +4121,18 @@
 </XPD:OBJ>
 <XPD:OBJ name="Operations[5]" type="UMLOperation" guid="NMgQiKBW50q7mMCAu3j7ywAA">
 <XPD:ATTR name="Name" type="string">BuildRobot</XPD:ATTR>
-<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
 <XPD:REF name="Owner">uirJr8M3d0KOoUmoY44j8AAA</XPD:REF>
 <XPD:ATTR name="#CallActions" type="integer">1</XPD:ATTR>
 <XPD:REF name="CallActions[0]">XYRpQlpFakuq+uvseBQDVwAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Operations[6]" type="UMLOperation" guid="2YLKzdz9wk2NSkA9y/hSOwAA">
 <XPD:ATTR name="Name" type="string">BuildTeleportGatePair</XPD:ATTR>
-<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
 <XPD:REF name="Owner">uirJr8M3d0KOoUmoY44j8AAA</XPD:REF>
 <XPD:ATTR name="#CallActions" type="integer">1</XPD:ATTR>
 <XPD:REF name="CallActions[0]">iNi4xVl/8kiYGpKoI7x3AQAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Operations[7]" type="UMLOperation" guid="saGSZx99D0uIDGBD6LT9vQAA">
 <XPD:ATTR name="Name" type="string">FillAsteroid</XPD:ATTR>
-<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
 <XPD:REF name="Owner">uirJr8M3d0KOoUmoY44j8AAA</XPD:REF>
 <XPD:ATTR name="#Parameters" type="integer">1</XPD:ATTR>
 <XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="5GNuZa3cKk6xLJA803AWOQAA">
@@ -4150,7 +4145,6 @@
 </XPD:OBJ>
 <XPD:OBJ name="Operations[8]" type="UMLOperation" guid="VQFu7CIOFE6RHxWu+TqMrAAA">
 <XPD:ATTR name="Name" type="string">Move</XPD:ATTR>
-<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
 <XPD:REF name="Owner">uirJr8M3d0KOoUmoY44j8AAA</XPD:REF>
 <XPD:ATTR name="#Parameters" type="integer">1</XPD:ATTR>
 <XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="0KZAexTYYU6fOwmI6lIp1AAA">
@@ -4236,7 +4230,6 @@
 <XPD:ATTR name="#Operations" type="integer">5</XPD:ATTR>
 <XPD:OBJ name="Operations[0]" type="UMLOperation" guid="9JdBSP0OLUejsVMDA3gh9gAA">
 <XPD:ATTR name="Name" type="string">Move</XPD:ATTR>
-<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
 <XPD:REF name="Owner">bvRpeEmOD0uNBJXWwBczgAAA</XPD:REF>
 <XPD:ATTR name="#Parameters" type="integer">1</XPD:ATTR>
 <XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="j44Tw5Bv8kmt6HwDcBpQPgAA">
@@ -4251,7 +4244,6 @@
 </XPD:OBJ>
 <XPD:OBJ name="Operations[1]" type="UMLOperation" guid="P5aFZv9dkEKCeOa60YzxnAAA">
 <XPD:ATTR name="Name" type="string">Drill</XPD:ATTR>
-<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
 <XPD:REF name="Owner">bvRpeEmOD0uNBJXWwBczgAAA</XPD:REF>
 <XPD:ATTR name="#CallActions" type="integer">1</XPD:ATTR>
 <XPD:REF name="CallActions[0]">QL/U9DprWkOom905MgEJngAA</XPD:REF>
@@ -4424,10 +4416,9 @@
 <XPD:ATTR name="#Specializations" type="integer">2</XPD:ATTR>
 <XPD:REF name="Specializations[0]">5uKoQ32UI0G0lUvFqK/TjwAA</XPD:REF>
 <XPD:REF name="Specializations[1]">oNGL/Flt/UGbAMKD4iX1UAAA</XPD:REF>
-<XPD:ATTR name="#Operations" type="integer">5</XPD:ATTR>
+<XPD:ATTR name="#Operations" type="integer">4</XPD:ATTR>
 <XPD:OBJ name="Operations[0]" type="UMLOperation" guid="ZMzOV8bzr0a7HIqiel0KRgAA">
 <XPD:ATTR name="Name" type="string">Move</XPD:ATTR>
-<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
 <XPD:ATTR name="IsAbstract" type="boolean">True</XPD:ATTR>
 <XPD:REF name="Owner">wmIjCoB98Eq+ugzcCnjQJQAA</XPD:REF>
 <XPD:ATTR name="#Parameters" type="integer">1</XPD:ATTR>
@@ -4443,7 +4434,6 @@
 </XPD:OBJ>
 <XPD:OBJ name="Operations[1]" type="UMLOperation" guid="W6k1OvAvp0WGh5rk68/gzgAA">
 <XPD:ATTR name="Name" type="string">Drill</XPD:ATTR>
-<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
 <XPD:ATTR name="IsAbstract" type="boolean">True</XPD:ATTR>
 <XPD:REF name="Owner">wmIjCoB98Eq+ugzcCnjQJQAA</XPD:REF>
 </XPD:OBJ>
@@ -4457,11 +4447,6 @@
 </XPD:OBJ>
 <XPD:OBJ name="Operations[3]" type="UMLOperation" guid="FbV2VsJ8o0SOcDuT5hsVRAAA">
 <XPD:ATTR name="Name" type="string">Explode</XPD:ATTR>
-<XPD:ATTR name="IsAbstract" type="boolean">True</XPD:ATTR>
-<XPD:REF name="Owner">wmIjCoB98Eq+ugzcCnjQJQAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="Operations[4]" type="UMLOperation" guid="sfHJgxMEEEeU6ujQWUUa+gAA">
-<XPD:ATTR name="Name" type="string">Step</XPD:ATTR>
 <XPD:ATTR name="IsAbstract" type="boolean">True</XPD:ATTR>
 <XPD:REF name="Owner">wmIjCoB98Eq+ugzcCnjQJQAA</XPD:REF>
 </XPD:OBJ>

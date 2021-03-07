@@ -10890,7 +10890,7 @@
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="lUmHrHGoPEKb8ihAtFj8JQAA">
 <XPD:ATTR name="Alpha" type="real">1,5707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">SetSibling(tg1): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">SetSibling(tg2): void</XPD:ATTR>
 <XPD:REF name="Model">VO/CNYyMnkGfSHBNMDK72gAA</XPD:REF>
 <XPD:REF name="HostEdge">+du0g88E50ylRFxX7W8DSAAA</XPD:REF>
 </XPD:OBJ>
@@ -10963,7 +10963,7 @@
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="YlBhhZ2MAUusSPcHT+xJYAAA">
 <XPD:ATTR name="Alpha" type="real">1,5707953267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">SetSibling(tg2): void</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">SetSibling(tg1): void</XPD:ATTR>
 <XPD:REF name="Model">B57WPG5A/Uir3Y+3ZOBXowAA</XPD:REF>
 <XPD:REF name="HostEdge">bRIjkMpobkS1icO9rlTGHQAA</XPD:REF>
 </XPD:OBJ>
@@ -11137,7 +11137,7 @@
 <XPD:REF name="Views[3]">BgG1a13XckaZ48DIJ502cwAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="ParticipatingStimuli[5]" type="UMLStimulus" guid="VO/CNYyMnkGfSHBNMDK72gAA">
-<XPD:ATTR name="Arguments" type="string">tg1</XPD:ATTR>
+<XPD:ATTR name="Arguments" type="string">tg2</XPD:ATTR>
 <XPD:REF name="Sender">HK8kqA3bWkCgzalUuJNMmwAA</XPD:REF>
 <XPD:REF name="Receiver">yo+2xn37t0iliw7Q9e+OewAA</XPD:REF>
 <XPD:OBJ name="Action" type="UMLCallAction" guid="Fs4dsiRVKk+5QFpoX330JgAA">
@@ -11165,7 +11165,7 @@
 <XPD:REF name="Views[3]">oMEYeiPBEke4zIMC+6o9tAAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="ParticipatingStimuli[7]" type="UMLStimulus" guid="B57WPG5A/Uir3Y+3ZOBXowAA">
-<XPD:ATTR name="Arguments" type="string">tg2</XPD:ATTR>
+<XPD:ATTR name="Arguments" type="string">tg1</XPD:ATTR>
 <XPD:REF name="Sender">HK8kqA3bWkCgzalUuJNMmwAA</XPD:REF>
 <XPD:REF name="Receiver">SsqS2GzNq0uPsk1TF8OeFQAA</XPD:REF>
 <XPD:OBJ name="Action" type="UMLCallAction" guid="Iyn4ppNa/Umh8BLrkjtieQAA">

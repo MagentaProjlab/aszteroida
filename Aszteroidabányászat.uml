@@ -915,7 +915,7 @@
 <XPD:ATTR name="Alpha" type="real">1,43770720276632</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">55,5427763079953</XPD:ATTR>
 <XPD:ATTR name="EdgePosition" type="EdgePositionKind">epHead</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">-Asteroids</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">-asteroids</XPD:ATTR>
 <XPD:REF name="Model">IWAOoXoKmkONOxuqXaKt0AAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="TailRoleNameLabel" type="EdgeLabelView" guid="OQajghSPNk2bnh/OOJJqbQAA">
@@ -999,7 +999,7 @@
 <XPD:ATTR name="Alpha" type="real">-0,523598775598299</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">30</XPD:ATTR>
 <XPD:ATTR name="EdgePosition" type="EdgePositionKind">epHead</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">-SolarWind</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">-solarwind</XPD:ATTR>
 <XPD:REF name="Model">E4Tp3YD7MUaJx75KjrD9MQAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="TailRoleNameLabel" type="EdgeLabelView" guid="efrdwslNNkO944jpLXJiggAA">
@@ -1308,10 +1308,10 @@
 <XPD:OBJ name="OwnedViews[29]" type="UMLClassView" guid="R7pKo5DpN0mlG26cQ7YSgQAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
-<XPD:ATTR name="Left" type="integer">908</XPD:ATTR>
+<XPD:ATTR name="Left" type="integer">904</XPD:ATTR>
 <XPD:ATTR name="Top" type="integer">716</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">390</XPD:ATTR>
-<XPD:ATTR name="Height" type="integer">95</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">82</XPD:ATTR>
 <XPD:REF name="Model">GwPjX5eAc0KHOSpIloAUpAAA</XPD:REF>
 <XPD:OBJ name="NameCompartment" type="UMLNameCompartmentView" guid="nn2S1/8NGEa908vaPGHDRQAA">
 <XPD:OBJ name="NameLabel" type="LabelView" guid="MK75rqvCnUGX4l0DcGV+rgAA">
@@ -1339,7 +1339,7 @@
 <XPD:OBJ name="OwnedViews[30]" type="UMLAssociationView" guid="J8SgLHRfjEiwOHZg2q0U+QAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
-<XPD:ATTR name="Points" type="Points">1308,885;1181,810</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">1308,884;1165,797</XPD:ATTR>
 <XPD:REF name="Model">vEk3q9ypjUeMkbai8mDD8gAA</XPD:REF>
 <XPD:REF name="Head">R7pKo5DpN0mlG26cQ7YSgQAA</XPD:REF>
 <XPD:REF name="Tail">4dMoNU6JqESkd0rsY+zJyAAA</XPD:REF>
@@ -1424,7 +1424,7 @@
 <XPD:OBJ name="OwnedViews[31]" type="UMLAssociationView" guid="hVJenN6gAk2rXLocEnsXyAAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
-<XPD:ATTR name="Points" type="Points">908,750;685,736</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">904,746;685,735</XPD:ATTR>
 <XPD:REF name="Model">LhSgnVkFhky7W07JFQcvJwAA</XPD:REF>
 <XPD:REF name="Head">NMavWpAXBEeRrDupKBSagAAA</XPD:REF>
 <XPD:REF name="Tail">R7pKo5DpN0mlG26cQ7YSgQAA</XPD:REF>
@@ -1508,7 +1508,7 @@
 <XPD:OBJ name="OwnedViews[32]" type="UMLAssociationView" guid="Q1X5OikRwUCn+0MJ7bHZAwAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
-<XPD:ATTR name="Points" type="Points">896,678;988,716</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">896,677;996,716</XPD:ATTR>
 <XPD:REF name="Model">IlefKcrNY0aHxBX0BgHFVAAA</XPD:REF>
 <XPD:REF name="Head">R7pKo5DpN0mlG26cQ7YSgQAA</XPD:REF>
 <XPD:REF name="Tail">DYmb0R84dE6MZpl34F60IwAA</XPD:REF>
@@ -4497,7 +4497,7 @@
 <XPD:REF name="Views[3]">suF9xQozl0ie7ZMP/QMqMwAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Connections[1]" type="UMLAssociationEnd" guid="IWAOoXoKmkONOxuqXaKt0AAA">
-<XPD:ATTR name="Name" type="string">Asteroids</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">asteroids</XPD:ATTR>
 <XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
 <XPD:ATTR name="Multiplicity" type="string">0..*</XPD:ATTR>
 <XPD:REF name="Association">cCnlfaCBg02/OtfMMj7W2AAA</XPD:REF>
@@ -4544,7 +4544,7 @@
 <XPD:REF name="Views[3]">f1mzXrQVjEuwL84buzh9wAAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Connections[1]" type="UMLAssociationEnd" guid="E4Tp3YD7MUaJx75KjrD9MQAA">
-<XPD:ATTR name="Name" type="string">SolarWind</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">solarwind</XPD:ATTR>
 <XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
 <XPD:ATTR name="Multiplicity" type="string">1</XPD:ATTR>
 <XPD:REF name="Association">hkM2eqYWf0+6s9T5kZ1COQAA</XPD:REF>
@@ -4687,7 +4687,7 @@
 <XPD:REF name="Views[1]">b42OSqkU/USpmOlbx73SfQAA</XPD:REF>
 <XPD:REF name="Views[2]">xi0Lw7Z5VEicuJC5D+19YgAA</XPD:REF>
 <XPD:REF name="Views[3]">Su6kLW4yaUWGhKJm/geHmAAA</XPD:REF>
-<XPD:ATTR name="#Operations" type="integer">4</XPD:ATTR>
+<XPD:ATTR name="#Operations" type="integer">3</XPD:ATTR>
 <XPD:OBJ name="Operations[0]" type="UMLOperation" guid="tDS52wLHZ0mA8nP8w7XCiAAA">
 <XPD:ATTR name="Name" type="string">CheckInventory</XPD:ATTR>
 <XPD:REF name="Owner">GwPjX5eAc0KHOSpIloAUpAAA</XPD:REF>
@@ -4709,12 +4709,7 @@
 <XPD:REF name="CallActions[1]">IQGVOwkn9kmTL3WTCg3pgQAA</XPD:REF>
 <XPD:REF name="CallActions[2]">Kkddb+dm4EassxLVRACHqgAA</XPD:REF>
 </XPD:OBJ>
-<XPD:OBJ name="Operations[1]" type="UMLOperation" guid="moLwnE0PhUivYiVjdttDewAA">
-<XPD:ATTR name="Name" type="string">Reset</XPD:ATTR>
-<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
-<XPD:REF name="Owner">GwPjX5eAc0KHOSpIloAUpAAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="Operations[2]" type="UMLOperation" guid="9PwrGnqvGE6Eq5ZzaKLBYQAA">
+<XPD:OBJ name="Operations[1]" type="UMLOperation" guid="9PwrGnqvGE6Eq5ZzaKLBYQAA">
 <XPD:ATTR name="Name" type="string">AddMaterialToBill</XPD:ATTR>
 <XPD:REF name="Owner">GwPjX5eAc0KHOSpIloAUpAAA</XPD:REF>
 <XPD:ATTR name="#Parameters" type="integer">1</XPD:ATTR>
@@ -4725,7 +4720,7 @@
 <XPD:REF name="Type_">y4KtBlWX3E+zSXqB9i01KwAA</XPD:REF>
 </XPD:OBJ>
 </XPD:OBJ>
-<XPD:OBJ name="Operations[3]" type="UMLOperation" guid="GC5YjBfA9E674KzgRuBkdwAA">
+<XPD:OBJ name="Operations[2]" type="UMLOperation" guid="GC5YjBfA9E674KzgRuBkdwAA">
 <XPD:ATTR name="Name" type="string">DeleteFromInventory</XPD:ATTR>
 <XPD:REF name="Owner">GwPjX5eAc0KHOSpIloAUpAAA</XPD:REF>
 <XPD:ATTR name="#Parameters" type="integer">2</XPD:ATTR>

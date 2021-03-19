@@ -20,44 +20,33 @@ public class ControllerClass
 	private Robot Robots;
 	private SolarWind solarwind;
 	private BillOfMaterials bills;
-	
-	public ControllerClass() {
-		System.out.println("ControllerClass()");
-		InitAsteroids();
-		InitSettlers();
-		InitBills();
-	}
-	
 	public void GameLoop()
 	{
-		System.out.println("GameLoop()");
+		
 	}
 	
 	public void InitAsteroids()
 	{
-		System.out.println("InitAsteroids()");
-		ConnectAsteroids();
+		
 	}
 	
 	public void InitSettlers()
 	{
-		System.out.println("InitSettlers()");
-		GetRandomAsteroid();
+		
 	}
 	
 	public void InitBills() 
 	{
-		System.out.println("InitBills()");
+		
 	}
 	
 	public void ConnectAsteroids() 
 	{
-		System.out.println("ConnectAsteroids()");
+		
 	}
 	
 	public Asteroid GetRandomAsteroid() 
 	{
-		System.out.println("GetRandomAsteroid()");
-		return null;
+		
 	}
 }

@@ -10,39 +10,24 @@ package asteroid;
 //
 //
 
-import java.util.Scanner;
+
+
 
 public class BillOfMaterials
 {
 	private RawMaterial materials;
-	
-	
 	public Boolean CheckInventory(RawMaterial inventory) 
 	{
-		System.out.println("CheckInventory(RawMaterial inventory)");
-		Scanner scanner = new Scanner(System.in);
 		
-		System.out.println("A feltételeket teljesíti az inventory?");
-		Boolean feltetel = false;
-		String input = scanner.nextLine();
-		if(input.equals("igen"))
-		{
-			feltetel = true;
-		}else if(input.equals("nem"))
-		{
-			feltetel = false;
-		}
-		return feltetel;
 	}
 	
 	public void AddMaterialToBill(RawMaterial material) 
 	{
-		System.out.println("AddMaterialToBill(RawMaterial material)");
+		
 	}
 	
 	public RawMaterial DeleteFromInventory(RawMaterial inventory) 
 	{
-		System.out.println("DeleteFromInventory(RawMaterial inventory)");
-		return null;
+		
 	}
 }

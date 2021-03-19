@@ -111,7 +111,7 @@ public class Asteroid extends Place
 		System.out.println("SetMaterial()");
 	}
 	
-	public void DropNeighbor(Place neighbor)
+	public void DropNeighbor(Asteroid neighbor)
 	{
 		System.out.println("DropNeighbor()");
 	}

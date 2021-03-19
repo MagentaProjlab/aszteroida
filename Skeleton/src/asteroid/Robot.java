@@ -10,56 +10,33 @@ package asteroid;
 //
 //
 
-import java.util.Scanner;
+
+
 
 public class Robot extends SentientBeing
 {
-	public void Move(Place place) 
+	public void Move(Place place)
 	{
-		System.out.println("Move(Place place)");
-		((Asteroid) place).DropBeing(this);
-		place.RegisterBeing(this);
+		
 	}
 	
 	public void Drill()
 	{
-		System.out.println("Drill()");
-		location.IncreaseHoleDepth();
+		
 	}	
 	
-	public void Die() 
+	public void Die()
 	{
-		System.out.println("Die()");
-		location.DropBeing(this);
+		
 	}
 	
 	public void Explode()
 	{
-		System.out.println("Explode()");
-		Scanner scanner = new Scanner(System.in);
-		int input = 0;
-		System.out.println("Hány darab szomszédja van az aszteroidának? (0-több)");
-		input = scanner.nextInt();
-		scanner.close();
-		if(input == 0) {
-			Die();
-		} else {
-			Move(null);
-		}
-				
+		
 	}
 	
-	public void Step() 
+	public void Step()
 	{
-		System.out.println("Step()");
-		Scanner scanner = new Scanner(System.in);
-		String input;
-		System.out.println("Fúrjon vagy lépjen a robot?");
-		input = scanner.nextLine();
-		if(scanner.equals("fúr")) {
-			this.Drill();
-		} else if(scanner.equals("lép")) {
-			this.Move(null);
-		}
+		
 	}
 }

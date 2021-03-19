@@ -10,37 +10,14 @@ package asteroid;
 //
 //
 
-import java.util.ArrayList;
-import java.util.Scanner;
+
+
 
 public class SolarWind
 {
 	private SentientBeing sentientbeings;
-	public void SolarWind(ArrayList<Asteroid> asteroids)
+	public void SolarWind(Asteroid asteroids)
 	{
-		System.out.println("SolarWind()");
-		Scanner scanner = new Scanner(System.in);
-		
-		System.out.println("Napszél van?");
-		Boolean feltetel = false;
-		String input = scanner.nextLine();
-		if(input.equals("igen"))
-		{
-			feltetel = true;
-		}else if(input.equals("nem"))
-		{
-			feltetel = false;
-		}
-		
-		
-		if(feltetel == true)
-		{
-			for(Asteroid a : asteroids)
-			{
-				a.SolarWindDeath();
-			}	
-		}
-		
 		
 	}
 }

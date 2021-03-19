@@ -15,24 +15,18 @@ package asteroid;
 
 public class Coal extends RawMaterial 
 {
-	public Coal() {
-		System.out.println("Coal()");
-	}
 	public void Perish() 
 	{
-		System.out.println("Perish()");
-		this.SetAsteroid(null);
+		
 	}
 	
 	public String GetUniqueID() 
 	{
-		System.out.println("GetUniqueID()");
-		return "Coal";
+		
 	}
 	
 	public void PerihelionReaction() 
 	{
-		System.out.println("PerihelionReaction()");
 		
 	}
 	

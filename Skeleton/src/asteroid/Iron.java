@@ -22,7 +22,7 @@ public class Iron extends RawMaterial
 	
 	public String GetUniqueID()
 	{
-		
+		return "Iron";
 	}
 	
 	public void PerihelionReaction()

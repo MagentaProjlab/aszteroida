@@ -15,18 +15,23 @@ package asteroid;
 
 public class Iron extends RawMaterial
 {
+	public Iron() {
+		System.out.println("Ice()");
+	}
 	public void Perish()
 	{
-		
+		System.out.println("Perish()");
+		this.SetAsteroid(null);
 	}
 	
 	public String GetUniqueID()
 	{
+		System.out.println("GetUniqueID()");
 		return "Iron";
 	}
 	
 	public void PerihelionReaction()
 	{
-		
+		System.out.println("PerihelionReaction()");
 	}
 }

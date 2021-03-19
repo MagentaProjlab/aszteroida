@@ -169,6 +169,7 @@ public class Asteroid extends Place
 	
 	public void StepBeings()
 	{
+		System.out.println("StepBeings()");
 		for(SentientBeing sb : sentientbeings)
 		{
 			sb.Step();

@@ -15,7 +15,8 @@ package asteroid;
 
 public abstract class SentientBeing
 {
-	private Asteroid location;
+	protected Asteroid location;
+	
 	public abstract void Move(Place place);
 	public abstract void Drill();
 	public abstract void Die();

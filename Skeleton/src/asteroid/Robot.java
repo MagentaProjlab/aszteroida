@@ -24,13 +24,13 @@ public class Robot extends SentientBeing
 	public void Drill()
 	{
 		System.out.println("Drill()");
-		place.IncreaseHoleDepth();
+		location.IncreaseHoleDepth();
 	}	
 	
 	public void Die() 
 	{
 		System.out.println("Die()");
-		place.DropBeing(this);
+		location.DropBeing(this);
 	}
 	
 	public void Explode()
@@ -44,7 +44,7 @@ public class Robot extends SentientBeing
 		if(input == 0) {
 			Die();
 		} else {
-			Move(randomneighbour);
+			Move(null);
 		}
 				
 	}
@@ -59,7 +59,7 @@ public class Robot extends SentientBeing
 		if(scanner.equals("fúr")) {
 			this.Drill();
 		} else if(scanner.equals("lép")) {
-			this.Move(p);
+			this.Move(null);
 		}
 	}
 }

@@ -10,8 +10,7 @@ package asteroid;
 //
 //
 
-
-
+import java.util.Scanner;
 
 public class TeleportGate extends Place 
 {
@@ -20,42 +19,85 @@ public class TeleportGate extends Place
 	private Settler owner;
 	public void SetSibling(TeleportGate sibling) 
 	{
-		
+		System.out.println("SetSibling()");
 	}
 	
 	public void SetAsteroid(Asteroid asteroid) 
 	{
-		
+		System.out.println("SetAsteroid()");
 	}
 	
 	public Asteroid GetAsteroid() 
 	{
-		
+		System.out.println("GetAsteroid()");
+		return null;
 	}
 	
 	public TeleportGate GetSibling()
 	{
-		
+		System.out.println("GetSibling()");
+		return null;
 	}
 	
 	
 	public void DropOwner()
 	{
-		
+		System.out.println("DropSibling()");
 	}
 	
 	public Settler GetOwner()
 	{
-		
+		System.out.println("GetOwner()");
+		return null;
 	}
 	
 	public void RegisterBeing(SentientBeing being)
 	{
-		
+		System.out.println("RegisterBeing()");
 	}
 	
 	public void Explode() 
 	{
+		System.out.println("Explode()");
+		Scanner scanner = new Scanner(System.in);
 		
+		System.out.println("Le van rakva a teleport?");
+		Boolean feltetel1 = false;
+		String input = scanner.nextLine();
+		if(input.equals("igen"))
+		{
+			feltetel1 = true;
+		}else if(input.equals("nem"))
+		{
+			feltetel1 = false;
+		}
+		
+		if(feltetel1 == true)
+		{
+			asteroid.DropNeighbor(this);
+		}else
+		{
+			owner.DropCarriedTeleport(this);
+		}
+		
+		System.out.println("Le van rakva a párja?");
+		Boolean feltetel2 = false;
+		input = scanner.nextLine();
+		if(input.equals("igen"))
+		{
+			feltetel2 = true;
+		}else if(input.equals("nem"))
+		{
+			feltetel2 = false;
+		}
+		
+		if(feltetel2 == true)
+		{
+			sibling.GetAsteroid().DropNeighbor(sibling);
+			sibling.SetAsteroid(null);
+		}else
+		{
+			sibling.GetOwner().DropCarriedTeleport(sibling);
+		}
 	}
 }

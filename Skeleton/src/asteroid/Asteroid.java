@@ -13,58 +13,82 @@ package asteroid;
 
 
 
-public class Asteroid extends Place {
+public class Asteroid extends Place 
+{
 	private Integer CrustThickness;
 	private Integer HoleDepth;
 	private Boolean CoreIsEmpty;
 	private RawMaterial corematerial;
 	private SentientBeing sentientbeings;
 	private Place neighbors;
-	public void IncreaseHoleDepth() {
+	public void IncreaseHoleDepth() 
+	{
+		
 	}
 	
-	public void Explode() {
+	public void Explode()
+	{
+		
 	}
 	
-	public void DropBeing(SentientBeing being) {
+	public void DropBeing(SentientBeing being)
+	{
+		
 	}
 	
-	public void RegisterBeing(SentientBeing being) {
+	public void RegisterBeing(SentientBeing being)
+	{
+		
 	}
 	
-	public void DropMaterial() {
+	public void DropMaterial() 
+	{
+		
 	}
 	
-	public RawMaterial GetMaterial() {
-		return corematerial;
+	public RawMaterial GetMaterial()
+	{
+		
 	}
 	
-	public Boolean IsEmpty() {
-		return CoreIsEmpty;
+	public Boolean IsEmpty()
+	{
+		
 	}
 	
-	public void SetMaterial(RawMaterial material, Settler settler) {
+	public void SetMaterial(RawMaterial material, Settler settler)
+	{
+		
 	}
 	
-	public void DropNeighbor(Asteroid neighbor) {
+	public void DropNeighbor(Asteroid neighbor)
+	{
+		
 	}
 	
-	public Boolean AtPerihelion() {
-		return CoreIsEmpty;
+	public Boolean AtPerihelion()
+	{
+		
 	}
 	
-	public void AddNeighbor(Place neighbor) {
+	public void AddNeighbor(Place neighbor)
+	{
+		
 	}
 	
-	public void SolarWindDeath() {
+	public void SolarWindDeath()
+	{
+		
 	}
 	
-	public void CheckPerihelionReaction() {
+	public void CheckPerihelionReaction()
+	{
+		
 	}
 	
-	public void StepBeings() {
+	public void StepBeings()
+	{
+		
 	}
-
-	
 
 }

@@ -13,35 +13,49 @@ package asteroid;
 
 
 
-public class TeleportGate extends Place {
+public class TeleportGate extends Place 
+{
 	private TeleportGate sibling;
 	private Asteroid asteroid;
 	private Settler owner;
-	public void SetSibling(TeleportGate sibling) {
+	public void SetSibling(TeleportGate sibling) 
+	{
+		
 	}
 	
-	public void SetAsteroid(Asteroid asteroid) {
+	public void SetAsteroid(Asteroid asteroid) 
+	{
+		
 	}
 	
-	public Asteroid GetAsteroid() {
-		return asteroid;
+	public Asteroid GetAsteroid() 
+	{
+		
 	}
 	
-	public TeleportGate GetSibling() {
-		return sibling;
+	public TeleportGate GetSibling()
+	{
+		
 	}
 	
 	
-	public void DropOwner() {
+	public void DropOwner()
+	{
+		
 	}
 	
-	public Settler GetOwner() {
-		return owner;
+	public Settler GetOwner()
+	{
+		
 	}
 	
-	public void RegisterBeing(SentientBeing being) {
+	public void RegisterBeing(SentientBeing being)
+	{
+		
 	}
 	
-	public void Explode() {
+	public void Explode() 
+	{
+		
 	}
 }

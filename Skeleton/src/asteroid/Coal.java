@@ -13,15 +13,21 @@ package asteroid;
 
 
 
-public class Coal extends RawMaterial {
-	public void Perish() {
+public class Coal extends RawMaterial 
+{
+	public void Perish() 
+	{
+		
 	}
 	
-	public String GetUniqueID() {
-		return null;
+	public String GetUniqueID() 
+	{
+		
 	}
 	
-	public void PerihelionReaction() {
+	public void PerihelionReaction() 
+	{
+		
 	}
 	
 }

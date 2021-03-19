@@ -13,8 +13,11 @@ package asteroid;
 
 
 
-public class SolarWind {
+public class SolarWind
+{
 	private SentientBeing sentientbeings;
-	public void SolarWind(Asteroid asteroids) {
+	public void SolarWind(Asteroid asteroids)
+	{
+		
 	}
 }

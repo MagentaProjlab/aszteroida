@@ -13,7 +13,8 @@ package asteroid;
 
 
 
-public abstract class Place {
+public abstract class Place
+{
 	public abstract void RegisterBeing(SentientBeing being);
 	public abstract void Explode();
 }

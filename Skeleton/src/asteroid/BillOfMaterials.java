@@ -13,16 +13,21 @@ package asteroid;
 
 
 
-public class BillOfMaterials {
+public class BillOfMaterials
+{
 	private RawMaterial materials;
-	public Boolean CheckInventory(RawMaterial inventory) {
-		return null;
+	public Boolean CheckInventory(RawMaterial inventory) 
+	{
+		
 	}
 	
-	public void AddMaterialToBill(RawMaterial material) {
+	public void AddMaterialToBill(RawMaterial material) 
+	{
+		
 	}
 	
-	public RawMaterial DeleteFromInventory(RawMaterial inventory) {
-		return inventory;
+	public RawMaterial DeleteFromInventory(RawMaterial inventory) 
+	{
+		
 	}
 }

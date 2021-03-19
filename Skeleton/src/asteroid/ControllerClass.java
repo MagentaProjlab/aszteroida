@@ -13,28 +13,40 @@ package asteroid;
 
 
 
-public class ControllerClass {
+public class ControllerClass
+{
 	private Asteroid asteroids;
 	private Settler Settlers;
 	private Robot Robots;
 	private SolarWind solarwind;
 	private BillOfMaterials bills;
-	public void GameLoop() {
+	public void GameLoop()
+	{
+		
 	}
 	
-	public void InitAsteroids() {
+	public void InitAsteroids()
+	{
+		
 	}
 	
-	public void InitSettlers() {
+	public void InitSettlers()
+	{
+		
 	}
 	
-	public void InitBills() {
+	public void InitBills() 
+	{
+		
 	}
 	
-	public void ConnectAsteroids() {
+	public void ConnectAsteroids() 
+	{
+		
 	}
 	
-	public Asteroid GetRandomAsteroid() {
-		return asteroids;
+	public Asteroid GetRandomAsteroid() 
+	{
+		
 	}
 }

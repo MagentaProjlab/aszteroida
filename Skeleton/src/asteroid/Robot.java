@@ -13,19 +13,30 @@ package asteroid;
 
 
 
-public class Robot extends SentientBeing {
-	public void Move(Place place) {
+public class Robot extends SentientBeing
+{
+	public void Move(Place place)
+	{
+		
 	}
 	
-	public void Drill() {
+	public void Drill()
+	{
+		
 	}	
 	
-	public void Die() {
+	public void Die()
+	{
+		
 	}
 	
-	public void Explode() {
+	public void Explode()
+	{
+		
 	}
 	
-	public void Step() {
+	public void Step()
+	{
+		
 	}
 }

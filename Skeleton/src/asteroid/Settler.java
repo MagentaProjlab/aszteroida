@@ -13,46 +13,73 @@ package asteroid;
 
 
 
-public class Settler extends SentientBeing {
+public class Settler extends SentientBeing
+{
 	private RawMaterial carriedmaterials;
 	private BillOfMaterials bills;
 	private TeleportGate carriedteleports;
-	public void Drill() {
+	public void Drill()
+	{
+		
 	}
 	
-	public void Mine() {
+	public void Mine()
+	{
+		
 	}
 	
-	public void Die() {
+	public void Die()
+	{
+		
 	}
 	
-	public void AddCarriedMaterial(RawMaterial material) {
+	public void AddCarriedMaterial(RawMaterial material)
+	{
+		
 	}
 	
-	public void Explode() {
+	public void Explode()
+	{
+		
 	}
 	
-	public void BuildRobot() {
+	public void BuildRobot() 
+	{
+		
 	}
 	
-	public void BuildTeleportGatePair() {
+	public void BuildTeleportGatePair() 
+	{
+		
 	}
 	
-	public void FillAsteroid(RawMaterial material) {
+	public void FillAsteroid(RawMaterial material) 
+	{
+		
 	}
 	
-	public void Move(Place place) {
+	public void Move(Place place) 
+	{
+		
 	}
 	
-	public void PutTeleportGateOnAsteroid() {
+	public void PutTeleportGateOnAsteroid() 
+	{
+		
 	}
 	
-	public void Step() {
+	public void Step() 
+	{
+		
 	}
 	
-	public void DropCarriedMaterial(RawMaterial material) {
+	public void DropCarriedMaterial(RawMaterial material) 
+	{
+		
 	}
 	
-	public void DropCarriedTeleport(TeleportGate teleport) {
+	public void DropCarriedTeleport(TeleportGate teleport) 
+	{
+		
 	}
 }

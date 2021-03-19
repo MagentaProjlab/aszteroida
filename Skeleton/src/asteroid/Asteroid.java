@@ -10,61 +10,170 @@ package asteroid;
 //
 //
 
+import java.util.ArrayList;
+import java.util.Scanner;
 
 
-
-public class Asteroid extends Place {
+public class Asteroid extends Place 
+{
 	private Integer CrustThickness;
 	private Integer HoleDepth;
 	private Boolean CoreIsEmpty;
 	private RawMaterial corematerial;
-	private SentientBeing sentientbeings;
-	private Place neighbors;
-	public void IncreaseHoleDepth() {
+	private ArrayList<SentientBeing> sentientbeings;
+	private ArrayList<Place> neighbors;
+	private BillOfMaterials radBill;
+	
+	public Asteroid()
+	{
+		
 	}
 	
-	public void Explode() {
+	public void IncreaseHoleDepth() 
+	{
+		System.out.println("IncreaseHoleDepth()");
 	}
 	
-	public void DropBeing(SentientBeing being) {
+	public void Explode()
+	{
+		System.out.println("Explode()");
+		Scanner scanner = new Scanner(System.in);
+		
+		Boolean feltetel1 = radBill.CheckInventory(corematerial);
+		
+		System.out.println("CrustThickness == HoleDepth?");
+		Boolean feltetel2 = false;
+		String input = scanner.nextLine();
+		if(input.equals("igen"))
+		{
+			feltetel2 = true;
+		}else if(input.equals("nem"))
+		{
+			feltetel2 = false;
+		}
+		
+		Boolean feltetel3 = this.AtPerihelion();
+		
+		if((feltetel1 == true && feltetel2 == true && feltetel3 == true) || neighbors.isEmpty())
+		{
+			for(SentientBeing sb : sentientbeings)
+			{
+				sb.Explode();
+			}
+			
+			corematerial.Perish();
+			
+			for(Place n : neighbors)
+			{
+				n.Explode();
+			}
+		}
 	}
 	
-	public void RegisterBeing(SentientBeing being) {
+	public void DropBeing(SentientBeing being)
+	{
+		System.out.println("DropBeing()");
 	}
 	
-	public void DropMaterial() {
+	public void RegisterBeing(SentientBeing being)
+	{
+		System.out.println("RegisterBeing()");
 	}
 	
-	public RawMaterial GetMaterial() {
-		return corematerial;
+	public void DropMaterial() 
+	{
+		System.out.println("DropMaterial()");
 	}
 	
-	public Boolean IsEmpty() {
-		return CoreIsEmpty;
+	public RawMaterial GetMaterial()
+	{
+		System.out.println("GetMaterial()");
+		return null;
 	}
 	
-	public void SetMaterial(RawMaterial material, Settler settler) {
+	public Boolean IsEmpty()
+	{
+		System.out.println("Üres az aszteroida?");
+		Scanner scanner = new Scanner(System.in);
+		String input = scanner.nextLine();
+		if(input.equals("igen"))
+		{
+			return true;
+		}else if(input.equals("nem"))
+		{
+			return false;
+		}
+		return false;
 	}
 	
-	public void DropNeighbor(Asteroid neighbor) {
+	public void SetMaterial(RawMaterial material, Settler settler)
+	{
+		System.out.println("SetMaterial()");
 	}
 	
-	public Boolean AtPerihelion() {
-		return CoreIsEmpty;
+	public void DropNeighbor(Place neighbor)
+	{
+		System.out.println("DropNeighbor()");
 	}
 	
-	public void AddNeighbor(Place neighbor) {
+	public Boolean AtPerihelion()
+	{
+		System.out.println("Napközelben van az aszteroida?");
+		Scanner scanner = new Scanner(System.in);
+		String input = scanner.nextLine();
+		if(input.equals("igen"))
+		{
+			return true;
+		}else if(input.equals("nem"))
+		{
+			return false;
+		}
+		return false;
 	}
 	
-	public void SolarWindDeath() {
+	public void AddNeighbor(Place neighbor)
+	{
+		System.out.println("AddNeighbor()");
 	}
 	
-	public void CheckPerihelionReaction() {
+	public void SolarWindDeath()
+	{
+		System.out.println("SolarWindDeath()");
+		Scanner scanner = new Scanner(System.in);
+		
+		System.out.println("CrustThickness == HoleDepth?");
+		Boolean feltetel1 = false;
+		String input = scanner.nextLine();
+		if(input.equals("igen"))
+		{
+			feltetel1 = true;
+		}else if(input.equals("nem"))
+		{
+			feltetel1 = false;
+		}
+		
+		if(this.IsEmpty() == false || feltetel1 == false)
+		{
+			for(SentientBeing sb : sentientbeings)
+			{
+				sb.Die();
+			}
+		}
 	}
 	
-	public void StepBeings() {
+	public void CheckPerihelionReaction()
+	{
+		System.out.println("CheckPerihelionReaction()");
+		corematerial.PerihelionReaction();
 	}
-
 	
+	public void StepBeings()
+	{
+		System.out.println("StepBeings()");
+		for(SentientBeing sb : sentientbeings)
+		{
+			sb.Step();
+		}
+	}
 
 }

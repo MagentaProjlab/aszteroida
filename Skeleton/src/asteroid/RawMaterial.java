@@ -13,12 +13,20 @@ package asteroid;
 
 
 
-public abstract class RawMaterial {
-	private Asteroid asteroid;
-	public void Perish() {
+public abstract class RawMaterial
+{
+	protected Asteroid asteroid;
+	public RawMaterial() {}
+	public void Perish()
+	{
+		System.out.println("Perish()");
+		this.SetAsteroid(null);
 	}
 	
-	public void SetAsteroid(Asteroid asteroid) {
+	public void SetAsteroid(Asteroid asteroid)
+	{
+		System.out.println("SetAsteroid(Asteroid asteroid)");
+		this.asteroid = asteroid;
 	}
 	
 	public abstract String GetUniqueID();

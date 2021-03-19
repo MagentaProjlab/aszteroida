@@ -13,28 +13,51 @@ package asteroid;
 
 
 
-public class ControllerClass {
+public class ControllerClass
+{
 	private Asteroid asteroids;
 	private Settler Settlers;
 	private Robot Robots;
 	private SolarWind solarwind;
 	private BillOfMaterials bills;
-	public void GameLoop() {
+	
+	public ControllerClass() {
+		System.out.println("ControllerClass()");
+		InitAsteroids();
+		InitSettlers();
+		InitBills();
 	}
 	
-	public void InitAsteroids() {
+	public void GameLoop()
+	{
+		System.out.println("GameLoop()");
 	}
 	
-	public void InitSettlers() {
+	public void InitAsteroids()
+	{
+		System.out.println("InitAsteroids()");
+		ConnectAsteroids();
 	}
 	
-	public void InitBills() {
+	public void InitSettlers()
+	{
+		System.out.println("InitSettlers()");
+		GetRandomAsteroid();
 	}
 	
-	public void ConnectAsteroids() {
+	public void InitBills() 
+	{
+		System.out.println("InitBills()");
 	}
 	
-	public Asteroid GetRandomAsteroid() {
-		return asteroids;
+	public void ConnectAsteroids() 
+	{
+		System.out.println("ConnectAsteroids()");
+	}
+	
+	public Asteroid GetRandomAsteroid() 
+	{
+		System.out.println("GetRandomAsteroid()");
+		return null;
 	}
 }

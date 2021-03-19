@@ -7,7 +7,7 @@ public class Main {
 	static public void main(String[] args)
 	{
 		Scanner scanner = new Scanner(System.in);
-		System.out.println("Válassz egy tesztesetet! (1-15)");
+		System.out.println("VÃ¡lassz egy tesztesetet! (1-15)");
 		String input = scanner.nextLine();
 		switch(Integer.parseInt(input))
 		{

@@ -16,7 +16,7 @@ package asteroid;
 public class Iron extends RawMaterial
 {
 	public Iron() {
-		System.out.println("Ice()");
+		System.out.println("Iron()");
 	}
 	public void Perish()
 	{

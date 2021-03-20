@@ -86,7 +86,15 @@ public class Main {
 	
 	private static void Teszteset6()
 	{
-		
+		System.out.println("A settler puts back material teszteset indul");
+		Settler s = new Settler();
+		Asteroid location = new Asteroid();
+		RawMaterial m = new Iron();
+		s.AddCarriedMaterial(m);
+		location.SetMaterial(m, s);
+		s.DropCarriedMaterial(m);
+		location.AtPerihelion();
+		System.out.println("A teszt sikeresen lefutott");
 	}
 	
 	private static void Teszteset7()

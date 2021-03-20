@@ -1,5 +1,6 @@
 package asteroid;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -144,12 +145,26 @@ public class Main {
 
 	}
 	
-	private static void Teszteset10()
-	{
+
 		
-	}
-	
 	private static void Teszteset11()
+	{
+		System.out.println("SolarWind teszteset");
+		ArrayList<Asteroid> asteroids=new ArrayList<Asteroid>();
+		Asteroid a=new Asteroid();
+		Settler s=new Settler();
+		//jobban nem "toltottem fel" a telepest, mert a szekvencian csak a Die-ig mennek vonalak.
+		a.RegisterBeing(new Settler());
+		s.setAsteroid(a);
+		asteroids.add(a);
+		//TODO de nem baj, hogy a tester látja itt ezeket felettem?(az incializalasokat)
+		
+		SolarWind sw=new SolarWind();
+		sw.solarWind(asteroids);
+	}
+
+	
+	private static void Teszteset10()
 	{
 		System.out.println("Az asteroid explodes teszteset indul");
 		Asteroid a = new Asteroid();

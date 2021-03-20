@@ -151,7 +151,15 @@ public class Main {
 	
 	private static void Teszteset11()
 	{
-		
+		System.out.println("Az asteroid explodes teszteset indul");
+		Asteroid a = new Asteroid();
+		Uranium u = new Uranium();
+		a.SetCore(u);
+		BillOfMaterials radbill = new BillOfMaterials();
+		radbill.AddMaterialToBill(u);
+		a.SetBill(radbill);
+		a.Explode();
+		System.out.println("A teszt sikeresen lefutott");
 	}
 	
 	private static void Teszteset12()

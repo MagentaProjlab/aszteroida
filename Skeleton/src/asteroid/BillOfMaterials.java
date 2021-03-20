@@ -49,6 +49,7 @@ public class BillOfMaterials
 	{
 		Logger.MethodCall("AddMaterialToBill(ArrayList<RawMaterial> inventory)");
 		Logger.MethodReturn("void");
+		materials.add(material);
 	}
 	
 	public ArrayList<RawMaterial> DeleteFromInventory(ArrayList<RawMaterial> inventory) 

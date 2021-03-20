@@ -29,13 +29,13 @@ public class SolarWind
 		Logger.MethodCall("SolarWind()");
 		Scanner scanner = new Scanner(System.in);
 		
-		System.out.println("Napszél van?");
+		System.out.println("Is there a solar wind?");
 		Boolean feltetel = false;
 		String input = scanner.nextLine();
-		if(input.equals("igen"))
+		if(input.equals("yes"))
 		{
 			feltetel = true;
-		}else if(input.equals("nem"))
+		}else if(input.equals("no"))
 		{
 			feltetel = false;
 		}

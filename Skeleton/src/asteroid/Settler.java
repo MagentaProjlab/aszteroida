@@ -163,7 +163,7 @@ public class Settler extends SentientBeing {
 		if(input.equals("yes")) {
 			TeleportGate t=new TeleportGate();
 			t.GetAsteroid();
-			System.out.println("Is the settler on the same asteroid as the teleportgate?");
+			System.out.println("Is the settler on the same asteroid as the teleportgate's sibling?");
 			scanner = new Scanner(System.in);
 			String input2 = scanner.nextLine();
 			if(input2.equals("no")) {

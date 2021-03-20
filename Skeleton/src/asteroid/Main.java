@@ -31,17 +31,38 @@ public class Main {
 	
 	private static void Teszteset1()
 	{
-		
+		System.out.println("A settler drills teszteset indul");
+		Settler s = new Settler();
+		Asteroid location = new Asteroid();
+		location.RegisterBeing(s);
+		s.location = location;
+		s.Drill();
+		System.out.println("A teszt sikeresen lefutott");
 	}
 	
 	private static void Teszteset2()
 	{
-		
+		System.out.println("A robot drills teszteset indul");
+		Robot r = new Robot();
+		Asteroid location = new Asteroid();
+		location.RegisterBeing(r);
+		r.location = location;
+		r.Drill();
+		System.out.println("A teszt sikeresen lefutott");
 	}
 	
 	private static void Teszteset3()
 	{
-		
+		System.out.println("A settler moves teszteset indul");
+		Settler s = new Settler();
+		Asteroid location = new Asteroid();
+		Asteroid destination = new Asteroid();
+		location.AddNeighbor(destination);
+		destination.AddNeighbor(location);
+		location.RegisterBeing(s);
+		s.location = location;
+		s.Move(destination);
+		System.out.println("A teszt sikeresen lefutott");	
 	}
 	
 	private static void Teszteset4()

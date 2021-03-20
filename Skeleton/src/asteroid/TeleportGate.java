@@ -119,7 +119,6 @@ public class TeleportGate extends Place
 		{
 			sibling.GetOwner().DropCarriedTeleport(sibling);
 		}
-		scanner.close();
 		Logger.MethodReturn("void");
 	}
 }

@@ -6,25 +6,28 @@ public class Main {
 	static public void main(String[] args)
 	{
 		Scanner scanner = new Scanner(System.in);
-		System.out.println("Válassz egy tesztesetet! (1-15)");
-		String input = scanner.nextLine();
-		switch(Integer.parseInt(input))
-		{
-			case 1: Teszteset1(); break;
-			case 2: Teszteset2(); break;
-			case 3: Teszteset3(); break;
-			case 4: Teszteset4(); break;
-			case 5: Teszteset5(); break;
-			case 6: Teszteset6(); break;
-			case 7: Teszteset7(); break;
-			case 8: Teszteset8(); break;
-			case 9: Teszteset9(); break;
-			case 10: Teszteset10(); break;
-			case 11: Teszteset11(); break;
-			case 12: Teszteset12(); break;
-			case 13: Teszteset13(); break;
-			case 14: Teszteset14(); break;
-			case 15: Teszteset15(); break;
+		String input = "-1";
+		while (!(input.equals("0"))) {
+			System.out.println("Válassz egy tesztesetet! (1-15)");
+			input = scanner.nextLine();
+			switch(Integer.parseInt(input))
+			{
+				case 1: Teszteset1(); break;
+				case 2: Teszteset2(); break;
+				case 3: Teszteset3(); break;
+				case 4: Teszteset4(); break;
+				case 5: Teszteset5(); break;
+				case 6: Teszteset6(); break;
+				case 7: Teszteset7(); break;
+				case 8: Teszteset8(); break;
+				case 9: Teszteset9(); break;
+				case 10: Teszteset10(); break;
+				case 11: Teszteset11(); break;
+				case 12: Teszteset12(); break;
+				case 13: Teszteset13(); break;
+				case 14: Teszteset14(); break;
+				case 15: Teszteset15(); break;
+			}
 		}
 		scanner.close();
 	}

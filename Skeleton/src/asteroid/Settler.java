@@ -45,7 +45,6 @@ public class Settler extends SentientBeing {
 		if(input.equals("1")) {//TODO tudni kell, hogy m�g furhatja-e
 			location.IncreaseHoleDepth();//TODO 
 		}
-		scanner.close();
 		Logger.MethodReturn("void");
 	}
 	
@@ -63,7 +62,6 @@ public class Settler extends SentientBeing {
 				location.DropMaterial();
 			}
 		}
-		scanner.close();
 		Logger.MethodReturn("void");
 	}
 	
@@ -140,7 +138,6 @@ public class Settler extends SentientBeing {
 		if(input.equals("igen")) {
 			location.SetMaterial(material, this);
 		}
-		scanner.close();
 		Logger.MethodReturn("void");
 	}
 	
@@ -174,8 +171,6 @@ public class Settler extends SentientBeing {
 				DropCarriedTeleport(t);
 			}
 		}
-		
-		scanner.close();
 		Logger.MethodReturn("void");
 	}
 	

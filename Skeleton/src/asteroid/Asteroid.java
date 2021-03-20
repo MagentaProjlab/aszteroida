@@ -83,7 +83,6 @@ public class Asteroid extends Place
 				n.Explode();
 			}
 		}
-		scanner.close();
 		Logger.MethodReturn("void");
 	}
 	
@@ -116,21 +115,18 @@ public class Asteroid extends Place
 	public Boolean IsEmpty()
 	{
 		Logger.MethodCall("IsEmpty()");
-		Logger.UserQuestion("Üres az aszteroida?");
+		Logger.UserQuestion("ï¿½res az aszteroida?");
 		Scanner scanner = new Scanner(System.in);
 		String input = scanner.nextLine();
 		if(input.equals("1"))
 		{
-			scanner.close();
 			Logger.MethodReturn("Boolean: true");
 			return true;
 		}else if(input.equals("2"))
 		{
-			scanner.close();
 			Logger.MethodReturn("Boolean: false");
 			return false;
 		}
-		scanner.close();
 		Logger.MethodReturn("Boolean: false");
 		return false;
 	}
@@ -150,21 +146,18 @@ public class Asteroid extends Place
 	public Boolean AtPerihelion()
 	{
 		Logger.MethodCall("AtPerihelion()");
-		Logger.UserQuestion("Napközelben van az aszteroida?");
+		Logger.UserQuestion("Napkï¿½zelben van az aszteroida?");
 		Scanner scanner = new Scanner(System.in);
 		String input = scanner.nextLine();
 		if(input.equals("1"))
 		{
-			scanner.close();
 			Logger.MethodReturn("Boolean: true");
 			return true;
 		}else if(input.equals("2"))
 		{
-			scanner.close();
 			Logger.MethodReturn("Boolean: false");
 			return false;
 		}
-		scanner.close();
 		Logger.MethodReturn("Boolean: false");
 		return false;
 	}
@@ -198,7 +191,6 @@ public class Asteroid extends Place
 				sb.Die();
 			}
 		}
-		scanner.close();
 		Logger.MethodReturn("void");
 	}
 	

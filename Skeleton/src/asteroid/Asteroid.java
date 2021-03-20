@@ -39,7 +39,13 @@ public class Asteroid extends Place
 		System.out.println("Explode()");
 		Scanner scanner = new Scanner(System.in);
 		
-		Boolean feltetel1 = radBill.CheckInventory(corematerial);
+		Boolean feltetel1 = false;
+		if(corematerial != null)
+		{
+			ArrayList<RawMaterial> corelist = new ArrayList<RawMaterial>();
+			corelist.add(corematerial);
+			feltetel1 = radBill.CheckInventory(corelist);
+		}
 		
 		System.out.println("CrustThickness == HoleDepth?");
 		Boolean feltetel2 = false;
@@ -79,6 +85,7 @@ public class Asteroid extends Place
 	public void RegisterBeing(SentientBeing being)
 	{
 		System.out.println("RegisterBeing()");
+		sentientbeings.add(being);
 	}
 	
 	public void DropMaterial() 

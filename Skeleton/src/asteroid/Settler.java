@@ -72,7 +72,7 @@ public class Settler extends SentientBeing {
 	
 	public void AddCarriedMaterial(RawMaterial material) {
 		System.out.println("AddCarriedMaterial()");
-		//carriedmaterials.add(material); most még nincs
+		carriedmaterials.add(material);
 	}
 	
 	public void Explode() 

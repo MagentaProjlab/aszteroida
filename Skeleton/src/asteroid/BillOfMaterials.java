@@ -20,7 +20,7 @@ public class BillOfMaterials
 	
 	public Boolean CheckInventory(ArrayList<RawMaterial> inventory) 
 	{
-		System.out.println("CheckInventory(RawMaterial inventory)");
+		System.out.println("CheckInventory(ArrayList<RawMaterial> inventory)");
 		Scanner scanner = new Scanner(System.in);
 		
 		System.out.println("A feltételeket teljesíti az inventory?");
@@ -37,14 +37,14 @@ public class BillOfMaterials
 		return feltetel;
 	}
 	
-	public void AddMaterialToBill(ArrayList<RawMaterial> material) 
+	public void AddMaterialToBill(RawMaterial material) 
 	{
 		System.out.println("AddMaterialToBill(RawMaterial material)");
 	}
 	
 	public ArrayList<RawMaterial> DeleteFromInventory(ArrayList<RawMaterial> inventory) 
 	{
-		System.out.println("DeleteFromInventory(RawMaterial inventory)");
+		System.out.println("DeleteFromInventory(ArrayList<RawMaterial> inventory)");
 		return null;
 	}
 }

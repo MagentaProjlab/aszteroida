@@ -15,25 +15,29 @@ package asteroid;
 
 public class Coal extends RawMaterial 
 {
-	public Coal() {
-
+	public Coal()
+	{
+		Logger.MethodCall("Coal()");
+		Logger.MethodReturn("");
 	}
 	public void Perish() 
 	{
-		System.out.println("Perish()");
+		Logger.MethodCall("Perish()");
 		this.SetAsteroid(null);
+		Logger.MethodReturn("void");
 	}
 	
 	public String GetUniqueID() 
 	{
-		System.out.println("GetUniqueID()");
+		Logger.MethodCall("GetUniqueID()");
+		Logger.MethodReturn("String: Coal");
 		return "Coal";
 	}
 	
 	public void PerihelionReaction() 
 	{
-		System.out.println("PerihelionReaction()");
-		
+		Logger.MethodCall("PerihelionReaction()");
+		Logger.MethodReturn("void");
 	}
 	
 }

@@ -26,8 +26,10 @@ public class Asteroid extends Place
 	
 	public Asteroid()
 	{
+		Logger.MethodCall("Asteroid()");
 		sentientbeings = new ArrayList<SentientBeing>();
 		neighbors = new ArrayList<Place>();
+		Logger.MethodReturn("");
 	}
 	public void SetCore(RawMaterial rm) {
 		this.corematerial = rm;
@@ -38,12 +40,13 @@ public class Asteroid extends Place
 	}
 	public void IncreaseHoleDepth() 
 	{
-		System.out.println("IncreaseHoleDepth()");
+		Logger.MethodCall("IncreaseHoleDepth()");
+		Logger.MethodReturn("void");
 	}
 	
 	public void Explode()
 	{
-		System.out.println("Explode()");
+		Logger.MethodCall("Explode()");
 		Boolean feltetel1 = false;
 		if(corematerial != null)
 		{
@@ -52,14 +55,14 @@ public class Asteroid extends Place
 			feltetel1 = radBill.CheckInventory(corelist);
 		}
 		
-		System.out.println("CrustThickness == HoleDepth?");
+		Logger.UserQuestion("CrustThickness == HoleDepth?");
 		Boolean feltetel2 = false;
 		Scanner scanner = new Scanner(System.in);
 		String input = scanner.nextLine();
-		if(input.equals("igen"))
+		if(input.equals("1"))
 		{
 			feltetel2 = true;
-		}else if(input.equals("nem"))
+		}else if(input.equals("2"))
 		{
 			feltetel2 = false;
 		}
@@ -81,93 +84,109 @@ public class Asteroid extends Place
 			}
 		}
 		scanner.close();
+		Logger.MethodReturn("void");
 	}
 	
 	public void DropBeing(SentientBeing being)
 	{
-		System.out.println("DropBeing()");
+		Logger.MethodCall("DropBeing()");
+		Logger.MethodReturn("void");
 	}
 	
 	public void RegisterBeing(SentientBeing being)
 	{
-		System.out.println("RegisterBeing()");
+		Logger.MethodCall("RegisterBeing()");
 		sentientbeings.add(being);
+		Logger.MethodReturn("void");
 	}
 	
 	public void DropMaterial() 
 	{
-		System.out.println("DropMaterial()");
+		Logger.MethodCall("DropMaterial()");
+		Logger.MethodReturn("void");
 	}
 	
 	public RawMaterial GetMaterial()
 	{
-		System.out.println("GetMaterial()");
+		Logger.MethodCall("GetMaterial()");
+		Logger.MethodReturn("RawMaterial");
 		return this.corematerial;
 	}
 	
 	public Boolean IsEmpty()
 	{
-		System.out.println("Üres az aszteroida?");
+		Logger.MethodCall("IsEmpty()");
+		Logger.UserQuestion("Üres az aszteroida?");
 		Scanner scanner = new Scanner(System.in);
 		String input = scanner.nextLine();
-		if(input.equals("igen"))
+		if(input.equals("1"))
 		{
 			scanner.close();
+			Logger.MethodReturn("Boolean: true");
 			return true;
-		}else if(input.equals("nem"))
+		}else if(input.equals("2"))
 		{
 			scanner.close();
+			Logger.MethodReturn("Boolean: false");
 			return false;
 		}
 		scanner.close();
+		Logger.MethodReturn("Boolean: false");
 		return false;
 	}
 	
 	public void SetMaterial(RawMaterial material, Settler settler)
 	{
-		System.out.println("SetMaterial()");
+		Logger.MethodCall("SetMaterial()");
+		Logger.MethodReturn("void");
 	}
 	
 	public void DropNeighbor(Place neighbor)
 	{
-		System.out.println("DropNeighbor()");
+		Logger.MethodCall("DropNeighbor()");
+		Logger.MethodReturn("void");
 	}
 	
 	public Boolean AtPerihelion()
 	{
-		System.out.println("Napközelben van az aszteroida?");
+		Logger.MethodCall("AtPerihelion()");
+		Logger.UserQuestion("Napközelben van az aszteroida?");
 		Scanner scanner = new Scanner(System.in);
 		String input = scanner.nextLine();
-		if(input.equals("igen"))
+		if(input.equals("1"))
 		{
 			scanner.close();
+			Logger.MethodReturn("Boolean: true");
 			return true;
-		}else if(input.equals("nem"))
+		}else if(input.equals("2"))
 		{
 			scanner.close();
+			Logger.MethodReturn("Boolean: false");
 			return false;
 		}
 		scanner.close();
+		Logger.MethodReturn("Boolean: false");
 		return false;
 	}
 	
 	public void AddNeighbor(Place neighbor)
 	{
-		System.out.println("AddNeighbor()");
+		Logger.MethodCall("AddNeighbor()");
+		Logger.MethodReturn("void");
 	}
 	
 	public void SolarWindDeath()
 	{
-		System.out.println("SolarWindDeath()");
+		Logger.MethodCall("SolarWindDeath()");
 		Scanner scanner = new Scanner(System.in);
 		
-		System.out.println("CrustThickness == HoleDepth?");
+		Logger.UserQuestion("CrustThickness == HoleDepth?");
 		Boolean feltetel1 = false;
 		String input = scanner.nextLine();
-		if(input.equals("igen"))
+		if(input.equals("1"))
 		{
 			feltetel1 = true;
-		}else if(input.equals("nem"))
+		}else if(input.equals("2"))
 		{
 			feltetel1 = false;
 		}
@@ -180,21 +199,24 @@ public class Asteroid extends Place
 			}
 		}
 		scanner.close();
+		Logger.MethodReturn("void");
 	}
 	
 	public void CheckPerihelionReaction()
 	{
-		System.out.println("CheckPerihelionReaction()");
+		Logger.MethodCall("CheckPerihelionReaction()");
 		corematerial.PerihelionReaction();
+		Logger.MethodReturn("void");
 	}
 	
 	public void StepBeings()
 	{
-		System.out.println("StepBeings()");
+		Logger.MethodCall("StepBeings()");
 		for(SentientBeing sb : sentientbeings)
 		{
 			sb.Step();
 		}
+		Logger.MethodReturn("void");
 	}
 
 }

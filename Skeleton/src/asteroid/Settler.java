@@ -24,30 +24,34 @@ public class Settler extends SentientBeing {
 	private ArrayList<TeleportGate> carriedteleports;
 	public Settler() 
 	{
-		
+		Logger.MethodCall("Settler()");
 		carriedmaterials = new ArrayList<RawMaterial>();
 		carriedteleports = new ArrayList<TeleportGate>();
 		bills = new ArrayList<BillOfMaterials>();
 		bills.add(new BillOfMaterials());
 		bills.add(new BillOfMaterials());
 		bills.add(new BillOfMaterials());
+		Logger.MethodReturn("");
 	}
 	public void addteleport(TeleportGate tg) {
 		this.carriedteleports.add(tg);
 	}
 	public void Drill() 
 	{
+		Logger.MethodCall("Drill()");
 		Logger.UserQuestion("Még tudja fúrni a telepes?");
 		Scanner scanner = new Scanner(System.in);
 		String input = scanner.nextLine();
-		if(input.equals("igen")) {//TODO tudni kell, hogy m�g furhatja-e
+		if(input.equals("1")) {//TODO tudni kell, hogy m�g furhatja-e
 			location.IncreaseHoleDepth();//TODO 
 		}
 		scanner.close();
+		Logger.MethodReturn("void");
 	}
 	
 	public void Mine() 
 	{
+		Logger.MethodCall("Mine()");
 		Logger.UserQuestion("Fér-e a telepes zsebébe még anyag?");
 		Scanner scanner = new Scanner(System.in);
 		String input = scanner.nextLine();
@@ -60,32 +64,37 @@ public class Settler extends SentientBeing {
 			}
 		}
 		scanner.close();
+		Logger.MethodReturn("void");
 	}
 	
 	public void Die() 
 	{
-		System.out.println("Die()");
+		Logger.MethodCall("Die()");
 		for(RawMaterial item:carriedmaterials) {
 			item.Perish();
 		}
 		for(TeleportGate item:carriedteleports) {
 			item.Explode();
 		}
+		Logger.MethodReturn("void");
 	}
 	
-	public void AddCarriedMaterial(RawMaterial material) {
-		System.out.println("AddCarriedMaterial()");
+	public void AddCarriedMaterial(RawMaterial material)
+	{
+		Logger.MethodCall("AddCarriedMaterial()");
 		carriedmaterials.add(material);
+		Logger.MethodReturn("void");
 	}
 	
 	public void Explode() 
 	{
-		System.out.println("Explode()");
+		Logger.MethodCall("Explode()");
+		Logger.MethodReturn("void");
 	}
 	
 	public void BuildRobot() 
 	{
-		System.out.println("BuildRobot()");
+		Logger.MethodCall("BuildRobot()");
 
 		//TODO robo bill hi�nya van itten, mik�pp k�rjem el a bills-b�l pont a dr�g�t?
 		//�n �gy vettem, hogy pont az egyes(�s nem els�) lesz az.
@@ -96,12 +105,12 @@ public class Settler extends SentientBeing {
 			location.RegisterBeing(new Robot());
 			bills.get(1).DeleteFromInventory(null);
 		}
-
+		Logger.MethodReturn("void");
 	}
 	
 	public void BuildTeleportGatePair() 
 	{
-		System.out.println("BuildTeleportGatePair()");
+		Logger.MethodCall("BuildTeleportGatePair()");
 
 		//TODO telegate bill hi�nya van itten, mik�pp k�rjem el a bills-b�l pont a dr�g�t?
 		//�n �gy vettem, hogy pont az kettes(�s nem m�sodik) lesz az.
@@ -118,12 +127,12 @@ public class Settler extends SentientBeing {
 			t1.SetSibling(t2);
 			t2.SetSibling(t1);
 		}
-		
+		Logger.MethodReturn("void");
 	}
 	
 	public void FillAsteroid(RawMaterial material) 
 	{
-		System.out.println("FillAsteroid()");
+		Logger.MethodCall("FillAsteroid()");
 
 		Logger.UserQuestion("Tud-e a telepes bepakolni?");
 		Scanner scanner = new Scanner(System.in);
@@ -132,18 +141,21 @@ public class Settler extends SentientBeing {
 			location.SetMaterial(material, this);
 		}
 		scanner.close();
+		Logger.MethodReturn("void");
 	}
 	
 	
 	public void Move(Place place) 
 	{
+		Logger.MethodCall("Move(Place place)");
 		location.DropBeing(this);
 		place.RegisterBeing(this);
+		Logger.MethodReturn("void");
 	}
 	
 	public void PutTeleportGateOnAsteroid() 
 	{
-		System.out.println("PutTeleportGateOnAsteroid()");
+		Logger.MethodCall("PutTeleportGateOnAsteroid()");
 
 		System.out.println("Van-e a telepes zsebében teleport?(igen/nem)");
 		Scanner scanner = new Scanner(System.in);
@@ -164,27 +176,26 @@ public class Settler extends SentientBeing {
 		}
 		
 		scanner.close();
+		Logger.MethodReturn("void");
 	}
 	
 	public void Step() 
 	{
-		System.out.println("Step()");
-
+		Logger.MethodCall("Step()");
 		//System.out.println("Mit csin�ljona a telepes? 1=mozogo egy aszteroid�ra,2=�s, 3=b�ny�sz,4=anyagot rak vissza,5=robotot �p�t, 6=teleportot �p�t, 7=teleportot helyez le");
-		
+		Logger.MethodReturn("void");
 	}
 	
-	public void DropCarriedMaterial(RawMaterial material) {
-		System.out.println("DropCarriedMaterial()");
-
-		//carriedmaterials.remove(material);
+	public void DropCarriedMaterial(RawMaterial material)
+	{
+		Logger.MethodCall("DropCarriedMaterial()");
+		Logger.MethodReturn("void");
 	}
 	
 	public void DropCarriedTeleport(TeleportGate teleport) 
 	{
-		System.out.println("DropCarriedTeleport()");
-
-		carriedteleports.remove(teleport);
+		Logger.MethodCall("DropCarriedTeleport()");
+		Logger.MethodReturn("void");
 	}
 	
 }

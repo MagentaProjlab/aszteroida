@@ -14,58 +14,68 @@ import java.util.Scanner;
 
 public class Robot extends SentientBeing
 {
+	public Robot()
+	{
+		Logger.MethodCall("Robot()");
+		Logger.MethodReturn("");
+	}
+	
 	public void Move(Place place) 
 	{
-		System.out.println("Move(Place place)");
+		Logger.MethodCall("Move(Place place)");
 		this.location.DropBeing(this);
 		place.RegisterBeing(this);
+		Logger.MethodReturn("void");
 	}
 	
 	public void Drill()
 	{
-		System.out.println("Drill()");
-		System.out.println("Meg tudja fúrni a robot?(igen/nem)");
+		Logger.MethodCall("Drill()");
+		Logger.UserQuestion("Meg tudja fúrni a robot?");
 		Scanner scanner = new Scanner(System.in);
 		String input = scanner.nextLine();
-		if(input.equals("igen"))
+		if(input.equals("1"))
 		{
 			location.IncreaseHoleDepth();
 		}
 		scanner.close();
+		Logger.MethodReturn("void");
 	}	
 	
 	public void Die() 
 	{
-		System.out.println("Die()");
+		Logger.MethodCall("Die()");
 		location.DropBeing(this);
+		Logger.MethodReturn("void");
 	}
 	
 	public void Explode()
 	{
-		System.out.println("Explode()");
+		Logger.MethodCall("Explode()");
 		Scanner scanner = new Scanner(System.in);
-		System.out.println("Van több szomszédja az aszteroidának?");
+		Logger.UserQuestion("Van több szomszédja az aszteroidának?");
 		String input = scanner.nextLine();
 		scanner.close();
-		if(input.equals("nem")) {
+		if(input.equals("2")) {
 			Die();
 		} else {
 			Move(null);
 		}
-				
+		Logger.MethodReturn("void");
 	}
 	
 	public void Step() 
 	{
-		System.out.println("Step()");
+		Logger.MethodCall("Step()");
 		Scanner scanner = new Scanner(System.in);
-		System.out.println("Fúrjon vagy lépjen a robot?");
+		Logger.UserQuestion("Fúrjon vagy lépjen a robot? (1=fúr, 2=lép)");
 		String input = scanner.nextLine();
 		scanner.close();
-		if(input.equals("fúr")) {
+		if(input.equals("1")) {
 			this.Drill();
-		} else if(input.equals("lép")) {
+		} else if(input.equals("2")) {
 			this.Move(null);
 		}
+		Logger.MethodReturn("void");
 	}
 }

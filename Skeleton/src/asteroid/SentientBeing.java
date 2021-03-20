@@ -4,7 +4,8 @@ public abstract class SentientBeing
 {
 	protected Asteroid location;
 	
-	public void setAsteroid(Asteroid loc) {
+	public void setAsteroid(Asteroid loc)
+	{
 		Logger.MethodCall("setAsteroid(Asteroid loc)");
 		this.location = loc;
 		Logger.MethodReturn("void");

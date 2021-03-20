@@ -24,13 +24,14 @@ public class Settler extends SentientBeing {
 	private ArrayList<TeleportGate> carriedteleports;
 	public Settler() 
 	{
-		
+		Logger.MethodCall("Settler()");
 		carriedmaterials = new ArrayList<RawMaterial>();
 		carriedteleports = new ArrayList<TeleportGate>();
 		bills = new ArrayList<BillOfMaterials>();
 		bills.add(new BillOfMaterials());
 		bills.add(new BillOfMaterials());
 		bills.add(new BillOfMaterials());
+		Logger.MethodReturn("");
 	}
 	public void Drill() 
 	{

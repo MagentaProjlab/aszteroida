@@ -16,17 +16,18 @@ package asteroid;
 public abstract class RawMaterial
 {
 	protected Asteroid asteroid;
-	public RawMaterial() {}
 	public void Perish()
 	{
-		System.out.println("Perish()");
+		Logger.MethodCall("Perish()");
 		this.SetAsteroid(null);
+		Logger.MethodReturn("void");
 	}
 	
 	public void SetAsteroid(Asteroid asteroid)
 	{
-		System.out.println("SetAsteroid(Asteroid asteroid)");
+		Logger.MethodCall("SetAsteroid(Asteroid asteroid)");
 		this.asteroid = asteroid;
+		Logger.MethodReturn("void");
 	}
 	
 	public abstract String GetUniqueID();

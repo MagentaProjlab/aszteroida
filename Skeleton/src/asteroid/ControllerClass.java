@@ -19,13 +19,17 @@ import java.util.ArrayList;
 public class ControllerClass
 {
 	private ArrayList<Asteroid> asteroids;
-	private ArrayList<Settler> Settlers;
-	private ArrayList<Robot> Robots;
+	private ArrayList<Settler> settlers;
+	private ArrayList<Robot> robots;
 	private SolarWind solarwind;
 	private ArrayList<BillOfMaterials> bills;
 	
 	public ControllerClass() {
 		System.out.println("ControllerClass()");
+		asteroids = new ArrayList<Asteroid>();
+		settlers = new ArrayList<Settler>();
+		robots = new ArrayList<Robot>();
+		bills = new ArrayList<BillOfMaterials>();
 		InitAsteroids();
 		InitSettlers();
 		InitBills();

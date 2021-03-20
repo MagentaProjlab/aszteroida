@@ -25,9 +25,9 @@ public class Settler extends SentientBeing {
 	public Settler() 
 	{
 		
-		//carriedmaterials = new ArrayList<RawMaterial>();
-		//carriedteleports = new ArrayList<TeleportGate>();
-		bills= new ArrayList<BillOfMaterials>();
+		carriedmaterials = new ArrayList<RawMaterial>();
+		carriedteleports = new ArrayList<TeleportGate>();
+		bills = new ArrayList<BillOfMaterials>();
 		bills.add(new BillOfMaterials());
 		bills.add(new BillOfMaterials());
 		bills.add(new BillOfMaterials());

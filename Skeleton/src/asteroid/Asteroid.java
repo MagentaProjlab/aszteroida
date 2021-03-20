@@ -26,7 +26,8 @@ public class Asteroid extends Place
 	
 	public Asteroid()
 	{
-		
+		sentientbeings = new ArrayList<SentientBeing>();
+		neighbors = new ArrayList<Place>();
 	}
 	
 	public void IncreaseHoleDepth() 

@@ -17,11 +17,6 @@ public class BillOfMaterials
 {
 	private ArrayList<RawMaterial> materials;
 	
-	
-	public void setMaterials(ArrayList<RawMaterial> materials) {
-		System.out.println("setMaterials(ArrayList<RawMaterial> materials))");
-		this.materials = materials;
-	}
 
 	public Boolean CheckInventory(ArrayList<RawMaterial> inventory) 
 	{

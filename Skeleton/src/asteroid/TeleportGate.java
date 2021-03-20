@@ -17,26 +17,33 @@ public class TeleportGate extends Place
 	private TeleportGate sibling;
 	private Asteroid asteroid;
 	private Settler owner;
+	
+	public void SetOwner(Settler s) {
+		owner = s;
+	}
+	
 	public void SetSibling(TeleportGate sibling) 
 	{
 		System.out.println("SetSibling()");
+		this.sibling = sibling;
 	}
 	
 	public void SetAsteroid(Asteroid asteroid) 
 	{
 		System.out.println("SetAsteroid()");
+		this.asteroid = asteroid;
 	}
 	
 	public Asteroid GetAsteroid() 
 	{
 		System.out.println("GetAsteroid()");
-		return null;
+		return this.asteroid;
 	}
 	
 	public TeleportGate GetSibling()
 	{
 		System.out.println("GetSibling()");
-		return null;
+		return this.sibling;
 	}
 	
 	
@@ -48,7 +55,7 @@ public class TeleportGate extends Place
 	public Settler GetOwner()
 	{
 		System.out.println("GetOwner()");
-		return null;
+		return this.owner;
 	}
 	
 	public void RegisterBeing(SentientBeing being)

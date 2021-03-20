@@ -32,6 +32,9 @@ public class Settler extends SentientBeing {
 		bills.add(new BillOfMaterials());
 		bills.add(new BillOfMaterials());
 	}
+	public void addteleport(TeleportGate tg) {
+		this.carriedteleports.add(tg);
+	}
 	public void Drill() 
 	{
 		Logger.UserQuestion("Még tudja fúrni a telepes?");

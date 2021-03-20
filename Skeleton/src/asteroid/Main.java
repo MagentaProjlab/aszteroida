@@ -134,8 +134,8 @@ public class Main {
 	private static void Teszteset9()
 	{
 		Settler s=new Settler();
-		//Jelenlegi megoldásom az "incializálás" során felmerülõ extra üzenetek elkerülésésre.
-		//Ez lehet fars. A tesztben használt objektumok, a metódsuban vannak létrehozva.
+		//Jelenlegi megoldï¿½som az "incializï¿½lï¿½s" sorï¿½n felmerï¿½lï¿½ extra ï¿½zenetek elkerï¿½lï¿½sï¿½sre.
+		//Ez lehet fars. A tesztben hasznï¿½lt objektumok, a metï¿½dsuban vannak lï¿½trehozva.
 
 		System.out.println("test start");
 		s.PutTeleportGateOnAsteroid();
@@ -199,7 +199,9 @@ public class Main {
 	
 	private static void Teszteset14()
 	{
+		System.out.println("Test starts");
 		ControllerClass cc = new ControllerClass();
+		System.out.println("Test finished");
 	}
 	
 	private static void Teszteset15()

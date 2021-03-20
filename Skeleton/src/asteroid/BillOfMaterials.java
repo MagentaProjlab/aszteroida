@@ -17,7 +17,11 @@ public class BillOfMaterials
 {
 	private ArrayList<RawMaterial> materials;
 	
-
+	public BillOfMaterials()
+	{
+		materials = new ArrayList<RawMaterial>();
+	}
+	
 	public Boolean CheckInventory(ArrayList<RawMaterial> inventory) 
 	{
 		System.out.println("CheckInventory(ArrayList<RawMaterial> inventory)");

@@ -17,57 +17,71 @@ public class TeleportGate extends Place
 	private TeleportGate sibling;
 	private Asteroid asteroid;
 	private Settler owner;
+	
+	public TeleportGate()
+	{
+		Logger.MethodCall("TeleportGate()");
+		Logger.MethodReturn("");
+	}
+	
 	public void SetSibling(TeleportGate sibling) 
 	{
-		System.out.println("SetSibling()");
+		Logger.MethodCall("SetSibling()");
+		Logger.MethodReturn("void");
 	}
 	
 	public void SetAsteroid(Asteroid asteroid) 
 	{
-		System.out.println("SetAsteroid()");
+		Logger.MethodCall("SetAsteroid()");
+		Logger.MethodReturn("void");
 	}
 	
 	public Asteroid GetAsteroid() 
 	{
-		System.out.println("GetAsteroid()");
+		Logger.MethodCall("GetAsteroid()");
+		Logger.MethodReturn("Asteroid");
 		return null;
 	}
 	
 	public TeleportGate GetSibling()
 	{
-		System.out.println("GetSibling()");
+		Logger.MethodCall("GetSibling()");
+		Logger.MethodReturn("TeleportGate");
 		return null;
 	}
 	
 	
 	public void DropOwner()
 	{
-		System.out.println("DropSibling()");
+		Logger.MethodCall("DropSibling()");
+		Logger.MethodReturn("void");
 	}
 	
 	public Settler GetOwner()
 	{
-		System.out.println("GetOwner()");
+		Logger.MethodCall("GetOwner()");
+		Logger.MethodReturn("Settler");
 		return null;
 	}
 	
 	public void RegisterBeing(SentientBeing being)
 	{
-		System.out.println("RegisterBeing()");
+		Logger.MethodCall("RegisterBeing()");
+		Logger.MethodReturn("void");
 	}
 	
 	public void Explode() 
 	{
-		System.out.println("Explode()");
+		Logger.MethodCall("Explode()");
 		Scanner scanner = new Scanner(System.in);
 		
-		System.out.println("Le van rakva a teleport?");
+		Logger.UserQuestion("Le van rakva a teleport?");
 		Boolean feltetel1 = false;
 		String input = scanner.nextLine();
-		if(input.equals("igen"))
+		if(input.equals("1"))
 		{
 			feltetel1 = true;
-		}else if(input.equals("nem"))
+		}else if(input.equals("2"))
 		{
 			feltetel1 = false;
 		}
@@ -80,13 +94,13 @@ public class TeleportGate extends Place
 			owner.DropCarriedTeleport(this);
 		}
 		
-		System.out.println("Le van rakva a párja?");
+		Logger.UserQuestion("Le van rakva a párja?");
 		Boolean feltetel2 = false;
 		input = scanner.nextLine();
-		if(input.equals("igen"))
+		if(input.equals("1"))
 		{
 			feltetel2 = true;
-		}else if(input.equals("nem"))
+		}else if(input.equals("2"))
 		{
 			feltetel2 = false;
 		}
@@ -100,5 +114,6 @@ public class TeleportGate extends Place
 			sibling.GetOwner().DropCarriedTeleport(sibling);
 		}
 		scanner.close();
+		Logger.MethodReturn("void");
 	}
 }

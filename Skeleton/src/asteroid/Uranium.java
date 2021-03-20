@@ -14,23 +14,28 @@ import java.util.Scanner;
 
 public class Uranium extends RawMaterial 
 {
-	public Uranium() {
-
+	public Uranium()
+	{
+		Logger.MethodCall("Uranium()");
+		Logger.MethodReturn("");
 	}
 	public void Perish() 
 	{
-		System.out.println("Perish()");
+		Logger.MethodCall("Perish()");
 		this.SetAsteroid(null);
+		Logger.MethodReturn("void");
 	}
 	
 	public String GetUniqueID() 
 	{
-		System.out.println("GetUniqueID() ");
+		Logger.MethodCall("GetUniqueID()");
+		Logger.MethodReturn("String: Uranium");
 		return "Uranium";
 	}
 	
 	public void PerihelionReaction() 
 	{
+		Logger.MethodCall("PerihelionReaction()");
 		Scanner sc = new Scanner(System.in);
 		System.out.println("PerihelionReaction()");
 		System.out.println("Is Holedepth = CrustTickness? [true/false]");
@@ -40,7 +45,8 @@ public class Uranium extends RawMaterial
 			this.Perish();
 		}
 		sc.close();
+		Logger.MethodReturn("void");
 	}
 		
-	}
+}
 

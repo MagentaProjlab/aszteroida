@@ -150,7 +150,7 @@ public class Asteroid extends Place
 	public Boolean AtPerihelion()
 	{
 		Logger.MethodCall("AtPerihelion()");
-		Logger.UserQuestion("Napközelben van az aszteroida?");
+		Logger.UserQuestion("Is the asteroid at Perihelion?");
 		Scanner scanner = new Scanner(System.in);
 		String input = scanner.nextLine();
 		if(input.equals("1"))

@@ -31,7 +31,7 @@ public class Robot extends SentientBeing
 	public void Drill()
 	{
 		Logger.MethodCall("Drill()");
-		Logger.UserQuestion("Meg tudja fúrni a robot?");
+		Logger.UserQuestion("Can the robot drill?");
 		Scanner scanner = new Scanner(System.in);
 		String input = scanner.nextLine();
 		if(input.equals("1"))
@@ -53,7 +53,7 @@ public class Robot extends SentientBeing
 	{
 		Logger.MethodCall("Explode()");
 		Scanner scanner = new Scanner(System.in);
-		Logger.UserQuestion("Van több szomszédja az aszteroidának?");
+		Logger.UserQuestion("Does the asteroid have more neighbors?");
 		String input = scanner.nextLine();
 		scanner.close();
 		if(input.equals("2")) {
@@ -68,7 +68,7 @@ public class Robot extends SentientBeing
 	{
 		Logger.MethodCall("Step()");
 		Scanner scanner = new Scanner(System.in);
-		Logger.UserQuestion("Fúrjon vagy lépjen a robot? (1=fúr, 2=lép)");
+		Logger.UserQuestion("Drill or move the robot? (1 = drill, 2 = move)");
 		String input = scanner.nextLine();
 		scanner.close();
 		if(input.equals("1")) {

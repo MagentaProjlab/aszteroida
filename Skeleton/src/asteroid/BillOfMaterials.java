@@ -29,7 +29,7 @@ public class BillOfMaterials
 		Logger.MethodCall("CheckInventory(ArrayList<RawMaterial> inventory)");
 		Scanner scanner = new Scanner(System.in);
 		
-		Logger.UserQuestion("A feltételeket teljesíti az inventory?");
+		Logger.UserQuestion("Does the inventory meet the conditions?");
 		Boolean feltetel = false;
 		String input = scanner.nextLine();
 		if(input.equals("1"))

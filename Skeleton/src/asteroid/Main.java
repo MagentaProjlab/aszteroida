@@ -6,7 +6,7 @@ public class Main {
 	static public void main(String[] args)
 	{
 		Scanner scanner = new Scanner(System.in);
-		System.out.println("VÃ¡lassz egy tesztesetet! (1-15)");
+		System.out.println("Choose a test method! (1-15)");
 		String input = scanner.nextLine();
 		switch(Integer.parseInt(input))
 		{
@@ -31,29 +31,29 @@ public class Main {
 	
 	private static void Teszteset1()
 	{
-		System.out.println("A settler drills teszteset indul");
+		System.out.println("The settler drills test method begins");
 		Settler s = new Settler();
 		Asteroid location = new Asteroid();
 		location.RegisterBeing(s);
 		s.location = location;
 		s.Drill();
-		System.out.println("A teszt sikeresen lefutott");
+		System.out.println("The test method has ran successfully");
 	}
 	
 	private static void Teszteset2()
 	{
-		System.out.println("A robot drills teszteset indul");
+		System.out.println("The robot drills test method begins");
 		Robot r = new Robot();
 		Asteroid location = new Asteroid();
 		location.RegisterBeing(r);
 		r.location = location;
 		r.Drill();
-		System.out.println("A teszt sikeresen lefutott");
+		System.out.println("The test method has ran successfully");
 	}
 	
 	private static void Teszteset3()
 	{
-		System.out.println("A settler moves teszteset indul");
+		System.out.println("The settler moves test method begins");
 		Settler s = new Settler();
 		Asteroid location = new Asteroid();
 		Asteroid destination = new Asteroid();
@@ -62,11 +62,12 @@ public class Main {
 		location.RegisterBeing(s);
 		s.location = location;
 		s.Move(destination);
-		System.out.println("A teszt sikeresen lefutott");
+		System.out.println("The test method has ran successfully");
 	}
 	
 	private static void Teszteset4()
 	{
+		System.out.println("The robot moves test method begins");
 		Robot r = new Robot();
 		Asteroid source = new Asteroid();
 		Asteroid dest = new Asteroid();
@@ -74,28 +75,27 @@ public class Main {
 		dest.AddNeighbor(source);
 		source.RegisterBeing(r);
 		r.location = source;
-		System.out.println("Test start");
 		r.Move(dest);
-		System.out.println("Test finished");
+		System.out.println("The test method has ran successfully");
 		
 	}
 	
 	private static void Teszteset5()
 	{
+		System.out.println("The settler mines test method begins");
 		Settler s = new Settler();
 		Asteroid a = new Asteroid();
 		Iron iron = new Iron();
 		a.SetCore(iron);
 		a.RegisterBeing(s);
 		s.location = a;
-		System.out.println("Test starts");
 		s.Mine();
-		System.out.println("Test finished");
+		System.out.println("The test method has ran successfully");
 	}
 	
 	private static void Teszteset6()
 	{
-		System.out.println("A settler puts back material teszteset indul");
+		System.out.println("The settler fills empty asteroid test method begins");
 		Settler s = new Settler();
 		Asteroid location = new Asteroid();
 		RawMaterial m = new Iron();
@@ -103,12 +103,12 @@ public class Main {
 		location.SetMaterial(m, s);
 		s.DropCarriedMaterial(m);
 		location.AtPerihelion();
-		System.out.println("A teszt sikeresen lefutott");
+		System.out.println("The test method has ran successfully");
 	}
 	
 	private static void Teszteset7()
 	{
-		System.out.println("A settler builds robot teszteset indul");
+		System.out.println("The settler builds robot test method begins");
 		Settler s = new Settler();
 		Asteroid location = new Asteroid();
 		location.RegisterBeing(s);
@@ -118,30 +118,29 @@ public class Main {
 		s.AddCarriedMaterial(new Uranium());
 		s.AddCarriedMaterial(new Coal());
 		s.BuildRobot();
-		System.out.println("A teszt sikeresen lefutott");
+		System.out.println("The test method has ran successfully");
 	}
 	
 	private static void Teszteset8()
 	{
+		System.out.println("The settler builds teleportgate pair test method begins");
 		Settler s=new Settler();
 		s.AddCarriedMaterial(new Iron());
 		s.AddCarriedMaterial(new Ice());
 		s.AddCarriedMaterial(new Uranium());
-		System.out.println("test start");
 		s.BuildTeleportGatePair();
+		System.out.println("The test method has ran successfully");
 	}
 	
 	private static void Teszteset9()
 	{
+		System.out.println("The settler puts down teleport test method begins");
 		Settler s=new Settler();
 		//Jelenlegi megoldï¿½som az "incializï¿½lï¿½s" sorï¿½n felmerï¿½lï¿½ extra ï¿½zenetek elkerï¿½lï¿½sï¿½sre.
 		//Ez lehet fars. A tesztben hasznï¿½lt objektumok, a metï¿½dsuban vannak lï¿½trehozva.
 
-		System.out.println("test start");
 		s.PutTeleportGateOnAsteroid();
-		
-		
-
+		System.out.println("The test method has ran successfully");
 	}
 	
 	private static void Teszteset10()
@@ -151,7 +150,7 @@ public class Main {
 	
 	private static void Teszteset11()
 	{
-		System.out.println("Az asteroid explodes teszteset indul");
+		System.out.println("The asteroid explodes test method begins");
 		Asteroid a = new Asteroid();
 		Uranium u = new Uranium();
 		a.SetCore(u);
@@ -159,17 +158,17 @@ public class Main {
 		radbill.AddMaterialToBill(u);
 		a.SetBill(radbill);
 		a.Explode();
-		System.out.println("A teszt sikeresen lefutott");
+		System.out.println("The test method has ran successfully");
 	}
 	
 	private static void Teszteset12()
 	{
+		System.out.println("The asteroid check core’s perihelion reaction test method begins");
 		Asteroid a = new Asteroid();
 		Iron ir = new Iron();
 		Ice ice = new Ice();
 		Coal c = new Coal();
 		Uranium ur = new Uranium();
-		System.out.println("Test starts");
 		System.out.println("Choose corematerial! [1: Iron, 2: Ice, 3: Coal, 4: Uranium]");
 		Scanner sc = new Scanner(System.in);
 		String input = sc.nextLine();
@@ -195,13 +194,14 @@ public class Main {
 		a.CheckPerihelionReaction();
 		break;
 		}
-		System.out.println("Test finished");
+		System.out.println("The test method has ran successfully");
 		sc.close();
 		
 	}
 	
 	private static void Teszteset13()
 	{
+		System.out.println("The teleport explodes test method begins");
 		TeleportGate tg = new TeleportGate();
 		TeleportGate tgsibling = new TeleportGate();
 		Asteroid tglocation = new Asteroid();
@@ -233,15 +233,14 @@ public class Main {
 			tg.Explode();
 			break;
 		}
-	
-		System.out.println("Test finished");
+		System.out.println("The test method has ran successfully");
 	}
 	
 	private static void Teszteset14()
 	{
-		System.out.println("Test starts");
+		System.out.println("The controller start game test method begins");
 		ControllerClass cc = new ControllerClass();
-		System.out.println("Test finished");
+		System.out.println("The test method has ran successfully");
 	}
 	
 	private static void Teszteset15()

@@ -39,7 +39,7 @@ public class Settler extends SentientBeing {
 	public void Drill() 
 	{
 		Logger.MethodCall("Drill()");
-		Logger.UserQuestion("Még tudja fúrni a telepes?");
+		Logger.UserQuestion("Can the settler drill?");
 		Scanner scanner = new Scanner(System.in);
 		String input = scanner.nextLine();
 		if(input.equals("1")) {//TODO tudni kell, hogy m�g furhatja-e
@@ -52,10 +52,10 @@ public class Settler extends SentientBeing {
 	public void Mine() 
 	{
 		Logger.MethodCall("Mine()");
-		Logger.UserQuestion("Fér-e a telepes zsebébe még anyag?");
+		Logger.UserQuestion("Does it still fit in the settler's invetory?");
 		Scanner scanner = new Scanner(System.in);
 		String input = scanner.nextLine();
-		if(input.equals("igen")) {
+		if(input.equals("yes")) {
 			if(!location.IsEmpty()) {
 				RawMaterial rm=location.GetMaterial();
 				AddCarriedMaterial(rm);
@@ -134,10 +134,10 @@ public class Settler extends SentientBeing {
 	{
 		Logger.MethodCall("FillAsteroid()");
 
-		Logger.UserQuestion("Tud-e a telepes bepakolni?");
+		Logger.UserQuestion("Can the settler fill the asteroid?");
 		Scanner scanner = new Scanner(System.in);
 		String input = scanner.nextLine();
-		if(input.equals("igen")) {
+		if(input.equals("yes")) {
 			location.SetMaterial(material, this);
 		}
 		scanner.close();
@@ -157,16 +157,16 @@ public class Settler extends SentientBeing {
 	{
 		Logger.MethodCall("PutTeleportGateOnAsteroid()");
 
-		System.out.println("Van-e a telepes zsebében teleport?(igen/nem)");
+		System.out.println("Does the settler have a teleportgate?");
 		Scanner scanner = new Scanner(System.in);
 		String input = scanner.nextLine();
-		if(input.equals("igen")) {
+		if(input.equals("yes")) {
 			TeleportGate t=new TeleportGate();
 			t.GetAsteroid();
-			System.out.println("A telepes ugyanazon az aszteroidán van, mint a teleport tesója?(igen/nem)");
+			System.out.println("Is the settler on the same asteroid as the teleportgate?");
 			scanner = new Scanner(System.in);
 			String input2 = scanner.nextLine();
-			if(input2.equals("nem")) {
+			if(input2.equals("no")) {
 				Asteroid TestLocation=new Asteroid();
 				TestLocation.AddNeighbor(t);
 				t.SetAsteroid(TestLocation);

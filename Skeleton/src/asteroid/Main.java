@@ -133,7 +133,15 @@ public class Main {
 	
 	private static void Teszteset9()
 	{
+		Settler s=new Settler();
+		//Jelenlegi megoldásom az "incializálás" során felmerülõ extra üzenetek elkerülésésre.
+		//Ez lehet fars. A tesztben használt objektumok, a metódsuban vannak létrehozva.
+
+		System.out.println("test start");
+		s.PutTeleportGateOnAsteroid();
 		
+		
+
 	}
 	
 	private static void Teszteset10()

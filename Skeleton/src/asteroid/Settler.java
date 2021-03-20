@@ -34,10 +34,10 @@ public class Settler extends SentientBeing {
 	}
 	public void Drill() 
 	{
-		System.out.println("Még tudja fúrni a telepes?(igen/nem)");
+		System.out.println("Mï¿½g tudja fï¿½rni a telepes?(igen/nem)");
 		Scanner scanner = new Scanner(System.in);
 		String input = scanner.nextLine();
-		if(input.equals("igen")) {//TODO tudni kell, hogy még furhatja-e
+		if(input.equals("igen")) {//TODO tudni kell, hogy mï¿½g furhatja-e
 			location.IncreaseHoleDepth();//TODO 
 		}
 		scanner.close();
@@ -45,7 +45,7 @@ public class Settler extends SentientBeing {
 	
 	public void Mine() 
 	{
-		System.out.println("Fér-e a telepes zsebébe még anyag?(igen/nem)");
+		System.out.println("Fï¿½r-e a telepes zsebï¿½be mï¿½g anyag?(igen/nem)");
 		Scanner scanner = new Scanner(System.in);
 		String input = scanner.nextLine();
 		if(input.equals("igen")) {
@@ -84,9 +84,9 @@ public class Settler extends SentientBeing {
 	{
 		System.out.println("BuildRobot()");
 
-		//TODO robo bill hiánya van itten, miképp kérjem el a bills-bõl pont a drágát?
-		//én úgy vettem, hogy pont az egyes(és nem elsõ) lesz az.
-		//TODO a BOM-nak arraylistet kéne fogadnia
+		//TODO robo bill hiï¿½nya van itten, mikï¿½pp kï¿½rjem el a bills-bï¿½l pont a drï¿½gï¿½t?
+		//ï¿½n ï¿½gy vettem, hogy pont az egyes(ï¿½s nem elsï¿½) lesz az.
+		//TODO a BOM-nak arraylistet kï¿½ne fogadnia
 		Boolean feltetel1 = bills.get(1).CheckInventory(null);
 		if(feltetel1) 
 		{
@@ -100,9 +100,9 @@ public class Settler extends SentientBeing {
 	{
 		System.out.println("BuildTeleportGatePair()");
 
-		//TODO telegate bill hiánya van itten, miképp kérjem el a bills-bõl pont a drágát?
-		//én úgy vettem, hogy pont az kettes(és nem második) lesz az.
-		//TODO a BOM-nak arraylistet kéne fogadnia
+		//TODO telegate bill hiï¿½nya van itten, mikï¿½pp kï¿½rjem el a bills-bï¿½l pont a drï¿½gï¿½t?
+		//ï¿½n ï¿½gy vettem, hogy pont az kettes(ï¿½s nem mï¿½sodik) lesz az.
+		//TODO a BOM-nak arraylistet kï¿½ne fogadnia
 		
 		Boolean feltetel1 = bills.get(2).CheckInventory(null);
 		if(feltetel1) 
@@ -142,13 +142,24 @@ public class Settler extends SentientBeing {
 	{
 		System.out.println("PutTeleportGateOnAsteroid()");
 
-		System.out.println("Van-e a telepes zsebében teleport?(igen/nem)");
+		System.out.println("Van-e a telepes zsebï¿½ben teleport?(igen/nem)");
 		Scanner scanner = new Scanner(System.in);
 		String input = scanner.nextLine();
 		if(input.equals("igen")) {
-			TeleportGate t=carriedteleports.get(carriedteleports.size()-1);
-			location.AddNeighbor(t);
+			TeleportGate t=new TeleportGate();
+			t.GetAsteroid();
+			System.out.println("A telepes ugyanazon az aszteroidÃ¡n van, mint a teleport tesÃ³ja?(igen/nem)");
+			scanner = new Scanner(System.in);
+			String input2 = scanner.nextLine();
+			if(input2.equals("nem")) {
+				Asteroid TestLocation=new Asteroid();
+				TestLocation.AddNeighbor(t);
+				t.SetAsteroid(TestLocation);
+				t.DropOwner();
+				DropCarriedTeleport(t);
+			}
 		}
+		
 		scanner.close();
 	}
 	
@@ -156,7 +167,7 @@ public class Settler extends SentientBeing {
 	{
 		System.out.println("Step()");
 
-		//System.out.println("Mit csináljona a telepes? 1=mozogo egy aszteroidára,2=ás, 3=bányász,4=anyagot rak vissza,5=robotot épít, 6=teleportot épít, 7=teleportot helyez le");
+		//System.out.println("Mit csinï¿½ljona a telepes? 1=mozogo egy aszteroidï¿½ra,2=ï¿½s, 3=bï¿½nyï¿½sz,4=anyagot rak vissza,5=robotot ï¿½pï¿½t, 6=teleportot ï¿½pï¿½t, 7=teleportot helyez le");
 		
 	}
 	
@@ -170,6 +181,7 @@ public class Settler extends SentientBeing {
 	{
 		System.out.println("DropCarriedTeleport()");
 
-		//carriedteleports.remove(teleport);
+		carriedteleports.remove(teleport);
 	}
+	
 }

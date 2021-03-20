@@ -15,7 +15,13 @@ import java.util.Scanner;
 
 public class SolarWind
 {
-	private SentientBeing sentientbeings;
+	private ArrayList<SentientBeing> sentientbeings;
+	
+	public SolarWind()
+	{
+		sentientbeings = new ArrayList<SentientBeing>();
+	}
+	
 	public SolarWind(ArrayList<Asteroid> asteroids)
 	{
 		System.out.println("SolarWind()");

@@ -18,9 +18,9 @@ public class BillOfMaterials
 	private ArrayList<RawMaterial> materials;
 	
 	
-	public void setMaterials(ArrayList<RawMaterial> materials) {
-		System.out.println("setMaterials(ArrayList<RawMaterial> materials))");
-		this.materials = materials;
+	public BillOfMaterials()
+	{
+		materials = new ArrayList<RawMaterial>();
 	}
 
 	public Boolean CheckInventory(ArrayList<RawMaterial> inventory) 
@@ -45,6 +45,7 @@ public class BillOfMaterials
 	public void AddMaterialToBill(RawMaterial material) 
 	{
 		System.out.println("AddMaterialToBill(ArrayList<RawMaterial> inventory)");
+		materials.add(material);
 	}
 	
 	public ArrayList<RawMaterial> DeleteFromInventory(ArrayList<RawMaterial> inventory) 

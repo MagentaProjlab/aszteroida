@@ -1,12 +1,19 @@
 package asteroid;
 
 public class Logger {
-		public static void MethodCall(String functionName) {
-			System.out.println(functionName);
-			
-		}
+	private static int indent = 0;
+	
+	public static void MethodCall(String functionName) {
+										//TAB rész
+		System.out.println(functionName);
+		++indent;
+	}
 		
-		public static void MethodReturn() {
-			
-		}
+	public static void MethodReturn() {
+		--indent;
+	}
+	
+	public static void UserQuestion() {
+		
+	}
 }

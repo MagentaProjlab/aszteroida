@@ -15,8 +15,9 @@ package asteroid;
 
 public class Iron extends RawMaterial
 {
-	public Iron() {
-
+	public Iron()
+	{
+		
 	}
 	public void Perish()
 	{

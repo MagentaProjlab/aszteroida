@@ -18,32 +18,38 @@ import java.util.Scanner;
 
 public class Ice extends RawMaterial 
 {
-	public Ice() {
-
+	public Ice()
+	{
+		Logger.MethodCall("Ice()");
+		Logger.MethodReturn("");
 	}
 	public void Perish() 
 	{
-		System.out.println("Perish()");
+		Logger.MethodCall("Perish()");
 		this.SetAsteroid(null);
+		Logger.MethodReturn("void");
 	}
 	
 	public String GetUniqueID() 
 	{
-		System.out.println("GetUniqueID() ");
+		Logger.MethodCall("GetUniqueID()");
+		Logger.MethodReturn("String: Ice");
 		return "Ice";
 	}
 	
 	public void PerihelionReaction() 
 	{
+		Logger.MethodCall("PerihelionReaction()");
 		Scanner sc = new Scanner(System.in);
-		System.out.println("PerihelionReaction()");
-		System.out.println("Is Holedepth = CrustTickness? [true/false]" );
+		Logger.UserQuestion("Holedepth = CrustTickness?");
 		String answer = sc.nextLine();
-		if (answer.equals("true")) {
+		if (answer.equals("1"))
+		{
 			this.asteroid.DropMaterial();
 			this.Perish();
 		}
 		sc.close();
+		Logger.MethodReturn("void");
 	}
 
 }

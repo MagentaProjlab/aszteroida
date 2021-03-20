@@ -32,11 +32,11 @@ public class BillOfMaterials
 		Logger.UserQuestion("A feltételeket teljesíti az inventory?");
 		Boolean feltetel = false;
 		String input = scanner.nextLine();
-		if(input.equals("igen"))
+		if(input.equals("1"))
 		{
 			feltetel = true;
 			Logger.MethodReturn("Boolean: true");
-		}else if(input.equals("nem"))
+		}else if(input.equals("2"))
 		{
 			feltetel = false;
 			Logger.MethodReturn("Boolean: false");

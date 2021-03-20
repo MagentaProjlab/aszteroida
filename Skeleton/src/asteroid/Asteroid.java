@@ -59,10 +59,10 @@ public class Asteroid extends Place
 		Boolean feltetel2 = false;
 		Scanner scanner = new Scanner(System.in);
 		String input = scanner.nextLine();
-		if(input.equals("igen"))
+		if(input.equals("1"))
 		{
 			feltetel2 = true;
-		}else if(input.equals("nem"))
+		}else if(input.equals("2"))
 		{
 			feltetel2 = false;
 		}
@@ -119,12 +119,12 @@ public class Asteroid extends Place
 		Logger.UserQuestion("Üres az aszteroida?");
 		Scanner scanner = new Scanner(System.in);
 		String input = scanner.nextLine();
-		if(input.equals("igen"))
+		if(input.equals("1"))
 		{
 			scanner.close();
 			Logger.MethodReturn("Boolean: true");
 			return true;
-		}else if(input.equals("nem"))
+		}else if(input.equals("2"))
 		{
 			scanner.close();
 			Logger.MethodReturn("Boolean: false");
@@ -153,12 +153,12 @@ public class Asteroid extends Place
 		Logger.UserQuestion("Napközelben van az aszteroida?");
 		Scanner scanner = new Scanner(System.in);
 		String input = scanner.nextLine();
-		if(input.equals("igen"))
+		if(input.equals("1"))
 		{
 			scanner.close();
 			Logger.MethodReturn("Boolean: true");
 			return true;
-		}else if(input.equals("nem"))
+		}else if(input.equals("2"))
 		{
 			scanner.close();
 			Logger.MethodReturn("Boolean: false");
@@ -183,10 +183,10 @@ public class Asteroid extends Place
 		Logger.UserQuestion("CrustThickness == HoleDepth?");
 		Boolean feltetel1 = false;
 		String input = scanner.nextLine();
-		if(input.equals("igen"))
+		if(input.equals("1"))
 		{
 			feltetel1 = true;
-		}else if(input.equals("nem"))
+		}else if(input.equals("2"))
 		{
 			feltetel1 = false;
 		}

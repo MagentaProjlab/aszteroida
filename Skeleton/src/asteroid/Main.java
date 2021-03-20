@@ -1,6 +1,5 @@
 package asteroid;
 
-import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
@@ -9,6 +8,7 @@ public class Main {
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Válassz egy tesztesetet! (1-15)");
 		String input = scanner.nextLine();
+		scanner.close();
 		switch(Integer.parseInt(input))
 		{
 			case 1: Teszteset1();

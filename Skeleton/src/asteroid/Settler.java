@@ -36,6 +36,7 @@ public class Settler extends SentientBeing {
 		if(input.equals("igen")) {//TODO tudni kell, hogy még furhatja-e
 			location.IncreaseHoleDepth();//TODO 
 		}
+		scanner.close();
 	}
 	
 	public void Mine() 
@@ -52,6 +53,7 @@ public class Settler extends SentientBeing {
 			}
 			
 		}
+		scanner.close();
 		
 	}
 	
@@ -116,7 +118,7 @@ public class Settler extends SentientBeing {
 		if(input.equals("igen")) {
 			location.SetMaterial(material, this);
 		}
-	
+		scanner.close();
 	}
 	
 	
@@ -138,6 +140,7 @@ public class Settler extends SentientBeing {
 			location.AddNeighbor(t);
 			System.out.println("AddNeighbor()");
 		}
+		scanner.close();
 	}
 	
 	public void Step() 

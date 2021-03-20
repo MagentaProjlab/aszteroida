@@ -53,12 +53,12 @@ public class Robot extends SentientBeing
 	{
 		System.out.println("Step()");
 		Scanner scanner = new Scanner(System.in);
-		String input;
 		System.out.println("Fúrjon vagy lépjen a robot?");
-		input = scanner.nextLine();
-		if(scanner.equals("fúr")) {
+		String input = scanner.nextLine();
+		scanner.close();
+		if(input.equals("fúr")) {
 			this.Drill();
-		} else if(scanner.equals("lép")) {
+		} else if(input.equals("lép")) {
 			this.Move(null);
 		}
 	}

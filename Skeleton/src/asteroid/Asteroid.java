@@ -68,6 +68,7 @@ public class Asteroid extends Place
 				n.Explode();
 			}
 		}
+		scanner.close();
 	}
 	
 	public void DropBeing(SentientBeing being)
@@ -98,11 +99,14 @@ public class Asteroid extends Place
 		String input = scanner.nextLine();
 		if(input.equals("igen"))
 		{
+			scanner.close();
 			return true;
 		}else if(input.equals("nem"))
 		{
+			scanner.close();
 			return false;
 		}
+		scanner.close();
 		return false;
 	}
 	
@@ -123,11 +127,14 @@ public class Asteroid extends Place
 		String input = scanner.nextLine();
 		if(input.equals("igen"))
 		{
+			scanner.close();
 			return true;
 		}else if(input.equals("nem"))
 		{
+			scanner.close();
 			return false;
 		}
+		scanner.close();
 		return false;
 	}
 	
@@ -159,6 +166,7 @@ public class Asteroid extends Place
 				sb.Die();
 			}
 		}
+		scanner.close();
 	}
 	
 	public void CheckPerihelionReaction()

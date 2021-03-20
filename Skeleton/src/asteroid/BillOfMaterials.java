@@ -32,6 +32,7 @@ public class BillOfMaterials
 		{
 			feltetel = false;
 		}
+		scanner.close();
 		return feltetel;
 	}
 	

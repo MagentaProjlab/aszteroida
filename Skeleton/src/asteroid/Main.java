@@ -223,30 +223,66 @@ public class Main {
 		Asteroid tgsiblinglocation = new Asteroid();
 		Settler tgowner = new Settler();
 		Settler tgsiblingowner = new Settler();
+		//settlers on asteroids
 		tgowner.setAsteroid(tglocation);
+		tgsiblingowner.setAsteroid(tgsiblinglocation);
+		//settlers to asteroids
 		tglocation.RegisterBeing(tgowner);
+		tgsiblinglocation.RegisterBeing(tgsiblingowner);
+		//siblings
 		tg.SetSibling(tgsibling);
 		tgsibling.SetSibling(tg);
-		tg.SetOwner(tgowner);
-		tgowner.addteleport(tg);
-		tglocation = tgowner.location;
-		tgsiblingowner.setAsteroid(tgsiblinglocation);
-		tgsiblinglocation.RegisterBeing(tgsiblingowner);
-		tgsiblinglocation = tgsiblingowner.location;
 		System.out.println("Test starts");
 		System.out.println("[1: Sibling is on asteroid, 2: Sibling is with a settler]");
+		System.out.println("[3: Teleport and sibling is on asteroid, 4: Teleport and sibling is with settler]");
 		Scanner sc = new Scanner(System.in);
 		String input = sc.nextLine();
 		switch(Integer.parseInt(input))
 		{
 		case 1:
+			//tg is with settler, sibling is on asteroid
+			//tg sets owner
+			tg.SetOwner(tgowner);
+			tgowner.addteleport(tg);
+			//tgsibling sets asteroid, no owner
 			tgsibling.SetAsteroid(tgsiblinglocation);
+			tglocation = tgowner.location;
+			tgsiblinglocation = tgsiblingowner.location;
 			tg.Explode();
 			break;
 		case 2: 
+			//tg is with settler, sibling is with settler
+			//tg sets owner
+			tg.SetOwner(tgowner);
+			tgowner.addteleport(tg);
+			//tgsibling sets owner
 			tgsibling.SetOwner(tgsiblingowner);
+			tgsiblinglocation = tgsiblingowner.location;
+			tglocation = tgowner.location;
+			tgsiblinglocation = tgsiblingowner.location;
 			tg.Explode();
 			break;
+		case 3:
+			//tg is on asteroid, sibling is on asteroid
+			//tg sets asteroid
+			tg.SetAsteroid(tglocation);
+			//tgsibling sets asteroid
+			tgsibling.SetAsteroid(tgsiblinglocation);
+			tglocation = tgowner.location;
+			tgsiblinglocation = tgsiblingowner.location;
+			tg.Explode();
+			break;
+		case 4:
+			//tg is on asteroid, sibling is with settler
+			//tg sets asteroid
+			tg.SetAsteroid(tglocation);
+			//tgsibling sets owner
+			tgsibling.SetOwner(tgsiblingowner);
+			tgsiblinglocation = tgsiblingowner.location;
+			tglocation = tgowner.location;
+			tgsiblinglocation = tgsiblingowner.location;
+			tg.Explode();
+		break;
 		}
 		System.out.println("The test method has ran successfully");
 	}

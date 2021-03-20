@@ -8,25 +8,25 @@ public class Main {
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Válassz egy tesztesetet! (1-15)");
 		String input = scanner.nextLine();
-		scanner.close();
 		switch(Integer.parseInt(input))
 		{
-			case 1: Teszteset1();
-			case 2: Teszteset2();
-			case 3: Teszteset3();
-			case 4: Teszteset4();
-			case 5: Teszteset5();
-			case 6: Teszteset6();
-			case 7: Teszteset7();
-			case 8: Teszteset8();
-			case 9: Teszteset9();
-			case 10: Teszteset10();
-			case 11: Teszteset11();
-			case 12: Teszteset12();
-			case 13: Teszteset13();
-			case 14: Teszteset14();
-			case 15: Teszteset15();
+			case 1: Teszteset1(); break;
+			case 2: Teszteset2(); break;
+			case 3: Teszteset3(); break;
+			case 4: Teszteset4(); break;
+			case 5: Teszteset5(); break;
+			case 6: Teszteset6(); break;
+			case 7: Teszteset7(); break;
+			case 8: Teszteset8(); break;
+			case 9: Teszteset9(); break;
+			case 10: Teszteset10(); break;
+			case 11: Teszteset11(); break;
+			case 12: Teszteset12(); break;
+			case 13: Teszteset13(); break;
+			case 14: Teszteset14(); break;
+			case 15: Teszteset15(); break;
 		}
+		scanner.close();
 	}
 	
 	private static void Teszteset1()
@@ -62,7 +62,7 @@ public class Main {
 		location.RegisterBeing(s);
 		s.location = location;
 		s.Move(destination);
-		System.out.println("A teszt sikeresen lefutott");	
+		System.out.println("A teszt sikeresen lefutott");
 	}
 	
 	private static void Teszteset4()

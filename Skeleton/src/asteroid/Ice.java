@@ -19,7 +19,7 @@ import java.util.Scanner;
 public class Ice extends RawMaterial 
 {
 	public Ice() {
-		System.out.println("Ice()");
+
 	}
 	public void Perish() 
 	{

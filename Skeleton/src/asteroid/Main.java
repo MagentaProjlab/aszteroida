@@ -74,14 +74,23 @@ public class Main {
 		dest.AddNeighbor(source);
 		source.RegisterBeing(r);
 		r.location = source;
-		System.out.println("test start");
+		System.out.println("Test start");
 		r.Move(dest);
+		System.out.println("Test finished");
 		
 	}
 	
 	private static void Teszteset5()
 	{
-		
+		Settler s = new Settler();
+		Asteroid a = new Asteroid();
+		Iron iron = new Iron();
+		a.SetCore(iron);
+		a.RegisterBeing(s);
+		s.location = a;
+		System.out.println("Test starts");
+		s.Mine();
+		System.out.println("Test finished");
 	}
 	
 	private static void Teszteset6()

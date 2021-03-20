@@ -16,7 +16,7 @@ package asteroid;
 public class Coal extends RawMaterial 
 {
 	public Coal() {
-		System.out.println("Coal()");
+
 	}
 	public void Perish() 
 	{

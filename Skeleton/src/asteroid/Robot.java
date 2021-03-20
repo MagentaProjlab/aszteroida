@@ -24,7 +24,7 @@ public class Robot extends SentientBeing
 	public void Drill()
 	{
 		System.out.println("Drill()");
-		System.out.println("Még tudja fúrni a telepes?(igen/nem)");
+		System.out.println("Még tudja fúrni a robot?(igen/nem)");
 		Scanner scanner = new Scanner(System.in);
 		String input = scanner.nextLine();
 		if(input.equals("igen"))

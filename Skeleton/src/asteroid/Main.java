@@ -46,6 +46,15 @@ public class Main {
 	
 	private static void Teszteset4()
 	{
+		Robot r = new Robot();
+		Asteroid source = new Asteroid();
+		Asteroid dest = new Asteroid();
+		source.AddNeighbor(dest);
+		dest.AddNeighbor(source);
+		source.RegisterBeing(r);
+		r.location = source;
+		System.out.println("test start");
+		r.Move(dest);
 		
 	}
 	

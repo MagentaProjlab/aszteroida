@@ -17,7 +17,7 @@ public class Robot extends SentientBeing
 	public void Move(Place place) 
 	{
 		System.out.println("Move(Place place)");
-		((Asteroid) place).DropBeing(this);
+		this.location.DropBeing(this);
 		place.RegisterBeing(this);
 	}
 	

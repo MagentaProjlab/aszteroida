@@ -194,7 +194,39 @@ public class Main {
 	
 	private static void Teszteset13()
 	{
-		
+		TeleportGate tg = new TeleportGate();
+		TeleportGate tgsibling = new TeleportGate();
+		Asteroid tglocation = new Asteroid();
+		Asteroid tgsiblinglocation = new Asteroid();
+		Settler tgowner = new Settler();
+		Settler tgsiblingowner = new Settler();
+		tgowner.setAsteroid(tglocation);
+		tglocation.RegisterBeing(tgowner);
+		tg.SetSibling(tgsibling);
+		tgsibling.SetSibling(tg);
+		tg.SetOwner(tgowner);
+		tgowner.addteleport(tg);
+		tglocation = tgowner.location;
+		tgsiblingowner.setAsteroid(tgsiblinglocation);
+		tgsiblinglocation.RegisterBeing(tgsiblingowner);
+		tgsiblinglocation = tgsiblingowner.location;
+		System.out.println("Test starts");
+		System.out.println("[1: Sibling is on asteroid, 2: Sibling is with a settler]");
+		Scanner sc = new Scanner(System.in);
+		String input = sc.nextLine();
+		switch(Integer.parseInt(input))
+		{
+		case 1:
+			tgsibling.SetAsteroid(tgsiblinglocation);
+			tg.Explode();
+			break;
+		case 2: 
+			tgsibling.SetOwner(tgsiblingowner);
+			tg.Explode();
+			break;
+		}
+	
+		System.out.println("Test finished");
 	}
 	
 	private static void Teszteset14()

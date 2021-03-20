@@ -33,6 +33,9 @@ public class Settler extends SentientBeing {
 		bills.add(new BillOfMaterials());
 		Logger.MethodReturn("");
 	}
+	public void addteleport(TeleportGate tg) {
+		this.carriedteleports.add(tg);
+	}
 	public void Drill() 
 	{
 		Logger.MethodCall("Drill()");

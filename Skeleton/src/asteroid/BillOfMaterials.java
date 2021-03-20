@@ -41,7 +41,6 @@ public class BillOfMaterials
 			feltetel = false;
 			Logger.MethodReturn("Boolean: false");
 		}
-		scanner.close();
 		return feltetel;
 	}
 	

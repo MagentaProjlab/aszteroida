@@ -238,6 +238,20 @@ public class Main {
 	
 	private static void Teszteset15()
 	{
-		
+		Asteroid a = new Asteroid();
+		Robot r1 = new Robot();
+		r1.location = a;
+		Robot r2 = new Robot();
+		r2.location = a;
+		Settler s1 = new Settler();
+		s1.location = a;
+		Settler s2 = new Settler();
+		s2.location = a;
+		a.RegisterBeing(r1);
+		a.RegisterBeing(r2);
+		a.RegisterBeing(s1);
+		a.RegisterBeing(s2);
+		a.StepBeings();
+		System.out.println("Test finished");
 	}
 }

@@ -108,7 +108,17 @@ public class Main {
 	
 	private static void Teszteset7()
 	{
-		
+		System.out.println("A settler builds robot teszteset indul");
+		Settler s = new Settler();
+		Asteroid location = new Asteroid();
+		location.RegisterBeing(s);
+		s.location = location;
+		s.AddCarriedMaterial(new Iron());
+		s.AddCarriedMaterial(new Ice());
+		s.AddCarriedMaterial(new Uranium());
+		s.AddCarriedMaterial(new Coal());
+		s.BuildRobot();
+		System.out.println("A teszt sikeresen lefutott");
 	}
 	
 	private static void Teszteset8()

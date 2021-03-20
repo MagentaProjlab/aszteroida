@@ -18,9 +18,14 @@ public class BillOfMaterials
 	private ArrayList<RawMaterial> materials;
 	
 	
+	public void setMaterials(ArrayList<RawMaterial> materials) {
+		System.out.println("setMaterials(ArrayList<RawMaterial> materials))");
+		this.materials = materials;
+	}
+
 	public Boolean CheckInventory(ArrayList<RawMaterial> inventory) 
 	{
-		System.out.println("CheckInventory(RawMaterial inventory)");
+		System.out.println("CheckInventory(ArrayList<RawMaterial> inventory)");
 		Scanner scanner = new Scanner(System.in);
 		
 		System.out.println("A feltételeket teljesíti az inventory?");
@@ -39,12 +44,12 @@ public class BillOfMaterials
 	
 	public void AddMaterialToBill(ArrayList<RawMaterial> material) 
 	{
-		System.out.println("AddMaterialToBill(RawMaterial material)");
+		System.out.println("AddMaterialToBill(ArrayList<RawMaterial> inventory)");
 	}
 	
 	public ArrayList<RawMaterial> DeleteFromInventory(ArrayList<RawMaterial> inventory) 
 	{
-		System.out.println("DeleteFromInventory(RawMaterial inventory)");
+		System.out.println("DeleteFromInventory(ArrayList<RawMaterial> inventory)");
 		return null;
 	}
 }

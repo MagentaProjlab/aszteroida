@@ -95,12 +95,30 @@ public class Main {
 	
 	private static void Teszteset6()
 	{
-		
+		System.out.println("A settler puts back material teszteset indul");
+		Settler s = new Settler();
+		Asteroid location = new Asteroid();
+		RawMaterial m = new Iron();
+		s.AddCarriedMaterial(m);
+		location.SetMaterial(m, s);
+		s.DropCarriedMaterial(m);
+		location.AtPerihelion();
+		System.out.println("A teszt sikeresen lefutott");
 	}
 	
 	private static void Teszteset7()
 	{
-		
+		System.out.println("A settler builds robot teszteset indul");
+		Settler s = new Settler();
+		Asteroid location = new Asteroid();
+		location.RegisterBeing(s);
+		s.location = location;
+		s.AddCarriedMaterial(new Iron());
+		s.AddCarriedMaterial(new Ice());
+		s.AddCarriedMaterial(new Uranium());
+		s.AddCarriedMaterial(new Coal());
+		s.BuildRobot();
+		System.out.println("A teszt sikeresen lefutott");
 	}
 	
 	private static void Teszteset8()
@@ -115,7 +133,15 @@ public class Main {
 	
 	private static void Teszteset9()
 	{
+		Settler s=new Settler();
+		//Jelenlegi megoldásom az "incializálás" során felmerülõ extra üzenetek elkerülésésre.
+		//Ez lehet fars. A tesztben használt objektumok, a metódsuban vannak létrehozva.
+
+		System.out.println("test start");
+		s.PutTeleportGateOnAsteroid();
 		
+		
+
 	}
 	
 	private static void Teszteset10()

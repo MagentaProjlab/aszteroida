@@ -146,9 +146,20 @@ public class Settler extends SentientBeing {
 		Scanner scanner = new Scanner(System.in);
 		String input = scanner.nextLine();
 		if(input.equals("igen")) {
-			TeleportGate t=carriedteleports.get(carriedteleports.size()-1);
-			location.AddNeighbor(t);
+			TeleportGate t=new TeleportGate();
+			t.GetAsteroid();
+			System.out.println("A telepes ugyanazon az aszteroidán van, mint a teleport tesója?(igen/nem)");
+			scanner = new Scanner(System.in);
+			String input2 = scanner.nextLine();
+			if(input2.equals("nem")) {
+				Asteroid TestLocation=new Asteroid();
+				TestLocation.AddNeighbor(t);
+				t.SetAsteroid(TestLocation);
+				t.DropOwner();
+				DropCarriedTeleport(t);
+			}
 		}
+		
 		scanner.close();
 	}
 	
@@ -170,6 +181,7 @@ public class Settler extends SentientBeing {
 	{
 		System.out.println("DropCarriedTeleport()");
 
-		//carriedteleports.remove(teleport);
+		carriedteleports.remove(teleport);
 	}
+	
 }

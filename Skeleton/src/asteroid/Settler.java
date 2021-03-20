@@ -57,11 +57,6 @@ public class Settler extends SentientBeing {
 			}
 		}
 		scanner.close();
-<<<<<<< Updated upstream
-		
-=======
-
->>>>>>> Stashed changes
 	}
 	
 	public void Die() 
@@ -134,11 +129,6 @@ public class Settler extends SentientBeing {
 			location.SetMaterial(material, this);
 		}
 		scanner.close();
-<<<<<<< Updated upstream
-=======
-
-	
->>>>>>> Stashed changes
 	}
 	
 	

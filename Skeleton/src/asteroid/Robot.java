@@ -44,11 +44,10 @@ public class Robot extends SentientBeing
 	{
 		System.out.println("Explode()");
 		Scanner scanner = new Scanner(System.in);
-		int input = 0;
-		System.out.println("Hány darab szomszédja van az aszteroidának? (0-több)");
-		input = scanner.nextInt();
+		System.out.println("Van több szomszédja az aszteroidának?");
+		String input = scanner.nextLine();
 		scanner.close();
-		if(input == 0) {
+		if(input.equals("nem")) {
 			Die();
 		} else {
 			Move(null);

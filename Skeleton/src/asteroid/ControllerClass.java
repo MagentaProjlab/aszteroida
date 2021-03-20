@@ -25,7 +25,7 @@ public class ControllerClass
 	private ArrayList<BillOfMaterials> bills;
 	
 	public ControllerClass() {
-		System.out.println("ControllerClass()");
+		Logger.MethodCall("ControllerClass()");
 		asteroids = new ArrayList<Asteroid>();
 		settlers = new ArrayList<Settler>();
 		robots = new ArrayList<Robot>();
@@ -33,38 +33,48 @@ public class ControllerClass
 		InitAsteroids();
 		InitSettlers();
 		InitBills();
+		Logger.MethodReturn();
 	}
 	
 	public void GameLoop()
 	{
-		System.out.println("GameLoop()");
+		Logger.MethodCall("GameLoop()");
+		Logger.MethodReturn();
 	}
 	
 	public void InitAsteroids()
 	{
-		System.out.println("InitAsteroids()");
+		Logger.MethodCall("InitAsteroids()");
+		Asteroid a1 = new Asteroid();
 		ConnectAsteroids();
+		Logger.MethodReturn();
 	}
 	
 	public void InitSettlers()
 	{
-		System.out.println("InitSettlers()");
-		GetRandomAsteroid();
+		Logger.MethodCall("InitSettlers()");
+		Settler s1 = new Settler();
+		Asteroid a1 = GetRandomAsteroid();
+		s1.setAsteroid(a1);
+		Logger.MethodReturn();
 	}
 	
 	public void InitBills() 
 	{
-		System.out.println("InitBills()");
+		Logger.MethodCall("InitBills()");
+		Logger.MethodReturn();
 	}
 	
 	public void ConnectAsteroids() 
 	{
-		System.out.println("ConnectAsteroids()");
+		Logger.MethodCall("ConnectAsteroids()");
+		Logger.MethodReturn();
 	}
 	
 	public Asteroid GetRandomAsteroid() 
 	{
-		System.out.println("GetRandomAsteroid()");
+		Logger.MethodCall("GetRandomAsteroid()");
+		Logger.MethodReturn();
 		return null;
 	}
 }

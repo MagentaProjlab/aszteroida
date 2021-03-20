@@ -126,7 +126,7 @@ public class Main {
 	
 	private static void Teszteset14()
 	{
-		
+		ControllerClass cc = new ControllerClass();
 	}
 	
 	private static void Teszteset15()

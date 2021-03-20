@@ -19,7 +19,22 @@ public class Logger {
 		System.out.println("<-" + returnName);
 	}
 	
-	public static void UserQuestion() {
-		
+	public static void UserQuestion(String question) {
+		for (int i=0; i<indent; ++i) {			//TAB rész
+			System.out.print("  ");	
+		}
+		System.out.println("? " + question);
+		for (int i=0; i<=indent; ++i) {			//+1 behúzás
+			System.out.print("  ");	
+		}
+		System.out.println("1:igen");
+		for (int i=0; i<=indent; ++i) {			//+1 behúzás
+			System.out.print("  ");	
+		}
+		System.out.println("2:nem");
+		for (int i=0; i<=indent; ++i) {			//+1 behúzás
+			System.out.print("  ");	
+		}
+		System.out.print(":");
 	}
 }

@@ -27,7 +27,7 @@ public class BillOfMaterials
 		System.out.println("CheckInventory(ArrayList<RawMaterial> inventory)");
 		Scanner scanner = new Scanner(System.in);
 		
-		System.out.println("A feltételeket teljesíti az inventory?");
+		Logger.UserQuestion("A feltételeket teljesíti az inventory?");
 		Boolean feltetel = false;
 		String input = scanner.nextLine();
 		if(input.equals("igen"))

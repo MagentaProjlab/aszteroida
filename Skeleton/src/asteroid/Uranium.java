@@ -15,7 +15,7 @@ import java.util.Scanner;
 public class Uranium extends RawMaterial 
 {
 	public Uranium() {
-		System.out.println("Uranium()");
+
 	}
 	public void Perish() 
 	{

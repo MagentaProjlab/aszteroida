@@ -29,7 +29,9 @@ public class Asteroid extends Place
 		sentientbeings = new ArrayList<SentientBeing>();
 		neighbors = new ArrayList<Place>();
 	}
-	
+	public void SetCore(RawMaterial rm) {
+		this.corematerial = rm;
+	}
 	public void IncreaseHoleDepth() 
 	{
 		System.out.println("IncreaseHoleDepth()");
@@ -97,7 +99,7 @@ public class Asteroid extends Place
 	public RawMaterial GetMaterial()
 	{
 		System.out.println("GetMaterial()");
-		return null;
+		return this.corematerial;
 	}
 	
 	public Boolean IsEmpty()

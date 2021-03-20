@@ -51,7 +51,7 @@ public class Settler extends SentientBeing {
 		if(input.equals("igen")) {
 			if(!location.IsEmpty()) {
 				RawMaterial rm=location.GetMaterial();
-				AddCarriedMaterial(null);
+				AddCarriedMaterial(rm);
 				rm.SetAsteroid(null);
 				location.DropMaterial();
 			}

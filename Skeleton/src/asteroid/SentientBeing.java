@@ -20,7 +20,7 @@ public abstract class SentientBeing
 	public void setAsteroid(Asteroid loc) {
 		Logger.MethodCall("setAsteroid(Asteroid loc)");
 		this.location = loc;
-		Logger.MethodReturn();
+		Logger.MethodReturn("void");
 	}
 	
 	public abstract void Move(Place place);

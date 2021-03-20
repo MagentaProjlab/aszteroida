@@ -33,13 +33,13 @@ public class ControllerClass
 		InitAsteroids();
 		InitSettlers();
 		InitBills();
-		Logger.MethodReturn();
+		Logger.MethodReturn("");
 	}
 	
 	public void GameLoop()
 	{
 		Logger.MethodCall("GameLoop()");
-		Logger.MethodReturn();
+		Logger.MethodReturn("void");
 	}
 	
 	public void InitAsteroids()
@@ -47,7 +47,7 @@ public class ControllerClass
 		Logger.MethodCall("InitAsteroids()");
 		Asteroid a1 = new Asteroid();
 		ConnectAsteroids();
-		Logger.MethodReturn();
+		Logger.MethodReturn("void");
 	}
 	
 	public void InitSettlers()
@@ -56,25 +56,25 @@ public class ControllerClass
 		Settler s1 = new Settler();
 		Asteroid a1 = GetRandomAsteroid();
 		s1.setAsteroid(a1);
-		Logger.MethodReturn();
+		Logger.MethodReturn("void");
 	}
 	
 	public void InitBills() 
 	{
 		Logger.MethodCall("InitBills()");
-		Logger.MethodReturn();
+		Logger.MethodReturn("void");
 	}
 	
 	public void ConnectAsteroids() 
 	{
 		Logger.MethodCall("ConnectAsteroids()");
-		Logger.MethodReturn();
+		Logger.MethodReturn("void");
 	}
 	
 	public Asteroid GetRandomAsteroid() 
 	{
 		Logger.MethodCall("GetRandomAsteroid()");
-		Logger.MethodReturn();
+		Logger.MethodReturn("Asteroid");
 		return null;
 	}
 }

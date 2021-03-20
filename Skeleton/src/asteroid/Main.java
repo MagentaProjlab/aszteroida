@@ -96,7 +96,12 @@ public class Main {
 	
 	private static void Teszteset8()
 	{
-		
+		Settler s=new Settler();
+		s.AddCarriedMaterial(new Iron());
+		s.AddCarriedMaterial(new Ice());
+		s.AddCarriedMaterial(new Uranium());
+		System.out.println("test start");
+		s.BuildTeleportGatePair();
 	}
 	
 	private static void Teszteset9()

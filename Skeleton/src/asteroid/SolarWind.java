@@ -28,13 +28,13 @@ public class SolarWind
 	{
 		Logger.MethodCall("SolarWind()");
 		Scanner scanner = new Scanner(System.in);
-		System.out.println("Is there a solar wind?");
+		Logger.UserQuestion("Is there a solar wind?");
 		Boolean feltetel = false;
 		String input = scanner.nextLine();
-		if(input.equals("yes"))
+		if(input.equals("1"))
 		{
 			feltetel = true;
-		}else if(input.equals("no"))
+		}else if(input.equals("2"))
 		{
 			feltetel = false;
 		}

@@ -154,16 +154,16 @@ public class Settler extends SentientBeing {
 	{
 		Logger.MethodCall("PutTeleportGateOnAsteroid()");
 
-		System.out.println("Does the settler have a teleportgate?");
+		Logger.UserQuestion("Does the settler have a teleportgate?");
 		Scanner scanner = new Scanner(System.in);
 		String input = scanner.nextLine();
-		if(input.equals("yes")) {
+		if(input.equals("1")) {
 			TeleportGate t=new TeleportGate();
 			t.GetAsteroid();
-			System.out.println("Is the settler on the same asteroid as the teleportgate's sibling?");
+			Logger.UserQuestion("Is the settler on the same asteroid as the teleportgate's sibling?");
 			scanner = new Scanner(System.in);
 			String input2 = scanner.nextLine();
-			if(input2.equals("no")) {
+			if(input2.equals("1")) {
 				Asteroid TestLocation=new Asteroid();
 				TestLocation.AddNeighbor(t);
 				t.SetAsteroid(TestLocation);

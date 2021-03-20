@@ -24,9 +24,13 @@ public class Settler extends SentientBeing {
 	private ArrayList<TeleportGate> carriedteleports;
 	public Settler() 
 	{
+		
 		//carriedmaterials = new ArrayList<RawMaterial>();
 		//carriedteleports = new ArrayList<TeleportGate>();
-		//bills= new ArrayList<BillOfMaterials>();
+		bills= new ArrayList<BillOfMaterials>();
+		bills.add(new BillOfMaterials());
+		bills.add(new BillOfMaterials());
+		bills.add(new BillOfMaterials());
 	}
 	public void Drill() 
 	{
@@ -51,10 +55,8 @@ public class Settler extends SentientBeing {
 				rm.SetAsteroid(null);
 				location.DropMaterial();
 			}
-			
 		}
 		scanner.close();
-		
 	}
 	
 	public void Die() 
@@ -69,6 +71,7 @@ public class Settler extends SentientBeing {
 	}
 	
 	public void AddCarriedMaterial(RawMaterial material) {
+		System.out.println("AddCarriedMaterial()");
 		//carriedmaterials.add(material); most még nincs
 	}
 	
@@ -79,30 +82,35 @@ public class Settler extends SentientBeing {
 	
 	public void BuildRobot() 
 	{
+		System.out.println("BuildRobot()");
+
 		//TODO robo bill hiánya van itten, miképp kérjem el a bills-bõl pont a drágát?
 		//én úgy vettem, hogy pont az egyes(és nem elsõ) lesz az.
 		//TODO a BOM-nak arraylistet kéne fogadnia
-		Boolean feltetel1 = bills.get(1).CheckInventory(carriedmaterials);
+		Boolean feltetel1 = bills.get(1).CheckInventory(null);
 		if(feltetel1) 
 		{
 			location.RegisterBeing(new Robot());
-			bills.get(1).DeleteFromInventory(carriedmaterials);
+			bills.get(1).DeleteFromInventory(null);
 		}
 
 	}
 	
 	public void BuildTeleportGatePair() 
 	{
+		System.out.println("BuildTeleportGatePair()");
+
 		//TODO telegate bill hiánya van itten, miképp kérjem el a bills-bõl pont a drágát?
 		//én úgy vettem, hogy pont az kettes(és nem második) lesz az.
 		//TODO a BOM-nak arraylistet kéne fogadnia
-		Boolean feltetel1 = bills.get(2).CheckInventory(carriedmaterials);
+		
+		Boolean feltetel1 = bills.get(2).CheckInventory(null);
 		if(feltetel1) 
 		{
 			TeleportGate t1=new TeleportGate();
 			TeleportGate t2=new TeleportGate();
 			
-			bills.get(2).DeleteFromInventory(carriedmaterials);
+			bills.get(2).DeleteFromInventory(null);
 			
 			t1.SetSibling(t2);
 			t2.SetSibling(t1);
@@ -112,6 +120,8 @@ public class Settler extends SentientBeing {
 	
 	public void FillAsteroid(RawMaterial material) 
 	{
+		System.out.println("FillAsteroid()");
+
 		System.out.println("Tud-e a telepes bepakolni?(igen/nem)");
 		Scanner scanner = new Scanner(System.in);
 		String input = scanner.nextLine();
@@ -125,36 +135,41 @@ public class Settler extends SentientBeing {
 	public void Move(Place place) 
 	{
 		location.DropBeing(this);
-		System.out.println("DropBeing()");
 		place.RegisterBeing(this);
-		System.out.println("RegisterBeing()");
 	}
 	
 	public void PutTeleportGateOnAsteroid() 
 	{
+		System.out.println("PutTeleportGateOnAsteroid()");
+
 		System.out.println("Van-e a telepes zsebében teleport?(igen/nem)");
 		Scanner scanner = new Scanner(System.in);
 		String input = scanner.nextLine();
 		if(input.equals("igen")) {
 			TeleportGate t=carriedteleports.get(carriedteleports.size()-1);
 			location.AddNeighbor(t);
-			System.out.println("AddNeighbor()");
 		}
 		scanner.close();
 	}
 	
 	public void Step() 
 	{
+		System.out.println("Step()");
+
 		//System.out.println("Mit csináljona a telepes? 1=mozogo egy aszteroidára,2=ás, 3=bányász,4=anyagot rak vissza,5=robotot épít, 6=teleportot épít, 7=teleportot helyez le");
 		
 	}
 	
 	public void DropCarriedMaterial(RawMaterial material) {
+		System.out.println("DropCarriedMaterial()");
+
 		//carriedmaterials.remove(material);
 	}
 	
 	public void DropCarriedTeleport(TeleportGate teleport) 
 	{
+		System.out.println("DropCarriedTeleport()");
+
 		//carriedteleports.remove(teleport);
 	}
 }

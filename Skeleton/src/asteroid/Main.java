@@ -156,6 +156,39 @@ public class Main {
 	
 	private static void Teszteset12()
 	{
+		Asteroid a = new Asteroid();
+		Iron ir = new Iron();
+		Ice ice = new Ice();
+		Coal c = new Coal();
+		Uranium ur = new Uranium();
+		System.out.println("Test starts");
+		System.out.println("Choose corematerial! [1: Iron, 2: Ice, 3: Coal, 4: Uranium]");
+		Scanner sc = new Scanner(System.in);
+		String input = sc.nextLine();
+		switch(Integer.parseInt(input))
+		{
+		case 1: a.SetCore(ir);
+		ir.SetAsteroid(a);
+		a.CheckPerihelionReaction();
+		break;
+		case 2:  a.SetCore(ice);
+		ice.SetAsteroid(a);
+		a.CheckPerihelionReaction();
+		break;
+		case 3:  a.SetCore(c);
+		c.SetAsteroid(a);
+		a.CheckPerihelionReaction();
+		break;
+		case 4:  a.SetCore(ur);
+		BillOfMaterials radbill = new BillOfMaterials();
+		radbill.AddMaterialToBill(ur);
+		a.SetBill(radbill);
+		ur.SetAsteroid(a);
+		a.CheckPerihelionReaction();
+		break;
+		}
+		System.out.println("Test finished");
+		sc.close();
 		
 	}
 	

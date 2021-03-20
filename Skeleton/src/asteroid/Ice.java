@@ -37,7 +37,7 @@ public class Ice extends RawMaterial
 	{
 		Scanner sc = new Scanner(System.in);
 		System.out.println("PerihelionReaction()");
-		System.out.println("Is Holedepth = CrustTickness?");
+		System.out.println("Is Holedepth = CrustTickness? [true/false]" );
 		String answer = sc.nextLine();
 		if (answer.equals("true")) {
 			this.asteroid.DropMaterial();

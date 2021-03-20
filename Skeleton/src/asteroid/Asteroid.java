@@ -32,6 +32,10 @@ public class Asteroid extends Place
 	public void SetCore(RawMaterial rm) {
 		this.corematerial = rm;
 	}
+	
+	public void SetBill(BillOfMaterials radbill) {
+		this.radBill = radbill;
+	}
 	public void IncreaseHoleDepth() 
 	{
 		System.out.println("IncreaseHoleDepth()");
@@ -40,8 +44,6 @@ public class Asteroid extends Place
 	public void Explode()
 	{
 		System.out.println("Explode()");
-		Scanner scanner = new Scanner(System.in);
-		
 		Boolean feltetel1 = false;
 		if(corematerial != null)
 		{
@@ -52,6 +54,7 @@ public class Asteroid extends Place
 		
 		System.out.println("CrustThickness == HoleDepth?");
 		Boolean feltetel2 = false;
+		Scanner scanner = new Scanner(System.in);
 		String input = scanner.nextLine();
 		if(input.equals("igen"))
 		{

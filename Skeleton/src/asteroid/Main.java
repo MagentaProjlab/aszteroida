@@ -81,7 +81,6 @@ public class Main {
 		r.location = source;
 		r.Move(dest);
 		System.out.println("The test method has ran successfully");
-		
 	}
 	
 	private static void Teszteset5()
@@ -147,7 +146,18 @@ public class Main {
 		System.out.println("The test method has ran successfully");
 	}
 	
-
+	private static void Teszteset10()
+	{
+		System.out.println("The asteroid explodes test method begins");
+		Asteroid a = new Asteroid();
+		Uranium u = new Uranium();
+		a.SetCore(u);
+		BillOfMaterials radbill = new BillOfMaterials();
+		radbill.AddMaterialToBill(u);
+		a.SetBill(radbill);
+		a.Explode();
+		System.out.println("The test method has ran successfully");
+	}
 		
 	private static void Teszteset11()
 	{
@@ -164,24 +174,10 @@ public class Main {
 		SolarWind sw=new SolarWind();
 		sw.solarWind(asteroids);
 	}
-
-	
-	private static void Teszteset10()
-	{
-		System.out.println("The asteroid explodes test method begins");
-		Asteroid a = new Asteroid();
-		Uranium u = new Uranium();
-		a.SetCore(u);
-		BillOfMaterials radbill = new BillOfMaterials();
-		radbill.AddMaterialToBill(u);
-		a.SetBill(radbill);
-		a.Explode();
-		System.out.println("The test method has ran successfully");
-	}
 	
 	private static void Teszteset12()
 	{
-		System.out.println("The asteroid check core’s perihelion reaction test method begins");
+		System.out.println("The asteroid check coreï¿½s perihelion reaction test method begins");
 		Asteroid a = new Asteroid();
 		Iron ir = new Iron();
 		Ice ice = new Ice();
@@ -214,7 +210,6 @@ public class Main {
 		}
 		System.out.println("The test method has ran successfully");
 		sc.close();
-		
 	}
 	
 	private static void Teszteset13()

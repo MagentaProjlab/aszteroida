@@ -28,14 +28,13 @@ public class SolarWind
 	{
 		Logger.MethodCall("SolarWind()");
 		Scanner scanner = new Scanner(System.in);
-		
-		System.out.println("Napszél van?");
+		Logger.UserQuestion("Is there a solar wind?");
 		Boolean feltetel = false;
 		String input = scanner.nextLine();
-		if(input.equals("igen"))
+		if(input.equals("1"))
 		{
 			feltetel = true;
-		}else if(input.equals("nem"))
+		}else if(input.equals("2"))
 		{
 			feltetel = false;
 		}
@@ -48,8 +47,6 @@ public class SolarWind
 				a.SolarWindDeath();
 			}	
 		}
-		
-		scanner.close();
 		Logger.MethodReturn("void");
 	}
 }

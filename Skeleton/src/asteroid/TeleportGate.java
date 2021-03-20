@@ -81,7 +81,7 @@ public class TeleportGate extends Place
 		Logger.MethodCall("Explode()");
 		Scanner scanner = new Scanner(System.in);
 		
-		Logger.UserQuestion("Le van rakva a teleport?");
+		Logger.UserQuestion("Has the teleport already putted down?");
 		Boolean feltetel1 = false;
 		String input = scanner.nextLine();
 		if(input.equals("1"))
@@ -100,7 +100,7 @@ public class TeleportGate extends Place
 			owner.DropCarriedTeleport(this);
 		}
 		
-		Logger.UserQuestion("Le van rakva a p�rja?");
+		Logger.UserQuestion("Has the sibling putted down?");
 		Boolean feltetel2 = false;
 		input = scanner.nextLine();
 		if(input.equals("1"))
@@ -119,7 +119,6 @@ public class TeleportGate extends Place
 		{
 			sibling.GetOwner().DropCarriedTeleport(sibling);
 		}
-		scanner.close();
 		Logger.MethodReturn("void");
 	}
 }

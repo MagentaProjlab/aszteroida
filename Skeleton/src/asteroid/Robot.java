@@ -38,7 +38,6 @@ public class Robot extends SentientBeing
 		{
 			location.IncreaseHoleDepth();
 		}
-		scanner.close();
 		Logger.MethodReturn("void");
 	}	
 	
@@ -55,7 +54,6 @@ public class Robot extends SentientBeing
 		Scanner scanner = new Scanner(System.in);
 		Logger.UserQuestion("Does the asteroid have more neighbors?");
 		String input = scanner.nextLine();
-		scanner.close();
 		if(input.equals("2")) {
 			Die();
 		} else {

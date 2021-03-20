@@ -7,25 +7,28 @@ public class Main {
 	static public void main(String[] args)
 	{
 		Scanner scanner = new Scanner(System.in);
-		System.out.println("Choose a test method! (1-15)");
-		String input = scanner.nextLine();
-		switch(Integer.parseInt(input))
-		{
-			case 1: Teszteset1(); break;
-			case 2: Teszteset2(); break;
-			case 3: Teszteset3(); break;
-			case 4: Teszteset4(); break;
-			case 5: Teszteset5(); break;
-			case 6: Teszteset6(); break;
-			case 7: Teszteset7(); break;
-			case 8: Teszteset8(); break;
-			case 9: Teszteset9(); break;
-			case 10: Teszteset10(); break;
-			case 11: Teszteset11(); break;
-			case 12: Teszteset12(); break;
-			case 13: Teszteset13(); break;
-			case 14: Teszteset14(); break;
-			case 15: Teszteset15(); break;
+		String input = "-1";
+		while (!(input.equals("0"))) {
+			System.out.println("Choose a test method! (1-15)");
+			input = scanner.nextLine();
+			switch(Integer.parseInt(input))
+			{
+				case 1: Teszteset1(); break;
+				case 2: Teszteset2(); break;
+				case 3: Teszteset3(); break;
+				case 4: Teszteset4(); break;
+				case 5: Teszteset5(); break;
+				case 6: Teszteset6(); break;
+				case 7: Teszteset7(); break;
+				case 8: Teszteset8(); break;
+				case 9: Teszteset9(); break;
+				case 10: Teszteset10(); break;
+				case 11: Teszteset11(); break;
+				case 12: Teszteset12(); break;
+				case 13: Teszteset13(); break;
+				case 14: Teszteset14(); break;
+				case 15: Teszteset15(); break;
+			}
 		}
 		scanner.close();
 	}
@@ -78,7 +81,6 @@ public class Main {
 		r.location = source;
 		r.Move(dest);
 		System.out.println("The test method has ran successfully");
-		
 	}
 	
 	private static void Teszteset5()
@@ -144,7 +146,18 @@ public class Main {
 		System.out.println("The test method has ran successfully");
 	}
 	
-
+	private static void Teszteset10()
+	{
+		System.out.println("The asteroid explodes test method begins");
+		Asteroid a = new Asteroid();
+		Uranium u = new Uranium();
+		a.SetCore(u);
+		BillOfMaterials radbill = new BillOfMaterials();
+		radbill.AddMaterialToBill(u);
+		a.SetBill(radbill);
+		a.Explode();
+		System.out.println("The test method has ran successfully");
+	}
 		
 	private static void Teszteset11()
 	{
@@ -161,24 +174,10 @@ public class Main {
 		SolarWind sw=new SolarWind();
 		sw.solarWind(asteroids);
 	}
-
-	
-	private static void Teszteset10()
-	{
-		System.out.println("The asteroid explodes test method begins");
-		Asteroid a = new Asteroid();
-		Uranium u = new Uranium();
-		a.SetCore(u);
-		BillOfMaterials radbill = new BillOfMaterials();
-		radbill.AddMaterialToBill(u);
-		a.SetBill(radbill);
-		a.Explode();
-		System.out.println("The test method has ran successfully");
-	}
 	
 	private static void Teszteset12()
 	{
-		System.out.println("The asteroid check core’s perihelion reaction test method begins");
+		System.out.println("The asteroid check coreï¿½s perihelion reaction test method begins");
 		Asteroid a = new Asteroid();
 		Iron ir = new Iron();
 		Ice ice = new Ice();
@@ -211,7 +210,6 @@ public class Main {
 		}
 		System.out.println("The test method has ran successfully");
 		sc.close();
-		
 	}
 	
 	private static void Teszteset13()

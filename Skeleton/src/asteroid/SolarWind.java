@@ -19,12 +19,14 @@ public class SolarWind
 	
 	public SolarWind()
 	{
+		Logger.MethodCall("SolarWind()");
 		sentientbeings = new ArrayList<SentientBeing>();
+		Logger.MethodReturn("");
 	}
 	
-	public SolarWind(ArrayList<Asteroid> asteroids)
+	public void solarWind(ArrayList<Asteroid> asteroids)
 	{
-		System.out.println("SolarWind()");
+		Logger.MethodCall("SolarWind()");
 		Scanner scanner = new Scanner(System.in);
 		
 		System.out.println("Napszél van?");
@@ -48,5 +50,6 @@ public class SolarWind
 		}
 		
 		scanner.close();
+		Logger.MethodReturn("void");
 	}
 }

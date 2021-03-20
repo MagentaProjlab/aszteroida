@@ -10,14 +10,15 @@ package asteroid;
 //
 //
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class BillOfMaterials
 {
-	private RawMaterial materials;
+	private ArrayList<RawMaterial> materials;
 	
 	
-	public Boolean CheckInventory(RawMaterial inventory) 
+	public Boolean CheckInventory(ArrayList<RawMaterial> inventory) 
 	{
 		System.out.println("CheckInventory(RawMaterial inventory)");
 		Scanner scanner = new Scanner(System.in);
@@ -36,12 +37,12 @@ public class BillOfMaterials
 		return feltetel;
 	}
 	
-	public void AddMaterialToBill(RawMaterial material) 
+	public void AddMaterialToBill(ArrayList<RawMaterial> material) 
 	{
 		System.out.println("AddMaterialToBill(RawMaterial material)");
 	}
 	
-	public RawMaterial DeleteFromInventory(RawMaterial inventory) 
+	public ArrayList<RawMaterial> DeleteFromInventory(ArrayList<RawMaterial> inventory) 
 	{
 		System.out.println("DeleteFromInventory(RawMaterial inventory)");
 		return null;

@@ -19,12 +19,14 @@ public class BillOfMaterials
 	
 	public BillOfMaterials()
 	{
+		Logger.MethodCall("BillOfMaterials()");
 		materials = new ArrayList<RawMaterial>();
+		Logger.MethodReturn("");
 	}
 	
 	public Boolean CheckInventory(ArrayList<RawMaterial> inventory) 
 	{
-		System.out.println("CheckInventory(ArrayList<RawMaterial> inventory)");
+		Logger.MethodCall("CheckInventory(ArrayList<RawMaterial> inventory)");
 		Scanner scanner = new Scanner(System.in);
 		
 		Logger.UserQuestion("A feltételeket teljesíti az inventory?");
@@ -33,9 +35,11 @@ public class BillOfMaterials
 		if(input.equals("igen"))
 		{
 			feltetel = true;
+			Logger.MethodReturn("Boolean: true");
 		}else if(input.equals("nem"))
 		{
 			feltetel = false;
+			Logger.MethodReturn("Boolean: false");
 		}
 		scanner.close();
 		return feltetel;
@@ -43,12 +47,14 @@ public class BillOfMaterials
 	
 	public void AddMaterialToBill(RawMaterial material) 
 	{
-		System.out.println("AddMaterialToBill(ArrayList<RawMaterial> inventory)");
+		Logger.MethodCall("AddMaterialToBill(ArrayList<RawMaterial> inventory)");
+		Logger.MethodReturn("void");
 	}
 	
 	public ArrayList<RawMaterial> DeleteFromInventory(ArrayList<RawMaterial> inventory) 
 	{
-		System.out.println("DeleteFromInventory(ArrayList<RawMaterial> inventory)");
+		Logger.MethodCall("DeleteFromInventory(ArrayList<RawMaterial> inventory)");
+		Logger.MethodReturn("ArrayList<RawMaterial>");
 		return null;
 	}
 }

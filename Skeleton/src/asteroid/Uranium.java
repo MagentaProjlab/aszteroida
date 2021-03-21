@@ -15,6 +15,7 @@ import java.util.Scanner;
 public class Uranium extends RawMaterial 
 {
 	public Uranium() {
+		Logger.MethodCall("Uranium()");
 
 	}
 	public void Perish() 

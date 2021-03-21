@@ -15,11 +15,19 @@ package asteroid;
 
 public class Iron extends RawMaterial
 {
+	/**
+	 * A vas konstruktora.
+	 *
+	 */
 	public Iron()
 	{
 		Logger.MethodCall("Iron()");
 		Logger.MethodReturn("");
 	}
+	
+	/**
+	 * A nyersanyagot elpusztito fuggveny.
+	 */
 	public void Perish()
 	{
 		Logger.MethodCall("Perish()");
@@ -27,6 +35,9 @@ public class Iron extends RawMaterial
 		Logger.MethodReturn("void");
 	}
 	
+	/**
+	 * Az egyedi azonositot visszaado fuggveny. Vas esesteben 'Iron'.
+	 */
 	public String GetUniqueID()
 	{
 		Logger.MethodCall("GetUniqueID()");
@@ -34,6 +45,10 @@ public class Iron extends RawMaterial
 		return "Iron";
 	}
 	
+	/**
+	 * Az anyag reakciojat napkozelben kivalto absztrakt fuggveny.
+	 * Vas eseteben nincs reakcio.
+	 */
 	public void PerihelionReaction()
 	{
 		Logger.MethodCall("PerihelionReaction()");

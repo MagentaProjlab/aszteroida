@@ -66,12 +66,12 @@ public class Robot extends SentientBeing
 	{
 		Logger.MethodCall("Step()");
 		Scanner scanner = new Scanner(System.in);
-		Logger.UserQuestion("Drill or move the robot? (1 = drill, 2 = move)");
+		Logger.UserQuestion2("Drill or move the robot?");
 		String input = scanner.nextLine();
 		if(input.equals("1")) {
 			this.Drill();
 		} else if(input.equals("2")) {
-			//random aszteroida a teszt kedvéért; nincsen szomszédja.
+			//random aszteroida a teszt kedvï¿½ï¿½rt; nincsen szomszï¿½dja.
 			Asteroid a = new Asteroid();
 			this.Move(a);
 		}

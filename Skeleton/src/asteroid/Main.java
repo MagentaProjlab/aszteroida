@@ -167,48 +167,34 @@ public class Main {
 		System.out.println("The settler fills empty asteroid test method begins");
 		Settler s = new Settler();
 		Asteroid a = new Asteroid();
+		a.SetBill(new BillOfMaterials());
 		a.RegisterBeing(s);
 		s.location = a;
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Choose corematerial! [1: Iron, 2: Ice, 3: Coal, 4: Uranium]");
 		String input = sc.nextLine();
-		Iron ir = new Iron();
-		Ice ice = new Ice();
-		Coal c = new Coal();
-		Uranium ur = new Uranium();
+
 		switch(Integer.parseInt(input))
 		{
 		case 1:
+			Iron ir = new Iron();
 			s.AddCarriedMaterial(ir);
-			s.DropCarriedMaterial(ir);
 			s.FillAsteroid(ir);
-			s.location.SetCore(ir);
-			ir.SetAsteroid(a);
-			s.location.CheckPerihelionReaction();
 			break;
 		case 2:  
+			Ice ice = new Ice();
 			s.AddCarriedMaterial(ice);
-			s.DropCarriedMaterial(ice);
 			s.FillAsteroid(ice);
-			s.location.SetCore(ice);
-			ice.SetAsteroid(a);
-			s.location.CheckPerihelionReaction();
 			break;
 		case 3: 
+			Coal c = new Coal();
 			s.AddCarriedMaterial(c);
-			s.DropCarriedMaterial(c);
 			s.FillAsteroid(c);
-			s.location.SetCore(c);
-			c.SetAsteroid(a);
-			s.location.CheckPerihelionReaction();
 			break;
 		case 4:  
+			Uranium ur = new Uranium();
 			s.AddCarriedMaterial(ur);
-			s.DropCarriedMaterial(ur);
 			s.FillAsteroid(ur);
-			s.location.SetCore(ur);
-			ur.SetAsteroid(a);
-			s.location.CheckPerihelionReaction();
 			break;
 		}
 		System.out.println("The test method has ran successfully");

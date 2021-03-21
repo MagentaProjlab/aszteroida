@@ -74,6 +74,5 @@ public class Robot extends SentientBeing
 			Logger.Message("Refer to test 4");
 		}
 		Logger.MethodReturn("void");
-		//scanner.close();
 	}
 }

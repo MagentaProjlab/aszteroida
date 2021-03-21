@@ -30,7 +30,6 @@ public class Main {
 				case 15: Teszteset15(); break;
 			}
 		}
-		scanner.close();
 	}
 	
 	private static void Teszteset1()
@@ -313,7 +312,6 @@ public class Main {
 		break;
 		}
 		System.out.println("The test method has ran successfully");
-		sc.close();
 	}
 	
 	private static void Teszteset13()

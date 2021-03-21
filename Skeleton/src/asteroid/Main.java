@@ -277,7 +277,7 @@ public class Main {
 	
 	private static void Teszteset12()
 	{
-		System.out.println("The asteroid check core�s perihelion reaction test method begins");
+		System.out.println("The asteroid check cores perihelion reaction test method begins");
 		Asteroid a = new Asteroid();
 		Asteroid neigbor = new Asteroid();
 		a.AddNeighbor(neigbor);

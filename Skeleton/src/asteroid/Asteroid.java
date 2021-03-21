@@ -135,6 +135,10 @@ public class Asteroid extends Place
 	public void SetMaterial(RawMaterial material, Settler settler)
 	{
 		Logger.MethodCall("SetMaterial()");
+		material.SetAsteroid(this);
+		settler.DropCarriedMaterial(material);
+		SetCore(material);
+		CheckPerihelionReaction();
 		Logger.MethodReturn("void");
 	}
 	

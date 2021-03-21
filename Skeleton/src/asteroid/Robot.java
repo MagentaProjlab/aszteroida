@@ -57,7 +57,7 @@ public class Robot extends SentientBeing
 		if(input.equals("2")) {
 			Die();
 		} else {
-			Move(null);
+			Move(this.location.GetNeighbour());
 		}
 		Logger.MethodReturn("void");
 	}

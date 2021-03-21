@@ -107,6 +107,9 @@ public class Main {
 			break;
 		case 4:  
 			Uranium ur = new Uranium();
+			Asteroid b = new Asteroid();
+			location.AddNeighbor(b);
+			b.AddNeighbor(location);
 			r.location.SetCore(ur);
 			ur.SetAsteroid(location);
 			BillOfMaterials radbill = new BillOfMaterials();

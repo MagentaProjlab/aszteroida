@@ -166,6 +166,7 @@ public class Asteroid extends Place
 	public void AddNeighbor(Place neighbor)
 	{
 		Logger.MethodCall("AddNeighbor()");
+		neighbors.add(neighbor);
 		Logger.MethodReturn("void");
 	}
 	
@@ -213,4 +214,10 @@ public class Asteroid extends Place
 		Logger.MethodReturn("void");
 	}
 
+	public Place GetNeighbour()
+	{
+		Logger.MethodCall("GetNeighbour()");
+		Logger.MethodReturn("Place");
+		return this.neighbors.get(0);
+	}
 }

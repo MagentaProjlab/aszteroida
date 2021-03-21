@@ -48,7 +48,6 @@ public class Ice extends RawMaterial
 			this.asteroid.DropMaterial();
 			this.Perish();
 		}
-		sc.close();
 		Logger.MethodReturn("void");
 	}
 

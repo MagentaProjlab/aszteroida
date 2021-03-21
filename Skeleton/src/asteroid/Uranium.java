@@ -41,7 +41,6 @@ public class Uranium extends RawMaterial
 			this.asteroid.Explode();
 			this.Perish();
 		}
-		sc.close();
 		Logger.MethodReturn("void");
 	}
 		

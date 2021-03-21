@@ -116,6 +116,7 @@ public class Main {
 			s.AddCarriedMaterial(ir);
 			s.DropCarriedMaterial(ir);
 			s.FillAsteroid(ir);
+			s.location.SetCore(ir);
 			ir.SetAsteroid(a);
 			s.location.CheckPerihelionReaction();
 			break;
@@ -123,6 +124,7 @@ public class Main {
 			s.AddCarriedMaterial(ice);
 			s.DropCarriedMaterial(ice);
 			s.FillAsteroid(ice);
+			s.location.SetCore(ice);
 			ice.SetAsteroid(a);
 			s.location.CheckPerihelionReaction();
 			break;
@@ -130,6 +132,7 @@ public class Main {
 			s.AddCarriedMaterial(c);
 			s.DropCarriedMaterial(c);
 			s.FillAsteroid(c);
+			s.location.SetCore(c);
 			c.SetAsteroid(a);
 			s.location.CheckPerihelionReaction();
 			break;
@@ -137,6 +140,7 @@ public class Main {
 			s.AddCarriedMaterial(ur);
 			s.DropCarriedMaterial(ur);
 			s.FillAsteroid(ur);
+			s.location.SetCore(ur);
 			ur.SetAsteroid(a);
 			s.location.CheckPerihelionReaction();
 			break;

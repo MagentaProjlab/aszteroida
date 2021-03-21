@@ -268,7 +268,7 @@ public class Main {
 		tgsibling.SetSibling(tg);
 		System.out.println("Test starts");
 		System.out.println("[1: Sibling is on asteroid, 2: Sibling is with a settler]");
-		System.out.println("[3: Teleport and sibling is on asteroid, 4: Teleport and sibling is with settler]");
+		System.out.println("[3: Teleport and sibling is on asteroid, 4: Teleport on asteroid, sibling is with settler]");
 		Scanner sc = new Scanner(System.in);
 		String input = sc.nextLine();
 		switch(Integer.parseInt(input))
@@ -280,8 +280,9 @@ public class Main {
 			tgowner.addteleport(tg);
 			//tgsibling sets asteroid, no owner
 			tgsibling.SetAsteroid(tgsiblinglocation);
+			tgsiblinglocation.AddNeighbor(tgsibling);
 			tglocation = tgowner.location;
-			tgsiblinglocation = tgsiblingowner.location;
+			tgsiblinglocation = tgsibling.GetAsteroid();
 			tg.Explode();
 			break;
 		case 2: 
@@ -291,30 +292,32 @@ public class Main {
 			tgowner.addteleport(tg);
 			//tgsibling sets owner
 			tgsibling.SetOwner(tgsiblingowner);
+			tgsiblingowner.addteleport(tgsibling);
 			tgsiblinglocation = tgsiblingowner.location;
 			tglocation = tgowner.location;
-			tgsiblinglocation = tgsiblingowner.location;
 			tg.Explode();
 			break;
 		case 3:
 			//tg is on asteroid, sibling is on asteroid
 			//tg sets asteroid
 			tg.SetAsteroid(tglocation);
+			tglocation.AddNeighbor(tg);
 			//tgsibling sets asteroid
 			tgsibling.SetAsteroid(tgsiblinglocation);
-			tglocation = tgowner.location;
-			tgsiblinglocation = tgsiblingowner.location;
+			tgsiblinglocation.AddNeighbor(tgsibling);
+			tglocation = tg.GetAsteroid();
+			tgsiblinglocation = tgsibling.GetAsteroid();
 			tg.Explode();
 			break;
 		case 4:
 			//tg is on asteroid, sibling is with settler
 			//tg sets asteroid
 			tg.SetAsteroid(tglocation);
+			tglocation.AddNeighbor(tg);
 			//tgsibling sets owner
 			tgsibling.SetOwner(tgsiblingowner);
 			tgsiblinglocation = tgsiblingowner.location;
-			tglocation = tgowner.location;
-			tgsiblinglocation = tgsiblingowner.location;
+			tglocation = tg.GetAsteroid();
 			tg.Explode();
 		break;
 		}

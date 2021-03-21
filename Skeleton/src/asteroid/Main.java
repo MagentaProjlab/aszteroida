@@ -161,7 +161,7 @@ public class Main {
 		
 	private static void Teszteset11()
 	{
-		System.out.println("SolarWind teszteset");
+		System.out.println("The solar wind happens test method begins");
 		ArrayList<Asteroid> asteroids=new ArrayList<Asteroid>();
 		Asteroid a=new Asteroid();
 		Settler s=new Settler();
@@ -173,6 +173,7 @@ public class Main {
 		
 		SolarWind sw=new SolarWind();
 		sw.solarWind(asteroids);
+		System.out.println("The test method has ran successfully");
 	}
 	
 	private static void Teszteset12()

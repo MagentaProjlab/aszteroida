@@ -192,6 +192,9 @@ public class Main {
 			s.FillAsteroid(c);
 			break;
 		case 4:  
+			Asteroid a2=new Asteroid();
+			a.AddNeighbor(a2);
+			a2.AddNeighbor(a2);
 			Uranium ur = new Uranium();
 			s.AddCarriedMaterial(ur);
 			s.FillAsteroid(ur);

@@ -1,17 +1,17 @@
 package asteroid;
 
 /**
- * Kiiratásért felelős osztály
+ * Kiiratasert felelos osztaly
  */
 public class Logger {
 	/**
-	 * Behúzás mértékét tároló változó
+	 * Behuzas merteket tarolo valtozo
 	 */
 	private static int indent = 0;
 	
 	/**
-	 * Függvényhívás elején ez a metódus írja ki a függvény nevét
-	 * @param functionName: függvény neve
+	 * Fuggvenyhivas elejen ez a metodus irja ki a fuggveny nevet
+	 * @param functionName: fuggveny neve
 	 */
 	public static void MethodCall(String functionName) {
 		for (int i=0; i<indent; ++i) {
@@ -22,9 +22,9 @@ public class Logger {
 	}
 	
 	/**
-	 * Függvényhívás végén ez a metódus írja ki a visszatérési értéket
-	 * Konstruktor esetén csak a nyilat írja ki
-	 * @param returnName: visszatérési érték
+	 * Fuggvenyhivas vegen ez a metodus irja ki a visszateresi erteket
+	 * Konstruktor eseten csak a nyilat irja ki
+	 * @param returnName: visszateresi ertek
 	 */
 	public static void MethodReturn(String returnName) {
 		--indent;
@@ -35,8 +35,8 @@ public class Logger {
 	}
 	
 	/**
-	 * Felhasználónak küldött igen-nem válaszú kérdésért felelős
-	 * @param question: kérdés szövege
+	 * Felhasznalonak kuldott igen-nem valaszú kerdesert felelos
+	 * @param question: kerdes szovege
 	 */
 	public static void UserQuestion(String question) {
 		for (int i=0; i<indent; ++i) {
@@ -58,9 +58,9 @@ public class Logger {
 	}
 	
 	/**
-	 * Felhasználónak feltett kérdés robottal kapcsolatban
-	 * Robot Step függvényénél használva
-	 * @param question: kérdés szövege
+	 * Felhasznalonak feltett kerdes robottal kapcsolatban
+	 * Robot Step fuggvenyenel hasznalva
+	 * @param question: kerdes szovege
 	 */
 	public static void UserQuestionRobot(String question) {
 		for (int i=0; i<indent; ++i) {
@@ -82,9 +82,9 @@ public class Logger {
 	}
 	
 	/**
-	 * Felhasználónak feltett kérdés telepessel kapcsolatban
-	 * Settler Step függvényénél használva
-	 * @param question: kérdés szövege
+	 * Felhasznalonak feltett kerdes telepessel kapcsolatban
+	 * Settler Step fuggvenyenel hasznalva
+	 * @param question: kerdes szovege
 	 */
 	public static void UserQuestionSettler(String question) {
 		for (int i=0; i<indent; ++i) {
@@ -126,8 +126,8 @@ public class Logger {
 	}
 	
 	/**
-	 * Felhasználónak küldött tájékoztató üzenetet jelenít meg
-	 * @param message: üzenet szövege
+	 * Felhasznalonak kuldott tajekoztato uzenetet jelenit meg
+	 * @param message: uzenet szovege
 	 */
 	public static void Message(String message) {
 		for (int i=0; i<indent; ++i) {

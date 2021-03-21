@@ -100,6 +100,9 @@ public class Main {
 	{
 		System.out.println("The settler fills empty asteroid test method begins");
 		Settler s = new Settler();
+		Asteroid a = new Asteroid();
+		a.RegisterBeing(s);
+		s.location = a;
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Choose corematerial! [1: Iron, 2: Ice, 3: Coal, 4: Uranium]");
 		String input = sc.nextLine();

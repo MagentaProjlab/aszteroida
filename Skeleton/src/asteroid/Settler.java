@@ -44,8 +44,8 @@ public class Settler extends SentientBeing {
 		Logger.UserQuestion("Can the settler drill?");
 		Scanner scanner = new Scanner(System.in);
 		String input = scanner.nextLine();
-		if(input.equals("1")) {//TODO tudni kell, hogy m�g furhatja-e
-			location.IncreaseHoleDepth();//TODO 
+		if(input.equals("1")) {//TODO tudni kell, hogy meg furhatja-e
+			location.IncreaseHoleDepth();
 		}
 		Logger.MethodReturn("void");
 	}
@@ -96,9 +96,8 @@ public class Settler extends SentientBeing {
 	{
 		Logger.MethodCall("BuildRobot()");
 
-		//TODO robo bill hi�nya van itten, mik�pp k�rjem el a bills-b�l pont a dr�g�t?
-		//�n �gy vettem, hogy pont az egyes(�s nem els�) lesz az.
-		//TODO a BOM-nak arraylistet k�ne fogadnia
+		// Pont ez a sorszamu a billje, perpill ures.
+
 		Boolean feltetel1 = bills.get(1).CheckInventory(null);
 		if(feltetel1) 
 		{
@@ -112,9 +111,7 @@ public class Settler extends SentientBeing {
 	{
 		Logger.MethodCall("BuildTeleportGatePair()");
 
-		//TODO telegate bill hi�nya van itten, mik�pp k�rjem el a bills-b�l pont a dr�g�t?
-		//�n �gy vettem, hogy pont az kettes(�s nem m�sodik) lesz az.
-		//TODO a BOM-nak arraylistet k�ne fogadnia
+		// Pont ez a sorszamu a billje, perpill ures.
 		
 		Boolean feltetel1 = bills.get(2).CheckInventory(null);
 		if(feltetel1) 

@@ -113,18 +113,34 @@ public class Main {
 		switch(Integer.parseInt(input))
 		{
 		case 1:
+			s.AddCarriedMaterial(ir);
+			s.DropCarriedMaterial(ir);
 			s.FillAsteroid(ir);
+			ir.SetAsteroid(a);
+			s.location.CheckPerihelionReaction();
 			break;
 		case 2:  
+			s.AddCarriedMaterial(ice);
+			s.DropCarriedMaterial(ice);
 			s.FillAsteroid(ice);
+			ice.SetAsteroid(a);
+			s.location.CheckPerihelionReaction();
+			break;
 		case 3: 
+			s.AddCarriedMaterial(c);
+			s.DropCarriedMaterial(c);
 			s.FillAsteroid(c);
-		break;
+			c.SetAsteroid(a);
+			s.location.CheckPerihelionReaction();
+			break;
 		case 4:  
+			s.AddCarriedMaterial(ur);
+			s.DropCarriedMaterial(ur);
 			s.FillAsteroid(ur);
-		break;
+			ur.SetAsteroid(a);
+			s.location.CheckPerihelionReaction();
+			break;
 		}
-		s.location.AtPerihelion();
 		System.out.println("The test method has ran successfully");
 	}
 	

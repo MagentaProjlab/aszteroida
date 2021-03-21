@@ -67,6 +67,9 @@ public class Main {
 			Uranium ur = new Uranium();
 			s.location.SetCore(ur);
 			ur.SetAsteroid(location);
+			BillOfMaterials radbill = new BillOfMaterials();
+			radbill.AddMaterialToBill(ur);
+			location.SetBill(radbill);
 			s.Drill();
 			break;
 		}
@@ -76,12 +79,43 @@ public class Main {
 	private static void Teszteset2()
 	{
 		System.out.println("The robot drills test method begins");
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Choose corematerial! [1: Iron, 2: Ice, 3: Coal, 4: Uranium]");
+		String input = sc.nextLine();
 		Robot r = new Robot();
 		Asteroid location = new Asteroid();
 		location.RegisterBeing(r);
 		r.location = location;
-		r.Drill();
-		r.location.CheckPerihelionReaction();
+		switch(Integer.parseInt(input))
+		{
+		case 1:
+			Iron ir = new Iron();
+			r.location.SetCore(ir);
+			ir.SetAsteroid(location);
+			r.Drill();
+			break;
+		case 2:  
+			Ice ice = new Ice();
+			r.location.SetCore(ice);
+			ice.SetAsteroid(location);
+			r.Drill();
+			break;
+		case 3: 
+			Coal c = new Coal();
+			r.location.SetCore(c);
+			c.SetAsteroid(location);
+			r.Drill();
+			break;
+		case 4:  
+			Uranium ur = new Uranium();
+			r.location.SetCore(ur);
+			ur.SetAsteroid(location);
+			BillOfMaterials radbill = new BillOfMaterials();
+			radbill.AddMaterialToBill(ur);
+			location.SetBill(radbill);
+			r.Drill();
+			break;
+		}
 		System.out.println("The test method has ran successfully");
 	}
 	

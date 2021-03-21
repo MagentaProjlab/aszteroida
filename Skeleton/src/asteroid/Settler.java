@@ -54,7 +54,7 @@ public class Settler extends SentientBeing {
 		Logger.UserQuestion("Does it still fit in the settler's invetory?");
 		Scanner scanner = new Scanner(System.in);
 		String input = scanner.nextLine();
-		if(input.equals("yes")) {
+		if(input.equals("1")) {
 			if(!location.IsEmpty()) {
 				RawMaterial rm=location.GetMaterial();
 				AddCarriedMaterial(rm);

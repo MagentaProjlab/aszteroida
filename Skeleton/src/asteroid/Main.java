@@ -100,12 +100,31 @@ public class Main {
 	{
 		System.out.println("The settler fills empty asteroid test method begins");
 		Settler s = new Settler();
-		Asteroid location = new Asteroid();
-		RawMaterial m = new Iron();
-		s.AddCarriedMaterial(m);
-		location.SetMaterial(m, s);
-		s.DropCarriedMaterial(m);
-		location.AtPerihelion();
+		Asteroid a = new Asteroid();
+		a.RegisterBeing(s);
+		s.location = a;
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Choose corematerial! [1: Iron, 2: Ice, 3: Coal, 4: Uranium]");
+		String input = sc.nextLine();
+		Iron ir = new Iron();
+		Ice ice = new Ice();
+		Coal c = new Coal();
+		Uranium ur = new Uranium();
+		switch(Integer.parseInt(input))
+		{
+		case 1:
+			s.FillAsteroid(ir);
+			break;
+		case 2:  
+			s.FillAsteroid(ice);
+		case 3: 
+			s.FillAsteroid(c);
+		break;
+		case 4:  
+			s.FillAsteroid(ur);
+		break;
+		}
+		s.location.AtPerihelion();
 		System.out.println("The test method has ran successfully");
 	}
 	

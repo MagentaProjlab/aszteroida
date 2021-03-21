@@ -279,6 +279,8 @@ public class Main {
 	{
 		System.out.println("The asteroid check core�s perihelion reaction test method begins");
 		Asteroid a = new Asteroid();
+		Asteroid neigbor = new Asteroid();
+		a.AddNeighbor(neigbor);
 		Iron ir = new Iron();
 		Ice ice = new Ice();
 		Coal c = new Coal();
@@ -400,6 +402,8 @@ public class Main {
 	private static void Teszteset15()
 	{
 		Asteroid a = new Asteroid();
+		Asteroid neigbor = new Asteroid();
+		a.AddNeighbor(neigbor);
 		Robot r1 = new Robot();
 		r1.location = a;
 		Robot r2 = new Robot();

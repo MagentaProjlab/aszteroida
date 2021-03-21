@@ -163,7 +163,7 @@ public class Settler extends SentientBeing {
 			Logger.UserQuestion("Is the settler on the same asteroid as the teleportgate's sibling?");
 			scanner = new Scanner(System.in);
 			String input2 = scanner.nextLine();
-			if(input2.equals("1")) {
+			if (!(input2.equals("1"))) {
 				Asteroid TestLocation=new Asteroid();
 				TestLocation.AddNeighbor(t);
 				t.SetAsteroid(TestLocation);

@@ -16,7 +16,7 @@ public class Uranium extends RawMaterial
 {
 	public Uranium() {
 		Logger.MethodCall("Uranium()");
-
+		Logger.MethodReturn("");
 	}
 	public void Perish() 
 	{

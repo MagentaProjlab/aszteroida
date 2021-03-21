@@ -78,11 +78,6 @@ public class Asteroid extends Place
 			}
 			
 			corematerial.Perish();
-			
-			for(Place n : neighbors)
-			{
-				n.Explode();
-			}
 		}
 		Logger.MethodReturn("void");
 	}

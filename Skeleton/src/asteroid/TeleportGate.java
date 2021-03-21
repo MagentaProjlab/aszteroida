@@ -78,21 +78,9 @@ public class TeleportGate extends Place
 	
 	public void Explode() 
 	{
-		Logger.MethodCall("Explode()");
-		Scanner scanner = new Scanner(System.in);
-		
-		Logger.UserQuestion("Has the teleport already putted down?");
-		Boolean feltetel1 = false;
-		String input = scanner.nextLine();
-		if(input.equals("1"))
-		{
-			feltetel1 = true;
-		}else if(input.equals("2"))
-		{
-			feltetel1 = false;
-		}
-		
-		if(feltetel1 == true)
+		Logger.MethodCall("Explode()");		
+		Asteroid a = this.GetAsteroid();	
+		if(a != null)
 		{
 			asteroid.DropNeighbor(this);
 		}else
@@ -100,18 +88,8 @@ public class TeleportGate extends Place
 			owner.DropCarriedTeleport(this);
 		}
 		
-		Logger.UserQuestion("Has the sibling putted down?");
-		Boolean feltetel2 = false;
-		input = scanner.nextLine();
-		if(input.equals("1"))
-		{
-			feltetel2 = true;
-		}else if(input.equals("2"))
-		{
-			feltetel2 = false;
-		}
-		
-		if(feltetel2 == true)
+		Asteroid a2 = this.sibling.GetAsteroid();
+		if(a2 != null)
 		{
 			sibling.GetAsteroid().DropNeighbor(sibling);
 			sibling.SetAsteroid(null);

@@ -43,35 +43,31 @@ public class Main {
 		Asteroid location = new Asteroid();
 		location.RegisterBeing(s);
 		s.location = location;
-		Iron ir = new Iron();
-		Ice ice = new Ice();
-		Coal c = new Coal();
-		Uranium ur = new Uranium();
 		switch(Integer.parseInt(input))
 		{
 		case 1:
+			Iron ir = new Iron();
 			s.location.SetCore(ir);
 			ir.SetAsteroid(location);
 			s.Drill();
-			s.location.CheckPerihelionReaction();
 			break;
 		case 2:  
+			Ice ice = new Ice();
 			s.location.SetCore(ice);
 			ice.SetAsteroid(location);
 			s.Drill();
-			s.location.CheckPerihelionReaction();
 			break;
 		case 3: 
+			Coal c = new Coal();
 			s.location.SetCore(c);
 			c.SetAsteroid(location);
 			s.Drill();
-			s.location.CheckPerihelionReaction();
 			break;
 		case 4:  
+			Uranium ur = new Uranium();
 			s.location.SetCore(ur);
 			ur.SetAsteroid(location);
 			s.Drill();
-			s.location.CheckPerihelionReaction();
 			break;
 		}
 		System.out.println("The test method has ran successfully");

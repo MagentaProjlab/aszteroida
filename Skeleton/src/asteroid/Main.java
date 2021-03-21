@@ -30,8 +30,17 @@ public class Main {
 				case 15: Teszteset15(); break;
 			}
 		}
+		scanner.close();
 	}
 	
+	/**
+	 * A settler drills teszteset
+	 * Letrehoz ket aszteroidat es egy telepest
+	 * Szomszedi viszonyba helyezi a ket aszteroidat
+	 * Mivel a banyaszas soran a kulonbozo nyersanyagtipusok mas reakciot valtanak ki
+	 * igy eloszor ki kell valasztani a nyersanyag tipusat
+	 * Majd lefut az adott nyersanyaghoz tartozo furasi teszteset
+	 */
 	private static void Teszteset1()
 	{
 		System.out.println("The settler drills test method begins");
@@ -77,6 +86,14 @@ public class Main {
 		System.out.println("The test method has ran successfully");
 	}
 	
+	/**
+	 * A robot drills teszteset
+	 * Letrehoz ket aszteroidat es egy robotot
+	 * Szomszedi viszonyba helyezi a ket aszteroidat
+	 * Mivel a banyaszas soran a kulonbozo nyersanyagtipusok mas reakciot valtanak ki
+	 * igy eloszor ki kell valasztani a nyersanyag tipusat
+	 * Majd lefut az adott nyersanyaghoz tartozo furasi teszteset
+	 */
 	private static void Teszteset2()
 	{
 		System.out.println("The robot drills test method begins");
@@ -123,6 +140,12 @@ public class Main {
 		System.out.println("The test method has ran successfully");
 	}
 	
+	/**
+	 * A settler moves teszteset
+	 * Letrehoz ket aszteroidat es egy telepest
+	 * Szomszedi viszonyba helyezi a ket aszteroidat
+	 * A telepes mozgasa vegrehajtodik a ket aszteroida kozott
+	 */
 	private static void Teszteset3()
 	{
 		System.out.println("The settler moves test method begins");
@@ -137,6 +160,12 @@ public class Main {
 		System.out.println("The test method has ran successfully");
 	}
 	
+	/**
+	 * A robot moves teszteset
+	 * Letrehoz ket aszteroidat es egy robotot
+	 * Szomszedi viszonyba helyezi a ket aszteroidat
+	 * A telepes mozgasa vegrehajtodik a ket aszteroida kozott
+	 */
 	private static void Teszteset4()
 	{
 		System.out.println("The robot moves test method begins");
@@ -151,6 +180,13 @@ public class Main {
 		System.out.println("The test method has ran successfully");
 	}
 	
+	/**
+	 * A settler mines teszteset
+	 * Letrehoz ket aszteroidat es egy telepest
+	 * Az aszteroida magjat beallitja vasra
+	 * A telepes regisztralja az aszteroidara
+	 * A telepes a megfurt aszteroidat kibanyassza
+	 */
 	private static void Teszteset5()
 	{
 		System.out.println("The settler mines test method begins");
@@ -164,6 +200,14 @@ public class Main {
 		System.out.println("The test method has ran successfully");
 	}
 	
+	/**
+	 * A settler fills empty asteroid teszteset
+	 * Letrehoz ket aszteroidat es egy robotot
+	 * Szomszedi viszonyba helyezi a ket aszteroidat
+	 * Mivel a banyaszas soran a kulonbozo nyersanyagtipusok mas reakciot valtanak ki
+	 * igy eloszor ki kell valasztani a nyersanyag tipusat
+	 * Majd lefut az adott nyersanyaghoz tartozo a nyersanyag visszahelyezesi teszteset
+	 */
 	private static void Teszteset6()
 	{
 		System.out.println("The settler fills empty asteroid test method begins");
@@ -207,6 +251,14 @@ public class Main {
 		System.out.println("The test method has ran successfully");
 	}
 	
+	/**
+	 * A settler builds robot teszteset
+	 * Letrehoz ket aszteroidat es egy telepest
+	 * Szomszedi viszonyba helyezi a ket aszteroidat
+	 * Letrehozza a robot epitesehez szukseges nyersanyagokat(vas, jeg, uran, szen)
+	 * A telepes megkapja a nyersanyagokat
+	 * Vegul a telepes megepiti a robotot
+	 */
 	private static void Teszteset7()
 	{
 		System.out.println("The settler builds robot test method begins");
@@ -224,6 +276,13 @@ public class Main {
 		System.out.println("The test method has ran successfully");
 	}
 	
+	/**
+	 * A settler builds teleportgate pair teszteset
+	 * Letrehoz egy telepest
+	 * Letrehozza a robot epitesehez szukseges nyersanyagokat(vas, jeg, uran)
+	 * A telepes megkapja a nyersanyagokat
+	 * Vegul a telepes megepiti a teleportkapu part
+	 */
 	private static void Teszteset8()
 	{
 		System.out.println("The settler builds teleportgate pair test method begins");
@@ -235,6 +294,11 @@ public class Main {
 		System.out.println("The test method has ran successfully");
 	}
 	
+	/**
+	 * A settler puts down teleport teszteset
+	 * Letrehoz egy telepest
+	 * A telepes lerakja a teleportkapu par egyik darabjat
+	 */
 	private static void Teszteset9()
 	{
 		System.out.println("The settler puts down teleport test method begins");
@@ -244,6 +308,12 @@ public class Main {
 		System.out.println("The test method has ran successfully");
 	}
 	
+	/**
+	 * A asteroid explodes teszteset
+	 * Letrehoz egy aszteroidat
+	 * Beallitja az aszteroida magjat uranra
+	 * Es mivel minden feltetel adott, igy az aszteroida felrobban
+	 */
 	private static void Teszteset10()
 	{
 		System.out.println("The asteroid explodes test method begins");
@@ -258,7 +328,14 @@ public class Main {
 		a.Explode();
 		System.out.println("The test method has ran successfully");
 	}
-		
+	
+	/**
+	 * A solar wind happens teszteset
+	 * Letrehoz egy aszteroidat es egy telepest
+	 * Hozzarendeli az aszteroidahoz a telepest es forditva
+	 * Letrehozza a napvihart
+	 * Majd megtortenik a napvihar
+	 */
 	private static void Teszteset11()
 	{
 		System.out.println("The solar wind happens test method begins");
@@ -275,6 +352,14 @@ public class Main {
 		System.out.println("The test method has ran successfully");
 	}
 	
+	/**
+	 * A asteroid check cores perihelion reaction teszteset
+	 * Letrehoz ket aszteroidat
+	 * Szomszedi viszonyba helyezi a ket aszteroidat
+	 * Mivel a robbanas soran a kulonbozo nyersanyagtipusok mas reakciot valtanak ki
+	 * igy eloszor ki kell valasztani a nyersanyag tipusat
+	 * Majd lefut az adott nyersanyaghoz tartozo napkozeli esemeny teszteset
+	 */
 	private static void Teszteset12()
 	{
 		System.out.println("The asteroid check cores perihelion reaction test method begins");
@@ -313,6 +398,15 @@ public class Main {
 		System.out.println("The test method has ran successfully");
 	}
 	
+	/**
+	 * A teleport explodes teszteset
+	 * Letrehoz ket aszteroidat, egy teleportkapupart es ket telepest
+	 * A telepesekhez aszteroidat rendel
+	 * Osszekoti a ket teleportkaput
+	 * Mivel a robbanas soran a teleport helyezetol fuggoen mas reakciot valtanak ki
+	 * igy eloszor ki kell valasztani a teleport helyzetet
+	 * Majd lefut az adott teleport helyzetehez tartozo teszteset
+	 */	
 	private static void Teszteset13()
 	{
 		System.out.println("The teleport explodes test method begins");
@@ -392,6 +486,11 @@ public class Main {
 		System.out.println("The test method has ran successfully");
 	}
 	
+	/**
+	 * A controller start game teszteset
+	 * A controller osztaly peldanyositasa
+	 * A controller osztely letrehoz egy uj jatekot
+	 */
 	private static void Teszteset14()
 	{
 		System.out.println("The controller start game test method begins");
@@ -399,8 +498,16 @@ public class Main {
 		System.out.println("The test method has ran successfully");
 	}
 	
+	/**
+	 * A controller step asteroids teszteset
+	 * Letrehoz ket aszteroidat, ket robotot es ket telepest
+	 * Szomszedi viszonyba helyezi a ket aszteroidat
+	 * Minden lenyt hozzarendel egy aszteroidahoz
+	 * A leptetes megtortenik
+	 */
 	private static void Teszteset15()
 	{
+		System.out.println("The controller step asteroids test method begins");
 		Asteroid a = new Asteroid();
 		Asteroid neigbor = new Asteroid();
 		a.AddNeighbor(neigbor);
@@ -417,6 +524,6 @@ public class Main {
 		a.RegisterBeing(s1);
 		a.RegisterBeing(s2);
 		a.StepBeings();
-		System.out.println("Test finished");
+		System.out.println("The test method has ran successfully");
 	}
 }

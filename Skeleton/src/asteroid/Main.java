@@ -40,6 +40,8 @@ public class Main {
 		String input = sc.nextLine();
 		Settler s = new Settler();
 		Asteroid location = new Asteroid();
+		Asteroid Neighbor = new Asteroid();
+		location.AddNeighbor(Neighbor);
 		location.RegisterBeing(s);
 		s.location = location;
 		switch(Integer.parseInt(input))
@@ -167,6 +169,8 @@ public class Main {
 		System.out.println("The settler fills empty asteroid test method begins");
 		Settler s = new Settler();
 		Asteroid a = new Asteroid();
+		Asteroid Neighbor = new Asteroid();
+		a.AddNeighbor(Neighbor);
 		a.SetBill(new BillOfMaterials());
 		a.RegisterBeing(s);
 		s.location = a;
@@ -208,6 +212,8 @@ public class Main {
 		System.out.println("The settler builds robot test method begins");
 		Settler s = new Settler();
 		Asteroid location = new Asteroid();
+		Asteroid Neighbor = new Asteroid();
+		location.AddNeighbor(Neighbor);
 		location.RegisterBeing(s);
 		s.location = location;
 		s.AddCarriedMaterial(new Iron());
@@ -244,6 +250,8 @@ public class Main {
 	{
 		System.out.println("The asteroid explodes test method begins");
 		Asteroid a = new Asteroid();
+		Asteroid Neighbor = new Asteroid();
+		a.AddNeighbor(Neighbor);
 		Uranium u = new Uranium();
 		a.SetCore(u);
 		BillOfMaterials radbill = new BillOfMaterials();

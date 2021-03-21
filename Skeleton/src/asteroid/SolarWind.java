@@ -16,14 +16,20 @@ import java.util.Scanner;
 public class SolarWind
 {
 	private ArrayList<SentientBeing> sentientbeings;
-	
+	/**
+	 * Napszel konstruktora.
+	 */
 	public SolarWind()
 	{
 		Logger.MethodCall("SolarWind()");
 		sentientbeings = new ArrayList<SentientBeing>();
 		Logger.MethodReturn("");
 	}
-	
+	/**
+	 * Napszel keletkezik
+	 * A napszel keletkezeset a felhasznalo donti el
+	 * @param asteroids : Azok az aszteroidak, amiket eler a napszel
+	 */
 	public void solarWind(ArrayList<Asteroid> asteroids)
 	{
 		Logger.MethodCall("SolarWind()");

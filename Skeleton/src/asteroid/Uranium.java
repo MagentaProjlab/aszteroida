@@ -14,24 +14,37 @@ import java.util.Scanner;
 
 public class Uranium extends RawMaterial 
 {
+	/**
+	 * Az urán konstruktora.
+	 *
+	 */
 	public Uranium() {
 		Logger.MethodCall("Uranium()");
 		Logger.MethodReturn("");
 	}
+	/**
+	 * A nyersanyagot elpusztito fuggveny.
+	 */
 	public void Perish() 
 	{
 		Logger.MethodCall("Perish()");
 		this.SetAsteroid(null);
 		Logger.MethodReturn("void");
 	}
-	
+	/**
+	 * Az egyedi azonositot visszaado fuggveny. Uran esesteben 'Uranium'.
+	 */
 	public String GetUniqueID() 
 	{
 		Logger.MethodCall("GetUniqueID() ");
 		Logger.MethodReturn("String Uranium");
 		return "Uranium";
 	}
-	
+	/**
+	 * Az uran reakcioba lep napkozelben.
+	 * Ha a tesztelo azt mondja, hogy Holedepth = CrustTickness(vagyis ki van furva)
+	 * akkor felrobbantja az aszteroidat. Egyebkent nem csinal semmit.
+	 */
 	public void PerihelionReaction() 
 	{
 		Scanner sc = new Scanner(System.in);

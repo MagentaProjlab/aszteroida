@@ -329,7 +329,6 @@ public class Main {
 		//siblings
 		tg.SetSibling(tgsibling);
 		tgsibling.SetSibling(tg);
-		System.out.println("Test starts");
 		System.out.println("[1: Sibling is on asteroid, 2: Sibling is with a settler]");
 		System.out.println("[3: Teleport and sibling is on asteroid, 4: Teleport on asteroid, sibling is with settler]");
 		Scanner sc = new Scanner(System.in);
@@ -346,6 +345,7 @@ public class Main {
 			tgsiblinglocation.AddNeighbor(tgsibling);
 			tglocation = tgowner.location;
 			tgsiblinglocation = tgsibling.GetAsteroid();
+			System.out.println("Test starts");
 			tg.Explode();
 			break;
 		case 2: 
@@ -358,6 +358,7 @@ public class Main {
 			tgsiblingowner.AddTeleport(tgsibling);
 			tgsiblinglocation = tgsiblingowner.location;
 			tglocation = tgowner.location;
+			System.out.println("Test starts");
 			tg.Explode();
 			break;
 		case 3:
@@ -370,6 +371,7 @@ public class Main {
 			tgsiblinglocation.AddNeighbor(tgsibling);
 			tglocation = tg.GetAsteroid();
 			tgsiblinglocation = tgsibling.GetAsteroid();
+			System.out.println("Test starts");
 			tg.Explode();
 			break;
 		case 4:
@@ -381,6 +383,7 @@ public class Main {
 			tgsibling.SetOwner(tgsiblingowner);
 			tgsiblinglocation = tgsiblingowner.location;
 			tglocation = tg.GetAsteroid();
+			System.out.println("Test starts");
 			tg.Explode();
 		break;
 		}

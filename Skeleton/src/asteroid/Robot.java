@@ -69,11 +69,9 @@ public class Robot extends SentientBeing
 		Logger.UserQuestionRobot("Drill or move the robot?");
 		String input = scanner.nextLine();
 		if(input.equals("1")) {
-			this.Drill();
+			Logger.Message("Refer to test 2");
 		} else if(input.equals("2")) {
-			//random aszteroida a teszt kedv��rt; nincsen szomsz�dja.
-			Asteroid a = new Asteroid();
-			this.Move(a);
+			Logger.Message("Refer to test 4");
 		}
 		Logger.MethodReturn("void");
 		//scanner.close();

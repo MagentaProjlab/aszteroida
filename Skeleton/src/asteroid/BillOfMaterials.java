@@ -17,6 +17,9 @@ public class BillOfMaterials
 {
 	private ArrayList<RawMaterial> materials;
 	
+	/**
+	 * A bill konstruktora
+	 */
 	public BillOfMaterials()
 	{
 		Logger.MethodCall("BillOfMaterials()");
@@ -24,6 +27,11 @@ public class BillOfMaterials
 		Logger.MethodReturn("");
 	}
 	
+	/**
+	 * Megvizsgalja, hogy az adott inventoryban van-e eleg a bill anyagaibol
+	 * @param inventory: a vizsgalni kivant inventory
+	 * @return azzal ter vissza, hogy a parameterként atadott inventoryban van-e eleg a billbeli anyagokbol
+	 */
 	public Boolean CheckInventory(ArrayList<RawMaterial> inventory) 
 	{
 		Logger.MethodCall("CheckInventory(ArrayList<RawMaterial> inventory)");
@@ -44,6 +52,10 @@ public class BillOfMaterials
 		return feltetel;
 	}
 	
+	/**
+	 * Hozzaad egy anyagot a bill listajahoz
+	 * @param material: a hozzaadni kivant anyag
+	 */
 	public void AddMaterialToBill(RawMaterial material) 
 	{
 		Logger.MethodCall("AddMaterialToBill(ArrayList<RawMaterial> inventory)");
@@ -51,6 +63,11 @@ public class BillOfMaterials
 		materials.add(material);
 	}
 	
+	/**
+	 * Kitorli a parameterkent atadott inventorybol a bill anyagait
+	 * @param inventory: a modositani kivant inventory
+	 * @return a modositott inventory
+	 */
 	public ArrayList<RawMaterial> DeleteFromInventory(ArrayList<RawMaterial> inventory) 
 	{
 		Logger.MethodCall("DeleteFromInventory(ArrayList<RawMaterial> inventory)");

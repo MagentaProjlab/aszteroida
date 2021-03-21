@@ -177,7 +177,7 @@ public class Settler extends SentientBeing {
 	public void Step() 
 	{
 		Logger.MethodCall("Step()");
-		//System.out.println("Mit csin�ljona a telepes? 1=mozogo egy aszteroid�ra,2=�s, 3=b�ny�sz,4=anyagot rak vissza,5=robotot �p�t, 6=teleportot �p�t, 7=teleportot helyez le");
+		Logger.UserQuestionSettler("What will the settler do?");
 		Logger.MethodReturn("void");
 	}
 	

@@ -66,7 +66,7 @@ public class Robot extends SentientBeing
 	{
 		Logger.MethodCall("Step()");
 		Scanner scanner = new Scanner(System.in);
-		Logger.UserQuestion2("Drill or move the robot?");
+		Logger.UserQuestionRobot("Drill or move the robot?");
 		String input = scanner.nextLine();
 		if(input.equals("1")) {
 			this.Drill();

@@ -45,8 +45,12 @@ public class Ice extends RawMaterial
 		String answer = sc.nextLine();
 		if (answer.equals("1"))
 		{
+			Logger.UserQuestion("AtPerihelion?");
+			String as = sc.nextLine();
+			if (as.equals("1")) {
 			this.asteroid.DropMaterial();
 			this.Perish();
+			}
 		}
 		Logger.MethodReturn("void");
 	}

@@ -41,6 +41,7 @@ public class Asteroid extends Place
 	public void IncreaseHoleDepth() 
 	{
 		Logger.MethodCall("IncreaseHoleDepth()");
+		CheckPerihelionReaction();
 		Logger.MethodReturn("void");
 	}
 	
@@ -197,7 +198,8 @@ public class Asteroid extends Place
 	public void CheckPerihelionReaction()
 	{
 		Logger.MethodCall("CheckPerihelionReaction()");
-		corematerial.PerihelionReaction();
+		if (corematerial != null)
+			corematerial.PerihelionReaction();
 		Logger.MethodReturn("void");
 	}
 	

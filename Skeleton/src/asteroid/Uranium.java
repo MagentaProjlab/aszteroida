@@ -40,7 +40,6 @@ public class Uranium extends RawMaterial
 		String answer = sc.nextLine();
 		if (answer.equals("1")) {
 			this.asteroid.Explode();
-			this.Perish();
 		}
 		Logger.MethodReturn("void");
 	}

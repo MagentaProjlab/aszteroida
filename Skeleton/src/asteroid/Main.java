@@ -263,7 +263,6 @@ public class Main {
 		a.RegisterBeing(new Settler());
 		s.setAsteroid(a);
 		asteroids.add(a);
-		//TODO de nem baj, hogy a tester látja itt ezeket felettem?(az incializalasokat)
 		
 		SolarWind sw=new SolarWind();
 		sw.solarWind(asteroids);

@@ -135,7 +135,7 @@ public class Settler extends SentientBeing {
 		Logger.UserQuestion("Can the settler fill the asteroid?");
 		Scanner scanner = new Scanner(System.in);
 		String input = scanner.nextLine();
-		if(input.equals("yes")) {
+		if(input.equals("1")) {
 			location.SetMaterial(material, this);
 		}
 		Logger.MethodReturn("void");

@@ -15,13 +15,14 @@ import java.util.Scanner;
 public class Uranium extends RawMaterial 
 {
 	/**
-	 * Az urán konstruktora.
+	 * Az uran konstruktora.
 	 *
 	 */
 	public Uranium() {
 		Logger.MethodCall("Uranium()");
 		Logger.MethodReturn("");
 	}
+	
 	/**
 	 * A nyersanyagot elpusztito fuggveny.
 	 */
@@ -31,6 +32,7 @@ public class Uranium extends RawMaterial
 		this.SetAsteroid(null);
 		Logger.MethodReturn("void");
 	}
+	
 	/**
 	 * Az egyedi azonositot visszaado fuggveny. Uran esesteben 'Uranium'.
 	 */
@@ -40,7 +42,9 @@ public class Uranium extends RawMaterial
 		Logger.MethodReturn("String Uranium");
 		return "Uranium";
 	}
+	
 	/**
+	 * Az anyag reakciojat napkozelben kivalto absztrakt fuggveny.
 	 * Az uran reakcioba lep napkozelben.
 	 * Ha a tesztelo azt mondja, hogy Holedepth = CrustTickness(vagyis ki van furva)
 	 * akkor felrobbantja az aszteroidat. Egyebkent nem csinal semmit.

@@ -335,7 +335,7 @@ public class Main {
 			//tg is with settler, sibling is on asteroid
 			//tg sets owner
 			tg.SetOwner(tgowner);
-			tgowner.addteleport(tg);
+			tgowner.AddTeleport(tg);
 			//tgsibling sets asteroid, no owner
 			tgsibling.SetAsteroid(tgsiblinglocation);
 			tgsiblinglocation.AddNeighbor(tgsibling);
@@ -347,10 +347,10 @@ public class Main {
 			//tg is with settler, sibling is with settler
 			//tg sets owner
 			tg.SetOwner(tgowner);
-			tgowner.addteleport(tg);
+			tgowner.AddTeleport(tg);
 			//tgsibling sets owner
 			tgsibling.SetOwner(tgsiblingowner);
-			tgsiblingowner.addteleport(tgsibling);
+			tgsiblingowner.AddTeleport(tgsibling);
 			tgsiblinglocation = tgsiblingowner.location;
 			tglocation = tgowner.location;
 			tg.Explode();

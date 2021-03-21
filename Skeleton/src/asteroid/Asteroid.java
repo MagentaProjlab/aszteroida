@@ -32,11 +32,15 @@ public class Asteroid extends Place
 		Logger.MethodReturn("");
 	}
 	public void SetCore(RawMaterial rm) {
+		Logger.MethodCall("SetCore(RawMaterial rm)");
 		this.corematerial = rm;
+		Logger.MethodReturn("void");
 	}
 	
 	public void SetBill(BillOfMaterials radbill) {
+		Logger.MethodCall("Setbill(BillOfMaterials radbill)");
 		this.radBill = radbill;
+		Logger.MethodReturn("void");
 	}
 	public void IncreaseHoleDepth() 
 	{

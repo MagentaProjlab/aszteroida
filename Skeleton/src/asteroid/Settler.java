@@ -178,6 +178,20 @@ public class Settler extends SentientBeing {
 	{
 		Logger.MethodCall("Step()");
 		Logger.UserQuestionSettler("What will the settler do?");
+		Scanner scanner = new Scanner(System.in);
+		String input = "-1";
+			input = scanner.nextLine();
+			switch(Integer.parseInt(input))
+			{
+				case 1: Logger.Message("Refer to test 3"); break;
+				case 2: Logger.Message("Refer to test 1"); break;
+				case 3: Logger.Message("Refer to test 5"); break;
+				case 4: Logger.Message("Refer to test 6"); break;
+				case 5: Logger.Message("Refer to test 7"); break;
+				case 6: Logger.Message("Refer to test 8"); break;
+				case 7: Logger.Message("Refer to test 9"); break;
+			}
+		
 		Logger.MethodReturn("void");
 	}
 	

@@ -24,8 +24,11 @@ public class TeleportGate extends Place
 		Logger.MethodReturn("");
 	}
 	
-	public void SetOwner(Settler s) {
+	public void SetOwner(Settler s) 
+	{
+		Logger.MethodCall("SetOwner(Settler s)");
 		owner = s;
+		Logger.MethodReturn("void");
 	}
 	
 	public void SetSibling(TeleportGate sibling) 

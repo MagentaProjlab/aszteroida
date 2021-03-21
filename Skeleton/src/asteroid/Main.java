@@ -36,11 +36,44 @@ public class Main {
 	private static void Teszteset1()
 	{
 		System.out.println("The settler drills test method begins");
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Choose corematerial! [1: Iron, 2: Ice, 3: Coal, 4: Uranium]");
+		String input = sc.nextLine();
 		Settler s = new Settler();
 		Asteroid location = new Asteroid();
 		location.RegisterBeing(s);
 		s.location = location;
-		s.Drill();
+		Iron ir = new Iron();
+		Ice ice = new Ice();
+		Coal c = new Coal();
+		Uranium ur = new Uranium();
+		switch(Integer.parseInt(input))
+		{
+		case 1:
+			s.location.SetCore(ir);
+			ir.SetAsteroid(location);
+			s.Drill();
+			s.location.CheckPerihelionReaction();
+			break;
+		case 2:  
+			s.location.SetCore(ice);
+			ice.SetAsteroid(location);
+			s.Drill();
+			s.location.CheckPerihelionReaction();
+			break;
+		case 3: 
+			s.location.SetCore(c);
+			c.SetAsteroid(location);
+			s.Drill();
+			s.location.CheckPerihelionReaction();
+			break;
+		case 4:  
+			s.location.SetCore(ur);
+			ur.SetAsteroid(location);
+			s.Drill();
+			s.location.CheckPerihelionReaction();
+			break;
+		}
 		System.out.println("The test method has ran successfully");
 	}
 	
@@ -52,6 +85,7 @@ public class Main {
 		location.RegisterBeing(r);
 		r.location = location;
 		r.Drill();
+		r.location.CheckPerihelionReaction();
 		System.out.println("The test method has ran successfully");
 	}
 	

@@ -35,7 +35,7 @@ public class Logger {
 	}
 	
 	/**
-	 * Felhasznalonak kuldott igen-nem valaszú kerdesert felelos
+	 * Felhasznalonak kuldott igen-nem valaszu kerdesert felelos
 	 * @param question: kerdes szovege
 	 */
 	public static void UserQuestion(String question) {

@@ -233,8 +233,6 @@ public class Main {
 	{
 		System.out.println("The settler puts down teleport test method begins");
 		Settler s=new Settler();
-		//Jelenlegi megold�som az "incializ�l�s" sor�n felmer�l� extra �zenetek elker�l�s�sre.
-		//Ez lehet fars. A tesztben haszn�lt objektumok, a met�dsuban vannak l�trehozva.
 
 		s.PutTeleportGateOnAsteroid();
 		System.out.println("The test method has ran successfully");

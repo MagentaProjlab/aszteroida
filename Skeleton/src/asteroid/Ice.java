@@ -41,7 +41,7 @@ public class Ice extends RawMaterial
 	{
 		Logger.MethodCall("PerihelionReaction()");
 		Scanner sc = new Scanner(System.in);
-		Logger.UserQuestion("Holedepth = CrustTickness?");
+		Logger.UserQuestion("Holedepth == CrustTickness?");
 		String answer = sc.nextLine();
 		if (answer.equals("1"))
 		{

@@ -115,7 +115,7 @@ public class Asteroid extends Place
 	public Boolean IsEmpty()
 	{
 		Logger.MethodCall("IsEmpty()");
-		Logger.UserQuestion("�res az aszteroida?");
+		Logger.UserQuestion("Is the asteroid empty?");
 		Scanner scanner = new Scanner(System.in);
 		String input = scanner.nextLine();
 		if(input.equals("1"))

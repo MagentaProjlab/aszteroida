@@ -101,8 +101,5 @@ public class Logger {
 			System.out.print("  ");	
 		}
 		System.out.println(message);
-		for (int i=0; i<=indent; ++i) {			//+1 behúzás
-			System.out.print("  ");	
-		}
 	}
 }

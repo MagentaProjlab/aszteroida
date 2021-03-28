@@ -9735,7 +9735,7 @@
 <XPD:REF name="CallActions[0]">UvE6416S3E+CpTZi/7vdRgAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Operations[4]" type="UMLOperation" guid="3LvnHHgiZ0S7n6flGGAGuAAA">
-<XPD:ATTR name="Name" type="string">PickMaterialUp</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">Mine</XPD:ATTR>
 <XPD:REF name="Owner">KZViLmsEi0u3/34luuqjdwAA</XPD:REF>
 <XPD:ATTR name="#CallActions" type="integer">1</XPD:ATTR>
 <XPD:REF name="CallActions[0]">6jLFTVDKC0iSmOPHGfVPDQAA</XPD:REF>
@@ -9805,8 +9805,8 @@
 <XPD:REF name="Participant">GwPjX5eAc0KHOSpIloAUpAAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
 <XPD:REF name="Views[0]">u/zubUiJnEaDoL032LACAQAA</XPD:REF>
-<XPD:REF name="Views[1]">OL9u+HSao0ukjyfOPqssGgAA</XPD:REF>
-<XPD:REF name="Views[2]">8rcnBcguEk2+IjiSk7MJUwAA</XPD:REF>
+<XPD:REF name="Views[1]">8rcnBcguEk2+IjiSk7MJUwAA</XPD:REF>
+<XPD:REF name="Views[2]">OL9u+HSao0ukjyfOPqssGgAA</XPD:REF>
 <XPD:REF name="Views[3]">T/Guo8RtEEWa3pVEZamwQwAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Connections[1]" type="UMLAssociationEnd" guid="0+5ceoOjtUK7OfZAuql9jgAA">
@@ -9817,8 +9817,8 @@
 <XPD:REF name="Participant">m7TSoqzE7kic+aA/hevo0QAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
 <XPD:REF name="Views[0]">iAzq7lvSPkihc7i9k8Gi5gAA</XPD:REF>
-<XPD:REF name="Views[1]">J1fQ2Ec2K0CHHZSPWjScGQAA</XPD:REF>
-<XPD:REF name="Views[2]">g01XK487uEezA7wz18IGNgAA</XPD:REF>
+<XPD:REF name="Views[1]">g01XK487uEezA7wz18IGNgAA</XPD:REF>
+<XPD:REF name="Views[2]">J1fQ2Ec2K0CHHZSPWjScGQAA</XPD:REF>
 <XPD:REF name="Views[3]">1lq3eVxT3U+TgGQTO2crmQAA</XPD:REF>
 </XPD:OBJ>
 </XPD:OBJ>
@@ -40792,14 +40792,14 @@
 <XPD:OBJ name="ContainedViews[0]" type="UMLCombinedFragmentView" guid="UevM8WcpdUeLr4uQaBD4mgAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
-<XPD:ATTR name="Left" type="integer">352</XPD:ATTR>
+<XPD:ATTR name="Left" type="integer">348</XPD:ATTR>
 <XPD:ATTR name="Top" type="integer">272</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">184</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">63</XPD:ATTR>
 <XPD:REF name="Model">oCdOJK87PUmEN6dVzYQ0DAAA</XPD:REF>
 <XPD:REF name="ContainerView">bFo3kNUidUWR7KX9nZIpEAAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="LabelView" guid="HVAiPK0gtkm4I5KWASC8wwAA">
-<XPD:ATTR name="Text" type="string">Ufo picks up material</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">Ufo mines</XPD:ATTR>
 </XPD:OBJ>
 <XPD:OBJ name="FrameTypeLabel" type="LabelView" guid="pO219awkSUqTcl1SvJY5dAAA">
 <XPD:ATTR name="FontStyle" type="integer">1</XPD:ATTR>
@@ -40809,7 +40809,7 @@
 <XPD:OBJ name="ContainedViews[0]" type="UMLInteractionOperandView" guid="d3QLW/Z1oE2Avp6NkjkXTAAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
-<XPD:ATTR name="Left" type="integer">352</XPD:ATTR>
+<XPD:ATTR name="Left" type="integer">348</XPD:ATTR>
 <XPD:ATTR name="Top" type="integer">292</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">184</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">43</XPD:ATTR>
@@ -41033,7 +41033,7 @@
 <XPD:REF name="Views[0]">bFo3kNUidUWR7KX9nZIpEAAA</XPD:REF>
 <XPD:ATTR name="#Fragments" type="integer">1</XPD:ATTR>
 <XPD:OBJ name="Fragments[0]" type="UMLCombinedFragment" guid="oCdOJK87PUmEN6dVzYQ0DAAA">
-<XPD:ATTR name="Name" type="string">Ufo picks up material</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">Ufo mines</XPD:ATTR>
 <XPD:ATTR name="InteractionOperator" type="UMLInteractionOperatorKind">iokSeq</XPD:ATTR>
 <XPD:REF name="EnclosingOperand">PQM7QlCpbUeRjdU3n3WzxwAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">1</XPD:ATTR>
@@ -41106,7 +41106,7 @@
 </XPD:OBJ>
 </XPD:OBJ>
 <XPD:OBJ name="OwnedCollaborationInstanceSets[47]" type="UMLCollaborationInstanceSet" guid="V/XvpZL+SkyMXEGpjL5UMAAA">
-<XPD:ATTR name="Name" type="string">Ufo Picks up material</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">Ufo mines</XPD:ATTR>
 <XPD:REF name="RepresentedClassifier">uJuaditY6kiwcOqOSZyezgAA</XPD:REF>
 <XPD:ATTR name="#InteractionInstanceSets" type="integer">1</XPD:ATTR>
 <XPD:OBJ name="InteractionInstanceSets[0]" type="UMLInteractionInstanceSet" guid="fQeynU0VvkOYFprVowhcrwAA">
@@ -41114,7 +41114,7 @@
 <XPD:REF name="Context">V/XvpZL+SkyMXEGpjL5UMAAA</XPD:REF>
 <XPD:ATTR name="#OwnedDiagrams" type="integer">1</XPD:ATTR>
 <XPD:OBJ name="OwnedDiagrams[0]" type="UMLSequenceDiagram" guid="yCXII61a80qEyzT6HFP4dQAA">
-<XPD:ATTR name="Name" type="string">Ufo picks up material</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">Ufo mines</XPD:ATTR>
 <XPD:REF name="DiagramOwner">fQeynU0VvkOYFprVowhcrwAA</XPD:REF>
 <XPD:OBJ name="DiagramView" type="UMLSequenceDiagramView" guid="5MJgjazxoEyvgIgKvhse1QAA">
 <XPD:REF name="Model">yCXII61a80qEyzT6HFP4dQAA</XPD:REF>
@@ -41129,7 +41129,7 @@
 <XPD:ATTR name="Height" type="integer">533</XPD:ATTR>
 <XPD:REF name="Model">vDu/EXsb5U+Gk4tUCktvhwAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="LabelView" guid="h3G5ml14a0S73PDYWH8iAAAA">
-<XPD:ATTR name="Text" type="string">Ufo Picks up material</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">Ufo mines</XPD:ATTR>
 </XPD:OBJ>
 <XPD:OBJ name="FrameTypeLabel" type="LabelView" guid="VA5bjHMadkeIwF6xXZTN8wAA">
 <XPD:ATTR name="FontStyle" type="integer">1</XPD:ATTR>
@@ -41273,7 +41273,7 @@
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="QuOzCDUoVE6lqP38noyotgAA">
 <XPD:ATTR name="Alpha" type="real">1,5707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">1 : PickMaterialUp()</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">1 : Mine()</XPD:ATTR>
 <XPD:REF name="Model">bUmwI0QhU0+YBipqEa6uugAA</XPD:REF>
 <XPD:REF name="HostEdge">3fHEt0HfmEe8zKelqz7bUgAA</XPD:REF>
 </XPD:OBJ>
@@ -41684,7 +41684,7 @@
 </XPD:OBJ>
 <XPD:ATTR name="#OwnedFrames" type="integer">1</XPD:ATTR>
 <XPD:OBJ name="OwnedFrames[0]" type="UMLFrame" guid="vDu/EXsb5U+Gk4tUCktvhwAA">
-<XPD:ATTR name="Name" type="string">Ufo Picks up material</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">Ufo mines</XPD:ATTR>
 <XPD:ATTR name="FrameKind" type="string">sd</XPD:ATTR>
 <XPD:REF name="InteractionInstanceSet">fQeynU0VvkOYFprVowhcrwAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">1</XPD:ATTR>

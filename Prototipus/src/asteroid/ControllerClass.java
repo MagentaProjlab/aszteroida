@@ -7,7 +7,7 @@ public class ControllerClass
 {
 	private ArrayList<Asteroid> asteroids;
 	private SolarWind solarwind;
-	private ArrayList<BillOfMaterials> bills;
+	private ArrayList<Bill> bills;
 	
 	
 	

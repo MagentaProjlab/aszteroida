@@ -20,7 +20,7 @@ public class Settler extends SentientBeing {
 	 * A Settler altal epitheto entitasokhoz szukseges BillOfMaterialok gyujtemenye.
 	 * Az osztaly konstruktoraban kerulnek feltoltesre a megfelelo "receptekkel".
 	 */
-	private ArrayList<BillOfMaterials> bills;
+	private ArrayList<Bill> bills;
 	/**
 	 * A telepes altal birtokolt teleportokat tartalmazo lista.
 	 * Az epito metodusban kerul ellenorzesre, hogy egyszerre
@@ -38,10 +38,10 @@ public class Settler extends SentientBeing {
 		Logger.MethodCall("Settler()");
 		carriedmaterials = new ArrayList<RawMaterial>();
 		carriedteleports = new ArrayList<TeleportGate>();
-		bills = new ArrayList<BillOfMaterials>();
-		bills.add(new BillOfMaterials());
-		bills.add(new BillOfMaterials());
-		bills.add(new BillOfMaterials());
+		bills = new ArrayList<Bill>();
+		bills.add(new Bill());
+		bills.add(new Bill());
+		bills.add(new Bill());
 		Logger.MethodReturn("");
 	}
 	/**

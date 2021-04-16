@@ -71,10 +71,8 @@ public class Settler extends SentientBeing {
 	 * Meghivja az aktualis aszteroida kopeny csokkento metodusat.
 	 */
 	public void Drill() 
-	{
-		//TODO az aszteroidanak kell bool-t visszaadni
-		
-		if(!location.isMined()) {
+	{		
+		if(!location.isDrilled()) {
 			location.IncreaseHoleDepth();
 			Logger.Message("[Settler: "+name+"] has drilled "+location.getName());
 		}
@@ -88,10 +86,7 @@ public class Settler extends SentientBeing {
 	 */
 	public void Mine() 
 	{
-		//TODO APRO baj, nem tudjuk megnezni , hogy mar beert-e a lyuk az aszteroidaba.
-		//Gabor on it
-		if(carriedmaterials.size()<11&&!location.IsEmpty()&&location.isMined()) {
-			
+		if(carriedmaterials.size()<11&&!location.IsEmpty()&&location.isDrilled()) {
 			RawMaterial rm=location.GetMaterial();
 			AddCarriedMaterial(rm);
 			rm.SetAsteroid(null);
@@ -124,7 +119,7 @@ public class Settler extends SentientBeing {
 	public void AddCarriedMaterial(RawMaterial material)
 	{
 		carriedmaterials.add(material);
-		//TODO De ez nem kell! A teszteset elvart kimenetetol fugg
+		//ittnem kell kiirni, mert arrol az ezt meghivo metodus gondoskodnik
 	}
 	/**
 	 * Explode metodus - A telepes felrobbantasa
@@ -196,9 +191,7 @@ public class Settler extends SentientBeing {
 	 */
 	public void FillAsteroid(RawMaterial material) 
 	{
-		//FIXME isMined(), getName hianya
-		//FIXME a user honnan fog kivalasztani egy objektumot, nem indexet kene kapjon? 
-		if(location.isMined()&&location.IsEmpty()) {
+		if(location.isDrilled()&&location.IsEmpty()) {
 			location.SetMaterial(material, this);
 			Logger.Message("[Settler: "+name+"]  has put material back to "+location.getName());
 		}
@@ -227,7 +220,6 @@ public class Settler extends SentientBeing {
 	 */
 	public void PutTeleportGateOnAsteroid(String name,int idx) 
 	{
-		//FIXME itt is kene egy teleport index a tesztesetek miatt
 		if(carriedteleports.size()>=idx+1) {
 			TeleportGate t=carriedteleports.get(idx);
 			//ezt a "t"-t csak azert  vettem fel, hogy a kovi sor ne legyen olyan 
@@ -267,7 +259,6 @@ public class Settler extends SentientBeing {
 					else {
 						Logger.Message("[Settler: "+name+"] failed to move  ");
 					}
-					//FIXME a getneighbors list legyen
 				}
 				break;
 			case "drill":

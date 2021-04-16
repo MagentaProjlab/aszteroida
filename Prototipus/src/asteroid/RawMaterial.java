@@ -1,6 +1,6 @@
 package asteroid;
 
-public abstract class RawMaterial
+public abstract class RawMaterial implements ID 
 {
 	protected Asteroid asteroid;
 	

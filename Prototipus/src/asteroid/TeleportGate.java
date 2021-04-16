@@ -1,5 +1,5 @@
 package asteroid;
-public class TeleportGate extends Place 
+public class TeleportGate extends Place implements ID 
 {
 	private TeleportGate sibling;
 	private Asteroid asteroid;
@@ -113,5 +113,9 @@ public class TeleportGate extends Place
 		{
 			sibling.GetOwner().DropCarriedTeleport(sibling);
 		}
+	}
+
+	public String GetUniqueID() {
+		return new String("teleportgate");
 	}
 }

@@ -19,30 +19,26 @@ public class Asteroid extends Place
 	 */
 	public Asteroid()
 	{
-		Logger.MethodCall("Asteroid()");
 		sentientbeings = new ArrayList<SentientBeing>();
 		neighbors = new ArrayList<Place>();
-		Logger.MethodReturn("");
 	}
 	
 	/**
 	 * Beallitja az aszteroida magjanak a tipusat
 	 * @param rm - parameterkent kapott nyersanyag
 	 */
-	public void SetCore(RawMaterial rm) {
-		Logger.MethodCall("SetCore(RawMaterial rm)");
+	public void SetCore(RawMaterial rm)
+	{
 		this.corematerial = rm;
-		Logger.MethodReturn("void");
 	}
 	
 	/**
 	 * Beallitja az aszteroidahoz tartozo BillOfMaterials-t
 	 * @param radbill - BOM
 	 */
-	public void SetBill(BillOfMaterials radbill) {
-		Logger.MethodCall("Setbill(BillOfMaterials radbill)");
+	public void SetBill(BillOfMaterials radbill)
+	{
 		this.radBill = radbill;
-		Logger.MethodReturn("void");
 	}
 	
 	/**
@@ -50,9 +46,11 @@ public class Asteroid extends Place
 	 */
 	public void IncreaseHoleDepth() 
 	{
-		Logger.MethodCall("IncreaseHoleDepth()");
+		if(HoleDepth != 0)
+		{
+			HoleDepth--;
+		}
 		CheckPerihelionReaction();
-		Logger.MethodReturn("void");
 	}
 	
 	/**
@@ -63,7 +61,6 @@ public class Asteroid extends Place
 	 */
 	public void Explode()
 	{
-		Logger.MethodCall("Explode()");
 		Boolean feltetel1 = false;
 		if(corematerial != null)
 		{
@@ -71,8 +68,6 @@ public class Asteroid extends Place
 			corelist.add(corematerial);
 			feltetel1 = radBill.CheckInventory(corelist);
 		}
-		
-		Logger.UserQuestion("CrustThickness == HoleDepth?");
 		Boolean feltetel2 = false;
 		Scanner scanner = new Scanner(System.in);
 		String input = scanner.nextLine();
@@ -95,7 +90,6 @@ public class Asteroid extends Place
 			
 			corematerial.Perish();
 		}
-		Logger.MethodReturn("void");
 	}
 	
 	/**
@@ -104,8 +98,7 @@ public class Asteroid extends Place
 	 */
 	public void DropBeing(SentientBeing being)
 	{
-		Logger.MethodCall("DropBeing()");
-		Logger.MethodReturn("void");
+		sentientbeings.removeIf(n -> n.)
 	}
 	
 	/**
@@ -113,9 +106,7 @@ public class Asteroid extends Place
 	 */
 	public void RegisterBeing(SentientBeing being)
 	{
-		Logger.MethodCall("RegisterBeing()");
 		sentientbeings.add(being);
-		Logger.MethodReturn("void");
 	}
 	
 	/**
@@ -123,8 +114,7 @@ public class Asteroid extends Place
 	 */
 	public void DropMaterial() 
 	{
-		Logger.MethodCall("DropMaterial()");
-		Logger.MethodReturn("void");
+		corematerial = null;
 	}
 	
 	/**
@@ -133,8 +123,6 @@ public class Asteroid extends Place
 	 */
 	public RawMaterial GetMaterial()
 	{
-		Logger.MethodCall("GetMaterial()");
-		Logger.MethodReturn("RawMaterial");
 		return this.corematerial;
 	}
 	
@@ -144,20 +132,15 @@ public class Asteroid extends Place
 	 */
 	public Boolean IsEmpty()
 	{
-		Logger.MethodCall("IsEmpty()");
-		Logger.UserQuestion("Is the asteroid empty?");
 		Scanner scanner = new Scanner(System.in);
 		String input = scanner.nextLine();
 		if(input.equals("1"))
 		{
-			Logger.MethodReturn("Boolean: true");
 			return true;
 		}else if(input.equals("2"))
 		{
-			Logger.MethodReturn("Boolean: false");
 			return false;
 		}
-		Logger.MethodReturn("Boolean: false");
 		return false;
 	}
 	
@@ -168,12 +151,10 @@ public class Asteroid extends Place
 	 */
 	public void SetMaterial(RawMaterial material, Settler settler)
 	{
-		Logger.MethodCall("SetMaterial()");
 		material.SetAsteroid(this);
 		settler.DropCarriedMaterial(material);
 		SetCore(material);
 		CheckPerihelionReaction();
-		Logger.MethodReturn("void");
 	}
 	
 	/**
@@ -182,8 +163,7 @@ public class Asteroid extends Place
 	 */
 	public void DropNeighbor(Place neighbor)
 	{
-		Logger.MethodCall("DropNeighbor()");
-		Logger.MethodReturn("void");
+		
 	}
 	
 	/**
@@ -192,20 +172,15 @@ public class Asteroid extends Place
 	 */
 	public Boolean AtPerihelion()
 	{
-		Logger.MethodCall("AtPerihelion()");
-		Logger.UserQuestion("Is the asteroid at Perihelion?");
 		Scanner scanner = new Scanner(System.in);
 		String input = scanner.nextLine();
 		if(input.equals("1"))
 		{
-			Logger.MethodReturn("Boolean: true");
 			return true;
 		}else if(input.equals("2"))
 		{
-			Logger.MethodReturn("Boolean: false");
 			return false;
 		}
-		Logger.MethodReturn("Boolean: false");
 		return false;
 	}
 	
@@ -215,9 +190,7 @@ public class Asteroid extends Place
 	 */
 	public void AddNeighbor(Place neighbor)
 	{
-		Logger.MethodCall("AddNeighbor()");
 		neighbors.add(neighbor);
-		Logger.MethodReturn("void");
 	}
 	
 	/**
@@ -229,10 +202,7 @@ public class Asteroid extends Place
 	 */
 	public void SolarWindDeath()
 	{
-		Logger.MethodCall("SolarWindDeath()");
 		Scanner scanner = new Scanner(System.in);
-		
-		Logger.UserQuestion("CrustThickness == HoleDepth?");
 		Boolean feltetel1 = false;
 		String input = scanner.nextLine();
 		if(input.equals("1"))
@@ -250,7 +220,6 @@ public class Asteroid extends Place
 				sb.Die();
 			}
 		}
-		Logger.MethodReturn("void");
 	}
 	
 	/**
@@ -259,10 +228,8 @@ public class Asteroid extends Place
 	 */
 	public void CheckPerihelionReaction()
 	{
-		Logger.MethodCall("CheckPerihelionReaction()");
 		if (corematerial != null)
 			corematerial.PerihelionReaction();
-		Logger.MethodReturn("void");
 	}
 	
 	/**
@@ -270,12 +237,10 @@ public class Asteroid extends Place
 	 */
 	public void StepBeings()
 	{
-		Logger.MethodCall("StepBeings()");
 		for(SentientBeing sb : sentientbeings)
 		{
 			sb.Step();
 		}
-		Logger.MethodReturn("void");
 	}
 
 	/**
@@ -284,8 +249,20 @@ public class Asteroid extends Place
 	 */
 	public Place GetNeighbour()
 	{
-		Logger.MethodCall("GetNeighbour()");
-		Logger.MethodReturn("Place");
 		return this.neighbors.get(0);
+	}
+
+	public Integer getHoleDepth() 
+	{
+		return HoleDepth;
+	}
+	
+	public boolean isMined() 
+	{
+		if(HoleDepth == CrustThickness) {
+			return true;
+		}else {
+			return false;
+		}
 	}
 }

@@ -116,6 +116,7 @@ public class Asteroid extends Place
 	public void RegisterBeing(SentientBeing being)
 	{
 		sentientbeings.add(being);
+		being.setAsteroid(this);
 	}
 	
 	/**
@@ -258,7 +259,7 @@ public class Asteroid extends Place
 	 * ki van-e furva az aszteroida
 	 * @return - boolean
 	 */
-	public boolean isMined() 
+	public boolean isDrilled() 
 	{
 		if(HoleDepth == CrustThickness) {
 			return true;

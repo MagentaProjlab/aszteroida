@@ -11,7 +11,7 @@ public class Asteroid extends Place
 	private RawMaterial corematerial;
 	private ArrayList<SentientBeing> sentientbeings;
 	private ArrayList<Place> neighbors;
-	private BillOfMaterials radBill;
+	private Bill radBill;
 	
 	/**
 	 * Aszteroida konstruktora
@@ -39,7 +39,7 @@ public class Asteroid extends Place
 	 * Beallitja az aszteroidahoz tartozo BillOfMaterials-t
 	 * @param radbill - BOM
 	 */
-	public void SetBill(BillOfMaterials radbill) {
+	public void SetBill(Bill radbill) {
 		Logger.MethodCall("Setbill(BillOfMaterials radbill)");
 		this.radBill = radbill;
 		Logger.MethodReturn("void");

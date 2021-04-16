@@ -4,6 +4,7 @@ public class TeleportGate extends Place implements ID
 	private TeleportGate sibling;
 	private Asteroid asteroid;
 	private Settler owner;
+	private boolean Malfunctioning; 
 	String id;
 	/**
 	 * A TeleportGate konstruktora
@@ -13,6 +14,7 @@ public class TeleportGate extends Place implements ID
 		this.asteroid = a;
 		this.owner = o;
 		this.id = name;
+		this.Malfunctioning = false;
 	}
 	
 	public void SetName(String n) {
@@ -117,5 +119,18 @@ public class TeleportGate extends Place implements ID
 
 	public String GetUniqueID() {
 		return new String("teleportgate");
+	}
+	/**
+	 * Beallitja a malfunction valtozot
+	 */
+	public void Malfunction() {
+		this.Malfunctioning = true;
+	}
+	/**
+	 * lekerdezi a malfunction valtozot
+	 * @return Malfunctioning
+	 */
+	public boolean GetMalfunction() {
+		return this.Malfunctioning;
 	}
 }

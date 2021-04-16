@@ -1,20 +1,27 @@
 package asteroid;
-
-
-import java.util.Scanner;
-
 public class TeleportGate extends Place 
 {
 	private TeleportGate sibling;
 	private Asteroid asteroid;
 	private Settler owner;
+	String id;
 	/**
 	 * A TeleportGate konstruktora
 	 */
-	public TeleportGate()
+	public TeleportGate(TeleportGate tg, Asteroid a, Settler o, String name)
 	{
-		Logger.MethodCall("TeleportGate()");
-		Logger.MethodReturn("");
+		this.sibling = tg;
+		this.asteroid = a;
+		this.owner = o;
+		this.id = name;
+	}
+	
+	public void SetName(String n) {
+		id = n;
+	}
+	
+	public String GetName(String n) {
+		return id;
 	}
 	/**
 	 * A teleportkapu tulajdonosat beallito fuggveny.
@@ -23,9 +30,7 @@ public class TeleportGate extends Place
 	 */
 	public void SetOwner(Settler s) 
 	{
-		Logger.MethodCall("SetOwner(Settler s)");
 		owner = s;
-		Logger.MethodReturn("void");
 	}
 	/**
 	 * A teleportkapu parjat beallito fuggveny
@@ -33,8 +38,6 @@ public class TeleportGate extends Place
 	 */
 	public void SetSibling(TeleportGate sibling) 
 	{
-		Logger.MethodCall("SetSibling()");
-		Logger.MethodReturn("void");
 		this.sibling = sibling;
 	}
 	/**
@@ -43,8 +46,6 @@ public class TeleportGate extends Place
 	 */
 	public void SetAsteroid(Asteroid asteroid) 
 	{
-		Logger.MethodCall("SetAsteroid()");
-		Logger.MethodReturn("void");
 		this.asteroid = asteroid;
 	}
 	/**
@@ -53,8 +54,6 @@ public class TeleportGate extends Place
 	 */
 	public Asteroid GetAsteroid() 
 	{
-		Logger.MethodCall("GetAsteroid()");
-		Logger.MethodReturn("Asteroid");
 		return this.asteroid;
 	}
 	/**
@@ -63,8 +62,6 @@ public class TeleportGate extends Place
 	 */
 	public TeleportGate GetSibling()
 	{
-		Logger.MethodCall("GetSibling()");
-		Logger.MethodReturn("TeleportGate");
 		return this.sibling;
 	}
 	
@@ -74,8 +71,7 @@ public class TeleportGate extends Place
 	 */
 	public void DropOwner()
 	{
-		Logger.MethodCall("DropOwner()");
-		Logger.MethodReturn("void");
+		this.owner = null;
 	}
 	/**
 	 * A teleportkapu parjat visszaado fuggveny
@@ -83,8 +79,6 @@ public class TeleportGate extends Place
 	 */
 	public Settler GetOwner()
 	{
-		Logger.MethodCall("GetOwner()");
-		Logger.MethodReturn("Settler");
 		return this.owner;
 	}
 	/**
@@ -92,8 +86,7 @@ public class TeleportGate extends Place
 	 */
 	public void RegisterBeing(SentientBeing being)
 	{
-		Logger.MethodCall("RegisterBeing()");
-		Logger.MethodReturn("void");
+		being.setAsteroid(this.sibling.GetAsteroid());
 	}
 	/**
 	 * A teleportkapu felrobban
@@ -101,8 +94,7 @@ public class TeleportGate extends Place
 	 * Ha a teleportkapu aszteroidaja nem null, akkor aszteroidan van
 	 */
 	public void Explode() 
-	{
-		Logger.MethodCall("Explode()");		
+	{		
 		Asteroid a = this.GetAsteroid();	
 		if(a != null)
 		{
@@ -113,6 +105,7 @@ public class TeleportGate extends Place
 		}
 		
 		Asteroid a2 = this.sibling.GetAsteroid();
+		
 		if(a2 != null)
 		{
 			sibling.GetAsteroid().DropNeighbor(sibling);
@@ -121,6 +114,5 @@ public class TeleportGate extends Place
 		{
 			sibling.GetOwner().DropCarriedTeleport(sibling);
 		}
-		Logger.MethodReturn("void");
 	}
 }

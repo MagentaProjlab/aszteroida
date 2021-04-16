@@ -15,6 +15,8 @@ public class Asteroid extends Place
 	private BillOfMaterials radBill;
 	private String name;
 	
+	
+
 	/**
 	 * Aszteroida konstruktora
 	 * Letrehoz ket listat, egyet a lenyek tarolasara, egyet a szomszedok tarolasara
@@ -269,5 +271,21 @@ public class Asteroid extends Place
 	public Integer getCrustThickness() 
 	{
 		return CrustThickness;
+	}
+	
+	/**
+	 * aszteroida szomszedainak listajanak gettere
+	 * @return - list
+	 */
+	public ArrayList<Place> getNeighbors() {
+		return neighbors;
+	}
+	
+	/**
+	 * aszteroida nevenek gettere
+	 * @return - nev
+	 */
+	public String getName() {
+		return name;
 	}
 }

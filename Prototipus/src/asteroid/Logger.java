@@ -9,16 +9,17 @@ import java.util.Scanner;
  */
 public class Logger {
 	
-	private String output;
+	private static String output;
 	private static Scanner input;
 	
 	Logger(int teszteset)
 	{
 		String filename = String.valueOf(teszteset) + ".txt";
 		SetFile(filename);
+		output = "";
 	}
 	
-	public void Message(String message)
+	public static void Message(String message)
 	{
 		System.out.println(message);
 		output += message + "\n";

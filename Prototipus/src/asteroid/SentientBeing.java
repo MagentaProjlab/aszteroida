@@ -9,19 +9,13 @@ public abstract class SentientBeing
 	 */
 	public void setAsteroid(Asteroid loc)
 	{
-		Logger.MethodCall("setAsteroid(Asteroid loc)");
 		this.location = loc;
-		Logger.MethodReturn("void");
 	}
 	/**
 	 * A leny absztrakt mozogasert felelos fuggvenye
 	 * @param place: A hely ahova mozog
 	 */
 	public abstract void Move(Place place);
-	/**
-	 * A leny absztrakt furasert felelos fuggvenye
-	 */
-	public abstract void Drill();
 	/**
 	 * A leny absztrakt halalert felelos fuggvenye
 	 */

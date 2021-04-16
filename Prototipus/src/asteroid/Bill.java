@@ -8,7 +8,7 @@ public class Bill
 	/**
 	 * Tárolja a receptet
 	 */
-	private ArrayList<RawMaterial> materials;
+	private ArrayList<ID> materials;
 	
 	/**
 	 * A bill konstruktora
@@ -22,7 +22,7 @@ public class Bill
 	 * @param inventory: a vizsgalni kivant inventory
 	 * @return azzal ter vissza, hogy a parameterkent atadott inventoryban van-e eleg a billbeli anyagokbol
 	 */
-	public Boolean CheckInventory(ArrayList<RawMaterial> inventory) 
+	public Boolean CheckInventory(ArrayList<ID> inventory) 
 	{
 		if (inventory.size() >= materials.size()) {
 			int inCoal = 0;
@@ -65,9 +65,9 @@ public class Bill
 	 * Hozzaad egy anyagot a bill listajahoz
 	 * @param material: a hozzaadni kivant anyag
 	 */
-	public void AddMaterialToBill(RawMaterial material) 
+	public void AddMaterialToBill(ID object) 
 	{
-		materials.add(material);
+		materials.add(object);
 	}
 	
 	/**
@@ -75,7 +75,7 @@ public class Bill
 	 * @param inventory: a modositani kivant inventory
 	 * @return a modositott inventory
 	 */
-	public ArrayList<RawMaterial> DeleteFromInventory(ArrayList<RawMaterial> inventory) 
+	public ArrayList<RawMaterial> DeleteFromInventory(ArrayList<ID> inventory) 
 	{
 		ArrayList<RawMaterial> neuInventory = new ArrayList<>();
 		

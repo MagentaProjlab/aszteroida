@@ -207,7 +207,6 @@ public class Settler extends SentientBeing {
 	 */
 	public void Move(Place place) 
 	{
-		//TODO a SentientBeing.setAsteroid-ot meg KELL hivni a cimzett asteroidanak
 		location.DropBeing(this);
 		place.RegisterBeing(this);
 		Logger.Message("[Settler: "+name+"] has moved to "+place.getName());

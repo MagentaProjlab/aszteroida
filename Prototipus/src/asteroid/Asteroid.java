@@ -53,12 +53,14 @@ public class Asteroid extends Place
 	/**
 	 * Csokkenti az aszteroida kergenek a vastagsagat 
 	 */
-	public void IncreaseHoleDepth() 
+	public boolean IncreaseHoleDepth() 
 	{
 		if(HoleDepth != 0)
 		{
 			HoleDepth--;
+			return true;
 		}
+		return false;
 		CheckPerihelionReaction();
 	}
 	

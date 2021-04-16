@@ -1,6 +1,7 @@
 package asteroid;
 
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Asteroid extends Place 
@@ -12,15 +13,21 @@ public class Asteroid extends Place
 	private ArrayList<SentientBeing> sentientbeings;
 	private ArrayList<Place> neighbors;
 	private BillOfMaterials radBill;
+	private String name;
 	
 	/**
 	 * Aszteroida konstruktora
 	 * Letrehoz ket listat, egyet a lenyek tarolasara, egyet a szomszedok tarolasara
 	 */
-	public Asteroid()
+	public Asteroid(String n, RawMaterial m, int c, int h)
 	{
+		name = n;
+		corematerial = m;
+		CrustThickness = c;
+		HoleDepth = h;
 		sentientbeings = new ArrayList<SentientBeing>();
 		neighbors = new ArrayList<Place>();
+		
 	}
 	
 	/**
@@ -61,33 +68,31 @@ public class Asteroid extends Place
 	 */
 	public void Explode()
 	{
-		Boolean feltetel1 = false;
+		Boolean exp = false;
 		if(corematerial != null)
 		{
 			ArrayList<RawMaterial> corelist = new ArrayList<RawMaterial>();
 			corelist.add(corematerial);
-			feltetel1 = radBill.CheckInventory(corelist);
-		}
-		Boolean feltetel2 = false;
-		Scanner scanner = new Scanner(System.in);
-		String input = scanner.nextLine();
-		if(input.equals("1"))
-		{
-			feltetel2 = true;
-		}else if(input.equals("2"))
-		{
-			feltetel2 = false;
+			exp = radBill.CheckInventory(corelist);
 		}
 		
-		Boolean feltetel3 = this.AtPerihelion();
-		
-		if((feltetel1 == true && feltetel2 == true && feltetel3 == true) || neighbors.isEmpty())
+		if((exp == true) && neighbors.isEmpty())
 		{
 			for(SentientBeing sb : sentientbeings)
 			{
 				sb.Explode();
 			}
-			
+			corematerial.Perish();
+		} else if ((exp == true) && !neighbors.isEmpty()) {
+			for(SentientBeing sb : sentientbeings)
+			{
+				if(!sb.getName().equals("robot"))
+					sb.Explode();
+				else if(sb.getName().equals("robot")) {
+					Random rand = new Rand();
+					sb.setAsteroid(this.neighbors[rand.nextInt()]);
+				}
+			}
 			corematerial.Perish();
 		}
 	}
@@ -98,7 +103,7 @@ public class Asteroid extends Place
 	 */
 	public void DropBeing(SentientBeing being)
 	{
-		sentientbeings.removeIf(n -> n.)
+		sentientbeings.removeIf(sb -> (sb.getName().equals(being.getName())));
 	}
 	
 	/**
@@ -132,16 +137,11 @@ public class Asteroid extends Place
 	 */
 	public Boolean IsEmpty()
 	{
-		Scanner scanner = new Scanner(System.in);
-		String input = scanner.nextLine();
-		if(input.equals("1"))
-		{
+		if(corematerial == null) {
 			return true;
-		}else if(input.equals("2"))
-		{
+		}else {
 			return false;
 		}
-		return false;
 	}
 	
 	/**
@@ -163,7 +163,7 @@ public class Asteroid extends Place
 	 */
 	public void DropNeighbor(Place neighbor)
 	{
-		
+		neighbors.removeIf(n -> (n.getName().equals(neighbor.getName())));
 	}
 	
 	/**
@@ -202,18 +202,7 @@ public class Asteroid extends Place
 	 */
 	public void SolarWindDeath()
 	{
-		Scanner scanner = new Scanner(System.in);
-		Boolean feltetel1 = false;
-		String input = scanner.nextLine();
-		if(input.equals("1"))
-		{
-			feltetel1 = true;
-		}else if(input.equals("2"))
-		{
-			feltetel1 = false;
-		}
-		
-		if(this.IsEmpty() == false || feltetel1 == false)
+		if(this.IsEmpty() == false)
 		{
 			for(SentientBeing sb : sentientbeings)
 			{
@@ -252,11 +241,19 @@ public class Asteroid extends Place
 		return this.neighbors.get(0);
 	}
 
+	/**
+	 * a lyuk melysegenek a gettere
+	 * @return - melyseg
+	 */
 	public Integer getHoleDepth() 
 	{
 		return HoleDepth;
 	}
 	
+	/**
+	 * ki van-e furva az aszteroida
+	 * @return - boolean
+	 */
 	public boolean isMined() 
 	{
 		if(HoleDepth == CrustThickness) {
@@ -264,5 +261,13 @@ public class Asteroid extends Place
 		}else {
 			return false;
 		}
+	}
+	
+	/**
+	 * @return - kopeny vastagsag
+	 */
+	public Integer getCrustThickness() 
+	{
+		return CrustThickness;
 	}
 }

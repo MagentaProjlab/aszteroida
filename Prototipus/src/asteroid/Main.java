@@ -77,7 +77,7 @@ public class Main {
 			Uranium ur = new Uranium();
 			s.location.SetCore(ur);
 			ur.SetAsteroid(location);
-			BillOfMaterials radbill = new BillOfMaterials();
+			Bill radbill = new Bill();
 			radbill.AddMaterialToBill(ur);
 			location.SetBill(radbill);
 			s.Drill();
@@ -131,7 +131,7 @@ public class Main {
 			b.AddNeighbor(location);
 			r.location.SetCore(ur);
 			ur.SetAsteroid(location);
-			BillOfMaterials radbill = new BillOfMaterials();
+			Bill radbill = new Bill();
 			radbill.AddMaterialToBill(ur);
 			location.SetBill(radbill);
 			r.Drill();
@@ -215,7 +215,7 @@ public class Main {
 		Asteroid a = new Asteroid();
 		Asteroid Neighbor = new Asteroid();
 		a.AddNeighbor(Neighbor);
-		a.SetBill(new BillOfMaterials());
+		a.SetBill(new Bill());
 		a.RegisterBeing(s);
 		s.location = a;
 		Scanner sc = new Scanner(System.in);
@@ -322,7 +322,7 @@ public class Main {
 		a.AddNeighbor(Neighbor);
 		Uranium u = new Uranium();
 		a.SetCore(u);
-		BillOfMaterials radbill = new BillOfMaterials();
+		Bill radbill = new Bill();
 		radbill.AddMaterialToBill(u);
 		a.SetBill(radbill);
 		a.Explode();
@@ -388,7 +388,7 @@ public class Main {
 		a.CheckPerihelionReaction();
 		break;
 		case 4:  a.SetCore(ur);
-		BillOfMaterials radbill = new BillOfMaterials();
+		Bill radbill = new Bill();
 		radbill.AddMaterialToBill(ur);
 		a.SetBill(radbill);
 		ur.SetAsteroid(a);

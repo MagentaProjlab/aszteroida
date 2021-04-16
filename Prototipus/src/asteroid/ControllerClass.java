@@ -9,7 +9,7 @@ public class ControllerClass
 	private ArrayList<Settler> settlers;
 	private ArrayList<Robot> robots;
 	private SolarWind solarwind;
-	private ArrayList<BillOfMaterials> bills;
+	private ArrayList<Bill> bills;
 	
 	private Logger log;
 	

@@ -1,0 +1,99 @@
+package asteroid;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Bill
+{
+	/**
+	 * Tárolja a receptet
+	 */
+	private ArrayList<RawMaterial> materials;
+	
+	/**
+	 * A bill konstruktora
+	 */
+	public Bill()
+	{
+	}
+	
+	/**
+	 * Megvizsgalja, hogy az adott inventoryban van-e eleg a bill anyagaibol
+	 * @param inventory: a vizsgalni kivant inventory
+	 * @return azzal ter vissza, hogy a parameterkent atadott inventoryban van-e eleg a billbeli anyagokbol
+	 */
+	public Boolean CheckInventory(ArrayList<RawMaterial> inventory) 
+	{
+		if (inventory.size() >= materials.size()) {
+			int inCoal = 0;
+			int inIce = 0;
+			int inIron = 0;
+			int inUranium = 0;
+			for (int i = 0; i<inventory.size(); ++i) {
+				if (inventory.get(i).GetUniqueID().equals("coal"))
+					++inCoal;
+				if (inventory.get(i).GetUniqueID().equals("ice"))
+					++inIce;
+				if (inventory.get(i).GetUniqueID().equals("iron"))
+					++inIron;
+				if (inventory.get(i).GetUniqueID().equals("uranium"))
+					++inUranium;
+			}
+			int maCoal = 0;
+			int maIce = 0;
+			int maIron = 0;
+			int maUranium = 0;
+			for (int i = 0; i<materials.size(); ++i) {
+				if (materials.get(i).GetUniqueID().equals("coal"))
+					++maCoal;
+				if (materials.get(i).GetUniqueID().equals("ice"))
+					++maIce;
+				if (materials.get(i).GetUniqueID().equals("iron"))
+					++maIron;
+				if (materials.get(i).GetUniqueID().equals("uranium"))
+					++maUranium;
+			}
+			if (inCoal >= maCoal && inIce >= maIce && inIron >= maIron && inUranium >= maUranium)
+				return true;
+			else
+				return false;
+		}
+		else return false;
+	}
+	
+	/**
+	 * Hozzaad egy anyagot a bill listajahoz
+	 * @param material: a hozzaadni kivant anyag
+	 */
+	public void AddMaterialToBill(RawMaterial material) 
+	{
+		materials.add(material);
+	}
+	
+	/**
+	 * Kitorli a parameterkent atadott inventorybol a bill anyagait
+	 * @param inventory: a modositani kivant inventory
+	 * @return a modositott inventory
+	 */
+	public ArrayList<RawMaterial> DeleteFromInventory(ArrayList<RawMaterial> inventory) 
+	{
+		ArrayList<RawMaterial> neuInventory = new ArrayList<>();
+		
+		int maCoal = 0;
+		int maIce = 0;
+		int maIron = 0;
+		int maUranium = 0;
+		for (int i = 0; i<materials.size(); ++i) {
+			if (materials.get(i).GetUniqueID().equals("coal"))
+				++maCoal;
+			if (materials.get(i).GetUniqueID().equals("ice"))
+				++maIce;
+			if (materials.get(i).GetUniqueID().equals("iron"))
+				++maIron;
+			if (materials.get(i).GetUniqueID().equals("uranium"))
+				++maUranium;
+		}
+
+		
+	}
+}

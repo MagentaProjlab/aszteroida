@@ -1,0 +1,67 @@
+package asteroid;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class BillOfMaterials
+{
+	private ArrayList<RawMaterial> materials;
+	
+	/**
+	 * A bill konstruktora
+	 */
+	public BillOfMaterials()
+	{
+		Logger.MethodCall("BillOfMaterials()");
+		materials = new ArrayList<RawMaterial>();
+		Logger.MethodReturn("");
+	}
+	
+	/**
+	 * Megvizsgalja, hogy az adott inventoryban van-e eleg a bill anyagaibol
+	 * @param inventory: a vizsgalni kivant inventory
+	 * @return azzal ter vissza, hogy a parameterként atadott inventoryban van-e eleg a billbeli anyagokbol
+	 */
+	public Boolean CheckInventory(ArrayList<RawMaterial> inventory) 
+	{
+		Logger.MethodCall("CheckInventory(ArrayList<RawMaterial> inventory)");
+		Scanner scanner = new Scanner(System.in);
+		
+		Logger.UserQuestion("Does the inventory meet the conditions?");
+		Boolean feltetel = false;
+		String input = scanner.nextLine();
+		if(input.equals("1"))
+		{
+			feltetel = true;
+			Logger.MethodReturn("Boolean: true");
+		}else if(input.equals("2"))
+		{
+			feltetel = false;
+			Logger.MethodReturn("Boolean: false");
+		}
+		return feltetel;
+	}
+	
+	/**
+	 * Hozzaad egy anyagot a bill listajahoz
+	 * @param material: a hozzaadni kivant anyag
+	 */
+	public void AddMaterialToBill(RawMaterial material) 
+	{
+		Logger.MethodCall("AddMaterialToBill(ArrayList<RawMaterial> inventory)");
+		Logger.MethodReturn("void");
+		materials.add(material);
+	}
+	
+	/**
+	 * Kitorli a parameterkent atadott inventorybol a bill anyagait
+	 * @param inventory: a modositani kivant inventory
+	 * @return a modositott inventory
+	 */
+	public ArrayList<RawMaterial> DeleteFromInventory(ArrayList<RawMaterial> inventory) 
+	{
+		Logger.MethodCall("DeleteFromInventory(ArrayList<RawMaterial> inventory)");
+		Logger.MethodReturn("ArrayList<RawMaterial>");
+		return null;
+	}
+}

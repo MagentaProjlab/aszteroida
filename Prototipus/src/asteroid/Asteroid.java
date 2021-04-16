@@ -1,0 +1,291 @@
+package asteroid;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Asteroid extends Place 
+{
+	private Integer CrustThickness;
+	private Integer HoleDepth;
+	private Boolean CoreIsEmpty;
+	private RawMaterial corematerial;
+	private ArrayList<SentientBeing> sentientbeings;
+	private ArrayList<Place> neighbors;
+	private BillOfMaterials radBill;
+	
+	/**
+	 * Aszteroida konstruktora
+	 * Letrehoz ket listat, egyet a lenyek tarolasara, egyet a szomszedok tarolasara
+	 */
+	public Asteroid()
+	{
+		Logger.MethodCall("Asteroid()");
+		sentientbeings = new ArrayList<SentientBeing>();
+		neighbors = new ArrayList<Place>();
+		Logger.MethodReturn("");
+	}
+	
+	/**
+	 * Beallitja az aszteroida magjanak a tipusat
+	 * @param rm - parameterkent kapott nyersanyag
+	 */
+	public void SetCore(RawMaterial rm) {
+		Logger.MethodCall("SetCore(RawMaterial rm)");
+		this.corematerial = rm;
+		Logger.MethodReturn("void");
+	}
+	
+	/**
+	 * Beallitja az aszteroidahoz tartozo BillOfMaterials-t
+	 * @param radbill - BOM
+	 */
+	public void SetBill(BillOfMaterials radbill) {
+		Logger.MethodCall("Setbill(BillOfMaterials radbill)");
+		this.radBill = radbill;
+		Logger.MethodReturn("void");
+	}
+	
+	/**
+	 * Csokkenti az aszteroida kergenek a vastagsagat 
+	 */
+	public void IncreaseHoleDepth() 
+	{
+		Logger.MethodCall("IncreaseHoleDepth()");
+		CheckPerihelionReaction();
+		Logger.MethodReturn("void");
+	}
+	
+	/**
+	 * Felrobbantja az aszteroidat ha teljesul az osszes feltetel
+	 * Ha az aszteroida magja uran
+	 * Ha Holedepth = CrustTickness
+	 * Es napkozelben van az asztroida 
+	 */
+	public void Explode()
+	{
+		Logger.MethodCall("Explode()");
+		Boolean feltetel1 = false;
+		if(corematerial != null)
+		{
+			ArrayList<RawMaterial> corelist = new ArrayList<RawMaterial>();
+			corelist.add(corematerial);
+			feltetel1 = radBill.CheckInventory(corelist);
+		}
+		
+		Logger.UserQuestion("CrustThickness == HoleDepth?");
+		Boolean feltetel2 = false;
+		Scanner scanner = new Scanner(System.in);
+		String input = scanner.nextLine();
+		if(input.equals("1"))
+		{
+			feltetel2 = true;
+		}else if(input.equals("2"))
+		{
+			feltetel2 = false;
+		}
+		
+		Boolean feltetel3 = this.AtPerihelion();
+		
+		if((feltetel1 == true && feltetel2 == true && feltetel3 == true) || neighbors.isEmpty())
+		{
+			for(SentientBeing sb : sentientbeings)
+			{
+				sb.Explode();
+			}
+			
+			corematerial.Perish();
+		}
+		Logger.MethodReturn("void");
+	}
+	
+	/**
+	 * Eltavolitja a parameterkent kapott elolenyt az elolenyek listajabol
+	 * @param being - leny, amit eltunik az aszteroidarol
+	 */
+	public void DropBeing(SentientBeing being)
+	{
+		Logger.MethodCall("DropBeing()");
+		Logger.MethodReturn("void");
+	}
+	
+	/**
+	 * Hozzaad egy elolenyt az elolenyek listajahoz
+	 */
+	public void RegisterBeing(SentientBeing being)
+	{
+		Logger.MethodCall("RegisterBeing()");
+		sentientbeings.add(being);
+		Logger.MethodReturn("void");
+	}
+	
+	/**
+	 * A kibanyaszott nyersanyagot, vagyis a magjat eltavolitja
+	 */
+	public void DropMaterial() 
+	{
+		Logger.MethodCall("DropMaterial()");
+		Logger.MethodReturn("void");
+	}
+	
+	/**
+	 * A mag tipusanak a gettere
+	 * @return - nyersanyag
+	 */
+	public RawMaterial GetMaterial()
+	{
+		Logger.MethodCall("GetMaterial()");
+		Logger.MethodReturn("RawMaterial");
+		return this.corematerial;
+	}
+	
+	/**
+	 * Lekerdezi, hogy az adott aszteroida magja ures-e
+	 * @return - bool
+	 */
+	public Boolean IsEmpty()
+	{
+		Logger.MethodCall("IsEmpty()");
+		Logger.UserQuestion("Is the asteroid empty?");
+		Scanner scanner = new Scanner(System.in);
+		String input = scanner.nextLine();
+		if(input.equals("1"))
+		{
+			Logger.MethodReturn("Boolean: true");
+			return true;
+		}else if(input.equals("2"))
+		{
+			Logger.MethodReturn("Boolean: false");
+			return false;
+		}
+		Logger.MethodReturn("Boolean: false");
+		return false;
+	}
+	
+	/**
+	 * Beallitja az aszteroida magjanak tipusat
+	 * @param material - a nyersanyag ami az aszteroidaba kerul
+	 * @param settler - a telepes aki visszahelyezi a nyersanyagot
+	 */
+	public void SetMaterial(RawMaterial material, Settler settler)
+	{
+		Logger.MethodCall("SetMaterial()");
+		material.SetAsteroid(this);
+		settler.DropCarriedMaterial(material);
+		SetCore(material);
+		CheckPerihelionReaction();
+		Logger.MethodReturn("void");
+	}
+	
+	/**
+	 * Szomszed eltavolasa a listabol.
+	 * @param neighbor
+	 */
+	public void DropNeighbor(Place neighbor)
+	{
+		Logger.MethodCall("DropNeighbor()");
+		Logger.MethodReturn("void");
+	}
+	
+	/**
+	 * Lekerdezi az aszteroidatol, hogy napkozelben van-e
+	 * @return - bool
+	 */
+	public Boolean AtPerihelion()
+	{
+		Logger.MethodCall("AtPerihelion()");
+		Logger.UserQuestion("Is the asteroid at Perihelion?");
+		Scanner scanner = new Scanner(System.in);
+		String input = scanner.nextLine();
+		if(input.equals("1"))
+		{
+			Logger.MethodReturn("Boolean: true");
+			return true;
+		}else if(input.equals("2"))
+		{
+			Logger.MethodReturn("Boolean: false");
+			return false;
+		}
+		Logger.MethodReturn("Boolean: false");
+		return false;
+	}
+	
+	/**
+	 * Aszteroida szomszedjanak hozzaadasa
+	 * @param neighbor - aszteroida szomszedja
+	 */
+	public void AddNeighbor(Place neighbor)
+	{
+		Logger.MethodCall("AddNeighbor()");
+		neighbors.add(neighbor);
+		Logger.MethodReturn("void");
+	}
+	
+	/**
+	 * Napvihar minden feltetel teljesulese eseten
+	 * Ha Holedepth = CrustTickness
+	 * Es az aszteroida nem ures
+	 * Akkor az aszteroidan levo telepesek meghalnak
+	 * A robotok vagy atkerulnek egy masik aszteroidara vagy felrobbanak
+	 */
+	public void SolarWindDeath()
+	{
+		Logger.MethodCall("SolarWindDeath()");
+		Scanner scanner = new Scanner(System.in);
+		
+		Logger.UserQuestion("CrustThickness == HoleDepth?");
+		Boolean feltetel1 = false;
+		String input = scanner.nextLine();
+		if(input.equals("1"))
+		{
+			feltetel1 = true;
+		}else if(input.equals("2"))
+		{
+			feltetel1 = false;
+		}
+		
+		if(this.IsEmpty() == false || feltetel1 == false)
+		{
+			for(SentientBeing sb : sentientbeings)
+			{
+				sb.Die();
+			}
+		}
+		Logger.MethodReturn("void");
+	}
+	
+	/**
+	 * Eldonti az aszteroidarol, a nyeranyag tipusatol fuggoen,
+	 * hogy napkozelben mi tortenik vele
+	 */
+	public void CheckPerihelionReaction()
+	{
+		Logger.MethodCall("CheckPerihelionReaction()");
+		if (corematerial != null)
+			corematerial.PerihelionReaction();
+		Logger.MethodReturn("void");
+	}
+	
+	/**
+	 * Lenyek leptetese
+	 */
+	public void StepBeings()
+	{
+		Logger.MethodCall("StepBeings()");
+		for(SentientBeing sb : sentientbeings)
+		{
+			sb.Step();
+		}
+		Logger.MethodReturn("void");
+	}
+
+	/**
+	 * Szomszedok gettere
+	 * @return - szomszed
+	 */
+	public Place GetNeighbour()
+	{
+		Logger.MethodCall("GetNeighbour()");
+		Logger.MethodReturn("Place");
+		return this.neighbors.get(0);
+	}
+}

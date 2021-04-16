@@ -1,0 +1,62 @@
+package asteroid;
+
+import java.util.Scanner;
+
+
+public class Ice extends RawMaterial 
+{
+	/**
+	 * A jeg konstruktora.
+	 *
+	 */
+	public Ice()
+	{
+		Logger.MethodCall("Ice()");
+		Logger.MethodReturn("");
+	}
+	
+	/**
+	 * A nyersanyagot elpusztito fuggveny.
+	 */
+	public void Perish() 
+	{
+		Logger.MethodCall("Perish()");
+		this.SetAsteroid(null);
+		Logger.MethodReturn("void");
+	}
+	
+	/**
+	 * Az egyedi azonositot visszaado fuggveny. Jeg esesteben 'Ice'.
+	 */
+	public String GetUniqueID() 
+	{
+		Logger.MethodCall("GetUniqueID()");
+		Logger.MethodReturn("String: Ice");
+		return "Ice";
+	}
+	
+	/**
+	 * Az anyag reakciojat napkozelben kivalto absztrakt fuggveny.
+	 * A jeg reakcioba lep napkozelben.
+	 * Ha a tesztelo azt mondja, hogy Holedepth = CrustTickness(vagyis ki van furva)
+	 * akkor elparolog a jeg. Egyebkent nem csinal semmit.
+	 */
+	public void PerihelionReaction() 
+	{
+		Logger.MethodCall("PerihelionReaction()");
+		Scanner sc = new Scanner(System.in);
+		Logger.UserQuestion("Holedepth == CrustTickness?");
+		String answer = sc.nextLine();
+		if (answer.equals("1"))
+		{
+			Logger.UserQuestion("AtPerihelion?");
+			String as = sc.nextLine();
+			if (as.equals("1")) {
+			this.asteroid.DropMaterial();
+			this.Perish();
+			}
+		}
+		Logger.MethodReturn("void");
+	}
+
+}

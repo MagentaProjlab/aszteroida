@@ -1,0 +1,55 @@
+package asteroid;
+
+import java.util.Scanner;
+
+public class Uranium extends RawMaterial 
+{
+	/**
+	 * Az uran konstruktora.
+	 *
+	 */
+	public Uranium() {
+		Logger.MethodCall("Uranium()");
+		Logger.MethodReturn("");
+	}
+	
+	/**
+	 * A nyersanyagot elpusztito fuggveny.
+	 */
+	public void Perish() 
+	{
+		Logger.MethodCall("Perish()");
+		this.SetAsteroid(null);
+		Logger.MethodReturn("void");
+	}
+	
+	/**
+	 * Az egyedi azonositot visszaado fuggveny. Uran esesteben 'Uranium'.
+	 */
+	public String GetUniqueID() 
+	{
+		Logger.MethodCall("GetUniqueID() ");
+		Logger.MethodReturn("String Uranium");
+		return "Uranium";
+	}
+	
+	/**
+	 * Az anyag reakciojat napkozelben kivalto absztrakt fuggveny.
+	 * Az uran reakcioba lep napkozelben.
+	 * Ha a tesztelo azt mondja, hogy Holedepth = CrustTickness(vagyis ki van furva)
+	 * akkor felrobbantja az aszteroidat. Egyebkent nem csinal semmit.
+	 */
+	public void PerihelionReaction() 
+	{
+		Scanner sc = new Scanner(System.in);
+		Logger.MethodCall("PerihelionReaction()");
+		Logger.UserQuestion("Is Holedepth = CrustTickness?");
+		String answer = sc.nextLine();
+		if (answer.equals("1")) {
+			this.asteroid.Explode();
+		}
+		Logger.MethodReturn("void");
+	}
+		
+	}
+

@@ -14,7 +14,7 @@ public class Bill
 	 * A bill konstruktora
 	 */
 	public Bill()
-	{
+	{ materials = new ArrayList<>();
 	}
 	
 	/**

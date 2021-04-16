@@ -3,6 +3,7 @@ package asteroid;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+
 /**
  * Settler osztaly 
  * Kepessegei:mozgas, furas, banyaszas, robot vagy teleport epites, utobbi lehelyezese.
@@ -27,22 +28,34 @@ public class Settler extends SentientBeing {
 	 * ne lehessen tobb teleportkapuja mint egy par.
 	 */
 	private ArrayList<TeleportGate> carriedteleports;
+	
+	/**
+	 * A prototipusnal felmerult szuksege vegett, egy Stringban tarolt nev amivel a Settler kivalaszthato.
+	 */
+	private String name;
+	/**
+	 * Utobbi attributum getter-e
+	 */
+	public String getName() {
+		return name;
+	}
+	
 	/**
 	 * A Settler konstruktora
 	 * A tesztesetek miatt csupan ures BOM-ok vannak hozzaadva.
 	 * A jo mukodes vegett vannak inicializalva a listak ezekben 
 	 * egy adott teszteseten tul tarolast nem vegzunk.
 	 */
-	public Settler() 
+	public Settler(String _name) 
 	{
-		Logger.MethodCall("Settler()");
 		carriedmaterials = new ArrayList<RawMaterial>();
 		carriedteleports = new ArrayList<TeleportGate>();
+
+		//FIXME Nincsenek neki bill-jei
 		bills = new ArrayList<Bill>();
-		bills.add(new Bill());
-		bills.add(new Bill());
-		bills.add(new Bill());
-		Logger.MethodReturn("");
+		
+		name=_name;
+		Logger.Message("[Settler: "+name+"]");
 	}
 	/**
 	 * AddTeleport metodus- egy teleportkapu hozzadasara
@@ -50,9 +63,8 @@ public class Settler extends SentientBeing {
 	 */
 	public void AddTeleport(TeleportGate tg) 
 	{
-		Logger.MethodCall("AddTeleport(TeleportGate tg)");
 		this.carriedteleports.add(tg);
-		Logger.MethodReturn("void");
+		//Masik metodus ir Logger-be elotte
 	}
 	/**
 	 * Drill metodus - A telepes aszteroidajanak furasara.
@@ -60,14 +72,15 @@ public class Settler extends SentientBeing {
 	 */
 	public void Drill() 
 	{
-		Logger.MethodCall("Drill()");
-		Logger.UserQuestion("Can the settler drill?");
-		Scanner scanner = new Scanner(System.in);
-		String input = scanner.nextLine();
-		if(input.equals("1")) {//TODO tudni kell, hogy meg furhatja-e
+		//TODO az aszteroidanak kell bool-t visszaadni
+		
+		if(!location.isMined()) {
 			location.IncreaseHoleDepth();
+			Logger.Message("[Settler: "+name+"] has drilled "+location.getName());
 		}
-		Logger.MethodReturn("void");
+		else {
+			Logger.Message("[Settler: "+name+"] has failed to drill "+location.getName());
+		}
 	}
 	/**
 	 * Mine metodus - A mar lefurt aszteroida banyaszasahoz.
@@ -75,19 +88,19 @@ public class Settler extends SentientBeing {
 	 */
 	public void Mine() 
 	{
-		Logger.MethodCall("Mine()");
-		Logger.UserQuestion("Does it still fit in the settler's invetory?");
-		Scanner scanner = new Scanner(System.in);
-		String input = scanner.nextLine();
-		if(input.equals("1")) {
-			if(!location.IsEmpty()) {
-				RawMaterial rm=location.GetMaterial();
-				AddCarriedMaterial(rm);
-				rm.SetAsteroid(null);
-				location.DropMaterial();
-			}
+		//TODO APRO baj, nem tudjuk megnezni , hogy mar beert-e a lyuk az aszteroidaba.
+		//Gabor on it
+		if(carriedmaterials.size()<11&&!location.IsEmpty()&&location.isMined()) {
+			
+			RawMaterial rm=location.GetMaterial();
+			AddCarriedMaterial(rm);
+			rm.SetAsteroid(null);
+			location.DropMaterial();
+			Logger.Message("[Settler: "+name+"] has mined ");
 		}
-		Logger.MethodReturn("void");
+		else {
+			Logger.Message("[Settler: "+name+"] has failed to mine ");
+		}
 	}
 	/**
 	 * Die metodus - A telepes halalakor meghivodo metodus
@@ -96,23 +109,22 @@ public class Settler extends SentientBeing {
 	 */
 	public void Die() 
 	{
-		Logger.MethodCall("Die()");
 		for(RawMaterial item:carriedmaterials) {
 			item.Perish();
 		}
 		for(TeleportGate item:carriedteleports) {
 			item.Explode();
 		}
-		Logger.MethodReturn("void");
+		Logger.Message("[Settler: "+name+"] has died ");
 	}
 	/**
 	 * AddCarriedMaterial metodus - Egy anyag hozzadasa a telepeshez.
+	 * Fontos, a telepes zsebenek telitettseget, az ezt a metodust meghivo, mine metodusban ellenorizzuk!
 	 */
 	public void AddCarriedMaterial(RawMaterial material)
 	{
-		Logger.MethodCall("AddCarriedMaterial()");
 		carriedmaterials.add(material);
-		Logger.MethodReturn("void");
+		//TODO De ez nem kell! A teszteset elvart kimenetetol fugg
 	}
 	/**
 	 * Explode metodus - A telepes felrobbantasa
@@ -120,9 +132,8 @@ public class Settler extends SentientBeing {
 	 */
 	public void Explode() 
 	{
-		Logger.MethodCall("Explode()");
 		Die();
-		Logger.MethodReturn("void");
+		Logger.Message("[Settler: "+name+"] has exploded ");
 	}
 	/**
 	 * BuildRobot metodus - A robot epiteshez
@@ -130,16 +141,21 @@ public class Settler extends SentientBeing {
 	 * A BOM-ok a prototipusban kerulnek rendesen feltoltesre
 	 *  jelenleg az ellenorzest az input altal dontjuk el.
 	 */
-	public void BuildRobot() 
+	public void BuildRobot(String robot_name) 
 	{
-		Logger.MethodCall("BuildRobot()");
-		Boolean feltetel1 = bills.get(1).CheckInventory(null);
+		//FIXME Nincsenek neki bill-jei!!! Amig ez nincs megoldva hagyd false-on, 
+		//ha meg van ird at a megfelelo bill check inventoryjara
+		Boolean feltetel1 = false;
 		if(feltetel1) 
 		{
-			location.RegisterBeing(new Robot());
-			bills.get(1).DeleteFromInventory(null);
+			Robot r=new Robot(location,robot_name);
+			location.RegisterBeing(r);
+			bills.get(1).DeleteFromInventory(carriedmaterials);
+			Logger.Message("[Settler: "+name+"] has built robot ");
 		}
-		Logger.MethodReturn("void");
+		else {
+			Logger.Message("[Settler: "+name+"] failed to build robot ");
+		}
 	}
 	/**
 	 * BuildTeleportGatePair metodus - A teleportkapuk epiteshez
@@ -150,25 +166,27 @@ public class Settler extends SentientBeing {
 	 */
 	public void BuildTeleportGatePair() 
 	{
-		Logger.MethodCall("BuildTeleportGatePair()");
-		Logger.UserQuestion("Does the settler have any teleportgates?");
-		Scanner scanner = new Scanner(System.in);
-		String input = scanner.nextLine();
-		// Pont ez a sorszamu a billje, perpill ures.
-		
-		
-		Boolean feltetel1 = bills.get(2).CheckInventory(null);
-		if(feltetel1&&input.equals("0")) 
+		//FIXME Nincsenek neki bill-jei!!! Amig ez nincs megoldva hagyd false-on, 
+		//ha meg van ird at a megfelelo bill check inventoryjara
+		Boolean feltetel1 = false;
+		if(feltetel1) 
 		{
-			TeleportGate t1=new TeleportGate();
-			TeleportGate t2=new TeleportGate();
-			
+			//itt meg a teleportgate nem tud semmit, mivel nincs lerakva.
+			//Csak a tesojat
+			TeleportGate t1=new TeleportGate(null,this,"");
+			TeleportGate t2=new TeleportGate(null,this,"");
 			bills.get(2).DeleteFromInventory(null);
-			
 			t1.SetSibling(t2);
 			t2.SetSibling(t1);
+			AddTeleport(t1);
+			AddTeleport(t2);
+			Logger.Message("[Settler: "+name+"] built a teleportgate pair  ");
+
 		}
-		Logger.MethodReturn("void");
+		else {
+			Logger.Message("[Settler: "+name+"] failed to build a teleportgate pair  ");
+		}
+		
 	}
 	/**
 	 * FillAsteroid metodus - Az anyag visszahelyezeshez
@@ -178,15 +196,15 @@ public class Settler extends SentientBeing {
 	 */
 	public void FillAsteroid(RawMaterial material) 
 	{
-		Logger.MethodCall("FillAsteroid()");
-
-		Logger.UserQuestion("Can the settler fill the asteroid?");
-		Scanner scanner = new Scanner(System.in);
-		String input = scanner.nextLine();
-		if(input.equals("1")) {
+		//FIXME isMined(), getName hianya
+		//FIXME a user honnan fog kivalasztani egy objektumot, nem indexet kene kapjon? 
+		if(location.isMined()&&location.IsEmpty()) {
 			location.SetMaterial(material, this);
+			Logger.Message("[Settler: "+name+"]  has put material back to "+location.getName());
 		}
-		Logger.MethodReturn("void");
+		else {
+			Logger.Message("[Settler: "+name+"]  has failed to put material back to "+location.getName());
+		}
 	}
 	
 	/**
@@ -196,38 +214,36 @@ public class Settler extends SentientBeing {
 	 */
 	public void Move(Place place) 
 	{
-		Logger.MethodCall("Move(Place place)");
+		//TODO a SentientBeing.setAsteroid-ot meg KELL hivni a cimzett asteroidanak
 		location.DropBeing(this);
 		place.RegisterBeing(this);
-		Logger.MethodReturn("void");
+		Logger.Message("[Settler: "+name+"] has moved to "+place.getName());
 	}
 	/**
 	 * PutTeleportGateOnAsteroid metodus - Teleportkapu lerakashoz
 	 * Az aszteroidahoz, amin eppen all a telepes lerakja az egyik teleportkaput.
-	 * Persze akkor ha a feltetelek ehhez adottak, vagyis nincs mar teleportkapu az aszteroidan.
+	 * Persze akkor ha a feltetelek ehhez adottak, vagyis nincs mar a teleportkapu parja az aszteroidan.
+	 * @param idx Hanyadik teleportkaput rakjuk le, 0-tol kezdunk!
 	 */
-	public void PutTeleportGateOnAsteroid() 
+	public void PutTeleportGateOnAsteroid(String name,int idx) 
 	{
-		Logger.MethodCall("PutTeleportGateOnAsteroid()");
-
-		Logger.UserQuestion("Does the settler have a teleportgate?");
-		Scanner scanner = new Scanner(System.in);
-		String input = scanner.nextLine();
-		if(input.equals("1")) {
-			TeleportGate t=new TeleportGate();
-			t.GetAsteroid();
-			Logger.UserQuestion("Is the settler on the same asteroid as the teleportgate's sibling?");
-			scanner = new Scanner(System.in);
-			String input2 = scanner.nextLine();
-			if (!(input2.equals("1"))) {
-				Asteroid TestLocation=new Asteroid();
-				TestLocation.AddNeighbor(t);
-				t.SetAsteroid(TestLocation);
+		//FIXME itt is kene egy teleport index a tesztesetek miatt
+		if(carriedteleports.size()>=idx+1) {
+			TeleportGate t=carriedteleports.get(idx);
+			//ezt a "t"-t csak azert  vettem fel, hogy a kovi sor ne legyen olyan 
+			//hosszu, es hogy konzisztens maradjak az eredeti koddal
+			if(!t.GetSibling().GetAsteroid().equals(location)) {
+				t.SetName(name);
+				location.AddNeighbor(t);
+				t.SetAsteroid(location);
 				t.DropOwner();
 				DropCarriedTeleport(t);
 			}
+			Logger.Message("[Settler: "+name+"] has put down teleport "+t.getName());
 		}
-		Logger.MethodReturn("void");
+		else {
+			Logger.Message("[Settler: "+name+"] has put down teleport ");
+		}
 	}
 	/**
 	 * Step metodus - A telepes leptetesehez
@@ -235,23 +251,82 @@ public class Settler extends SentientBeing {
 	 */
 	public void Step() 
 	{
-		Logger.MethodCall("Step()");
-		Logger.UserQuestionSettler("What will the settler do?");
-		Scanner scanner = new Scanner(System.in);
-		String input = "-1";
-			input = scanner.nextLine();
-			switch(Integer.parseInt(input))
-			{
-				case 1: Logger.Message("Refer to test 3"); break;
-				case 2: Logger.Message("Refer to test 1"); break;
-				case 3: Logger.Message("Refer to test 5"); break;
-				case 4: Logger.Message("Refer to test 6"); break;
-				case 5: Logger.Message("Refer to test 7"); break;
-				case 6: Logger.Message("Refer to test 8"); break;
-				case 7: Logger.Message("Refer to test 9"); break;
-			}
+		String command="";//FIXME give me value
+		String[] command_parts=command.split(":");
+		switch (command_parts[0]) {
+			case "move":
+				if(command_parts.length!=2) {
+					Logger.Message("[Settler: "+name+"] failed to move  ");
+				}
+				else {
+					ArrayList<Place> neighbors=location.getNeighbors();
+					int celzottIndex=Integer.parseInt(command_parts[1]);
+					if(neighbors.size()>=1+celzottIndex) {
+						Move(neighbors.get(celzottIndex));
+					}
+					else {
+						Logger.Message("[Settler: "+name+"] failed to move  ");
+					}
+					//FIXME a getneighbors list legyen
+				}
+				break;
+			case "drill":
+				this.Drill();
+				break;	
+			case "mine":
+				this.Mine();
+				break;
+			case "listinventory":
+				//teleport es nyersanyag!
+				for (int i = 0; i < carriedmaterials.size(); i++) {
+					Logger.Message(i+":"+carriedmaterials.get(i).GetUniqueID());
+				}
+				for (int i = 0; i < carriedmaterials.size(); i++) {
+					Logger.Message(i+":"+carriedmaterials.get(i).GetUniqueID());
+				}
+				break;
+			case "buildteleport":
+				this.BuildTeleportGatePair();
+				break;
+			case "putdowntele":	
+				
+				if(command_parts.length!=3) {
+					//Logger.Message("[Settler: "+name+"] failed to put down teleport ");
+				}
+				else {
+					//atadjuk a kiiratas alapjan megfelelo index-et es a nevet a teleportnak
+					//Az index a metodusban van ellenorizve
+					this.PutTeleportGateOnAsteroid(command_parts[1],Integer.parseInt(command_parts[2]));
+				}
+				break;
+			case "buildrobot":	
+				if(command_parts.length!=2) {
+					Logger.Message("[Settler: "+name+"] failed to build robot ");
+				}
+				else {
+					BuildRobot(command_parts[1]);
+				}
+				break;
+			case "putback":	
+				if(command_parts.length!=2) {
+					Logger.Message("[Settler: "+name+"] failed to put back material ");
+				}
+				else {
+					int celzottIndex=Integer.parseInt(command_parts[1]);
+					if(carriedmaterials.size()>=1+celzottIndex) {
+						FillAsteroid(carriedmaterials.get(celzottIndex));
+					}
+					else {
+						Logger.Message("[Settler: "+name+"] failed to move  ");
+					}
+				}
+				break;
+			default:
+				Logger.Message("Bad command for the Settler bucko");
+				break;
+		}
 		
-		Logger.MethodReturn("void");
+		Logger.Message("[Settler: "+name+"] has been selected to step.");
 	}
 	/**
 	 * DropCarriedMaterial metodus - Egy anyag eldobashoz
@@ -261,19 +336,17 @@ public class Settler extends SentientBeing {
 	 */
 	public void DropCarriedMaterial(RawMaterial material)
 	{
-		Logger.MethodCall("DropCarriedMaterial()");
-		Logger.MethodReturn("void");
+		carriedmaterials.remove(material);		
 	}
 	/**
 	 * DropCarriedTeleport metodus - Egy teleportkapu eldobasahoz
 	 * Ha a telepes lerak egy teleport kaput, vagy amikor a halalakor el kell
-	 *  dobnia az osszeset, akkor hasznaljuk ezt a metodust.
+	 * dobni a az osszeset, akkor hasznaljuk ezt a metodust.
 	 * @param teleport Az eldobando teleportkapu objektum
 	 */
 	public void DropCarriedTeleport(TeleportGate teleport) 
 	{
-		Logger.MethodCall("DropCarriedTeleport()");
-		Logger.MethodReturn("void");
+		carriedteleports.remove(teleport);		
 	}
 	
 }

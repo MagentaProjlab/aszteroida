@@ -15,4 +15,5 @@ public abstract class Place
 	 * Felrobbantja az adott "helyszint"
 	 */
 	public abstract void Explode();
+	public abstract String getName();
 }

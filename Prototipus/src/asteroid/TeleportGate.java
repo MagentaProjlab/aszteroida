@@ -20,8 +20,8 @@ public class TeleportGate extends Place implements ID
 	public void SetName(String n) {
 		id = n;
 	}
-	
-	public String GetName(String n) {
+
+	public String getName() {
 		return id;
 	}
 	/**

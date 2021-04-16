@@ -64,6 +64,8 @@ public class ControllerClass
 			
 		}
 		
+		
+		//  ezek mind a beingekhez kellenek
 		//Move 
 		//Drill 
 		//Die 

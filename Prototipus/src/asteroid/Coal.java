@@ -6,10 +6,9 @@ public class Coal extends RawMaterial
 	 * A szen konstruktora.
 	 *
 	 */
-	public Coal()
+	public Coal(Asteroid a)
 	{
-		Logger.MethodCall("Coal()");
-		Logger.MethodReturn("");
+		this.asteroid=a;
 	}
 	
 	/**
@@ -17,9 +16,7 @@ public class Coal extends RawMaterial
 	 */
 	public void Perish() 
 	{
-		Logger.MethodCall("Perish()");
 		this.SetAsteroid(null);
-		Logger.MethodReturn("void");
 	}
 	
 	/**
@@ -27,8 +24,6 @@ public class Coal extends RawMaterial
 	 */
 	public String GetUniqueID() 
 	{
-		Logger.MethodCall("GetUniqueID()");
-		Logger.MethodReturn("String: Coal");
 		return "Coal";
 	}
 	
@@ -36,10 +31,6 @@ public class Coal extends RawMaterial
 	 * Az anyag reakciojat napkozelben kivalto absztrakt fuggveny.
 	 * Szen eseteben nincs reakcio.
 	 */
-	public void PerihelionReaction() 
-	{
-		Logger.MethodCall("PerihelionReaction()");
-		Logger.MethodReturn("void");
-	}
+	public void PerihelionReaction() {}
 	
 }

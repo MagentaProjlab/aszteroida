@@ -1,16 +1,15 @@
 package asteroid;
 
-import java.util.Scanner;
-
 public class Uranium extends RawMaterial 
 {
+	int ReactionCount;
 	/**
 	 * Az uran konstruktora.
 	 *
 	 */
-	public Uranium() {
-		Logger.MethodCall("Uranium()");
-		Logger.MethodReturn("");
+	public Uranium(Asteroid a, int recount) {
+		this.asteroid = a;
+		this.ReactionCount = recount;
 	}
 	
 	/**
@@ -18,9 +17,7 @@ public class Uranium extends RawMaterial
 	 */
 	public void Perish() 
 	{
-		Logger.MethodCall("Perish()");
 		this.SetAsteroid(null);
-		Logger.MethodReturn("void");
 	}
 	
 	/**
@@ -28,8 +25,6 @@ public class Uranium extends RawMaterial
 	 */
 	public String GetUniqueID() 
 	{
-		Logger.MethodCall("GetUniqueID() ");
-		Logger.MethodReturn("String Uranium");
 		return "Uranium";
 	}
 	
@@ -41,15 +36,14 @@ public class Uranium extends RawMaterial
 	 */
 	public void PerihelionReaction() 
 	{
-		Scanner sc = new Scanner(System.in);
-		Logger.MethodCall("PerihelionReaction()");
-		Logger.UserQuestion("Is Holedepth = CrustTickness?");
-		String answer = sc.nextLine();
-		if (answer.equals("1")) {
-			this.asteroid.Explode();
+		if (true) {
+			if (this.ReactionCount < 3) {
+				this.ReactionCount++;
+			}else {
+				this.asteroid.Explode();
+			}
 		}
-		Logger.MethodReturn("void");
 	}
-		
+	
 	}
 

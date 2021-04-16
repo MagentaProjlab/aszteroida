@@ -1,18 +1,14 @@
 package asteroid;
 
-import java.util.Scanner;
-
-
 public class Ice extends RawMaterial 
 {
 	/**
 	 * A jeg konstruktora.
 	 *
 	 */
-	public Ice()
+	public Ice(Asteroid a)
 	{
-		Logger.MethodCall("Ice()");
-		Logger.MethodReturn("");
+		this.asteroid = a;
 	}
 	
 	/**
@@ -20,9 +16,7 @@ public class Ice extends RawMaterial
 	 */
 	public void Perish() 
 	{
-		Logger.MethodCall("Perish()");
 		this.SetAsteroid(null);
-		Logger.MethodReturn("void");
 	}
 	
 	/**
@@ -30,8 +24,6 @@ public class Ice extends RawMaterial
 	 */
 	public String GetUniqueID() 
 	{
-		Logger.MethodCall("GetUniqueID()");
-		Logger.MethodReturn("String: Ice");
 		return "Ice";
 	}
 	
@@ -43,20 +35,11 @@ public class Ice extends RawMaterial
 	 */
 	public void PerihelionReaction() 
 	{
-		Logger.MethodCall("PerihelionReaction()");
-		Scanner sc = new Scanner(System.in);
-		Logger.UserQuestion("Holedepth == CrustTickness?");
-		String answer = sc.nextLine();
-		if (answer.equals("1"))
-		{
-			Logger.UserQuestion("AtPerihelion?");
-			String as = sc.nextLine();
-			if (as.equals("1")) {
+		//here goes the fuggveny for getting the crust thickness
+			if (true) {
 			this.asteroid.DropMaterial();
 			this.Perish();
-			}
 		}
-		Logger.MethodReturn("void");
 	}
 
 }

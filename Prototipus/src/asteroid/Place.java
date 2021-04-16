@@ -3,6 +3,10 @@ package asteroid;
 public abstract class Place
 {
 	/**
+	 * Az adott hely neve
+	 */
+	protected String name;
+	/**
 	 * Hozzarendel egy leny az adott "helyszinhez"
 	 * @param being - hozzarendelendo leny
 	 */

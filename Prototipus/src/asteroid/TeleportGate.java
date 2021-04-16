@@ -8,9 +8,8 @@ public class TeleportGate extends Place
 	/**
 	 * A TeleportGate konstruktora
 	 */
-	public TeleportGate(TeleportGate tg, Asteroid a, Settler o, String name)
+	public TeleportGate(Asteroid a, Settler o, String name)
 	{
-		this.sibling = tg;
 		this.asteroid = a;
 		this.owner = o;
 		this.id = name;

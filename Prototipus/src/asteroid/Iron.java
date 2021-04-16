@@ -6,10 +6,9 @@ public class Iron extends RawMaterial
 	 * A vas konstruktora.
 	 *
 	 */
-	public Iron()
+	public Iron(Asteroid a)
 	{
-		Logger.MethodCall("Iron()");
-		Logger.MethodReturn("");
+		this.asteroid = a;
 	}
 	
 	/**
@@ -17,9 +16,7 @@ public class Iron extends RawMaterial
 	 */
 	public void Perish()
 	{
-		Logger.MethodCall("Perish()");
 		this.SetAsteroid(null);
-		Logger.MethodReturn("void");
 	}
 	
 	/**
@@ -27,8 +24,6 @@ public class Iron extends RawMaterial
 	 */
 	public String GetUniqueID()
 	{
-		Logger.MethodCall("GetUniqueID()");
-		Logger.MethodReturn("String: Iron");
 		return "Iron";
 	}
 	
@@ -36,9 +31,5 @@ public class Iron extends RawMaterial
 	 * Az anyag reakciojat napkozelben kivalto absztrakt fuggveny.
 	 * Vas eseteben nincs reakcio.
 	 */
-	public void PerihelionReaction()
-	{
-		Logger.MethodCall("PerihelionReaction()");
-		Logger.MethodReturn("void");
-	}
+	public void PerihelionReaction(){}
 }

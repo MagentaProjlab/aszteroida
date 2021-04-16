@@ -1,16 +1,18 @@
 package asteroid;
 
-import java.util.Scanner;
-
 public class Robot extends SentientBeing
 {
+	String id;
 	/**
 	 * Robot konstruktora
 	 */
-	public Robot()
+	public Robot(Asteroid a, String name)
 	{
-		Logger.MethodCall("Robot()");
-		Logger.MethodReturn("");
+		this.location = a;
+		this.id = name;
+	}
+	public String GetName() {
+		return id;
 	}
 	/**
 	 * Robot mozog az aszteroidak kozott
@@ -18,10 +20,8 @@ public class Robot extends SentientBeing
 	 */
 	public void Move(Place place) 
 	{
-		Logger.MethodCall("Move(Place place)");
 		this.location.DropBeing(this);
 		place.RegisterBeing(this);
-		Logger.MethodReturn("void");
 	}
 	/**
 	 * A robot fur
@@ -30,24 +30,14 @@ public class Robot extends SentientBeing
 	 */
 	public void Drill()
 	{
-		Logger.MethodCall("Drill()");
-		Logger.UserQuestion("Can the robot drill?");
-		Scanner scanner = new Scanner(System.in);
-		String input = scanner.nextLine();
-		if(input.equals("1"))
-		{
 			location.IncreaseHoleDepth();
-		}
-		Logger.MethodReturn("void");
 	}	
 	/**
 	 * A robot meghal
 	 */
 	public void Die() 
 	{
-		Logger.MethodCall("Die()");
 		location.DropBeing(this);
-		Logger.MethodReturn("void");
 	}
 	/**
 	 * A robot felrobban
@@ -57,16 +47,11 @@ public class Robot extends SentientBeing
 	 */
 	public void Explode()
 	{
-		Logger.MethodCall("Explode()");
-		Scanner scanner = new Scanner(System.in);
-		Logger.UserQuestion("Does the asteroid have more neighbors?");
-		String input = scanner.nextLine();
-		if(input.equals("2")) {
+		if(this.location.GetNeighbour() != null) {
 			Die();
 		} else {
 			Move(this.location.GetNeighbour());
 		}
-		Logger.MethodReturn("void");
 	}
 	/**
 	 * A robot lep.
@@ -74,15 +59,6 @@ public class Robot extends SentientBeing
 	 */
 	public void Step() 
 	{
-		Logger.MethodCall("Step()");
-		Scanner scanner = new Scanner(System.in);
-		Logger.UserQuestionRobot("Drill or move the robot?");
-		String input = scanner.nextLine();
-		if(input.equals("1")) {
-			Logger.Message("Refer to test 2");
-		} else if(input.equals("2")) {
-			Logger.Message("Refer to test 4");
-		}
-		Logger.MethodReturn("void");
+		
 	}
 }

@@ -12,9 +12,7 @@ public class SolarWind
 	 */
 	public SolarWind()
 	{
-		Logger.MethodCall("SolarWind()");
 		sentientbeings = new ArrayList<SentientBeing>();
-		Logger.MethodReturn("");
 	}
 	/**
 	 * Napszel keletkezik
@@ -22,28 +20,10 @@ public class SolarWind
 	 * @param asteroids : Azok az aszteroidak, amiket eler a napszel
 	 */
 	public void solarWind(ArrayList<Asteroid> asteroids)
-	{
-		Logger.MethodCall("SolarWind()");
-		Scanner scanner = new Scanner(System.in);
-		Logger.UserQuestion("Is there a solar wind?");
-		Boolean feltetel = false;
-		String input = scanner.nextLine();
-		if(input.equals("1"))
+	{		
+		for(Asteroid a : asteroids)
 		{
-			feltetel = true;
-		}else if(input.equals("2"))
-		{
-			feltetel = false;
-		}
-		
-		
-		if(feltetel == true)
-		{
-			for(Asteroid a : asteroids)
-			{
-				a.SolarWindDeath();
-			}	
-		}
-		Logger.MethodReturn("void");
+			a.SolarWindDeath();
+		}	
 	}
 }

@@ -9,9 +9,7 @@ public abstract class RawMaterial
 	 */
 	public void Perish()
 	{
-		Logger.MethodCall("Perish()");
 		this.SetAsteroid(null);
-		Logger.MethodReturn("void");
 	}
 	
 	/**
@@ -20,9 +18,7 @@ public abstract class RawMaterial
 	 */
 	public void SetAsteroid(Asteroid asteroid)
 	{
-		Logger.MethodCall("SetAsteroid(Asteroid asteroid)");
 		this.asteroid = asteroid;
-		Logger.MethodReturn("void");
 	}
 	
 	/**

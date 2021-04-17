@@ -26,7 +26,7 @@ public class Ufo extends SentientBeing
 	{
 		this.location.DropBeing(this);
 		place.RegisterBeing(this);
-		Logger.Message("[Ufo: "+id+"] has moved to "+place.getName());
+		Logger.Message("[Ufo: "+id+"] has moved to "+place.getName()+".");
 
 	}
 	/**
@@ -40,10 +40,10 @@ public class Ufo extends SentientBeing
 				this.carriedmaterials.add(rm);
 				rm.SetAsteroid(null);
 				location.DropMaterial();
-				Logger.Message("[Ufo: "+id+"] has mined ");
+				Logger.Message("[Ufo: "+id+"] has mined"+".");
 			}
 			else {
-				Logger.Message("[Ufo: "+id+"] has failed to mine ");
+				Logger.Message("[Ufo: "+id+"] has failed to mine"+".");
 			}
 	}
 	/**
@@ -66,7 +66,7 @@ public class Ufo extends SentientBeing
 	 */
 	public void Explode()
 	{
-		Logger.Message("[Ufo: "+id+"] has exploded ");
+		Logger.Message("[Ufo: "+id+"] has exploded"+".");
 		Die();
 			
 	}
@@ -82,7 +82,7 @@ public class Ufo extends SentientBeing
 		switch (command_parts[0]) {
 			case "move":
 				if(command_parts.length!=2) {
-					Logger.Message("[Ufo: "+id+"] failed to move  ");
+					Logger.Message("[Ufo: "+id+"] failed to move"+".");
 				}
 				else {
 					ArrayList<Place> neighbors=location.getNeighbors();
@@ -91,7 +91,7 @@ public class Ufo extends SentientBeing
 						Move(neighbors.get(celzottIndex));
 					}
 					else {
-						Logger.Message("[Ufo: "+id+"] failed to move  ");
+						Logger.Message("[Ufo: "+id+"] failed to move"+".");
 					}
 				}
 				break;
@@ -99,7 +99,7 @@ public class Ufo extends SentientBeing
 				this.Mine();
 				break;
 			default:
-				Logger.Message("Bad command for the Ufo bucko");
+				Logger.Message("Bad command for the Ufo bucko"+".");
 				break;
 		}
 		

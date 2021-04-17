@@ -83,8 +83,8 @@ public class Settler extends SentientBeing {
 		
 		if(tg)
 		{
-			TeleportGate gate1 = new TeleportGate(null, null, name1);
-			TeleportGate gate2 = new TeleportGate(null, null, name2);
+			TeleportGate gate1 = new TeleportGate(null, null, "");
+			TeleportGate gate2 = new TeleportGate(null, null, "");
 			gate1.SetSibling(gate2);
 			gate2.SetSibling(gate1);
 
@@ -110,10 +110,10 @@ public class Settler extends SentientBeing {
 	{		
 		if(!location.isDrilled()) {
 			location.IncreaseHoleDepth();
-			Logger.Message("[Settler: "+name+"] has drilled "+location.getName());
+			Logger.Message("[Settler: "+name+"] has drilled "+location.getName()+".");
 		}
 		else {
-			Logger.Message("[Settler: "+name+"] has failed to drill "+location.getName());
+			Logger.Message("[Settler: "+name+"] has failed to drill "+location.getName()+".");
 		}
 	}
 	/**
@@ -127,10 +127,10 @@ public class Settler extends SentientBeing {
 			AddCarriedMaterial(rm);
 			rm.SetAsteroid(null);
 			location.DropMaterial();
-			Logger.Message("[Settler: "+name+"] has mined ");
+			Logger.Message("[Settler: "+name+"] has mined"+".");
 		}
 		else {
-			Logger.Message("[Settler: "+name+"] has failed to mine ");
+			Logger.Message("[Settler: "+name+"] has failed to mine"+".");
 		}
 	}
 	/**
@@ -166,7 +166,7 @@ public class Settler extends SentientBeing {
 	 */
 	public void Explode() 
 	{
-		Logger.Message("[Settler: "+name+"] has exploded ");
+		Logger.Message("[Settler: "+name+"] has exploded"+".");
 		Die();
 		
 	}
@@ -186,10 +186,10 @@ public class Settler extends SentientBeing {
 			Robot r=new Robot(location,robot_name);
 			location.RegisterBeing(r);
 			bills.get(1).DeleteFromInventory(carriedmaterials);
-			Logger.Message("[Settler: "+name+"] has built robot ");
+			Logger.Message("[Settler: "+name+"] has built robot"+".");
 		}
 		else {
-			Logger.Message("[Settler: "+name+"] failed to build robot ");
+			Logger.Message("[Settler: "+name+"] failed to build robot"+".");
 		}
 	}
 	/**
@@ -215,11 +215,11 @@ public class Settler extends SentientBeing {
 			t2.SetSibling(t1);
 			AddTeleport(t1);
 			AddTeleport(t2);
-			Logger.Message("[Settler: "+name+"] built a teleportgate pair  ");
+			Logger.Message("[Settler: "+name+"] built a teleportgate pair.");
 
 		}
 		else {
-			Logger.Message("[Settler: "+name+"] failed to build a teleportgate pair  ");
+			Logger.Message("[Settler: "+name+"] failed to build a teleportgate pair"+".");
 		}
 		
 	}
@@ -233,10 +233,10 @@ public class Settler extends SentientBeing {
 	{
 		if(location.isDrilled()&&location.IsEmpty()) {
 			location.SetMaterial(material, this);
-			Logger.Message("[Settler: "+name+"]  has put material back to "+location.getName());
+			Logger.Message("[Settler: "+name+"]  has put material back to "+location.getName()+".");
 		}
 		else {
-			Logger.Message("[Settler: "+name+"]  has failed to put material back to "+location.getName());
+			Logger.Message("[Settler: "+name+"]  has failed to put material back to "+location.getName()+".");
 		}
 	}
 	
@@ -249,7 +249,7 @@ public class Settler extends SentientBeing {
 	{
 		location.DropBeing(this);
 		place.RegisterBeing(this);
-		Logger.Message("[Settler: "+name+"] has moved to "+place.getName());
+		Logger.Message("[Settler: "+name+"] has moved to "+place.getName()+".");
 	}
 	/**
 	 * PutTeleportGateOnAsteroid metodus - Teleportkapu lerakashoz
@@ -270,10 +270,10 @@ public class Settler extends SentientBeing {
 				t.DropOwner();
 				DropCarriedTeleport(t);
 			}
-			Logger.Message("[Settler: "+name+"] has put down teleport "+t.getName());
+			Logger.Message("[Settler: "+name+"] has put down teleport "+t.getName()+".");
 		}
 		else {
-			Logger.Message("[Settler: "+name+"] has put down teleport ");
+			Logger.Message("[Settler: "+name+"] has put down teleport "+".");
 		}
 	}
 	/**
@@ -288,7 +288,7 @@ public class Settler extends SentientBeing {
 		switch (command_parts[0]) {
 			case "move":
 				if(command_parts.length!=2) {
-					Logger.Message("[Settler: "+name+"] failed to move  ");
+					Logger.Message("[Settler: "+name+"] failed to move"+".");
 				}
 				else {
 					ArrayList<Place> neighbors=location.getNeighbors();
@@ -297,7 +297,7 @@ public class Settler extends SentientBeing {
 						Move(neighbors.get(celzottIndex));
 					}
 					else {
-						Logger.Message("[Settler: "+name+"] failed to move  ");
+						Logger.Message("[Settler: "+name+"] failed to move"+".");
 					}
 				}
 				break;
@@ -322,7 +322,7 @@ public class Settler extends SentientBeing {
 			case "putdowntele":	
 				
 				if(command_parts.length!=3) {
-					Logger.Message("[Settler: "+name+"] failed to put down teleport ");
+					Logger.Message("[Settler: "+name+"] failed to put down teleport.");
 				}
 				else {
 					//atadjuk a kiiratas alapjan megfelelo index-et es a nevet a teleportnak
@@ -332,7 +332,7 @@ public class Settler extends SentientBeing {
 				break;
 			case "buildrobot":	
 				if(command_parts.length!=2) {
-					Logger.Message("[Settler: "+name+"] failed to build robot ");
+					Logger.Message("[Settler: "+name+"] failed to build robot.");
 				}
 				else {
 					BuildRobot(command_parts[1]);
@@ -340,7 +340,7 @@ public class Settler extends SentientBeing {
 				break;
 			case "putback":	
 				if(command_parts.length!=2) {
-					Logger.Message("[Settler: "+name+"] failed to put back material ");
+					Logger.Message("[Settler: "+name+"] failed to put back material.");
 				}
 				else {
 					int celzottIndex=Integer.parseInt(command_parts[1]);
@@ -348,12 +348,12 @@ public class Settler extends SentientBeing {
 						FillAsteroid(carriedmaterials.get(celzottIndex));
 					}
 					else {
-						Logger.Message("[Settler: "+name+"] failed to move  ");
+						Logger.Message("[Settler: "+name+"] failed to move.");
 					}
 				}
 				break;
 			default:
-				Logger.Message("Bad command for the Settler bucko");
+				Logger.Message("Bad command for the Settler bucko"+".");
 				break;
 		}
 		

@@ -24,7 +24,7 @@ public class Robot extends SentientBeing
 	{
 		this.location.DropBeing(this);
 		place.RegisterBeing(this);
-		Logger.Message("[Robot: "+id+"] has moved to "+place.getName());
+		Logger.Message("[Robot: "+id+"] has moved to "+place.getName()+".");
 
 	}
 	/**
@@ -36,10 +36,10 @@ public class Robot extends SentientBeing
 	{
 		if(!location.isDrilled()) {
 			location.IncreaseHoleDepth();
-			Logger.Message("[Robot: "+id+"] has drilled "+location.getName());
+			Logger.Message("[Robot: "+id+"] has drilled "+location.getName()+".");
 		}
 		else {
-			Logger.Message("[Robot: "+id+"] has failed to drill "+location.getName());
+			Logger.Message("[Robot: "+id+"] has failed to drill "+location.getName()+".");
 		}
 	}	
 	/**
@@ -60,7 +60,7 @@ public class Robot extends SentientBeing
 	 */
 	public void Explode()
 	{
-		Logger.Message("[Robot: "+id+"] has exploded ");
+		Logger.Message("[Robot: "+id+"] has exploded "+".");
 
 		if(this.location.GetNeighbour() != null) {
 			Die();
@@ -80,7 +80,7 @@ public class Robot extends SentientBeing
 		switch (command_parts[0]) {
 			case "move":
 				if(command_parts.length!=2) {
-					Logger.Message("[Robot: "+id+"] failed to move  ");
+					Logger.Message("[Robot: "+id+"] failed to move"+".");
 				}
 				else {
 					ArrayList<Place> neighbors=location.getNeighbors();
@@ -89,7 +89,7 @@ public class Robot extends SentientBeing
 						Move(neighbors.get(celzottIndex));
 					}
 					else {
-						Logger.Message("[Robot: "+id+"] failed to move  ");
+						Logger.Message("[Robot: "+id+"] failed to move"+".");
 					}
 				}
 				break;
@@ -97,7 +97,7 @@ public class Robot extends SentientBeing
 				this.Drill();
 				break;	
 			default:
-				Logger.Message("Bad command for the Robot bucko");
+				Logger.Message("Bad command for the Robot bucko"+".");
 				break;
 		}
 	}

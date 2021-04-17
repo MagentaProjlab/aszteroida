@@ -104,13 +104,16 @@ public class Settler extends SentientBeing {
 	 */
 	public void Die() 
 	{
+		location.DropBeing(this);
+
 		for(RawMaterial item:carriedmaterials) {
 			item.Perish();
 		}
 		for(TeleportGate item:carriedteleports) {
 			item.Explode();
 		}
-		Logger.Message("[Settler: "+name+"] has died ");
+		//Doku szerint nem irat ki
+		//Logger.Message("[Settler: "+name+"] has died ");
 	}
 	/**
 	 * AddCarriedMaterial metodus - Egy anyag hozzadasa a telepeshez.
@@ -127,8 +130,9 @@ public class Settler extends SentientBeing {
 	 */
 	public void Explode() 
 	{
-		Die();
 		Logger.Message("[Settler: "+name+"] has exploded ");
+		Die();
+		
 	}
 	/**
 	 * BuildRobot metodus - A robot epiteshez
@@ -242,8 +246,9 @@ public class Settler extends SentientBeing {
 	 */
 	public void Step() 
 	{
-		String command="";//FIXME give me value
-		String[] command_parts=command.split(":");
+		Logger.Message("[Settler: "+name+"] has been selected to step.");
+		String command=Logger.NextLine();
+		String[] command_parts=command.split(" ");
 		switch (command_parts[0]) {
 			case "move":
 				if(command_parts.length!=2) {
@@ -272,7 +277,7 @@ public class Settler extends SentientBeing {
 					Logger.Message(i+":"+carriedmaterials.get(i).GetUniqueID());
 				}
 				for (int i = 0; i < carriedmaterials.size(); i++) {
-					Logger.Message(i+":"+carriedmaterials.get(i).GetUniqueID());
+					Logger.Message(i+":"+carriedteleports.get(i).GetUniqueID());
 				}
 				break;
 			case "buildteleport":
@@ -281,7 +286,7 @@ public class Settler extends SentientBeing {
 			case "putdowntele":	
 				
 				if(command_parts.length!=3) {
-					//Logger.Message("[Settler: "+name+"] failed to put down teleport ");
+					Logger.Message("[Settler: "+name+"] failed to put down teleport ");
 				}
 				else {
 					//atadjuk a kiiratas alapjan megfelelo index-et es a nevet a teleportnak
@@ -316,7 +321,7 @@ public class Settler extends SentientBeing {
 				break;
 		}
 		
-		Logger.Message("[Settler: "+name+"] has been selected to step.");
+		
 	}
 	/**
 	 * DropCarriedMaterial metodus - Egy anyag eldobashoz

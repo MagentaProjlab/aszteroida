@@ -1,5 +1,7 @@
 package asteroid;
 
+import java.util.ArrayList;
+
 public class Robot extends SentientBeing
 {
 	String id;
@@ -10,6 +12,7 @@ public class Robot extends SentientBeing
 	{
 		this.location = a;
 		this.id = name;
+		Logger.Message("[Robot: "+name+"]");
 	}
 	public String getName() {
 		return id;
@@ -22,6 +25,8 @@ public class Robot extends SentientBeing
 	{
 		this.location.DropBeing(this);
 		place.RegisterBeing(this);
+		Logger.Message("[Robot: "+id+"] has moved to "+place.getName());
+
 	}
 	/**
 	 * A robot fur
@@ -30,7 +35,13 @@ public class Robot extends SentientBeing
 	 */
 	public void Drill()
 	{
+		if(!location.isDrilled()) {
 			location.IncreaseHoleDepth();
+			Logger.Message("[Robot: "+id+"] has drilled "+location.getName());
+		}
+		else {
+			Logger.Message("[Robot: "+id+"] has failed to drill "+location.getName());
+		}
 	}	
 	/**
 	 * A robot meghal
@@ -38,6 +49,9 @@ public class Robot extends SentientBeing
 	public void Die() 
 	{
 		location.DropBeing(this);
+		//Doku szerint nem irat ki
+		//Logger.Message("[Robot: "+id+"] has died ");
+
 	}
 	/**
 	 * A robot felrobban
@@ -47,6 +61,8 @@ public class Robot extends SentientBeing
 	 */
 	public void Explode()
 	{
+		Logger.Message("[Robot: "+id+"] has exploded ");
+
 		if(this.location.GetNeighbour() != null) {
 			Die();
 		} else {
@@ -59,6 +75,31 @@ public class Robot extends SentientBeing
 	 */
 	public void Step() 
 	{
-		
+		Logger.Message("[Robot: "+id+"] has been selected to step.");
+		String command=Logger.NextLine();
+		String[] command_parts=command.split(" ");
+		switch (command_parts[0]) {
+			case "move":
+				if(command_parts.length!=2) {
+					Logger.Message("[Robot: "+id+"] failed to move  ");
+				}
+				else {
+					ArrayList<Place> neighbors=location.getNeighbors();
+					int celzottIndex=Integer.parseInt(command_parts[1]);
+					if(neighbors.size()>=1+celzottIndex) {
+						Move(neighbors.get(celzottIndex));
+					}
+					else {
+						Logger.Message("[Robot: "+id+"] failed to move  ");
+					}
+				}
+				break;
+			case "drill":
+				this.Drill();
+				break;	
+			default:
+				Logger.Message("Bad command for the Robot bucko");
+				break;
+		}
 	}
 }

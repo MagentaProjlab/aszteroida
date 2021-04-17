@@ -7,8 +7,7 @@ public class Uranium extends RawMaterial
 	 * Az uran konstruktora.
 	 *
 	 */
-	public Uranium(Asteroid a, int recount) {
-		this.asteroid = a;
+	public Uranium(int recount) {
 		this.ReactionCount = recount;
 	}
 	

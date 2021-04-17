@@ -6,9 +6,9 @@ public class Coal extends RawMaterial
 	 * A szen konstruktora.
 	 *
 	 */
-	public Coal(Asteroid a)
+	public Coal()
 	{
-		this.asteroid=a;
+		
 	}
 	
 	/**

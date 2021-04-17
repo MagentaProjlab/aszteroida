@@ -6,9 +6,9 @@ public class Iron extends RawMaterial
 	 * A vas konstruktora.
 	 *
 	 */
-	public Iron(Asteroid a)
+	public Iron()
 	{
-		this.asteroid = a;
+		
 	}
 	
 	/**

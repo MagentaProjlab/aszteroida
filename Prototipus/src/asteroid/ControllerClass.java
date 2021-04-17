@@ -306,7 +306,10 @@ public class ControllerClass
 			}
 		}
 		
-		//CheckEndGame
+		if(params[0].equals("CheckEndGame"))
+		{
+			
+		}
 		//LoadTest 
 		//Exit
 	}

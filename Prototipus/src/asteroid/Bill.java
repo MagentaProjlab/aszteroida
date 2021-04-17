@@ -8,13 +8,16 @@ public class Bill
 	/**
 	 * Tárolja a receptet
 	 */
-	private ArrayList<ID> materials;
+	private ArrayList<ID> check;
+	private ArrayList<ID> remove;
 	
 	/**
 	 * A bill konstruktora
 	 */
 	public Bill()
-	{ materials = new ArrayList<>();
+	{
+		check = new ArrayList<>();
+		remove = new ArrayList<>();
 	}
 	
 	/**
@@ -24,7 +27,7 @@ public class Bill
 	 */
 	public Boolean CheckInventory(ArrayList<ID> inventory) 
 	{
-		if (inventory != null) {
+		/*if (inventory != null) {
 			if (inventory.get(0).GetUniqueID().equals("teleportgate"))
 				return true;
 			
@@ -64,7 +67,26 @@ public class Bill
 			}
 			else return false;
 		}
-		else return false;
+		else return false;*/
+		
+		for(ID i : inventory)
+		{
+			for(ID i2 : check)
+			{
+				if(i.GetUniqueID().compareTo(i2.GetUniqueID()) == 0)
+				{
+					check.remove(i2);
+					break;
+				}
+			}
+		}
+		
+		if(check.size() == 0)
+		{
+			return true;
+		}
+		
+		return false;
 	}
 	
 	/**
@@ -73,7 +95,8 @@ public class Bill
 	 */
 	public void AddMaterialToBill(ID object) 
 	{
-		materials.add(object);
+		check.add(object);
+		remove.add(object);
 	}
 	
 	/**
@@ -83,7 +106,7 @@ public class Bill
 	 */
 	public ArrayList<RawMaterial> DeleteFromInventory(ArrayList<RawMaterial> inventory) 
 	{
-		int inCoal = 0;
+		/*int inCoal = 0;
 		int inIce = 0;
 		int inIron = 0;
 		int inUranium = 0;
@@ -116,6 +139,23 @@ public class Bill
 				inventory.remove(i);
 			}
 		}
+		return inventory;*/
+		
+		int i, size = inventory.size();
+		for(i = 0; i < size; i++)
+		{
+			for(ID i2 : remove)
+			{
+				if(i2.GetUniqueID().compareTo(inventory.get(i).GetUniqueID()) == 0)
+				{
+					inventory.remove(i);
+					remove.remove(i2);
+					i--;
+					size--;
+				}
+			}
+		}
+		
 		return inventory;
 	}
 	

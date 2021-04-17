@@ -29,6 +29,7 @@ public class Asteroid extends Place
 		HoleDepth = h;
 		sentientbeings = new ArrayList<SentientBeing>();
 		neighbors = new ArrayList<Place>();
+		Logger.Message("[Asteroid: "+name+"]");
 		
 	}
 	

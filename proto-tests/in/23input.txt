@@ -1,0 +1,7 @@
+asteroid a1 uranium 3 0 2
+asteroid a2 uranium 3 3 2
+neighbor a1 a2
+perihelion a1
+perihelion a2
+nextround
+listasteroids

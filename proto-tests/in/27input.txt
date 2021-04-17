@@ -1,0 +1,8 @@
+asteroid a1 null 1 1
+asteroid a2 uranium 1 1 2
+asteroid a3 null 2 0
+neighbor a1 a3
+neighbor a1 a2
+teleport t a1 a2
+perihelion a1
+nextround

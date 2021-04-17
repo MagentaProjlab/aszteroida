@@ -1,0 +1,6 @@
+asteroid a1 null 1 1
+asteroid a2 null 1 1
+neighbor a1 a2
+settler Laszlo a1 2 2 2 2 0
+settler Laszloka a1 2 2 2 2 0
+endgame

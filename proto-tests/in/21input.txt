@@ -1,0 +1,14 @@
+asteroid a1 iron 1 1
+asteroid a2 null 2 2
+neighbor a1 a2
+settler SAndor a1 0 0 0 0 0
+robot MikRobi a1
+ufo Gerzson a1
+settler Laszlo a2 0 0 0 0 0
+ufo Gedeon a2
+solarwind a1
+nextround
+listbeings a1
+solarwind a2
+nextround
+listbeings a2

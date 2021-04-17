@@ -1,0 +1,4 @@
+asteroid asteroid1 ice 3 3
+settler settler1 asteroid1 0 0 0 0 0
+nextround
+drill

@@ -11,7 +11,7 @@ public class Robot extends SentientBeing
 		this.location = a;
 		this.id = name;
 	}
-	public String GetName() {
+	public String getName() {
 		return id;
 	}
 	/**

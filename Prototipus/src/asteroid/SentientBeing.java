@@ -11,6 +11,7 @@ public abstract class SentientBeing
 	{
 		this.location = loc;
 	}
+	public abstract String getName();
 	/**
 	 * A leny absztrakt mozogasert felelos fuggvenye
 	 * @param place: A hely ahova mozog

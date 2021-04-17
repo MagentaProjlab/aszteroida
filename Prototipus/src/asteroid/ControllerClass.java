@@ -30,16 +30,27 @@ public class ControllerClass
 		{
 			String name = params[1];
 			String materialtype = params[2];
-			String crustthickness = params[3];
-			String holedepth = params[4];
+			int crustthickness = Integer.valueOf(params[3]);
+			int holedepth = Integer.valueOf(params[4]);
+			
+			RawMaterial material = null;
 			
 			if(materialtype.equals("uranium"))
 			{
-				//aszteroida hozzáadása a fenti paraméterekkel + params[5] a perihelion count
-			}else
+				int rcount = Integer.valueOf(params[5]);
+				material = new Uranium(rcount);
+			}else if(materialtype.equals("coal"))
 			{
-				//aszteroida hozzáadása a fenti paraméterekkel
+				material = new Coal();
+			}else if(materialtype.equals("ice"))
+			{
+				material = new Ice();
+			}else if(materialtype.equals("iron"))
+			{
+				material = new Iron();
 			}
+			
+			asteroids.add(new Asteroid(name, material, crustthickness, holedepth));
 		}
 		
 		if(params[0].equals("SetNeighbors"))

@@ -6,9 +6,9 @@ public class Ice extends RawMaterial
 	 * A jeg konstruktora.
 	 *
 	 */
-	public Ice(Asteroid a)
+	public Ice()
 	{
-		this.asteroid = a;
+		
 	}
 	
 	/**

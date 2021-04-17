@@ -29,4 +29,5 @@ public abstract class SentientBeing
 	 * A leny absztrakt lepesert felelos fuggvenye
 	 */
 	public abstract void Step();
+	protected abstract String getName();
 }

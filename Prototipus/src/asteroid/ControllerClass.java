@@ -116,9 +116,6 @@ public class ControllerClass
 			String asteroid1 = params[3];
 			String asteroid2 = params[4];
 			
-			//teleportok létrehozása
-			//teleportok hozzáadása az aszteroidákhoz
-			
 			TeleportGate gate1 = new TeleportGate(null, null, name1);
 			TeleportGate gate2 = new TeleportGate(null, null, name2);
 			gate1.SetSibling(gate2);
@@ -157,10 +154,37 @@ public class ControllerClass
 			String asteroid = params[2];
 			String settler = params[3];
 			
-			//teleport létrehozása
-			//asteroid megkeresése
-			//settler megkeresése és teleport hozzáadása
+			TeleportGate gate1 = new TeleportGate(null, null, name);
+			TeleportGate gate2 = new TeleportGate(null, null, null);
+			gate1.SetSibling(gate2);
+			gate2.SetSibling(gate1);
 			
+			int index2 = 0;
+			
+			for(Asteroid a : asteroids)
+			{
+				if(a.getName().compareTo(asteroid) == 0)
+				{
+					a.AddNeighbor(gate1);
+					break;
+				}
+			}
+			
+			for(Asteroid a : asteroids)
+			{
+				index2 = 0;
+				for(SentientBeing sb : a.getBeings())
+				{
+					if(sb.getName().compareTo(name) == 0)
+					{
+						Settler s = (Settler)sb;
+						s.AddTeleport(gate2);
+						a.getBeings().set(index2, s);
+						break;
+					}
+					index2++;
+				}
+			}
 		}
 		
 		//BuildRobot 
@@ -170,7 +194,14 @@ public class ControllerClass
 			String name = params[1];
 			String asteroid = params[2];
 			
-			//robot létrehozás adott aszteroidán
+			for(Asteroid a : asteroids)
+			{
+				if(a.getName().compareTo(asteroid) == 0)
+				{
+					a.RegisterBeing(new Robot(a, name));
+					break;
+				}
+			}
 		}
 		
 		if(params[0].equals("Ufo"))
@@ -178,47 +209,97 @@ public class ControllerClass
 			String name = params[1];
 			String asteroid = params[2];
 			
-			//ufo létrehozás adott aszteroidán
+			for(Asteroid a : asteroids)
+			{
+				if(a.getName().compareTo(asteroid) == 0)
+				{
+					a.RegisterBeing(new Ufo(a, name));
+					break;
+				}
+			}
 		}
 		
 		if(params[0].equals("Perihelion"))
 		{
 			String asteroid = params[1];
 			
-			//setperihelion(true) adott aszteroidán
+			for(Asteroid a : asteroids)
+			{
+				if(a.getName().compareTo(asteroid) == 0)
+				{
+					a.CheckPerihelionReaction();
+					break;
+				}
+			}
 		}
 		
 		if(params[0].equals("SolarWind"))
 		{
 			String asteroid = params[1];
 			
-			//solarwind csinálás adott aszteroidán
+			for(Asteroid a : asteroids)
+			{
+				if(a.getName().compareTo(asteroid) == 0)
+				{
+					a.SolarWindDeath();
+					break;
+				}
+			}
 		}
 		
 		//CheckEndGame 
 		
 		if(params[0].equals("ListAsteroids"))
 		{
-			//for ciklus és aszteroidák kiratása loggerrel
+			for(Asteroid a : asteroids)
+			{
+				String message = "[Asteroid: " + a.getName() + "]";
+				Logger.Message(message);
+			}
 		}
 		
 		if(params[0].equals("ListBeings"))
 		{
 			String asteroid = params[1];
 			
-			//for ciklus és telepesek kiratása loggerrel adott aszteroidán
+			for(Asteroid a : asteroids)
+			{
+				if(a.getName().compareTo(asteroid) == 0)
+				{
+					for(SentientBeing sb : a.getBeings())
+					{
+						String message = "[SentientBeing: " + sb.getName() + "]";
+						Logger.Message(message);
+					}
+					break;
+				}
+			}
 		}
 		
 		if(params[0].equals("ListNeighbors"))
 		{
 			String asteroid = params[1];
 			
-			//for ciklus és szomszédok kiratása loggerrel adott aszteroidán
+			for(Asteroid a : asteroids)
+			{
+				if(a.getName().compareTo(asteroid) == 0)
+				{
+					for(Place p : a.getNeighbors())
+					{
+						String message = "[Place: " + p.getName() + "]";
+						Logger.Message(message);
+					}
+					break;
+				}
+			}
 		}
 		
 		if(params[0].equals("NextRound"))
 		{
-			//összes aszteroidán meghívja a step-et 1x
+			for(Asteroid a : asteroids)
+			{
+				a.StepBeings();
+			}
 		}
 		
 		//LoadMap 

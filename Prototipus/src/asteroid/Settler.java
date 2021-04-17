@@ -339,4 +339,9 @@ public class Settler extends SentientBeing {
 		carriedteleports.remove(teleport);		
 	}
 	
+	public void AddTeleportGate(TeleportGate gate)
+	{
+		carriedteleports.add(gate);
+	}
+	
 }

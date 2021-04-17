@@ -294,4 +294,9 @@ public class Asteroid extends Place
 	public String getName() {
 		return name;
 	}
+	
+	public ArrayList<SentientBeing> getBeings()
+	{
+		return sentientbeings;
+	}
 }

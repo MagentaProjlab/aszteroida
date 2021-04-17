@@ -55,7 +55,30 @@ public class ControllerClass
 		
 		if(params[0].equals("SetNeighbors"))
 		{
-			//asteroids-ban a két szomszéd nevének megkeresése majd hozzáadása
+			String name1 = params[1];
+			String name2 = params[2];
+			int index1 = 0, index2 = 0;
+			
+			for(Asteroid a : asteroids)
+			{
+				if(a.getName().compareTo(name1) == 0)
+				{
+					break;
+				}
+				index1++;
+			}
+			
+			for(Asteroid a : asteroids)
+			{
+				if(a.getName().compareTo(name2) == 0)
+				{
+					break;
+				}
+				index2++;
+			}
+			
+			asteroids.get(index1).AddNeighbor(asteroids.get(index2));
+			asteroids.get(index2).AddNeighbor(asteroids.get(index1));
 		}
 		
 		if(params[0].equals("Settler"))
@@ -95,6 +118,37 @@ public class ControllerClass
 			
 			//teleportok létrehozása
 			//teleportok hozzáadása az aszteroidákhoz
+			
+			TeleportGate gate1 = new TeleportGate(null, null, name1);
+			TeleportGate gate2 = new TeleportGate(null, null, name2);
+			gate1.SetSibling(gate2);
+			gate2.SetSibling(gate1);
+			
+			int index1 = 0, index2 = 0;
+			
+			for(Asteroid a : asteroids)
+			{
+				if(a.getName().compareTo(asteroid1) == 0)
+				{
+					break;
+				}
+				index1++;
+			}
+			
+			for(Asteroid a : asteroids)
+			{
+				if(a.getName().compareTo(asteroid2) == 0)
+				{
+					break;
+				}
+				index2++;
+			}
+			
+			gate1.SetAsteroid(asteroids.get(index1));
+			gate2.SetAsteroid(asteroids.get(index2));
+			
+			asteroids.get(index1).AddNeighbor(gate2);
+			asteroids.get(index2).AddNeighbor(gate1);
 		}
 		
 		if(params[0].equals("Teleport2"))
@@ -106,6 +160,7 @@ public class ControllerClass
 			//teleport létrehozása
 			//asteroid megkeresése
 			//settler megkeresése és teleport hozzáadása
+			
 		}
 		
 		//BuildRobot 

@@ -15,7 +15,7 @@ public class Ufo extends SentientBeing
 		this.id = name;
 		carriedmaterials = new ArrayList<RawMaterial>();
 	}
-	public String GetName() {
+	public String getName() {
 		return id;
 	}
 	/**

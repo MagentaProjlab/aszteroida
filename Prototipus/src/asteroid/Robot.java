@@ -12,7 +12,6 @@ public class Robot extends SentientBeing
 	{
 		this.location = a;
 		this.id = name;
-		Logger.Message("[Robot: "+name+"]");
 	}
 	public String getName() {
 		return id;

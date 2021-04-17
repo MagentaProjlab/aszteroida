@@ -55,7 +55,6 @@ public class Settler extends SentientBeing {
 		bills = new ArrayList<Bill>();
 		
 		name=_name;
-		Logger.Message("[Settler: "+name+"]");
 	}
 	/**
 	 * AddTeleport metodus- egy teleportkapu hozzadasara

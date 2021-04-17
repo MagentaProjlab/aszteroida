@@ -14,7 +14,6 @@ public class Ufo extends SentientBeing
 		this.location = a;
 		this.id = name;
 		carriedmaterials = new ArrayList<RawMaterial>();
-		Logger.Message("[Ufo: "+name+"]");
 	}
 	public String getName() {
 		return id;

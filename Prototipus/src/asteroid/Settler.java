@@ -145,7 +145,12 @@ public class Settler extends SentientBeing {
 		{
 			Robot r=new Robot(location,robot_name);
 			location.RegisterBeing(r);
-			bills.get(1).DeleteFromInventory(carriedmaterials);
+			ArrayList<ID> deletematerial = new ArrayList<ID>();
+			for (int i = 0; i<carriedmaterials.size(); i++)
+			{
+				deletematerial.add(carriedmaterials.get(i));
+			}
+			bills.get(1).DeleteFromInventory(deletematerial);
 			Logger.Message("[Settler: "+name+"] has built robot ");
 		}
 		else {

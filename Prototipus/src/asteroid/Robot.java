@@ -101,4 +101,9 @@ public class Robot extends SentientBeing
 				break;
 		}
 	}
+	
+	public String GetUniqueID()
+	{
+		return "Robot";
+	}
 }

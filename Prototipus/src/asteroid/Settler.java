@@ -56,6 +56,43 @@ public class Settler extends SentientBeing {
 		
 		name=_name;
 	}
+	
+	public Settler(String name, int coal, int ice, int iron, int uranium, boolean tg)
+	{
+		this.name = name;
+		
+		for(int i = 0; i < coal; i++)
+		{
+			carriedmaterials.add(new Coal());
+		}
+		
+		for(int i = 0; i < ice; i++)
+		{
+			carriedmaterials.add(new Ice());
+		}
+		
+		for(int i = 0; i < iron; i++)
+		{
+			carriedmaterials.add(new Iron());
+		}
+		
+		for(int i = 0; i < uranium; i++)
+		{
+			carriedmaterials.add(new Uranium(0));
+		}
+		
+		if(tg)
+		{
+			TeleportGate gate1 = new TeleportGate(null, null, name1);
+			TeleportGate gate2 = new TeleportGate(null, null, name2);
+			gate1.SetSibling(gate2);
+			gate2.SetSibling(gate1);
+
+			carriedteleports.add(gate1);
+			carriedteleports.add(gate2);
+		}
+	}
+	
 	/**
 	 * AddTeleport metodus- egy teleportkapu hozzadasara
 	 * @param TeleportGate A hozzadni kivant teleportkapu
@@ -348,4 +385,8 @@ public class Settler extends SentientBeing {
 		carriedteleports.add(gate);
 	}
 	
+	public String GetUniqueID()
+	{
+		return "Settler";
+	}
 }

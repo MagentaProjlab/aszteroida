@@ -85,17 +85,20 @@ public class ControllerClass
 		{
 			String name = params[1];
 			String asteroid = params[2];
-			String coal = params[3];
-			String ice = params[4];
-			String iron = params[5];
-			String uranium = params[6];
-			String teleportgate  = params[7];
+			int coal = Integer.valueOf(params[3]);
+			int ice = Integer.valueOf(params[4]);
+			int iron = Integer.valueOf(params[5]);
+			int uranium = Integer.valueOf(params[6]);
+			boolean teleportgate  = params[7].compareTo("2") == 0? true : false;
 			
-			//asteroid index kikeresés
-			//asteroid registerbeing
-			//add coal, add ice, add iron, add uranium
-			//add teleport
-			
+			for(Asteroid a : asteroids)
+			{
+				if(a.getName().compareTo(asteroid) == 0)
+				{
+					a.RegisterBeing(new Settler(name, coal, ice, iron, uranium, teleportgate));
+					break;
+				}
+			}
 		}
 		
 		
@@ -108,6 +111,7 @@ public class ControllerClass
 		//ListInventory 
 		//BuildTeleport 
 		//PutDownTeleport 
+		//BuildRobot 
 		
 		if(params[0].equals("Teleport"))
 		{
@@ -187,7 +191,7 @@ public class ControllerClass
 			}
 		}
 		
-		//BuildRobot 
+		
 		
 		if(params[0].equals("Robot"))
 		{
@@ -247,7 +251,7 @@ public class ControllerClass
 			}
 		}
 		
-		//CheckEndGame 
+		
 		
 		if(params[0].equals("ListAsteroids"))
 		{
@@ -302,8 +306,7 @@ public class ControllerClass
 			}
 		}
 		
-		//LoadMap 
-		//SaveMap 
+		//CheckEndGame
 		//LoadTest 
 		//Exit
 	}

@@ -1,6 +1,6 @@
 package asteroid;
 
-public abstract class SentientBeing
+public abstract class SentientBeing implements ID
 {
 	protected Asteroid location;
 	/**

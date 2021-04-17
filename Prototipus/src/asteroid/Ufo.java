@@ -105,4 +105,9 @@ public class Ufo extends SentientBeing
 		
 		
 	}
+	
+	public String GetUniqueID()
+	{
+		return "Ufo";
+	}
 }

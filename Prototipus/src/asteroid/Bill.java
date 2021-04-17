@@ -81,7 +81,7 @@ public class Bill
 	 * @param inventory: a modositani kivant inventory
 	 * @return a modositott inventory
 	 */
-	public ArrayList<ID> DeleteFromInventory(ArrayList<ID> inventory) 
+	public ArrayList<RawMaterial> DeleteFromInventory(ArrayList<RawMaterial> inventory) 
 	{
 		int inCoal = 0;
 		int inIce = 0;

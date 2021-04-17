@@ -12,7 +12,7 @@ public class Asteroid extends Place
 	private RawMaterial corematerial;
 	private ArrayList<SentientBeing> sentientbeings;
 	private ArrayList<Place> neighbors;
-	private BillOfMaterials radBill;
+	private Bill radBill;
 	private String name;
 	
 	
@@ -45,9 +45,19 @@ public class Asteroid extends Place
 	 * Beallitja az aszteroidahoz tartozo BillOfMaterials-t
 	 * @param radbill - BOM
 	 */
-	public void SetBill(BillOfMaterials radbill)
+	public void SetBill(Bill radbill)
 	{
 		this.radBill = radbill;
+	}
+	
+	/**
+	 * Eldonti az aszteroidarol, a nyeranyag tipusatol fuggoen,
+	 * hogy napkozelben mi tortenik vele
+	 */
+	public void CheckPerihelionReaction()
+	{
+		if (corematerial != null)
+			corematerial.PerihelionReaction();
 	}
 	
 	/**
@@ -58,10 +68,11 @@ public class Asteroid extends Place
 		if(HoleDepth != 0)
 		{
 			HoleDepth--;
+			CheckPerihelionReaction();
 			return true;
 		}
-		return false;
 		CheckPerihelionReaction();
+		return false;
 	}
 	
 	/**
@@ -75,7 +86,7 @@ public class Asteroid extends Place
 		Boolean exp = false;
 		if(corematerial != null)
 		{
-			ArrayList<RawMaterial> corelist = new ArrayList<RawMaterial>();
+			ArrayList<ID> corelist = new ArrayList<ID>();
 			corelist.add(corematerial);
 			exp = radBill.CheckInventory(corelist);
 		}
@@ -93,8 +104,8 @@ public class Asteroid extends Place
 				if(!sb.getName().equals("robot"))
 					sb.Explode();
 				else if(sb.getName().equals("robot")) {
-					Random rand = new Rand();
-					sb.setAsteroid(this.neighbors[rand.nextInt()]);
+					Random rand = new Random();
+					sb.setAsteroid((Asteroid)this.neighbors.get(rand.nextInt(this.neighbors.size())));
 				}
 			}
 			corematerial.Perish();
@@ -214,16 +225,6 @@ public class Asteroid extends Place
 				sb.Die();
 			}
 		}
-	}
-	
-	/**
-	 * Eldonti az aszteroidarol, a nyeranyag tipusatol fuggoen,
-	 * hogy napkozelben mi tortenik vele
-	 */
-	public void CheckPerihelionReaction()
-	{
-		if (corematerial != null)
-			corematerial.PerihelionReaction();
 	}
 	
 	/**

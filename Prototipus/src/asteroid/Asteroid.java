@@ -29,12 +29,9 @@ public class Asteroid extends Place
 		HoleDepth = h;
 		sentientbeings = new ArrayList<SentientBeing>();
 		neighbors = new ArrayList<Place>();
-<<<<<<< Updated upstream
-		Logger.Message("[Asteroid: "+name+"]");
+        Logger.Message("[Asteroid: "+name+"]");
 		
-=======
-		corematerial.SetAsteroid(this);
->>>>>>> Stashed changes
+        corematerial.SetAsteroid(this);
 	}
 	
 	/**

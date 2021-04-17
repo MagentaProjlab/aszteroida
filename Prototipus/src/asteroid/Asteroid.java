@@ -183,25 +183,7 @@ public class Asteroid extends Place
 	{
 		neighbors.removeIf(n -> (n.getName().equals(neighbor.getName())));
 	}
-	
-	/**
-	 * Lekerdezi az aszteroidatol, hogy napkozelben van-e
-	 * @return - bool
-	 */
-	public Boolean AtPerihelion()
-	{
-		Scanner scanner = new Scanner(System.in);
-		String input = scanner.nextLine();
-		if(input.equals("1"))
-		{
-			return true;
-		}else if(input.equals("2"))
-		{
-			return false;
-		}
-		return false;
-	}
-	
+		
 	/**
 	 * Aszteroida szomszedjanak hozzaadasa
 	 * @param neighbor - aszteroida szomszedja

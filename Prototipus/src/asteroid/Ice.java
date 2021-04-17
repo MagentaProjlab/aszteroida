@@ -36,7 +36,7 @@ public class Ice extends RawMaterial
 	public void PerihelionReaction() 
 	{
 		//here goes the fuggveny for getting the crust thickness
-		if (this.asteroid.getCrustThickness().equals(this.asteroid.getHoleDepth())) {
+			if (this.asteroid.isMined()) {
 			this.asteroid.DropMaterial();
 			this.Perish();
 		}

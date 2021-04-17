@@ -36,7 +36,7 @@ public class Uranium extends RawMaterial
 	 */
 	public void PerihelionReaction() 
 	{
-		if (this.asteroid.getCrustThickness().equals(this.asteroid.getHoleDepth())) {
+		if (this.asteroid.isMined()) {
 			if (this.ReactionCount < 3) {
 				this.ReactionCount++;
 			}else {

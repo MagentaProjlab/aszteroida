@@ -138,10 +138,10 @@ public class Settler extends SentientBeing {
 			AddCarriedMaterial(rm);
 			rm.SetAsteroid(null);
 			location.DropMaterial();
-			Logger.Message("[Settler: "+name+"] has mined"+".");
+			Logger.Message("[Settler: "+name+"] has mined "+location.getName()+""+".");
 		}
 		else {
-			Logger.Message("[Settler: "+name+"] has failed to mine"+".");
+			Logger.Message("[Settler: "+name+"] has failed to mine "+location.getName()+""+".");
 		}
 	}
 	/**
@@ -209,7 +209,7 @@ public class Settler extends SentientBeing {
 			Logger.Message("[Settler: "+name+"] has built robot"+".");
 		}
 		else {
-			Logger.Message("[Settler: "+name+"] failed to build robot"+".");
+			Logger.Message("[Settler: "+name+"] has failed to build a robot"+".");
 		}
 	}
 	/**
@@ -263,10 +263,10 @@ public class Settler extends SentientBeing {
 	{
 		if(location.isDrilled()&&location.IsEmpty()) {
 			location.SetMaterial(material, this);
-			Logger.Message("[Settler: "+name+"]  has put material back to "+location.getName()+".");
+			Logger.Message("[Settler: "+name+"] has put material back to "+location.getName()+".");
 		}
 		else {
-			Logger.Message("[Settler: "+name+"]  has failed to put material back to "+location.getName()+".");
+			Logger.Message("[Settler: "+name+"] has failed to put material back to "+location.getName()+".");
 		}
 	}
 	
@@ -367,7 +367,7 @@ public class Settler extends SentientBeing {
 				break;
 			case "buildrobot":	
 				if(command_parts.length!=2) {
-					Logger.Message("[Settler: "+name+"] failed to build robot.");
+					Logger.Message("[Settler: "+name+"] has failed to build a robot.");
 				}
 				else {
 					BuildRobot(command_parts[1]);

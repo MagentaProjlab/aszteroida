@@ -14,6 +14,8 @@ public class ControllerClass
 	 */
 	public ControllerClass(int teszteset)
 	{
+		asteroids = new ArrayList<Asteroid>();
+		solarwind = new SolarWind();
 		log = new Logger(teszteset);
 	}
 	

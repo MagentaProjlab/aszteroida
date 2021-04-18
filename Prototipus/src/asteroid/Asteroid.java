@@ -12,9 +12,14 @@ public class Asteroid extends Place
 	private ArrayList<Place> neighbors;
 	private Bill radBill;
 	private String name;
+	/**A prototipus miatt szukseges ez a cucc, de nagyon vaa
+	 * 
+	 */
+	private boolean exploded=false;
+	public boolean getExploded() {
+		return exploded;
+	}
 	
-	
-
 	/**
 	 * Aszteroida konstruktora
 	 * Letrehoz ket listat, egyet a lenyek tarolasara, egyet a szomszedok tarolasara
@@ -84,6 +89,7 @@ public class Asteroid extends Place
 	 */
 	public void Explode()
 	{
+		exploded=true;
 		Boolean exp = false;
 		if(corematerial != null)
 		{

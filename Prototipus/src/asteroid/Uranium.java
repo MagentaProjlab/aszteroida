@@ -35,6 +35,7 @@ public class Uranium extends RawMaterial
 	 */
 	public void PerihelionReaction() 
 	{
+		//System.out.println("fasz");
 		if (this.asteroid.isDrilled()) {
 			if (this.ReactionCount < 2) {
 				this.ReactionCount++;

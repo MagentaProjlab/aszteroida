@@ -4,7 +4,7 @@ nextround
 listasteroids
 perihelion asteroid1
 nextround
-listssteroids
+listasteroids
 perihelion asteroid1
 nextround
 listssteroids

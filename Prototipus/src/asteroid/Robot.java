@@ -119,6 +119,7 @@ public class Robot extends SentientBeing
 				Logger.Message("Bad command for the Robot bucko"+".");
 				break;
 		}
+		this.setStepped(true);
 	}
 	
 	public String GetUniqueID()

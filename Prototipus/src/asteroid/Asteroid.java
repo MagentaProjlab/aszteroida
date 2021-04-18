@@ -15,7 +15,7 @@ public class Asteroid extends Place
 	/**A prototipus miatt szukseges ez a cucc, de nagyon vaa
 	 * 
 	 */
-	private boolean exploded=false;
+	private boolean exploded = false;
 	public boolean getExploded() {
 		return exploded;
 	}
@@ -36,6 +36,7 @@ public class Asteroid extends Place
 		{
 			corematerial.SetAsteroid(this);
 		}
+		exploded = false;
 	}
 	
 	/**
@@ -89,7 +90,7 @@ public class Asteroid extends Place
 	 */
 	public void Explode()
 	{
-		exploded=true;
+		exploded = true;
 		Boolean exp = false;
 		if(corematerial != null)
 		{

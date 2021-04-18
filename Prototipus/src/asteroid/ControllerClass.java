@@ -258,9 +258,16 @@ public class ControllerClass
 			}
 		}else if(params[0].equals("nextround"))
 		{
-			for(Asteroid a : asteroids)
+			for(int i = 0; i < asteroids.size(); i++)
 			{
-				a.StepBeings();
+				if(asteroids.get(i).getExploded() == true)
+				{
+					asteroids.remove(i);
+					i--;
+				}else
+				{
+					asteroids.get(i).StepBeings();
+				}
 			}
 		}else if(params[0].equals("endgame"))
 		{

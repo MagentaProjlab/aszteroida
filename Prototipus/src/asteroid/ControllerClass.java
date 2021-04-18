@@ -128,8 +128,8 @@ public class ControllerClass
 			gate1.SetAsteroid(asteroids.get(index1));
 			gate2.SetAsteroid(asteroids.get(index2));
 			
-			asteroids.get(index1).AddNeighbor(gate2);
-			asteroids.get(index2).AddNeighbor(gate1);
+			//asteroids.get(index1).AddNeighbor(gate2);
+			//asteroids.get(index2).AddNeighbor(gate1);
 		}else if(params[0].equals("teleport2"))
 		{
 			String name = params[1];

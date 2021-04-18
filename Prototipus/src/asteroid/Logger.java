@@ -62,6 +62,10 @@ public class Logger
 		}
 	}*/
 	
+	public static boolean hasNextLine()
+	{
+		return input.hasNextLine();
+	}
 	public static String NextLine()
 	{	
 		if(input.hasNextLine())

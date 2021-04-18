@@ -105,7 +105,11 @@ public class Asteroid extends Place
 					sb.Explode();
 				else if(sb.getName().equals("robot")) {
 					Random rand = new Random();
-					sb.setAsteroid((Asteroid)this.neighbors.get(rand.nextInt(this.neighbors.size())));
+					int r = rand.nextInt(this.neighbors.size());
+					while (this.neighbors.get(r).GetUniqueID().equals("asteroid")) {
+						 r = rand.nextInt(this.neighbors.size());
+					}
+					sb.setAsteroid((Asteroid)this.neighbors.get(r));
 				}
 			}
 			corematerial.Perish();

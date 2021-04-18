@@ -133,7 +133,7 @@ public class Settler extends SentientBeing {
 	 */
 	public void Mine() 
 	{
-		if(carriedmaterials.size()<11&&!location.IsEmpty()&&location.isDrilled()) {
+		if(carriedmaterials.size()<10 && !location.IsEmpty() && location.isDrilled()) {
 			RawMaterial rm=location.GetMaterial();
 			AddCarriedMaterial(rm);
 			rm.SetAsteroid(null);

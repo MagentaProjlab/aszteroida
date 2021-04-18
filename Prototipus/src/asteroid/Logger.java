@@ -28,7 +28,7 @@ public class Logger
 		}
 		output = "";
 		
-		filename = String.valueOf(teszteset) + "output.txt";
+		filename = "tests\\out" + String.valueOf(teszteset) + "output.txt";
 		try
 		{
 		      File file = new File(filename);
@@ -62,6 +62,10 @@ public class Logger
 		}
 	}*/
 	
+	public static boolean hasNextLine()
+	{
+		return input.hasNextLine();
+	}
 	public static String NextLine()
 	{	
 		if(input.hasNextLine())

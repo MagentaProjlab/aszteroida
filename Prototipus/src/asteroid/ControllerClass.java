@@ -284,7 +284,10 @@ public class ControllerClass
 	 */
 	public void GameLoop()
 	{
-		
+		while(Logger.hasNextLine())
+		{
+			this.Command(Logger.NextLine());
+		}
 	}
 	/**
 	 * A controller inicializalja az aszteroidakat

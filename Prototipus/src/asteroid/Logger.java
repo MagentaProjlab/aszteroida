@@ -7,25 +7,49 @@ import java.util.Scanner;
 /**
  * Kiiratasert felelos osztaly
  */
-public class Logger {
+public class Logger
+{
 	
 	private static String output;
+	private static String prewrittenoutput;
 	private static Scanner input;
+	private static Scanner input2;
 	
 	Logger(int teszteset)
 	{
-		String filename = String.valueOf(teszteset) + ".txt";
-		SetFile(filename);
+		String filename = String.valueOf(teszteset) + "input.txt";
+		try
+		{
+		      File file = new File(filename);
+		      input = new Scanner(file);
+		} catch (FileNotFoundException e)
+		{
+		      
+		}
 		output = "";
+		
+		filename = String.valueOf(teszteset) + "output.txt";
+		try
+		{
+		      File file = new File(filename);
+		      input2 = new Scanner(file);
+		      while(input2.hasNextLine())
+		      {
+		    	  prewrittenoutput += input2.nextLine();
+		      }
+		} catch (FileNotFoundException e)
+		{
+		      
+		}
 	}
 	
 	public static void Message(String message)
 	{
 		System.out.println(message);
-		output += message + "\n";
+		output += message;
 	}
 	
-	private void SetFile(String filename)
+	/*private void SetFile(String filename)
 	{
 		try
 		{
@@ -35,7 +59,7 @@ public class Logger {
 		{
 		      
 		}
-	}
+	}*/
 	
 	public static String NextLine()
 	{	

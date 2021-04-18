@@ -180,12 +180,21 @@ public class Settler extends SentientBeing {
 	{
 		//FIXME Nincsenek neki bill-jei!!! Amig ez nincs megoldva hagyd false-on, 
 		//ha meg van ird at a megfelelo bill check inventoryjara
-		Boolean feltetel1 = false;
-		if(feltetel1) 
+		Bill b = new Bill();
+		b.AddMaterialToBill(new Iron());
+		b.AddMaterialToBill(new Uranium(0));
+		b.AddMaterialToBill(new Coal());
+		ArrayList<ID> l = new ArrayList<ID>();
+		for(RawMaterial rm : carriedmaterials)
 		{
-			Robot r=new Robot(location,robot_name);
+			l.add(rm);
+		}
+		
+		if(b.CheckInventory(l) == true) 
+		{
+			Robot r = new Robot(location, robot_name);
 			location.RegisterBeing(r);
-			bills.get(1).DeleteFromInventory(carriedmaterials);
+			carriedmaterials = b.DeleteFromInventory(carriedmaterials);
 			Logger.Message("[Settler: "+name+"] has built robot"+".");
 		}
 		else {
@@ -203,14 +212,24 @@ public class Settler extends SentientBeing {
 	{
 		//FIXME Nincsenek neki bill-jei!!! Amig ez nincs megoldva hagyd false-on, 
 		//ha meg van ird at a megfelelo bill check inventoryjara
-		Boolean feltetel1 = false;
-		if(feltetel1) 
+		Bill b = new Bill();
+		b.AddMaterialToBill(new Iron());
+		b.AddMaterialToBill(new Iron());
+		b.AddMaterialToBill(new Uranium(0));
+		b.AddMaterialToBill(new Ice());
+		ArrayList<ID> l = new ArrayList<ID>();
+		for(RawMaterial rm : carriedmaterials)
+		{
+			l.add(rm);
+		}
+		
+		if(b.CheckInventory(l) == true) 
 		{
 			//itt meg a teleportgate nem tud semmit, mivel nincs lerakva.
 			//Csak a tesojat
-			TeleportGate t1=new TeleportGate(null,this,"");
-			TeleportGate t2=new TeleportGate(null,this,"");
-			bills.get(2).DeleteFromInventory(null);
+			TeleportGate t1=new TeleportGate(null,this,null);
+			TeleportGate t2=new TeleportGate(null,this,null);
+			carriedmaterials = b.DeleteFromInventory(carriedmaterials);
 			t1.SetSibling(t2);
 			t2.SetSibling(t1);
 			AddTeleport(t1);

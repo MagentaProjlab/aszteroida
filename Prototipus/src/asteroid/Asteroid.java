@@ -89,6 +89,8 @@ public class Asteroid extends Place
 		{
 			ArrayList<ID> corelist = new ArrayList<ID>();
 			corelist.add(corematerial);
+			Bill radBill=new Bill();
+			radBill.AddMaterialToBill(new Uranium(0));
 			exp = radBill.CheckInventory(corelist);
 		}
 		

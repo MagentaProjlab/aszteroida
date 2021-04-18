@@ -2,13 +2,11 @@ package asteroid;
 
 import java.util.ArrayList;
 import java.util.Random;
-import java.util.Scanner;
 
 public class Asteroid extends Place 
 {
 	private Integer CrustThickness;
 	private Integer HoleDepth;
-	private Boolean CoreIsEmpty;
 	private RawMaterial corematerial;
 	private ArrayList<SentientBeing> sentientbeings;
 	private ArrayList<Place> neighbors;
@@ -105,7 +103,11 @@ public class Asteroid extends Place
 					sb.Explode();
 				else if(sb.getName().equals("robot")) {
 					Random rand = new Random();
-					sb.setAsteroid((Asteroid)this.neighbors.get(rand.nextInt(this.neighbors.size())));
+					int r = rand.nextInt(this.neighbors.size());
+					while (this.neighbors.get(r).GetUniqueID().equals("Asteroid")) {
+						 r = rand.nextInt(this.neighbors.size());
+					}
+					sb.setAsteroid((Asteroid)this.neighbors.get(r));
 				}
 			}
 			corematerial.Perish();
@@ -252,6 +254,7 @@ public class Asteroid extends Place
 	}
 	
 	/**
+	 * aszteroida kopenyvastagsag getter
 	 * @return - kopeny vastagsag
 	 */
 	public Integer getCrustThickness() 
@@ -275,11 +278,19 @@ public class Asteroid extends Place
 		return name;
 	}
 	
+	/**
+	 * aszteroidan tartozkodo lenyek listajanak getter
+	 * @return - lenyek list
+	 */
 	public ArrayList<SentientBeing> getBeings()
 	{
 		return sentientbeings;
 	}
-
+	
+	/**
+	 * aszteroida ID-nak gettere
+	 * @return - Astreoid ID
+	 */
 	public String GetUniqueID()
 	{
 		return "Asteroid";

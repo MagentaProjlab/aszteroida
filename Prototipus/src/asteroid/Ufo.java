@@ -39,7 +39,6 @@ public class Ufo extends SentientBeing
 	{
 		this.location.DropBeing(this);
 		place.RegisterBeing(this);
-		Logger.Message("[Ufo: "+id+"] has moved to "+place.getName()+".");
 
 	}
 	/**
@@ -103,10 +102,26 @@ public class Ufo extends SentientBeing
 					for (int i = 0; i< neighbors.size(); i++) {
 						if(neighbors.get(i).getName().equals(command_parts[1])) {
 							celzottIndex = i;
+							Logger.Message("[Ufo: "+id+"] has moved to "+neighbors.get(i).getName()+".");
 						}
+						Bill teleBill=new Bill();
+						teleBill.AddMaterialToBill(new TeleportGate(null, null, null));
+						ArrayList<ID> teleList=new ArrayList();
+						teleList.add(neighbors.get(i));
+						if(teleBill.CheckInventory(teleList)) {
+							TeleportGate t=(TeleportGate)neighbors.get(i);
+							if(t.GetSibling().GetAsteroid()!=null) {
+								if(t.GetSibling().GetAsteroid().getName().equals(command_parts[1])) {
+									celzottIndex = i;
+									Logger.Message("[Ufo: "+id+"] has moved to "+t.GetSibling().GetAsteroid().getName()+".");
+								}
+							}
+						}
+						
 					}
 					if(celzottIndex != -1) {
 						Move(neighbors.get(celzottIndex));
+						
 					}
 					else {
 						Logger.Message("[Ufo: "+id+"] failed to move"+".");
@@ -121,7 +136,7 @@ public class Ufo extends SentientBeing
 				break;
 		}
 		
-		
+		this.setStepped(true);
 	}
 	
 	public String GetUniqueID()

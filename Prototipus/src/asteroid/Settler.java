@@ -279,7 +279,7 @@ public class Settler extends SentientBeing {
 	{
 		location.DropBeing(this);
 		place.RegisterBeing(this);
-		Logger.Message("[Settler: "+name+"] has moved to "+place.getName()+".");
+		
 	}
 	/**
 	 * PutTeleportGateOnAsteroid metodus - Teleportkapu lerakashoz
@@ -326,10 +326,26 @@ public class Settler extends SentientBeing {
 					for (int i = 0; i< neighbors.size(); i++) {
 						if(neighbors.get(i).getName().equals(command_parts[1])) {
 							celzottIndex = i;
+							Logger.Message("[Settler: "+name+"] has moved to "+neighbors.get(i).getName()+".");
 						}
+						Bill teleBill=new Bill();
+						teleBill.AddMaterialToBill(new TeleportGate(null, null, null));
+						ArrayList<ID> teleList=new ArrayList();
+						teleList.add(neighbors.get(i));
+						if(teleBill.CheckInventory(teleList)) {
+							TeleportGate t=(TeleportGate)neighbors.get(i);
+							if(t.GetSibling().GetAsteroid()!=null) {
+								if(t.GetSibling().GetAsteroid().getName().equals(command_parts[1])) {
+									celzottIndex = i;
+									Logger.Message("[Settler: "+name+"] has moved to "+t.GetSibling().GetAsteroid().getName()+".");
+								}
+							}
+						}
+						
 					}
 					if(celzottIndex != -1) {
 						Move(neighbors.get(celzottIndex));
+						
 					}
 					else {
 						Logger.Message("[Settler: "+name+"] failed to move"+".");

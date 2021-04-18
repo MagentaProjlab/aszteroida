@@ -229,6 +229,7 @@ public class Asteroid extends Place
 			maxnumber = sentientbeings.size();
 			iter++;
 		}
+		this.resetStepped();
 	}
 	
 	public void resetStepped()

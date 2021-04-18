@@ -9,6 +9,7 @@ public class Main {
 		System.out.println("Choose a test case! (1-36)");
 		input = scanner.nextInt();
 		ControllerClass controller = new ControllerClass(input);
+		controller.GameLoop();
 		scanner.close();
 	}
 }

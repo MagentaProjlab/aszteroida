@@ -130,6 +130,8 @@ public class Robot extends SentientBeing
 			case "drill":
 				this.Drill();
 				break;	
+			case "noaction":
+				break;
 			default:
 				Logger.Message("Bad command for the Robot bucko"+".");
 				break;

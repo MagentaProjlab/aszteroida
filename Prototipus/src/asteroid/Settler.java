@@ -406,6 +406,8 @@ public class Settler extends SentientBeing {
 			default:
 				Logger.Message("Bad command for the Settler bucko"+".");
 				break;
+			case "noaction":
+				break;
 		}
 		this.setStepped(true);
 		

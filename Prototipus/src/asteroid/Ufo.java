@@ -131,6 +131,8 @@ public class Ufo extends SentientBeing
 			case "mine":
 				this.Mine();
 				break;
+			case "noaction":
+				break;
 			default:
 				Logger.Message("Bad command for the Ufo bucko"+".");
 				break;

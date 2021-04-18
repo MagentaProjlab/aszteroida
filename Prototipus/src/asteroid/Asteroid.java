@@ -109,9 +109,9 @@ public class Asteroid extends Place
 			//corematerial.Perish();
 		} else if ((exp == true) && !neighbors.isEmpty()) {
 			for (int i = 0; i < sentientbeings.size(); i++) {
-				if(!sentientbeings.get(i).getName().equals("robot"))
+				if(!sentientbeings.get(i).GetUniqueID().equals("Robot"))
 					sentientbeings.get(i).Explode();
-				else if(sentientbeings.get(i).getName().equals("robot")) {
+				else if(sentientbeings.get(i).GetUniqueID().equals("Robot")) {
 					//FIXME ide kellene egy teleportgate typecheck!!!
 					Random rand = new Random();
 					int r = rand.nextInt(this.neighbors.size());

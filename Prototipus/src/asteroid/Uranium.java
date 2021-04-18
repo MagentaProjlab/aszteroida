@@ -36,7 +36,7 @@ public class Uranium extends RawMaterial
 	public void PerihelionReaction() 
 	{
 		if (this.asteroid.isDrilled()) {
-			if (this.ReactionCount < 3) {
+			if (this.ReactionCount < 2) {
 				this.ReactionCount++;
 			}else {
 				this.asteroid.Explode();

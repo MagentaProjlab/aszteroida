@@ -1,0 +1,78 @@
+[Asteroid: a1] has been selected to step.
+[Settler: s1] has been selected to step.
+[Settler: s1] has built teleport gate pair
+[Asteroid: a2] has been selected to step.
+[Ufo: u1] has been selected to step.
+[Ufo: u1] has moved to a1.
+[Asteroid: a3] has been selected to step.
+[Settler: s2] has been selected to step.
+[Settler: s2] has drilled a3.
+[Asteroid: a4] has been selected to step.
+[Asteroid: a5] has been selected to step.
+[Settler: s3] has been selected to step.
+[Settler: s3] has moved to a4.
+[Asteroid: a1] has been selected to step.
+[Settler: s1] has been selected to step.
+[Settler: s1] has put down teleport tp3.
+[Ufo: u1] has been selected to step.
+[Ufo: u1] has moved to tp2.
+[Asteroid: a2] has been selected to step.
+[Asteroid: a3] has been selected to step.
+[Settler: s2] has been selected to step.
+[Settler: s2] has drilled a3.
+[Asteroid: a4] has been selected to step.
+[Settler: s3] has been selected to step.
+[Settler: s3] has mined a4.
+[Asteroid: a5] has been selected to step.
+[Asteroid: a1] has been selected to step.
+[Settler: s1] has been selected to step.
+[Settler: s1] has moved to tp2.
+[Asteroid: a2] has been selected to step.
+[Asteroid: a3] has been selected to step.
+[Settler: s2] has been selected to step.
+[Settler: s2] has selected no action.
+[Ufo: u1] has been selected to step.
+[Ufo: u1] has moved to a5.
+[Asteroid: a4] has been selected to step.
+[Settler: s3] has been selected to step.
+[Settler: s3] has selected no action.
+[Asteroid: a5] has been selected to step.
+[Asteroid: a1] has been selected to step.
+[Asteroid: a2] has been selected to step.
+[Asteroid: a3] has been selected to step.
+[Settler: s2] has been selected to step.
+[Settler: s2] has selected no action.
+[Settler: s1] has been selected to step.
+[Settler: s1] has moved to a5.
+[Asteroid: a4] has been selected to step.
+[Settler: s3] has been selected to step.
+[Settler: s3] has selected no action.
+[Asteroid: a5] has been selected to step.
+[Ufo: u1] has been selected to step.
+[Ufo: u1] has moved to a3.
+[Asteroid: a1] has been selected to step.
+[Asteroid: a2] has been selected to step.
+[Asteroid: a3] has been selected to step.
+[Settler: s2] has been selected to step.
+[Settler: s2] has selected no action.
+[Ufo: u1] has been selected to step.
+[Ufo: u1] has selected no action.
+[Asteroid: a4] has been selected to step.
+[Settler: s3] has been selected to step.
+[Settler: s3] has moved to a5.
+[Asteroid: a5] has been selected to step.
+[Settler: s1] has been selected to step.
+[Settler: s1] has put down teleport tp4.
+[Asteroid: a1] has been selected to step.
+[Asteroid: a2] has been selected to step.
+[Asteroid: a3] has been selected to step.
+[Settler: s2] has been selected to step.
+[Settler: s2] has selected no action.
+[Ufo: u1] has been selected to step.
+[Ufo: u1] has selected no action.
+[Asteroid: a4] has been selected to step.
+[Asteroid: a5] has been selected to step.
+[Settler: s1] has been selected to step.
+[Settler: s1] has moved to tp4.
+[Settler: s3] has been selected to step.
+[Settler: s3] has moved to tp4.

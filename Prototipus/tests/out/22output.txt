@@ -1,0 +1,3 @@
+[Asteroid: a1]
+[Asteroid: a2]
+[Asteroid: a3]

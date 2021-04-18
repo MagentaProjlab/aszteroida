@@ -292,10 +292,9 @@ public class ControllerClass
 	 */
 	public void GameLoop()
 	{
-		String s = log.NextLine();
-		while(s != null) {
-			this.Command(s);
-			s = log.NextLine();
+		while(Logger.hasNextLine())
+		{
+			this.Command(Logger.NextLine());
 		}
 	}
 	/**

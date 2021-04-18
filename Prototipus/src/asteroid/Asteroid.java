@@ -218,7 +218,19 @@ public class Asteroid extends Place
 	{
 		for(SentientBeing sb : sentientbeings)
 		{
-			sb.Step();
+			if(sb.getStepped() == false)
+			{
+				sb.Step();
+				sb.setStepped(true);
+			}
+		}
+	}
+	
+	public void resetStepped()
+	{
+		for(SentientBeing sb : sentientbeings)
+		{
+			sb.setStepped(false);
 		}
 	}
 

@@ -2,7 +2,7 @@ package asteroid;
 
 public abstract class SentientBeing implements ID
 {
-	//faszom
+	private boolean hasStepped;
 	protected Asteroid location;
 	/**
 	 * A sentientbeing beallitja az aszteroidajat
@@ -11,6 +11,17 @@ public abstract class SentientBeing implements ID
 	public void setAsteroid(Asteroid loc)
 	{
 		this.location = loc;
+		this.hasStepped = false;
+	}
+	
+	public boolean getStepped()
+	{
+		return hasStepped;
+	}
+	
+	public void setStepped(boolean arg)
+	{
+		hasStepped = arg;
 	}
 	/**
 	 * Vissza adja a leny nevet, amit letrehozaskor kapott

@@ -67,6 +67,9 @@ public class Settler extends SentientBeing {
 	
 	public Settler(String name, int coal, int ice, int iron, int uranium, boolean tg)
 	{
+		carriedmaterials = new ArrayList<RawMaterial>();
+		carriedteleports = new ArrayList<TeleportGate>();
+		
 		this.name = name;
 		
 		for(int i = 0; i < coal; i++)

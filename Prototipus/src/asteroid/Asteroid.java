@@ -26,8 +26,11 @@ public class Asteroid extends Place
 		CrustThickness = c;
 		HoleDepth = h;
 		sentientbeings = new ArrayList<SentientBeing>();
-		neighbors = new ArrayList<Place>();		
-        corematerial.SetAsteroid(this);
+		neighbors = new ArrayList<Place>();
+		if(corematerial != null)
+		{
+			corematerial.SetAsteroid(this);
+		}
 	}
 	
 	/**

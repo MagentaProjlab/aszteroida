@@ -121,7 +121,7 @@ public class Ufo extends SentientBeing
 				break;
 		}
 		
-		
+		this.setStepped(true);
 	}
 	
 	public String GetUniqueID()

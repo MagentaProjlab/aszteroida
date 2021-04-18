@@ -219,13 +219,15 @@ public class Asteroid extends Place
 	 */
 	public void StepBeings()
 	{
-		for(SentientBeing sb : sentientbeings)
-		{
-			if(sb.getStepped() == false)
+		int maxnumber = sentientbeings.size();
+		int iter = 0;
+		while(iter < maxnumber) {
+			if(sentientbeings.get(iter).getStepped() == false)
 			{
-				sb.Step();
-				sb.setStepped(true);
+			sentientbeings.get(iter).Step();
 			}
+			maxnumber = sentientbeings.size();
+			iter++;
 		}
 	}
 	

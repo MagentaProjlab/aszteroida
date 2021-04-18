@@ -1,0 +1,4 @@
+[Settler: settler1] has been selected to step.
+[Settler: settler1] has moved to asteroid2.
+[Settler: settler1] has been selected to step.
+[Settler: settler1] has moved to asteroid3.

@@ -5,6 +5,7 @@ settler s1 a1 0 0 0 0 0
 settler s2 a2 0 0 0 0 0
 solarwind a1
 nextround
+noaction
 mine
 listbeings a1
 listbeings a2

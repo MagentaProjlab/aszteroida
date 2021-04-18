@@ -5,5 +5,6 @@ neighbor a1 a2
 neighbor a2 a3
 robot MikRobi a1
 nextround
+noaction
 listasteroids
 listbeings a2

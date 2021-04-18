@@ -1,2 +1,3 @@
 [Settler: settler1] has been selected to step.
 [Settler: settler1] has built robot1.
+[Robot: robot1] has been selected to step.

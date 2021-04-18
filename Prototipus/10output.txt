@@ -1,2 +1,0 @@
-[Settler: settler1] has been selected to step.
-[Settler: settler1] has put material back to asteroid1.

@@ -1,4 +1,0 @@
-[Robot: robot1] has been selected to step.
-[Robot: robot1] has moved to asteroid2.
-[Robot: robot1] has been selected to step.
-[Robot: robot1] has moved to asteroid3.

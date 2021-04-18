@@ -1,2 +1,0 @@
-[TeleportGate:t1] has been selected to step.
-[TeleportGate:t1] has moved to a2.

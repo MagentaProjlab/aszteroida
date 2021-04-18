@@ -28,7 +28,7 @@ public class Logger
 		}
 		output = "";
 		
-		filename = String.valueOf(teszteset) + "output.txt";
+		filename = "tests\\in" + String.valueOf(teszteset) + "output.txt";
 		try
 		{
 		      File file = new File(filename);

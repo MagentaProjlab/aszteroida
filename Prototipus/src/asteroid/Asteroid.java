@@ -279,4 +279,9 @@ public class Asteroid extends Place
 	{
 		return sentientbeings;
 	}
+
+	public String GetUniqueID()
+	{
+		return "Asteroid";
+	}
 }

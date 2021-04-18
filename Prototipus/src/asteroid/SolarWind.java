@@ -6,24 +6,36 @@ import java.util.Scanner;
 
 public class SolarWind
 {
-	private ArrayList<SentientBeing> sentientbeings;
 	/**
 	 * Napszel konstruktora.
 	 */
 	public SolarWind()
 	{
-		sentientbeings = new ArrayList<SentientBeing>();
+		
 	}
 	/**
 	 * Napszel keletkezik
 	 * A napszel keletkezeset a felhasznalo donti el
-	 * @param asteroids : Azok az aszteroidak, amiket eler a napszel
+	 * @param asteroids : Azok a helyek, amiket eler a napszel
 	 */
-	public void solarWind(ArrayList<Asteroid> asteroids)
-	{		
-		for(Asteroid a : asteroids)
+	public void solarWind(ArrayList<Place> places)
+	{	
+		for(Place p : places)
 		{
-			a.SolarWindDeath();
+			Bill a = new Bill();
+			a.AddMaterialToBill(new Asteroid(null, null, 0, 0));
+			ArrayList<ID> l = new ArrayList<ID>();
+			l.add(p);
+			
+			if(a.CheckInventory(l) == true)
+			{
+				Asteroid as = (Asteroid)p;
+				as.SolarWindDeath();
+			}else
+			{
+				TeleportGate tg = (TeleportGate)p;
+				tg.Malfunction();
+			}
 		}	
 	}
 }

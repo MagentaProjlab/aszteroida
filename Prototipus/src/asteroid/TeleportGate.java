@@ -1,5 +1,5 @@
 package asteroid;
-public class TeleportGate extends Place implements ID 
+public class TeleportGate extends Place
 {
 	private TeleportGate sibling;
 	private Asteroid asteroid;

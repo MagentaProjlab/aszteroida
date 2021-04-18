@@ -1,6 +1,6 @@
 package asteroid;
 
-public abstract class Place
+public abstract class Place implements ID
 {
 	/**
 	 * Az adott hely neve

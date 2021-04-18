@@ -7,10 +7,6 @@ public class ControllerClass
 {
 	private ArrayList<Asteroid> asteroids;
 	private SolarWind solarwind;
-	private ArrayList<Bill> bills;
-	
-	
-	
 	private Logger log;
 	
 	/**
@@ -26,7 +22,7 @@ public class ControllerClass
 		String[] params = cmd.split(" ");
 		
 		
-		if(params[0].equals("Asteroid"))
+		if(params[0].equals("asteroid"))
 		{
 			String name = params[1];
 			String materialtype = params[2];
@@ -51,9 +47,7 @@ public class ControllerClass
 			}
 			
 			asteroids.add(new Asteroid(name, material, crustthickness, holedepth));
-		}
-		
-		if(params[0].equals("SetNeighbors"))
+		}else if(params[0].equals("neighbor"))
 		{
 			String name1 = params[1];
 			String name2 = params[2];
@@ -79,9 +73,7 @@ public class ControllerClass
 			
 			asteroids.get(index1).AddNeighbor(asteroids.get(index2));
 			asteroids.get(index2).AddNeighbor(asteroids.get(index1));
-		}
-		
-		if(params[0].equals("Settler"))
+		}else if(params[0].equals("settler"))
 		{
 			String name = params[1];
 			String asteroid = params[2];
@@ -99,21 +91,7 @@ public class ControllerClass
 					break;
 				}
 			}
-		}
-		
-		
-		//  ezek mind a beingekhez kellenek
-		//Move 
-		//Drill 
-		//Die 
-		//NoAction 
-		//Mine 
-		//ListInventory 
-		//BuildTeleport 
-		//PutDownTeleport 
-		//BuildRobot 
-		
-		if(params[0].equals("Teleport"))
+		}else if(params[0].equals("teleport"))
 		{
 			String name1 = params[1];
 			String name2 = params[2];
@@ -150,9 +128,7 @@ public class ControllerClass
 			
 			asteroids.get(index1).AddNeighbor(gate2);
 			asteroids.get(index2).AddNeighbor(gate1);
-		}
-		
-		if(params[0].equals("Teleport2"))
+		}else if(params[0].equals("teleport2"))
 		{
 			String name = params[1];
 			String asteroid = params[2];
@@ -189,11 +165,7 @@ public class ControllerClass
 					index2++;
 				}
 			}
-		}
-		
-		
-		
-		if(params[0].equals("Robot"))
+		}else if(params[0].equals("robot"))
 		{
 			String name = params[1];
 			String asteroid = params[2];
@@ -206,9 +178,7 @@ public class ControllerClass
 					break;
 				}
 			}
-		}
-		
-		if(params[0].equals("Ufo"))
+		}else if(params[0].equals("ufo"))
 		{
 			String name = params[1];
 			String asteroid = params[2];
@@ -221,9 +191,7 @@ public class ControllerClass
 					break;
 				}
 			}
-		}
-		
-		if(params[0].equals("Perihelion"))
+		}else if(params[0].equals("perihelion"))
 		{
 			String asteroid = params[1];
 			
@@ -235,9 +203,7 @@ public class ControllerClass
 					break;
 				}
 			}
-		}
-		
-		if(params[0].equals("SolarWind"))
+		}else if(params[0].equals("solarwind"))
 		{
 			String asteroid = params[1];
 			
@@ -249,20 +215,14 @@ public class ControllerClass
 					break;
 				}
 			}
-		}
-		
-		
-		
-		if(params[0].equals("ListAsteroids"))
+		}else if(params[0].equals("listasteroids"))
 		{
 			for(Asteroid a : asteroids)
 			{
 				String message = "[Asteroid: " + a.getName() + "]";
 				Logger.Message(message);
 			}
-		}
-		
-		if(params[0].equals("ListBeings"))
+		}else if(params[0].equals("listbeings"))
 		{
 			String asteroid = params[1];
 			
@@ -278,9 +238,7 @@ public class ControllerClass
 					break;
 				}
 			}
-		}
-		
-		if(params[0].equals("ListNeighbors"))
+		}else if(params[0].equals("listneighbors"))
 		{
 			String asteroid = params[1];
 			
@@ -296,22 +254,29 @@ public class ControllerClass
 					break;
 				}
 			}
-		}
-		
-		if(params[0].equals("NextRound"))
+		}else if(params[0].equals("nextround"))
 		{
 			for(Asteroid a : asteroids)
 			{
 				a.StepBeings();
 			}
-		}
-		
-		if(params[0].equals("CheckEndGame"))
+		}else if(params[0].equals("endgame"))
 		{
 			
 		}
 		//LoadTest 
 		//Exit
+		
+		//  ezek mind a beingekhez kellenek
+		//Move 
+		//Drill 
+		//Die 
+		//NoAction 
+		//Mine 
+		//ListInventory 
+		//BuildTeleport 
+		//PutDownTeleport 
+		//BuildRobot 
 	}
 	
 	/**

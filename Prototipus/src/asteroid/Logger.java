@@ -17,7 +17,7 @@ public class Logger
 	
 	Logger(int teszteset)
 	{
-		String filename = "tests\\in" + String.valueOf(teszteset) + "input.txt";
+		String filename = "tests\\in\\" + String.valueOf(teszteset) + "input.txt";
 		try
 		{
 		      File file = new File(filename);
@@ -28,14 +28,14 @@ public class Logger
 		}
 		output = "";
 		
-		filename = "tests\\out" + String.valueOf(teszteset) + "output.txt";
+		filename = "tests\\out\\" + String.valueOf(teszteset) + "output.txt";
 		try
 		{
 		      File file = new File(filename);
 		      input2 = new Scanner(file);
 		      while(input2.hasNextLine())
 		      {
-		    	  prewrittenoutput += input2.nextLine();
+		    	  prewrittenoutput += input2.nextLine();;
 		      }
 		      input2.close();
 		} catch (FileNotFoundException e)

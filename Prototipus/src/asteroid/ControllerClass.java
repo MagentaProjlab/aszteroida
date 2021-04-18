@@ -15,6 +15,7 @@ public class ControllerClass
 	public ControllerClass(int teszteset)
 	{
 		log = new Logger(teszteset);
+		solarwind = new SolarWind();
 	}
 	
 	public void Command(String cmd)
@@ -256,6 +257,11 @@ public class ControllerClass
 			}
 		}else if(params[0].equals("nextround"))
 		{
+			for(Asteroid a : asteroids)
+			{
+				a.resetStepped();
+			}
+			
 			for(Asteroid a : asteroids)
 			{
 				a.StepBeings();

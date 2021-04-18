@@ -26,48 +26,6 @@ public class Bill
 	 */
 	public Boolean CheckInventory(ArrayList<ID> inventory) 
 	{
-		/*if (inventory != null) {
-			if (inventory.get(0).GetUniqueID().equals("teleportgate"))
-				return true;
-			
-			if (inventory.size() >= materials.size()) {
-				int inCoal = 0;
-				int inIce = 0;
-				int inIron = 0;
-				int inUranium = 0;
-				for (int i = 0; i<inventory.size(); ++i) {
-					if (inventory.get(i).GetUniqueID().equals("coal"))
-						++inCoal;
-					if (inventory.get(i).GetUniqueID().equals("ice"))
-						++inIce;
-					if (inventory.get(i).GetUniqueID().equals("iron"))
-						++inIron;
-					if (inventory.get(i).GetUniqueID().equals("uranium"))
-						++inUranium;
-				}
-				int maCoal = 0;
-				int maIce = 0;
-				int maIron = 0;
-				int maUranium = 0;
-				for (int i = 0; i<materials.size(); ++i) {
-					if (materials.get(i).GetUniqueID().equals("coal"))
-						++maCoal;
-					if (materials.get(i).GetUniqueID().equals("ice"))
-						++maIce;
-					if (materials.get(i).GetUniqueID().equals("iron"))
-						++maIron;
-					if (materials.get(i).GetUniqueID().equals("uranium"))
-						++maUranium;
-				}
-				if (inCoal >= maCoal && inIce >= maIce && inIron >= maIron && inUranium >= maUranium)
-					return true;
-				else
-					return false;
-			}
-			else return false;
-		}
-		else return false;*/
-		
 		for(ID i : inventory)
 		{
 			for(ID i2 : check)
@@ -105,52 +63,32 @@ public class Bill
 	 */
 	public ArrayList<RawMaterial> DeleteFromInventory(ArrayList<RawMaterial> inventory) 
 	{
-		/*int inCoal = 0;
-		int inIce = 0;
-		int inIron = 0;
-		int inUranium = 0;
-		for (int i = 0; i<inventory.size(); ++i) {
-			if (inventory.get(i).GetUniqueID().equals("coal"))
-				++inCoal;
-			if (inventory.get(i).GetUniqueID().equals("ice"))
-				++inIce;
-			if (inventory.get(i).GetUniqueID().equals("iron"))
-				++inIron;
-			if (inventory.get(i).GetUniqueID().equals("uranium"))
-				++inUranium;
-		}
-		
-		for (int i = inventory.size(); i>0; --i) {
-			if (inventory.get(i).GetUniqueID().equals("coal") && inCoal > 0) {
-				--inCoal;
-				inventory.remove(i);
-			}
-			if (inventory.get(i).GetUniqueID().equals("ice") && inIce > 0) {
-				--inIce;
-				inventory.remove(i);
-			}
-			if (inventory.get(i).GetUniqueID().equals("iron") && inIron > 0) {
-				--inIron;
-				inventory.remove(i);
-			}
-			if (inventory.get(i).GetUniqueID().equals("uranium") && inUranium > 0) {
-				--inUranium;
-				inventory.remove(i);
-			}
-		}
-		return inventory;*/
-		
-		int i, size = inventory.size();
+		/*int i, size = inventory.size();
 		for(i = 0; i < size; i++)
 		{
-			for(ID i2 : remove)
+			int j, size2 = remove.size();
+			for(j = 0; j < size2; j++)
 			{
-				if(i2.GetUniqueID().compareTo(inventory.get(i).GetUniqueID()) == 0)
+				if(remove.get(j).GetUniqueID().compareTo(inventory.get(i).GetUniqueID()) == 0)
 				{
 					inventory.remove(i);
-					remove.remove(i2);
+					remove.remove(j);
 					i--;
+					j--;
 					size--;
+					size2--;
+				}
+			}
+		}*/
+		
+		for(ID item : remove)
+		{
+			for(int i = 0; i < inventory.size(); i++)
+			{
+				if(item.GetUniqueID().compareTo(inventory.get(i).GetUniqueID()) == 0)
+				{
+					inventory.remove(i);
+					break;
 				}
 			}
 		}

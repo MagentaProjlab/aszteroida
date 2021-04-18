@@ -270,6 +270,8 @@ public class ControllerClass
 		{
 			
 		}
+		
+		//ezek kérdésesek
 		//LoadTest 
 		//Exit
 		

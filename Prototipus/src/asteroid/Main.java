@@ -6,7 +6,7 @@ public class Main {
 	{
 		Scanner scanner = new Scanner(System.in);
 		int input = -1;
-		System.out.println("Choose a test method! (1-36)");
+		System.out.println("Choose a test case! (1-36)");
 		input = scanner.nextInt();
 		ControllerClass controller = new ControllerClass(input);
 		scanner.close();

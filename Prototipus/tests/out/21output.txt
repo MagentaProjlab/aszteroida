@@ -1,0 +1,3 @@
+[Settler: SAndor]
+[Ufo: Gerzson]
+[Robot: MikRobi]

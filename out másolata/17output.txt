@@ -1,0 +1,2 @@
+[Asteroid: asteroid1]
+[Asteroid: asteroid1]

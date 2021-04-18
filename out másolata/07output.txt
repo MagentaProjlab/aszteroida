@@ -1,0 +1,2 @@
+[Settler: settler1] has been selected to step.
+[Settler: settler1] has mined asteroid1.

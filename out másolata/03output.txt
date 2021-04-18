@@ -1,0 +1,2 @@
+[Robot: robot1] has been selected to step.
+[Robot: robot1] has drilled asteroid1.

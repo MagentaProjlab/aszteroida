@@ -1,0 +1,2 @@
+[Settler: settler1] has been selected to step.
+[Settler: settler1] has failed to drill asteroid1.

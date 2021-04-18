@@ -221,6 +221,7 @@ public class Asteroid extends Place
 	 */
 	public void StepBeings()
 	{
+		System.out.println("[Asteroid: "+this.name+"] has been selected to step.");
 		int maxnumber = sentientbeings.size();
 		int iter = 0;
 		while(iter < maxnumber) {

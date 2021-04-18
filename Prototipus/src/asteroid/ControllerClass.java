@@ -15,7 +15,6 @@ public class ControllerClass
 	public ControllerClass(int teszteset)
 	{
 		log = new Logger(teszteset);
-		solarwind = new SolarWind();
 	}
 	
 	public void Command(String cmd)
@@ -233,7 +232,7 @@ public class ControllerClass
 				{
 					for(SentientBeing sb : a.getBeings())
 					{
-						String message = sb.getFullName();
+						String message = "[SentientBeing: " + sb.getName() + "]";
 						Logger.Message(message);
 					}
 					break;
@@ -259,19 +258,12 @@ public class ControllerClass
 		{
 			for(Asteroid a : asteroids)
 			{
-				a.resetStepped();
-			}
-			
-			for(Asteroid a : asteroids)
-			{
 				a.StepBeings();
 			}
 		}else if(params[0].equals("endgame"))
 		{
 			
 		}
-		
-		//ezek kérdésesek
 		//LoadTest 
 		//Exit
 		

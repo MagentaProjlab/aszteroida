@@ -7,40 +7,40 @@ neighbor a1 a2
 neighbor a3 a5 
 neighbor a4 a5 
 teleport tp1 tp2 a3 a1 
-Settler s1 a1 2 2 2 2 
-Settler s2 a3 0 0 0 0 
-Settler s3 a5 0 0 0 0 
-Ufo u1 a2 
-Nextround 
-Buildteleport //s1 lép a1-en 
-Move a1 //u1 lép a2-n 
-Drill //s2 lép a3-on 
-Move a4 //s3 lép a5-ön 
-Nextround 
-Putdowntele tp3 1 //s1 lép a1-en 
-Move tp2 //u1 lép a1-en 
-Drill //s2 lép a3-on 
-Mine //s3 lép a4-en 
-Nextround 
-Move tp2 // s1 lép a1-en 
-Noaction //s2 lép a3-on 
-Move a5 //u1 lép a3-on 
-Noaction //s3 lép a4-en 
-Nextround 
-Noaction //s2 lép a3-on 
-Move a5 //s1 lép a3-on 
-Noaction //s3 lép a4-en 
-Move a3 //u1 lép a5-ön 
-Perihelion a3 
-Nextround 
-Noaction //s2 lép a3-on 
-Noaction //u1 lép a3-on 
-Move a5 //s3 lép a4-en 
-Putdowntele tp4 1 //s1 lép a5-ön 
-Perihelion a3 
-Nextround 
-Noaction //s2 lép a3-on 
-Noaction //u1 lép a3-on 
-Move tp4 //s1 lép a5-ön 
-Move tp4 // s3 lép a5-ön 
-Perihelion a3
+settler s1 a1 2 2 2 2 
+settler s2 a3 0 0 0 0 
+settler s3 a5 0 0 0 0 
+ufo u1 a2 
+nextround 
+buildteleport //s1 lép a1-en 
+move a1 //u1 lép a2-n 
+drill //s2 lép a3-on 
+move a4 //s3 lép a5-ön 
+nextround 
+putdowntele tp3 1 //s1 lép a1-en 
+move tp2 //u1 lép a1-en 
+drill //s2 lép a3-on 
+mine //s3 lép a4-en 
+nextround 
+move tp2 // s1 lép a1-en 
+noaction //s2 lép a3-on 
+move a5 //u1 lép a3-on 
+noaction //s3 lép a4-en 
+nextround 
+noaction //s2 lép a3-on 
+move a5 //s1 lép a3-on 
+noaction //s3 lép a4-en 
+move a3 //u1 lép a5-ön 
+perihelion a3 
+nextround 
+noaction //s2 lép a3-on 
+noaction //u1 lép a3-on 
+move a5 //s3 lép a4-en 
+putdowntele tp4 1 //s1 lép a5-ön 
+perihelion a3 
+nextround 
+noaction //s2 lép a3-on 
+noaction //u1 lép a3-on 
+move tp4 //s1 lép a5-ön 
+move tp4 // s3 lép a5-ön 
+perihelion a3

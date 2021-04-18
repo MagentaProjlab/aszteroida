@@ -17,7 +17,7 @@ public class Logger
 	
 	Logger(int teszteset)
 	{
-		String filename = String.valueOf(teszteset) + "input.txt";
+		String filename = "tests\\in" + String.valueOf(teszteset) + "input.txt";
 		try
 		{
 		      File file = new File(filename);
@@ -37,6 +37,7 @@ public class Logger
 		      {
 		    	  prewrittenoutput += input2.nextLine();
 		      }
+		      input2.close();
 		} catch (FileNotFoundException e)
 		{
 		      

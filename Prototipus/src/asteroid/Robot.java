@@ -98,8 +98,13 @@ public class Robot extends SentientBeing
 				}
 				else {
 					ArrayList<Place> neighbors=location.getNeighbors();
-					int celzottIndex=Integer.parseInt(command_parts[1]);
-					if(neighbors.size()>=1+celzottIndex) {
+					int celzottIndex = -1;
+					for (int i = 0; i< neighbors.size(); i++) {
+						if(neighbors.get(i).getName().equals(command_parts[1])) {
+							celzottIndex = i;
+						}
+					}
+					if(celzottIndex != -1) {
 						Move(neighbors.get(celzottIndex));
 					}
 					else {

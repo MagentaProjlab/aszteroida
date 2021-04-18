@@ -328,7 +328,6 @@ public class Settler extends SentientBeing {
 							celzottIndex = i;
 						}
 					}
-					System.out.print(celzottIndex);
 					if(celzottIndex != -1) {
 						Move(neighbors.get(celzottIndex));
 					}

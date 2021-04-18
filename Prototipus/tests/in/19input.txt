@@ -6,6 +6,15 @@ neighbor a2 a3
 settler Gerzsonka a1 0 0 0 0 0
 ufo Gerzson a1
 listbeings a1
+perihelion a1
+nextround
+noaction
+noaction
+perihelion a1
+nextround
+noaction
+noaction
+perihelion a1
 nextround
 noaction
 noaction

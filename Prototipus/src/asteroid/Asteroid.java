@@ -100,22 +100,36 @@ public class Asteroid extends Place
 			{
 				sb.Explode();
 			}
-			corematerial.Perish();
+			//corematerial.Perish();
 		} else if ((exp == true) && !neighbors.isEmpty()) {
-			for(SentientBeing sb : sentientbeings)
-			{
-				if(!sb.getName().equals("robot"))
-					sb.Explode();
-				else if(sb.getName().equals("robot")) {
+			for (int i = 0; i < sentientbeings.size(); i++) {
+				if(!sentientbeings.get(i).getName().equals("robot"))
+					sentientbeings.get(i).Explode();
+				else if(sentientbeings.get(i).getName().equals("robot")) {
+					//FIXME ide kellene egy teleportgate typecheck!!!
 					Random rand = new Random();
 					int r = rand.nextInt(this.neighbors.size());
 					while (this.neighbors.get(r).GetUniqueID().equals("Asteroid")) {
 						 r = rand.nextInt(this.neighbors.size());
 					}
-					sb.setAsteroid((Asteroid)this.neighbors.get(r));
+					sentientbeings.get(i).setAsteroid((Asteroid)this.neighbors.get(r));
 				}
+				
 			}
-			corematerial.Perish();
+			{
+//				if(!sb.getName().equals("robot"))
+//					sb.Explode();
+//				else if(sb.getName().equals("robot")) {
+//					//FIXME ide kellene egy teleportgate typecheck!!!
+//					Random rand = new Random();
+//					int r = rand.nextInt(this.neighbors.size());
+//					while (this.neighbors.get(r).GetUniqueID().equals("Asteroid")) {
+//						 r = rand.nextInt(this.neighbors.size());
+//					}
+//					sb.setAsteroid((Asteroid)this.neighbors.get(r));
+//				}
+			}
+			//corematerial.Perish();
 		}
 	}
 	

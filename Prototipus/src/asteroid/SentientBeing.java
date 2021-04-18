@@ -2,6 +2,7 @@ package asteroid;
 
 public abstract class SentientBeing implements ID
 {
+	//faszom
 	protected Asteroid location;
 	/**
 	 * A sentientbeing beallitja az aszteroidajat

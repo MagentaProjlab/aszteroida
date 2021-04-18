@@ -28,6 +28,15 @@ public class Settler extends SentientBeing {
 	 */
 	private ArrayList<TeleportGate> carriedteleports;
 	
+	
+	/**
+	 * Vissza adja a leny nevet, amit letrehozaskor kapott es a tipusat
+	 * @return A leny neve
+	 */
+	public  String getFullName() {
+		return "[Settler:"+name+"]";
+	}
+	
 	/**
 	 * A prototipusnal felmerult szuksege vegett, egy Stringban tarolt nev amivel a Settler kivalaszthato.
 	 */

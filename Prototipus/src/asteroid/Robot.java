@@ -13,6 +13,20 @@ public class Robot extends SentientBeing
 		this.location = a;
 		this.id = name;
 	}
+	
+	/**
+	 * Vissza adja a leny nevet, amit letrehozaskor kapott es a tipusat
+	 * @return A leny neve
+	 */
+	public  String getFullName() {
+		return "[Robot:"+id+"]";
+	}
+	
+	
+	/**
+	 * Vissza adja a leny nevet, amit letrehozaskor kapott
+	 * @return A leny neve
+	 */
 	public String getName() {
 		return id;
 	}

@@ -15,6 +15,19 @@ public class Ufo extends SentientBeing
 		this.id = name;
 		carriedmaterials = new ArrayList<RawMaterial>();
 	}
+	/**
+	 * Vissza adja a leny nevet, amit letrehozaskor kapott es a tipusat
+	 * @return A leny neve
+	 */
+	public  String getFullName() {
+		return "[Ufo:"+id+"]";
+	}
+	
+	
+	/**
+	 * Vissza adja a leny nevet, amit letrehozaskor kapott
+	 * @return A leny neve
+	 */
 	public String getName() {
 		return id;
 	}

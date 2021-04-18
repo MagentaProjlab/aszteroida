@@ -11,6 +11,15 @@ public abstract class SentientBeing implements ID
 	{
 		this.location = loc;
 	}
+	/**
+	 * Vissza adja a leny nevet, amit letrehozaskor kapott
+	 * @return A leny neve
+	 */
+	public abstract String getFullName();
+	/**
+	 * Vissza adja a leny nevet, es a tipusat a prototipus dokumentacioban meghatarozott modon
+	 * @return A leny tipusa es neve
+	 */
 	public abstract String getName();
 	/**
 	 * A leny absztrakt mozogasert felelos fuggvenye
@@ -29,4 +38,5 @@ public abstract class SentientBeing implements ID
 	 * A leny absztrakt lepesert felelos fuggvenye
 	 */
 	public abstract void Step();
+	
 }

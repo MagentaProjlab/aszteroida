@@ -1,2 +1,0 @@
-[Robot: robot1] has been selected to step.
-[Robot: robot1] has failed to drill asteroid1.

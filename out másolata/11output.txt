@@ -1,2 +1,0 @@
-[Settler: settler1] has been selected to step.
-[Settler: settler1] has failed to put material back to asteroid1.

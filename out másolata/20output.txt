@@ -1,3 +1,0 @@
-[Asteroid: a2]
-[Asteroid: a3]
-[Robot: MikRobi]

@@ -137,6 +137,13 @@ public class Asteroid extends Place
 //				}
 			}
 			//corematerial.Perish();
+		}for(int i = 0; i< this.neighbors.size(); i++) {
+			if(this.neighbors.get(i).GetUniqueID().equals("Asteroid")) {
+				Asteroid a = (Asteroid)this.neighbors.get(i);
+				if(a.getNeighbors().size() <= 1 && a.getExploded() == false) {
+					a.Explode();
+				}
+			}
 		}
 	}
 	

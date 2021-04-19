@@ -1,13 +1,3 @@
-[Asteroid: a1] has been selected to step.
-[Robot: MikRobi] has been selected to step.
-[Asteroid: a2] has been selected to step.
-[Settler: Laszlo] has been selected to step.
-[Ufo: Gedeon] has been selected to step.
-[Robot:MikRobi]
-[Asteroid: a1] has been selected to step.
-[Robot: MikRobi] has been selected to step.
-[Asteroid: a2] has been selected to step.
-[Settler: Laszlo] has been selected to step.
-[Ufo: Gedeon] has been selected to step.
-[Settler:Laszlo]
-[Ufo:Gedeon]
+[Settler: SAndor]
+[Ufo: Gerzson]
+[Robot: MikRobi]

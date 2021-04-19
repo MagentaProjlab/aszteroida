@@ -1,2 +1,4 @@
+[Asteroid: asteroid1] has been selected to step.
 [Asteroid: asteroid1]
+[Asteroid: asteroid1] has been selected to step.
 [Asteroid: asteroid1]

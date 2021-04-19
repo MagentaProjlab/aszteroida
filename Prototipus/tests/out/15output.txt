@@ -1,2 +1,3 @@
+[Asteroid: asteroid1] has been selected to step.
 [Settler: settler1] has been selected to step.
-[Settler: settler1] has built a teleportgate pair.
+[Settler: settler1] built a teleportgate pair.

@@ -1,4 +1,10 @@
+[Asteroid: asteroid1] has been selected to step.
 [Settler: settler1] has been selected to step.
 [Settler: settler1] has moved to asteroid2.
+[Asteroid: asteroid2] has been selected to step.
+[Asteroid: asteroid3] has been selected to step.
+[Asteroid: asteroid1] has been selected to step.
+[Asteroid: asteroid2] has been selected to step.
 [Settler: settler1] has been selected to step.
 [Settler: settler1] has moved to asteroid3.
+[Asteroid: asteroid3] has been selected to step.

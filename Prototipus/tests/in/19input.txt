@@ -10,12 +10,3 @@ perihelion a1
 nextround
 noaction
 noaction
-perihelion a1
-nextround
-noaction
-noaction
-perihelion a1
-nextround
-noaction
-noaction
-listbeings a1

@@ -1,10 +1,10 @@
 [Asteroid: a1] has been selected to step.
 [Settler: Sandor] has been selected to step.
-[Settler :Sandor] has drilled a1.
+[Settler: Sandor] has failed to drill a1.
 [Ufo: Gerzson] has been selected to step.
 [Ufo: Gerzson] has moved to a2.
 [Robot: r1] has been selected to step.
-[Robot: r1] has drilled a1.
+[Robot: r1] has failed to drill a1.
 [Asteroid: a2] has been selected to step.
 [TeleportGate:t1] has been selected to step.
 [TeleportGate:t1] has moved to a2.

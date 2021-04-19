@@ -282,15 +282,37 @@ public class ControllerClass
 				{
 					asteroids.get(i).StepBeings();
 					for(int j = 0; j< asteroids.get(i).getNeighbors().size();j++) {
-						if(asteroids.get(i).getNeighbors().get(j).GetUniqueID().equals("teleportgate")) {
+						Bill teleBill=new Bill();
+						teleBill.AddMaterialToBill(new TeleportGate(null, null, null));
+						ArrayList<ID> teleList=new ArrayList();
+						teleList.add(asteroids.get(i).getNeighbors().get(j));
+						if(teleBill.CheckInventory(teleList)) {
 							TeleportGate tg = (TeleportGate)asteroids.get(i).getNeighbors().get(j);
-							tg.Move();
+							if(!tg.getstepped())
+								tg.Move();
+							
 							//j--;
 						}
-						else {}
 					}
 				}
 			}
+			for(int i = 0; i < asteroids.size(); i++)
+			{
+				for(int j = 0; j< asteroids.get(i).getNeighbors().size();j++) {
+					Bill teleBill=new Bill();
+					teleBill.AddMaterialToBill(new TeleportGate(null, null, null));
+					ArrayList<ID> teleList=new ArrayList();
+					teleList.add(asteroids.get(i).getNeighbors().get(j));
+					if(teleBill.CheckInventory(teleList)) {
+						TeleportGate tg = (TeleportGate)asteroids.get(i).getNeighbors().get(j);
+						tg.setstepped(false);
+						
+						//j--;
+					}
+				}
+				
+			}
+			
 		}else if(params[0].equals("endgame"))
 		{
 			boolean w = false;

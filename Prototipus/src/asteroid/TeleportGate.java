@@ -9,6 +9,7 @@ public class TeleportGate extends Place
 	private Settler owner;
 	private boolean Malfunctioning; 
 	String id;
+	private boolean stepped;
 	/**
 	 * A TeleportGate konstruktora
 	 */
@@ -18,6 +19,15 @@ public class TeleportGate extends Place
 		this.owner = o;
 		this.id = name;
 		this.Malfunctioning = false;
+		stepped=false;
+	}
+	
+	public void setstepped(boolean azt) {
+		stepped=azt;
+	}
+	
+	public boolean getstepped() {
+		return stepped;
 	}
 	
 	public void SetName(String n) {
@@ -34,20 +44,20 @@ public class TeleportGate extends Place
 			int max = this.asteroid.getNeighbors().size();
 			while(index < max) {
 				teleList.add(this.asteroid.getNeighbors().get(index));
-				if(!teleBill.CheckInventory(teleList)) {
+				if(teleBill.CheckInventory(teleList)) {
+					teleList.remove(this.asteroid.getNeighbors().get(index));
+					index++;
+					
+				}else {
 					asteroid.DropNeighbor(this);
 					this.asteroid = (Asteroid)this.asteroid.getNeighbors().get(index);
 					asteroid.AddNeighbor(this);
-					Logger.Message("[TeleportGate: "+this.getName()+"] has moved to "+this.asteroid.getNeighbors().get(index).getName()+".");
+					Logger.Message("[TeleportGate: "+this.getName()+"] has moved to "+this.asteroid.getName()+".");
 					break;
-				}else {
-					teleList.remove(this.asteroid.getNeighbors().get(index));
-					index++;
 				}
-				
 			}
 		}
-
+		stepped=true;
 	}
 	public String getName() {
 		return id;

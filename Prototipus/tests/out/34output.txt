@@ -1,2 +1,6 @@
-[TeleportGate:t1] has been selected to step.
-[TeleportGate:t1] has moved to a2.
+[Asteroid: a1] has been selected to step.
+[Asteroid: a2] has been selected to step.
+[Asteroid: a1] has been selected to step.
+[TeleportGate: t1] has been selected to step.
+[TeleportGate: t1] has moved to a2.
+[Asteroid: a2] has been selected to step.

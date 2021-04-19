@@ -234,7 +234,7 @@ public class ControllerClass
 				{
 					for(SentientBeing sb : a.getBeings())
 					{
-						String message = "[SentientBeing: " + sb.getName() + "]";
+						String message = sb.getFullName();
 						Logger.Message(message);
 					}
 					break;
@@ -378,6 +378,14 @@ public class ControllerClass
 		while(Logger.hasNextLine())
 		{
 			this.Command(Logger.NextLine());
+		}
+		
+		if(Logger.CompareOutputs())
+		{
+			System.out.println("The test case succeeded.");
+		}else
+		{
+			System.out.println("The test case failed.");
 		}
 	}
 	/**

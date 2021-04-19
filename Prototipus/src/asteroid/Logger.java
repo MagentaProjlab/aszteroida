@@ -28,6 +28,7 @@ public class Logger
 		}
 		output = "";
 		
+		prewrittenoutput = "";
 		filename = "tests\\out\\" + String.valueOf(teszteset) + "output.txt";
 		try
 		{
@@ -42,6 +43,13 @@ public class Logger
 		{
 		      
 		}
+	}
+	
+	public static boolean CompareOutputs()
+	{
+		System.out.println(output);
+		System.out.println(prewrittenoutput);
+		return output.compareTo(prewrittenoutput) == 0 ? true : false;
 	}
 	
 	public static void Message(String message)

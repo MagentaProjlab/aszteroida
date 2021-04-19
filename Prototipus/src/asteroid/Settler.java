@@ -94,8 +94,8 @@ public class Settler extends SentientBeing {
 		
 		if(tg)
 		{
-			TeleportGate gate1 = new TeleportGate(null, null, "");
-			TeleportGate gate2 = new TeleportGate(null, null, "");
+			TeleportGate gate1 = new TeleportGate(null, this, "");
+			TeleportGate gate2 = new TeleportGate(null, this, "");
 			gate1.SetSibling(gate2);
 			gate2.SetSibling(gate1);
 

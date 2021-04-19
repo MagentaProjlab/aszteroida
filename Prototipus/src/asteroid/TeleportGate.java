@@ -103,7 +103,8 @@ public class TeleportGate extends Place
 			asteroid.DropNeighbor(this);
 		}else
 		{
-			owner.DropCarriedTeleport(this);
+			if (owner != null)
+				owner.DropCarriedTeleport(this);
 		}
 		
 		Asteroid a2 = this.sibling.GetAsteroid();

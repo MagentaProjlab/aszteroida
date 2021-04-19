@@ -234,7 +234,7 @@ public class ControllerClass
 				{
 					for(SentientBeing sb : a.getBeings())
 					{
-						String message = "[SentientBeing: " + sb.getName() + "]";
+						String message = sb.getFullName();
 						Logger.Message(message);
 					}
 					break;

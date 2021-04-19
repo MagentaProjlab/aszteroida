@@ -11,8 +11,6 @@ import java.util.Scanner;
 public class Logger
 {
 	
-	//private static String output;
-	//private static String prewrittenoutput;
 	private static Scanner input;
 	private static Scanner input2;
 	private static ArrayList<String> output = new ArrayList<String>();
@@ -29,9 +27,7 @@ public class Logger
 		{
 		      
 		}
-		//output = "";
 		
-		//prewrittenoutput = "";
 		filename = "tests\\out\\" + String.valueOf(teszteset) + "output.txt";
 		try
 		{
@@ -40,7 +36,6 @@ public class Logger
 		      while(input2.hasNextLine())
 		      {
 		    	  prewrittenoutput.add(input2.nextLine());
-		    	  //prewrittenoutput += input2.nextLine();
 		      }
 		      input2.close();
 		} catch (FileNotFoundException e)
@@ -65,14 +60,12 @@ public class Logger
 		}
 		
 		return true;
-		//return output.compareTo(prewrittenoutput) == 0 ? true : false;
 	}
 	
 	public static void Message(String message)
 	{
 		System.out.println(message);
 		output.add(message);
-		//output += message;
 	}
 	
 	public static boolean hasNextLine()

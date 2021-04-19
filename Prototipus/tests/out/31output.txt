@@ -1,4 +1,6 @@
 [Ufo:Sandor]
-[Ufo:Sandor] has been selected to step.
-[Ufo:Sandor] has moved to a2.
+[Asteroid: a1] has been selected to step.
+[Ufo: Sandor] has been selected to step.
+[Ufo: Sandor] has moved to a2.
+[Asteroid: a2] has been selected to step.
 [Ufo:Sandor]

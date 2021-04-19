@@ -2,6 +2,7 @@ package asteroid;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -10,10 +11,12 @@ import java.util.Scanner;
 public class Logger
 {
 	
-	private static String output;
-	private static String prewrittenoutput;
+	//private static String output;
+	//private static String prewrittenoutput;
 	private static Scanner input;
 	private static Scanner input2;
+	private static ArrayList<String> output = new ArrayList<String>();
+	private static ArrayList<String> prewrittenoutput = new ArrayList<String>();
 	
 	Logger(int teszteset)
 	{
@@ -26,9 +29,9 @@ public class Logger
 		{
 		      
 		}
-		output = "";
+		//output = "";
 		
-		prewrittenoutput = "";
+		//prewrittenoutput = "";
 		filename = "tests\\out\\" + String.valueOf(teszteset) + "output.txt";
 		try
 		{
@@ -36,7 +39,8 @@ public class Logger
 		      input2 = new Scanner(file);
 		      while(input2.hasNextLine())
 		      {
-		    	  prewrittenoutput += input2.nextLine();;
+		    	  prewrittenoutput.add(input2.nextLine());
+		    	  //prewrittenoutput += input2.nextLine();
 		      }
 		      input2.close();
 		} catch (FileNotFoundException e)
@@ -47,13 +51,28 @@ public class Logger
 	
 	public static boolean CompareOutputs()
 	{
-		return output.compareTo(prewrittenoutput) == 0 ? true : false;
+		if(output.size() != prewrittenoutput.size())
+		{
+			return false;
+		}
+		
+		for(int i = 0; i < output.size(); i++)
+		{
+			if(output.get(i).compareTo(prewrittenoutput.get(i)) != 0)
+			{
+				return false;
+			}
+		}
+		
+		return true;
+		//return output.compareTo(prewrittenoutput) == 0 ? true : false;
 	}
 	
 	public static void Message(String message)
 	{
 		System.out.println(message);
-		output += message;
+		output.add(message);
+		//output += message;
 	}
 	
 	public static boolean hasNextLine()

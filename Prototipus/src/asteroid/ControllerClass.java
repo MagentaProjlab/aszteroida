@@ -379,6 +379,14 @@ public class ControllerClass
 		{
 			this.Command(Logger.NextLine());
 		}
+		
+		if(Logger.CompareOutputs())
+		{
+			System.out.println("The test case succeeded.");
+		}else
+		{
+			System.out.println("The test case failed.");
+		}
 	}
 	/**
 	 * A controller inicializalja az aszteroidakat

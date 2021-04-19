@@ -157,12 +157,16 @@ public class Settler extends SentientBeing {
 	public void Die() 
 	{
 		location.DropBeing(this);
-
-		for(RawMaterial item:carriedmaterials) {
-			item.Perish();
+		int max = carriedmaterials.size();
+		int iter = 0;
+		while(iter < max ) {
+			this.carriedmaterials.get(iter).Perish();
+			max = carriedmaterials.size();
 		}
-		for(TeleportGate item:carriedteleports) {
-			item.Explode();
+		max = carriedteleports.size();
+		while(iter < max ) {
+			carriedteleports.get(iter).Explode();
+			max = carriedteleports.size();
 		}
 		//Doku szerint nem irat ki
 		//Logger.Message("[Settler: "+name+"] has died ");

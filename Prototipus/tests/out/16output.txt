@@ -1,2 +1,3 @@
+[Asteroid: asteroid1] has been selected to step.
 [Settler: settler1] has been selected to step.
 [Settler: settler1] has failed to build a teleportgate pair.

@@ -254,11 +254,11 @@ public class Settler extends SentientBeing {
 			t2.SetSibling(t1);
 			AddTeleport(t1);
 			AddTeleport(t2);
-			Logger.Message("[Settler: "+name+"] built a teleportgate pair.");
+			Logger.Message("[Settler: "+name+"] has built a teleportgate pair.");
 
 		}
 		else {
-			Logger.Message("[Settler: "+name+"] failed to build a teleportgate pair"+".");
+			Logger.Message("[Settler: "+name+"] has failed to build a teleportgate pair"+".");
 		}
 		
 	}

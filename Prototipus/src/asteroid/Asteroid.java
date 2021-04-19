@@ -109,20 +109,15 @@ public class Asteroid extends Place
 			}
 			//corematerial.Perish();
 		} else if ((exp == true) && !neighbors.isEmpty()) {
-			for (int i = 0; i < sentientbeings.size(); i++) {
-				if(!sentientbeings.get(i).GetUniqueID().equals("Robot"))
-					sentientbeings.get(i).Explode();
-				else if(sentientbeings.get(i).GetUniqueID().equals("Robot")) {
-					//FIXME ide kellene egy teleportgate typecheck!!!
-					Random rand = new Random();
-					int r = rand.nextInt(this.neighbors.size());
-					while (this.neighbors.get(r).GetUniqueID().equals("Asteroid")) {
-						 r = rand.nextInt(this.neighbors.size());
-					}
-					sentientbeings.get(i).setAsteroid((Asteroid)this.neighbors.get(r));
-				}
+			int maxsize = sentientbeings.size();
+			int iter = 0;
+			while(iter < maxsize) {
+				SentientBeing sb = sentientbeings.get(iter);
+				sb.Explode();
+				maxsize = sentientbeings.size();
+				iter++;
 				
-			}
+				}
 			{
 //				if(!sb.getName().equals("robot"))
 //					sb.Explode();

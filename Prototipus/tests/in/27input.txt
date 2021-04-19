@@ -4,5 +4,5 @@ asteroid a3 null 2 0
 neighbor a1 a3
 neighbor a1 a2
 teleport t1 t2 a1 a2
-perihelion a1
+perihelion a2
 nextround

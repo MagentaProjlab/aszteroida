@@ -161,6 +161,7 @@ public class Settler extends SentientBeing {
 		int iter = 0;
 		while(iter < max ) {
 			this.carriedmaterials.get(iter).Perish();
+			this.carriedmaterials.remove(iter);
 			max = carriedmaterials.size();
 		}
 		max = carriedteleports.size();

@@ -75,7 +75,7 @@ public class Robot extends SentientBeing
 	{
 		Logger.Message("[Robot: "+id+"] has exploded "+".");
 
-		if(this.location.GetNeighbour() != null) {
+		if(this.location.GetNeighbour() == null) {
 			Die();
 		} else {
 			Move(this.location.GetNeighbour());

@@ -146,7 +146,8 @@ public class ControllerClass
 			for(Asteroid a : asteroids)
 			{
 				if(a.getName().compareTo(asteroid) == 0)
-				{
+				{	
+					gate1.SetAsteroid(a);
 					a.AddNeighbor(gate1);
 					break;
 				}
@@ -157,10 +158,11 @@ public class ControllerClass
 				index2 = 0;
 				for(SentientBeing sb : a.getBeings())
 				{
-					if(sb.getName().compareTo(name) == 0)
+					if(sb.getName().compareTo(settler) == 0)
 					{
 						Settler s = (Settler)sb;
 						s.AddTeleport(gate2);
+						gate2.SetOwner(s);
 						a.getBeings().set(index2, s);
 						break;
 					}
@@ -268,9 +270,7 @@ public class ControllerClass
 				{
 					asteroids.get(i).StepBeings();
 					for(int j = 0; j< asteroids.get(i).getNeighbors().size();j++) {
-						System.out.print("fucku");
 						if(asteroids.get(i).getNeighbors().get(j).GetUniqueID().equals("teleportgate")) {
-							System.out.print("fuck");
 							TeleportGate tg = (TeleportGate)asteroids.get(i).getNeighbors().get(j);
 							tg.Move();
 							j--;

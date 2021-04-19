@@ -129,6 +129,12 @@ public class Asteroid extends Place
 				}
 			}
 		}
+		for(int i = 0; i< this.neighbors.size(); i++) {
+			if(this.neighbors.get(i).GetUniqueID().equals("teleportgate")) {
+				TeleportGate a = (TeleportGate)this.neighbors.get(i);
+					a.Explode();
+			}
+		}
 	}
 	
 	/**

@@ -10,11 +10,9 @@ solarwind a1
 nextround
 noaction
 noaction
-noaction
 listbeings a1
 solarwind a2
 nextround
-noaction
 noaction
 noaction
 listbeings a2

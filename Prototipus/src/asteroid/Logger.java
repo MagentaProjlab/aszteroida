@@ -47,8 +47,6 @@ public class Logger
 	
 	public static boolean CompareOutputs()
 	{
-		System.out.println(output);
-		System.out.println(prewrittenoutput);
 		return output.compareTo(prewrittenoutput) == 0 ? true : false;
 	}
 	
@@ -57,18 +55,6 @@ public class Logger
 		System.out.println(message);
 		output += message;
 	}
-	
-	/*private void SetFile(String filename)
-	{
-		try
-		{
-		      File file = new File(filename);
-		      input = new Scanner(file);
-		} catch (FileNotFoundException e)
-		{
-		      
-		}
-	}*/
 	
 	public static boolean hasNextLine()
 	{

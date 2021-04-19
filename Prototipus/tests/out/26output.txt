@@ -1,4 +1,3 @@
-[Asteroid :a1] has had an uranium core and it exploded.
 [Settler: s1] has exploded.
-[TeleportGate: t1] has exploded.
-[TeleportGate : t2] has exploded.
+[TeleportGate: null] has exploded.
+[TeleportGate: t] has exploded.

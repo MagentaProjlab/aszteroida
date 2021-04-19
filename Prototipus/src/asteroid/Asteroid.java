@@ -251,8 +251,12 @@ public class Asteroid extends Place
 			{
 				sentientbeings.get(iter).Step();
 			}
-			maxnumber = sentientbeings.size();
-			iter++;
+			int nmaxnumber = sentientbeings.size();
+			if(nmaxnumber < maxnumber) {
+				maxnumber = nmaxnumber;
+			}else {
+				iter++;
+			}
 		}
 		this.resetStepped();
 	}

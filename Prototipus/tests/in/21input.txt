@@ -8,7 +8,13 @@ settler Laszlo a2 0 0 0 0 0
 ufo Gedeon a2
 solarwind a1
 nextround
+noaction
+noaction
+noaction
 listbeings a1
 solarwind a2
 nextround
+noaction
+noaction
+noaction
 listbeings a2

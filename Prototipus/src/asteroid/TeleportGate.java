@@ -26,7 +26,7 @@ public class TeleportGate extends Place
 	public void Move() 
 	{
 		if(this.GetMalfunction()==true) {
-			Logger.Message("[shit: "+this.getName()+"] has been selected to step.");
+			Logger.Message("[TeleportGate: "+this.getName()+"] has been selected to step.");
 			Bill teleBill=new Bill();
 			teleBill.AddMaterialToBill(new TeleportGate(null, null, null));
 			ArrayList<ID> teleList=new ArrayList();
@@ -35,10 +35,11 @@ public class TeleportGate extends Place
 			while(index < max) {
 				teleList.add(this.asteroid.getNeighbors().get(index));
 				if(!teleBill.CheckInventory(teleList)) {
-				asteroid.DropNeighbor(this);
-				this.asteroid = (Asteroid)this.asteroid.getNeighbors().get(index);
-				asteroid.AddNeighbor(this);
-				break;
+					asteroid.DropNeighbor(this);
+					this.asteroid = (Asteroid)this.asteroid.getNeighbors().get(index);
+					asteroid.AddNeighbor(this);
+					Logger.Message("[TeleportGate: "+this.getName()+"] has moved to "+this.asteroid.getNeighbors().get(index).getName()+".");
+					break;
 				}else {
 					teleList.remove(this.asteroid.getNeighbors().get(index));
 					index++;

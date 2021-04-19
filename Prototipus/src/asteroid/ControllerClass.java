@@ -216,9 +216,21 @@ public class ControllerClass
 				if(a.getName().compareTo(asteroid) == 0)
 				{
 					a.SolarWindDeath();
+					for(Place p:a.getNeighbors()) {
+						Bill teleBill=new Bill();
+						teleBill.AddMaterialToBill(new TeleportGate(null, null, null));
+						ArrayList<ID> teleList=new ArrayList();
+						teleList.add(p);
+						if(teleBill.CheckInventory(teleList)) {
+						      TeleportGate t=(TeleportGate)p;
+						      t.Malfunction();
+						}
+						
+					}
 					break;
 				}
 			}
+			
 		}else if(params[0].equals("listasteroids"))
 		{
 			for(Asteroid a : asteroids)
@@ -273,8 +285,9 @@ public class ControllerClass
 						if(asteroids.get(i).getNeighbors().get(j).GetUniqueID().equals("teleportgate")) {
 							TeleportGate tg = (TeleportGate)asteroids.get(i).getNeighbors().get(j);
 							tg.Move();
-							j--;
+							//j--;
 						}
+						else {}
 					}
 				}
 			}

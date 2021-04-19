@@ -1,6 +1,6 @@
 [Asteroid: a1] has been selected to step.
 [Settler: s1] has been selected to step.
-[Settler: s1] has built teleport gate pair
+[Settler: s1] has built teleportgate pair
 [Asteroid: a2] has been selected to step.
 [Ufo: u1] has been selected to step.
 [Ufo: u1] has moved to a1.

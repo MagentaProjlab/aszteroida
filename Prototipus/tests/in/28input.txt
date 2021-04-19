@@ -11,4 +11,4 @@ solarwind a1
 nextround
 drill
 move a2
-drills
+drill

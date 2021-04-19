@@ -1,2 +1,4 @@
-[Ufo:Sandor] has been selected to step.
-[Ufo: Sandor] has picked up material from a1.
+[Asteroid: a1] has been selected to step.
+[Ufo: Sandor] has been selected to step.
+[Ufo: Sandor] has failed to mine.
+[Asteroid: a2] has been selected to step.

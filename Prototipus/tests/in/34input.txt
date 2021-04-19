@@ -1,5 +1,6 @@
 asteroid a1 null 1 1
 asteroid a2 null 1 1
+neighbor a1 a2
 teleport t1 t2 a1 a2
 nextround //itt még nem várunk kimenetet
 solarwind a1

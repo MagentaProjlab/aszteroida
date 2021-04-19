@@ -1,5 +1,7 @@
 [Asteroid: a1] has been selected to step.
+[Settler: s1] has been selected to step.
 [Asteroid: a2] has been selected to step.
 [Settler: s2] has been selected to step.
 [Settler: s2] has mined a2.
-[Settler: s2]
+[Settler:s1]
+[Settler:s2]

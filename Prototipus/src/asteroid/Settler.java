@@ -48,6 +48,11 @@ public class Settler extends SentientBeing {
 		return name;
 	}
 	
+	public ArrayList<RawMaterial> getInventory()
+	{
+		return carriedmaterials;
+	}
+	
 	/**
 	 * A Settler konstruktora
 	 * A tesztesetek miatt csupan ures BOM-ok vannak hozzaadva.

@@ -271,21 +271,103 @@ public class ControllerClass
 			}
 		}else if(params[0].equals("endgame"))
 		{
+			boolean w = false;
+			for(Asteroid a : asteroids)
+			{
+				ArrayList<ID> l = new ArrayList<ID>();
+				Bill win = new Bill();
+				win.AddMaterialToBill(new Ice());
+				win.AddMaterialToBill(new Iron());
+				win.AddMaterialToBill(new Coal());
+				win.AddMaterialToBill(new Uranium(0));
+				win.AddMaterialToBill(new Ice());
+				win.AddMaterialToBill(new Iron());
+				win.AddMaterialToBill(new Coal());
+				win.AddMaterialToBill(new Uranium(0));
+				win.AddMaterialToBill(new Ice());
+				win.AddMaterialToBill(new Iron());
+				win.AddMaterialToBill(new Coal());
+				win.AddMaterialToBill(new Uranium(0));
+				
+				for(SentientBeing sb : a.getBeings())
+				{
+					Bill b = new Bill();
+					b.AddMaterialToBill(new Settler(null, 0, 0, 0, 0, false));
+					ArrayList<ID> s = new ArrayList<ID>();
+					s.add(sb);
+					if(b.CheckInventory(s) == true)
+					{
+						Settler settler = (Settler)sb;
+						for(RawMaterial r : settler.getInventory())
+						{
+							l.add(r);
+						}
+					}
+				}
+				
+				if(win.CheckInventory(l) == true)
+				{
+					w = true;
+					break;
+				}
+			}
+			
+			if(w)
+			{
+				Logger.Message("Congrats");
+				return;
+			}
+			
+			ArrayList<ID> lose = new ArrayList<ID>();
+			Bill l = new Bill();
+			l.AddMaterialToBill(new Ice());
+			l.AddMaterialToBill(new Iron());
+			l.AddMaterialToBill(new Coal());
+			l.AddMaterialToBill(new Uranium(0));
+			l.AddMaterialToBill(new Ice());
+			l.AddMaterialToBill(new Iron());
+			l.AddMaterialToBill(new Coal());
+			l.AddMaterialToBill(new Uranium(0));
+			l.AddMaterialToBill(new Ice());
+			l.AddMaterialToBill(new Iron());
+			l.AddMaterialToBill(new Coal());
+			l.AddMaterialToBill(new Uranium(0));
+			for(Asteroid a : asteroids)
+			{
+				if(a.GetMaterial() != null)
+				{
+					lose.add(a.GetMaterial());
+				}
+				
+				for(SentientBeing sb : a.getBeings())
+				{
+					Bill b = new Bill();
+					b.AddMaterialToBill(new Settler(null, 0, 0, 0, 0, false));
+					ArrayList<ID> s = new ArrayList<ID>();
+					s.add(sb);
+					if(b.CheckInventory(s) == true)
+					{
+						Settler settler = (Settler)sb;
+						for(RawMaterial r : settler.getInventory())
+						{
+							lose.add(r);
+						}
+					}
+				}
+			}
+			
+			if(l.CheckInventory(lose) == true)
+			{
+				return;
+			}else
+			{
+				Logger.Message("Game over");
+				return;
+			}
 			
 		}
 		//LoadTest 
-		//Exit
-		
-		//  ezek mind a beingekhez kellenek
-		//Move 
-		//Drill 
-		//Die 
-		//NoAction 
-		//Mine 
-		//ListInventory 
-		//BuildTeleport 
-		//PutDownTeleport 
-		//BuildRobot 
+		//Exit 
 	}
 	
 	/**

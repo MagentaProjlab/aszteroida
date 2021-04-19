@@ -111,35 +111,33 @@ public class ControllerClass
 			{
 				if(a.getName().compareTo(asteroid1) == 0)
 				{
+					gate1.SetAsteroid(asteroids.get(index1));
 					break;
 				}
 				index1++;
 			}
 			
+			asteroids.get(index1).AddNeighbor(gate1);
 			for(Asteroid a : asteroids)
 			{
 				if(a.getName().compareTo(asteroid2) == 0)
 				{
+					gate2.SetAsteroid(asteroids.get(index2));
 					break;
 				}
 				index2++;
 			}
-			
-			gate1.SetAsteroid(asteroids.get(index1));
-			gate2.SetAsteroid(asteroids.get(index2));
-			
-			//asteroids.get(index1).AddNeighbor(gate2);
-			//asteroids.get(index2).AddNeighbor(gate1);
+			asteroids.get(index2).AddNeighbor(gate1);
 		}else if(params[0].equals("teleport2"))
 		{
 			String name = params[1];
 			String asteroid = params[2];
 			String settler = params[3];
 			
-			/*TeleportGate gate1 = new TeleportGate(null, null, name);
+			TeleportGate gate1 = new TeleportGate(null, null, name);
 			TeleportGate gate2 = new TeleportGate(null, null, null);
 			gate1.SetSibling(gate2);
-			gate2.SetSibling(gate1);*/
+			gate2.SetSibling(gate1);
 			
 			int index2 = 0;
 			
@@ -147,10 +145,6 @@ public class ControllerClass
 			{
 				if(a.getName().compareTo(asteroid) == 0)
 				{	
-					TeleportGate gate1 = new TeleportGate(null, null, name);
-					TeleportGate gate2 = new TeleportGate(null, null, null);
-					gate1.SetSibling(gate2);
-					gate2.SetSibling(gate1);
 					gate1.SetAsteroid(a);
 					a.AddNeighbor(gate1);
 					break;
@@ -165,10 +159,6 @@ public class ControllerClass
 					if(sb.getName().compareTo(settler) == 0)
 					{
 						Settler s = (Settler)sb;
-						TeleportGate gate1 = new TeleportGate(null, s, name);
-						TeleportGate gate2 = new TeleportGate(null, s, null);
-						gate1.SetSibling(gate2);
-						gate2.SetSibling(gate1);
 						s.AddTeleport(gate2);
 						gate2.SetOwner(s);
 						a.getBeings().set(index2, s);

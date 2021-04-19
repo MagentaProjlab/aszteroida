@@ -306,8 +306,8 @@ public class Settler extends SentientBeing {
 			//hosszu, es hogy konzisztens maradjak az eredeti koddal
 			if(t.GetSibling().GetAsteroid() ==null || !t.GetSibling().GetAsteroid().equals(location)) {
 				t.SetName(name);
-				location.AddNeighbor(t);
 				t.SetAsteroid(location);
+				location.AddNeighbor(t);
 				t.DropOwner();
 				DropCarriedTeleport(t);
 			}

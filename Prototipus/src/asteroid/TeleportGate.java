@@ -86,7 +86,7 @@ public class TeleportGate extends Place
 	public void SetAsteroid(Asteroid asteroid) 
 	{
 		this.asteroid = asteroid;
-		asteroid.AddNeighbor(this);
+		//asteroid.AddNeighbor(this);
 	}
 	/**
 	 * A teleportkapu aszteroidajat visszaado fuggveny

@@ -237,9 +237,14 @@ public class Asteroid extends Place
 	{
 		if(this.IsEmpty() == false)
 		{
-			for(SentientBeing sb : sentientbeings)
+			int iter = 0;
+			int maxb = sentientbeings.size();
+			while(iter < maxb)
 			{
+				SentientBeing sb = sentientbeings.get(iter);
 				sb.Die();
+				maxb = sentientbeings.size();
+				iter++;
 			}
 		}
 	}

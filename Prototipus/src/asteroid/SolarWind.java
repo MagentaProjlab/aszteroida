@@ -19,9 +19,11 @@ public class SolarWind
 	 */
 	public void solarWind(ArrayList<Place> places)
 	{	
-		for(Place p : places)
-		{
+		int maxplace = places.size();
+		int iter = 0;
+		while(iter < maxplace) {
 			Bill a = new Bill();
+			Place p = places.get(iter);
 			a.AddMaterialToBill(new Asteroid(null, null, 0, 0));
 			ArrayList<ID> l = new ArrayList<ID>();
 			l.add(p);
@@ -35,6 +37,8 @@ public class SolarWind
 				TeleportGate tg = (TeleportGate)p;
 				tg.Malfunction();
 			}
+			iter++;
+			maxplace = places.size();
 		}	
 	}
 }

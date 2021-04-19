@@ -1,4 +1,7 @@
 package asteroid;
+
+import java.util.ArrayList;
+
 public class TeleportGate extends Place
 {
 	private TeleportGate sibling;
@@ -20,7 +23,31 @@ public class TeleportGate extends Place
 	public void SetName(String n) {
 		id = n;
 	}
+	public void Move() 
+	{
+		if(this.GetMalfunction()==true) {
+			Logger.Message("[shit: "+this.getName()+"] has been selected to step.");
+			Bill teleBill=new Bill();
+			teleBill.AddMaterialToBill(new TeleportGate(null, null, null));
+			ArrayList<ID> teleList=new ArrayList();
+			int index = 0;
+			int max = this.asteroid.getNeighbors().size();
+			while(index < max) {
+				teleList.add(this.asteroid.getNeighbors().get(index));
+				if(!teleBill.CheckInventory(teleList)) {
+				asteroid.DropNeighbor(this);
+				this.asteroid = (Asteroid)this.asteroid.getNeighbors().get(index);
+				asteroid.AddNeighbor(this);
+				break;
+				}else {
+					teleList.remove(this.asteroid.getNeighbors().get(index));
+					index++;
+				}
+				
+			}
+		}
 
+	}
 	public String getName() {
 		return id;
 	}
@@ -96,7 +123,7 @@ public class TeleportGate extends Place
 	 * Ha a teleportkapu aszteroidaja nem null, akkor aszteroidan van
 	 */
 	public void Explode() 
-	{		
+	{	Logger.Message("[TeleportGate: "+this.getName()+"] has exploded"+".");
 		Asteroid a = this.GetAsteroid();	
 		if(a != null)
 		{
@@ -107,7 +134,7 @@ public class TeleportGate extends Place
 		}
 		
 		Asteroid a2 = this.sibling.GetAsteroid();
-		
+		Logger.Message("[TeleportGate: "+this.sibling.getName()+"] has exploded"+".");
 		if(a2 != null)
 		{
 			sibling.GetAsteroid().DropNeighbor(sibling);

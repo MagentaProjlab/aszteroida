@@ -99,8 +99,8 @@ public class Settler extends SentientBeing {
 		
 		if(tg)
 		{
-			TeleportGate gate1 = new TeleportGate(null, this, "");
-			TeleportGate gate2 = new TeleportGate(null, this, "");
+			TeleportGate gate1 = new TeleportGate(null, this, "t1");
+			TeleportGate gate2 = new TeleportGate(null, this, "t2");
 			gate1.SetSibling(gate2);
 			gate2.SetSibling(gate1);
 
@@ -164,6 +164,7 @@ public class Settler extends SentientBeing {
 			this.carriedmaterials.remove(iter);
 			max = carriedmaterials.size();
 		}
+		iter=0;
 		max = carriedteleports.size();
 		while(iter < max ) {
 			carriedteleports.get(iter).Explode();
@@ -255,11 +256,11 @@ public class Settler extends SentientBeing {
 			t2.SetSibling(t1);
 			AddTeleport(t1);
 			AddTeleport(t2);
-			Logger.Message("[Settler: "+name+"] built a teleportgate pair.");
+			Logger.Message("[Settler: "+name+"] has built a teleportgate pair.");
 
 		}
 		else {
-			Logger.Message("[Settler: "+name+"] failed to build a teleportgate pair"+".");
+			Logger.Message("[Settler: "+name+"] has failed to build a teleportgate pair"+".");
 		}
 		
 	}

@@ -1,2 +1,6 @@
 [Settler:Gerzsonka]
 [Ufo:Gerzson]
+[Settler: Gerzsonka] has exploded.
+[Ufo: Gerzson] has exploded.
+[Asteroid: a2] has been selected to step.
+[Asteroid: a3] has been selected to step.

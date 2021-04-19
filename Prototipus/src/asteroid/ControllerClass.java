@@ -267,6 +267,12 @@ public class ControllerClass
 				}else
 				{
 					asteroids.get(i).StepBeings();
+					for(int j = 0; j< asteroids.get(i).getNeighbors().size();j++) {
+						if(asteroids.get(i).getNeighbors().get(j).GetUniqueID() == "teleport") {
+							TeleportGate tg = (TeleportGate)asteroids.get(i).getNeighbors().get(j);
+							tg.Move();
+						}
+					}
 				}
 			}
 		}else if(params[0].equals("endgame"))

@@ -96,7 +96,7 @@ public class TeleportGate extends Place
 	 * Ha a teleportkapu aszteroidaja nem null, akkor aszteroidan van
 	 */
 	public void Explode() 
-	{		
+	{	Logger.Message("[TeleportGate: "+this.getName()+"] has exploded"+".");
 		Asteroid a = this.GetAsteroid();	
 		if(a != null)
 		{
@@ -107,7 +107,7 @@ public class TeleportGate extends Place
 		}
 		
 		Asteroid a2 = this.sibling.GetAsteroid();
-		
+		Logger.Message("[TeleportGate: "+this.sibling.getName()+"] has exploded"+".");
 		if(a2 != null)
 		{
 			sibling.GetAsteroid().DropNeighbor(sibling);

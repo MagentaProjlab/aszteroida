@@ -4,6 +4,7 @@ asteroid a3 null 2 0
 neighbor a1 a2
 neighbor a2 a3
 robot MikRobi a1
+perihelion a1
 nextround
 noaction
 listasteroids

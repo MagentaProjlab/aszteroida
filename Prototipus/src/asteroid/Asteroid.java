@@ -249,7 +249,7 @@ public class Asteroid extends Place
 		while(iter < maxnumber) {
 			if(sentientbeings.get(iter).getStepped() == false)
 			{
-			sentientbeings.get(iter).Step();
+				sentientbeings.get(iter).Step();
 			}
 			maxnumber = sentientbeings.size();
 			iter++;

@@ -219,7 +219,7 @@ public class Asteroid extends Place
 	 */
 	public void SolarWindDeath()
 	{
-		if(this.IsEmpty() == false)
+		if(this.GetMaterial() != null)
 		{
 			int iter = 0;
 			int maxb = sentientbeings.size();
@@ -228,7 +228,6 @@ public class Asteroid extends Place
 				SentientBeing sb = sentientbeings.get(iter);
 				sb.Die();
 				maxb = sentientbeings.size();
-				iter++;
 			}
 		}
 	}

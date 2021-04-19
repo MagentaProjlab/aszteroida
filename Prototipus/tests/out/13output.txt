@@ -1,3 +1,4 @@
+[Asteroid: asteroid1] has been selected to step.
 [Settler: settler1] has been selected to step.
-[Settler: settler1] has built robot1.
+[Settler: settler1] has built robot.
 [Robot: robot1] has been selected to step.

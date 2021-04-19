@@ -1,4 +1,4 @@
-[Asteroid: a2] has been selected to step.
-[Asteroid :a2] has had an uranium core and it exploded.
+[Asteroid: a1] has been selected to step.
 [TeleportGate: t1] has exploded.
 [TeleportGate : t2] has exploded.
+[Asteroid: a3] has been selected to step.

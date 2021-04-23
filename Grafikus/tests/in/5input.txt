@@ -1,0 +1,10 @@
+asteroid asteroid1 ice 3 1
+asteroid asteroid2 ice 3 1
+asteroid asteroid3 ice 3 1
+neighbor asteroid1 asteroid2
+teleport tel1 tel2 asteroid2 asteroid3
+settler settler1 asteroid1 0 0 0 0 0
+nextround
+move asteroid2
+nextround
+move asteroid3

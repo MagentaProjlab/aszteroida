@@ -1,0 +1,10 @@
+asteroid asteroid1 uranium 2 2 0
+perihelion asteroid1
+nextround
+listasteroids
+perihelion asteroid1
+nextround
+listasteroids
+perihelion asteroid1
+nextround
+listssteroids

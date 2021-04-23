@@ -10,7 +10,7 @@ public class View extends JFrame
 {
 	private int width = 600;
 	private int height = 600;
-	private JPanel cards;
+	public JPanel cards;
 
 	public View()
 	{

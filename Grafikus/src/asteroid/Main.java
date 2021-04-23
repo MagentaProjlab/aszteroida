@@ -1,4 +1,5 @@
 package asteroid;
+import java.awt.CardLayout;
 import java.util.Scanner;
 
 import asteroid.logic.ControllerClass;
@@ -52,6 +53,8 @@ public class Main {
 		scanner.close();*/
 		
 		View ablak = new View();
+		CardLayout cardLayout = (CardLayout) ablak.cards.getLayout();
+		cardLayout.show(ablak.cards, "Settings");
 		ablak.createAndShowGUI();
 	}
 }

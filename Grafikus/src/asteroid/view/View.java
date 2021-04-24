@@ -2,6 +2,8 @@ package asteroid.view;
 
 import java.awt.CardLayout;
 import java.awt.Dimension;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -19,12 +21,21 @@ public class View extends JFrame
 		this.getContentPane().setPreferredSize(new Dimension(width, height));
 		this.setResizable(false);
 
+		ActionListener al = new ActionListener()
+		{	
+			public void actionPerformed(ActionEvent e)
+			{
+				CardLayout cardLayout = (CardLayout) cards.getLayout();
+				cardLayout.next(cards);
+			}
+		};
+		
 		cards = new JPanel(new CardLayout());
 
-		MainMenu mainmenu = new MainMenu();
+		MainMenu mainmenu = new MainMenu(al);
 		cards.add(mainmenu, "Main menu");
 
-		Settings settings = new Settings();
+		Settings settings = new Settings(al);
 		cards.add(settings, "Settings");
 
 		Game game = new Game();

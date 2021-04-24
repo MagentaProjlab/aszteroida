@@ -16,9 +16,9 @@ public class Game extends JPanel
 		
 	}
 	
-	public void showSettler(Settler s)
+	public void ShowSettler(Settler s)
 	{
-		//nem rajzolós string kiiratós logika helye
+		//nem rajzolï¿½s string kiiratï¿½s logika helye
 		
 		///////////////////////////////////////////
 		
@@ -26,7 +26,7 @@ public class Game extends JPanel
 		this.repaint();
 	}
 	
-	protected void paintComponent(Graphics g)
+	protected void PaintComponent(Graphics g)
 	{
 		super.paintComponent(g);
 	}

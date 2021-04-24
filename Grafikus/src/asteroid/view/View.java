@@ -46,27 +46,27 @@ public class View extends JFrame
 		settings = new Settings(al);
 		cards.add(settings, "Settings");
 
-		//kell majd action listener, egyelõre null
+		//kell majd action listener, egyelï¿½re null
 		game = new Game(null);
 		cards.add(game, "Game");	
 	}
 	
-	private void command(String s)
+	private void Command(String s)
 	{
 		
 	}
 	
-	public void setController(ControllerClass c)
+	public void SetController(ControllerClass c)
 	{
 		controller = c;
 	}
 	
-	public void showSettler(Settler s)
+	public void ShowSettler(Settler s)
 	{
 		
 	}
 
-	public void createAndShowGUI()
+	public void CreateAndShowGUI()
 	{
 		this.add(cards);
 		this.pack();

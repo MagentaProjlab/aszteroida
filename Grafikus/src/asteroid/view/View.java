@@ -8,11 +8,19 @@ import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import asteroid.logic.ControllerClass;
+import asteroid.logic.Settler;
+
 public class View extends JFrame
 {
 	private int width = 600;
 	private int height = 600;
 	public JPanel cards;
+	
+	MainMenu mainmenu;
+	Settings settings;
+	Game game;
+	ControllerClass controller;
 
 	public View()
 	{
@@ -32,14 +40,30 @@ public class View extends JFrame
 		
 		cards = new JPanel(new CardLayout());
 
-		MainMenu mainmenu = new MainMenu(al);
+		mainmenu = new MainMenu(al);
 		cards.add(mainmenu, "Main menu");
 
-		Settings settings = new Settings(al);
+		settings = new Settings(al);
 		cards.add(settings, "Settings");
 
-		Game game = new Game();
-		cards.add(game, "Game");
+		//kell majd action listener, egyelõre null
+		game = new Game(null);
+		cards.add(game, "Game");	
+	}
+	
+	private void command(String s)
+	{
+		
+	}
+	
+	public void setController(ControllerClass c)
+	{
+		controller = c;
+	}
+	
+	public void showSettler(Settler s)
+	{
+		
 	}
 
 	public void createAndShowGUI()

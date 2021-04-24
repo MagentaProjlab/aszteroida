@@ -15,12 +15,12 @@ public class View extends JFrame
 {
 	private int width = 600;
 	private int height = 600;
-	public JPanel cards;
+	private JPanel cards;
 	
-	MainMenu mainmenu;
-	Settings settings;
-	Game game;
-	ControllerClass controller;
+	private MainMenu mainmenu;
+	private Settings settings;
+	private Game game;
+	private ControllerClass controller;
 
 	public View()
 	{

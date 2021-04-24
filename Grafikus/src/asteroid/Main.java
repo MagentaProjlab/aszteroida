@@ -53,6 +53,6 @@ public class Main {
 		scanner.close();*/
 		
 		View ablak = new View();
-		ablak.createAndShowGUI();
+		ablak.CreateAndShowGUI();
 	}
 }

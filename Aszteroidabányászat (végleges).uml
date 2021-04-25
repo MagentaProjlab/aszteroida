@@ -11579,8 +11579,6 @@
 <XPD:ATTR name="TypeExpression" type="string">Graphics</XPD:ATTR>
 <XPD:REF name="BehavioralFeature">MoovVVgQXUyP6S9A4tATUAAA</XPD:REF>
 </XPD:OBJ>
-<XPD:ATTR name="#CallActions" type="integer">1</XPD:ATTR>
-<XPD:REF name="CallActions[0]">2bXeG57elUqXIWIXr2AIAAAA</XPD:REF>
 </XPD:OBJ>
 <XPD:ATTR name="#TypedFeatures" type="integer">1</XPD:ATTR>
 <XPD:REF name="TypedFeatures[0]">UoeEPNhz2kGWX9CyO6/l1wAA</XPD:REF>
@@ -46492,7 +46490,7 @@
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="Left" type="integer">208</XPD:ATTR>
 <XPD:ATTR name="Top" type="integer">52</XPD:ATTR>
-<XPD:ATTR name="Width" type="integer">801</XPD:ATTR>
+<XPD:ATTR name="Width" type="integer">669</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">393</XPD:ATTR>
 <XPD:REF name="Model">zzZNJ6SJOUej7JjETlxxIQAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="LabelView" guid="wsFZFqmbKkmXGheGtePczQAA">
@@ -46717,8 +46715,8 @@
 <XPD:REF name="Tail">MmKiNXi1NEa0vooKnBR2DgAA</XPD:REF>
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="ZEma1OZ+8kKC3AEzhSUDgQAA">
 <XPD:ATTR name="Alpha" type="real">1,5707953267949</XPD:ATTR>
-<XPD:ATTR name="Distance" type="real">96</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">4 : paintComponent(g: Graphics): void</XPD:ATTR>
+<XPD:ATTR name="Distance" type="real">33</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">4 : repaint()</XPD:ATTR>
 <XPD:REF name="Model">xqbFc8kXQkmjRAIPHhZ/dgAA</XPD:REF>
 <XPD:REF name="HostEdge">TWoysZPXH06IQ5A8W/MqdAAA</XPD:REF>
 </XPD:OBJ>
@@ -46901,11 +46899,11 @@
 <XPD:REF name="Views[3]">0wPp92uDBk6dTjDCijVcYgAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="ParticipatingStimuli[3]" type="UMLStimulus" guid="xqbFc8kXQkmjRAIPHhZ/dgAA">
+<XPD:ATTR name="Name" type="string">repaint</XPD:ATTR>
 <XPD:REF name="Sender">kIM0vj/+hkCAQ6W6c9MTcwAA</XPD:REF>
 <XPD:REF name="Receiver">kIM0vj/+hkCAQ6W6c9MTcwAA</XPD:REF>
 <XPD:OBJ name="Action" type="UMLCallAction" guid="2bXeG57elUqXIWIXr2AIAAAA">
 <XPD:REF name="Stimulus">xqbFc8kXQkmjRAIPHhZ/dgAA</XPD:REF>
-<XPD:REF name="Operation">MoovVVgQXUyP6S9A4tATUAAA</XPD:REF>
 </XPD:OBJ>
 <XPD:REF name="InteractionInstanceSet">UjYybKP0cUq454ScQsuRrgAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>

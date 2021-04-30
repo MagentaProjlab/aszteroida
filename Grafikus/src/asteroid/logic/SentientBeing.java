@@ -14,6 +14,11 @@ public abstract class SentientBeing implements ID
 		this.hasStepped = false;
 	}
 	
+	public Asteroid getAsteroid()
+	{
+		return location;
+	}
+	
 	public boolean getStepped()
 	{
 		return hasStepped;

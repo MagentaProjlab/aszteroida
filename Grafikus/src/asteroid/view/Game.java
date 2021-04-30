@@ -61,6 +61,18 @@ public class Game extends JPanel
 		g.fillRect(0, 0, 600, 600);
 		//
 		
+		//szoveges adatok kiirasa
+		g.setColor(new Color(0, 0, 0));
+		String nametext1 = "Settler name: " + settler.getName();
+		String nametext2 = "Asteroid name: " + settler.getAsteroid().getName();
+		String crusttext = "Crust thickness: " + crustthickness/4;
+		String holetext = "Hole depth: " + holedepth/4;
+		g.drawString(nametext1, 10, 20);
+		g.drawString(nametext2, 10, 40);
+		g.drawString(crusttext, 10, 60);
+		g.drawString(holetext, 10, 80);
+		//
+		
 		//aszteroida rajzolas
 		g.setColor(dirt);
 		g.fillOval(centerx - (diameter + crustthickness)/2, centery - (diameter + crustthickness)/2, diameter + crustthickness, diameter + crustthickness);
@@ -102,32 +114,23 @@ public class Game extends JPanel
 			ArrayList<ID> list = new ArrayList<ID>();
 			list.add(core);
 			
-			g.setColor(new Color(0, 0, 0));
 			Toolkit t = Toolkit.getDefaultToolkit();
 			int size = 70;
 			
 			if(uranium.CheckInventory(list))
 			{
-				g.drawString("uranium", 10, 20);
-				
-		        Image i = t.getImage("icons//uranium.png"); 
+				Image i = t.getImage("icons//uranium.png"); 
 		        g.drawImage(i, centerx - size/2, centery - size/2, size, size, this);
 			}else if(ice.CheckInventory(list))
 			{
-				g.drawString("ice", 10, 20);
-				
 				Image i = t.getImage("icons//ice.png"); 
 		        g.drawImage(i, centerx - size/2, centery - size/2, size, size, this);
 			}else if(iron.CheckInventory(list))
 			{
-				g.drawString("iron", 10, 20);
-				
 				Image i = t.getImage("icons//iron.png"); 
 		        g.drawImage(i, centerx - size/2, centery - size/2, size, size, this);
 			}else if(coal.CheckInventory(list))
 			{
-				g.drawString("coal", 10, 20);
-				
 				Image i = t.getImage("icons//coal.png"); 
 		        g.drawImage(i, centerx - size/2, centery - size/2, size, size, this);
 			}

@@ -28,7 +28,7 @@ public class Game extends JPanel
 	
 	public Game(ActionListener al)
 	{
-		Asteroid a = new Asteroid("asteroid", new Uranium(0), 10, 3);
+		Asteroid a = new Asteroid("asteroid", new Ice(), 10, 3);
 		Settler s = new Settler("settler", 2, 2, 2, 2, false);
 		s.setAsteroid(a);
 		a.RegisterBeing(s);
@@ -115,7 +115,7 @@ public class Game extends JPanel
 			list.add(core);
 			
 			Toolkit t = Toolkit.getDefaultToolkit();
-			int size = 70;
+			int size = 80;
 			
 			if(uranium.CheckInventory(list))
 			{

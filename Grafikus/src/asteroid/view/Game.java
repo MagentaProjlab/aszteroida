@@ -1,8 +1,11 @@
 package asteroid.view;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.FlowLayout;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.GridLayout;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.ActionListener;
@@ -10,6 +13,7 @@ import java.awt.geom.Arc2D;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
+import javax.swing.JButton;
 import javax.swing.JPanel;
 
 import asteroid.logic.Asteroid;
@@ -19,7 +23,10 @@ import asteroid.logic.ID;
 import asteroid.logic.Ice;
 import asteroid.logic.Iron;
 import asteroid.logic.RawMaterial;
+import asteroid.logic.Robot;
+import asteroid.logic.SentientBeing;
 import asteroid.logic.Settler;
+import asteroid.logic.Ufo;
 import asteroid.logic.Uranium;
 
 public class Game extends JPanel
@@ -28,12 +35,50 @@ public class Game extends JPanel
 	
 	public Game(ActionListener al)
 	{
-		Asteroid a = new Asteroid("asteroid", new Ice(), 10, 3);
-		Settler s = new Settler("settler", 2, 2, 2, 2, false);
+		//gombok a parancsokhoz
+		JPanel buttons = new JPanel();
+		buttons.setLayout(new GridLayout(2, 4));
+		
+		JButton move = new JButton("Move");
+		buttons.add(move);
+		
+		JButton drill = new JButton("Drill");
+		buttons.add(drill);
+		
+		JButton noaction = new JButton("No action");
+		buttons.add(noaction);
+		
+		JButton mine = new JButton("Mine");
+		buttons.add(mine);
+		
+		JButton buildteleport = new JButton("Build teleport");
+		buttons.add(buildteleport);
+		
+		JButton putdownteleport = new JButton("Put down teleport");
+		buttons.add(putdownteleport);
+		
+		JButton buildrobot = new JButton("Build robot");
+		buttons.add(buildrobot);
+		
+		JButton putback = new JButton("Put back material");
+		buttons.add(putback);
+		
+		this.setLayout(new BorderLayout());
+		this.add(buttons, BorderLayout.SOUTH);
+		//
+		
+		//teszthez cuccok
+		Asteroid a = new Asteroid("asteroid", new Ice(), 10, 6);
+		Settler s = new Settler("settler", 3, 3, 2, 2, false);
 		s.setAsteroid(a);
 		a.RegisterBeing(s);
 		
+		a.RegisterBeing(new Settler(null));
+		a.RegisterBeing(new Robot(null, null));
+		a.RegisterBeing(new Ufo(null, null));
+		
 		this.ShowSettler(s);
+		//
 	}
 	
 	public void ShowSettler(Settler s)
@@ -51,7 +96,7 @@ public class Game extends JPanel
 		Color hole = new Color(0, 0, 0);
 		
 		int centerx = 300;
-		int centery = 300;
+		int centery = 225;
 		int diameter = 100;
 		int holedepth = settler.getAsteroid().getHoleDepth() * 4;
 		int crustthickness = settler.getAsteroid().getCrustThickness() * 4;
@@ -115,7 +160,7 @@ public class Game extends JPanel
 			list.add(core);
 			
 			Toolkit t = Toolkit.getDefaultToolkit();
-			int size = 80;
+			int size = 75;
 			
 			if(uranium.CheckInventory(list))
 			{
@@ -133,6 +178,94 @@ public class Game extends JPanel
 			{
 				Image i = t.getImage("icons//coal.png"); 
 		        g.drawImage(i, centerx - size/2, centery - size/2, size, size, this);
+			}
+		}
+		//
+		
+		//inventory rajzolas
+		g.setColor(new Color(0, 0, 0));
+		int invx = 10;
+		int invy = 360;
+		int invsize = 40;
+		g.drawString("inventory: ", invx, invy);
+		invx += 10;
+		invy -= invsize;
+		
+		ArrayList<RawMaterial> inventory = settler.getInventory();
+		for(int i = 0; i < inventory.size(); i++)
+		{
+			Bill u = new Bill();
+			u.AddMaterialToBill(new Uranium(0));
+			Bill ic = new Bill();
+			ic.AddMaterialToBill(new Ice());
+			Bill ir = new Bill();
+			ir.AddMaterialToBill(new Iron());
+			Bill c = new Bill();
+			c.AddMaterialToBill(new Coal());
+			
+			ArrayList<ID> list = new ArrayList<ID>();
+			list.add(inventory.get(i));
+				
+			Toolkit t = Toolkit.getDefaultToolkit();
+			invx += (int)(4.0 / 3.0 * ((float)invsize));
+			
+			if(u.CheckInventory(list))
+			{
+				Image im = t.getImage("icons//uranium.png"); 
+			    g.drawImage(im, invx, invy + invsize/2, invsize, invsize, this);
+			}else if(ic.CheckInventory(list))
+			{
+				Image im = t.getImage("icons//ice.png"); 
+			    g.drawImage(im, invx, invy + invsize/2, invsize, invsize, this);
+			}else if(ir.CheckInventory(list))
+			{
+				Image im = t.getImage("icons//iron.png"); 
+			    g.drawImage(im, invx, invy + invsize/2, invsize, invsize, this);
+			}else if(c.CheckInventory(list))
+			{
+				Image im = t.getImage("icons//coal.png"); 
+			    g.drawImage(im, invx, invy + invsize/2, invsize, invsize, this);
+			}
+		}
+		//
+		
+		//being rajzolas
+		g.setColor(new Color(0, 0, 0));
+		int beingx = 10;
+		int beingy = 420;
+		int beingsize = 50;
+		g.drawString("beings: ", beingx, beingy);
+		beingx -= 10;
+		beingy -= beingsize;
+		
+		ArrayList<SentientBeing> beings = settler.getAsteroid().getBeings();
+		for(int i = 0; i < beings.size(); i++)
+		{
+			Bill settler = new Bill();
+			settler.AddMaterialToBill(new Settler(null));
+			Bill robot = new Bill();
+			robot.AddMaterialToBill(new Robot(null, null));
+			Bill ufo = new Bill();
+			ufo.AddMaterialToBill(new Ufo(null, null));
+			
+			ArrayList<ID> list = new ArrayList<ID>();
+			list.add(beings.get(i));
+				
+			Toolkit t = Toolkit.getDefaultToolkit();
+			beingx += (int)(4.0 / 3.0 * ((float)beingsize));
+			
+			if(settler.CheckInventory(list))
+			{
+				Image im = t.getImage("icons//settler.png"); 
+			    g.drawImage(im, beingx, beingy + beingsize/2, beingsize, beingsize, this);
+			}else if(robot.CheckInventory(list))
+			{
+				Image im = t.getImage("icons//robot.png"); 
+			    g.drawImage(im, beingx, beingy + beingsize/2, beingsize, beingsize, this);
+			}else if(ufo.CheckInventory(list))
+			{
+				Image im = t.getImage("icons//ufo.png"); 
+			    g.drawImage(im, beingx, beingy + beingsize/2, beingsize, beingsize, this);
 			}
 		}
 		//

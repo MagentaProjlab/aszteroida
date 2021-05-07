@@ -24,9 +24,10 @@ public class Settings extends JPanel
 		{	
 			public void actionPerformed(ActionEvent e)
 			{
-				v.controller.GameLoop(Integer.parseInt(namefield.getText()));
+				v.controller.Init(Integer.parseInt(namefield.getText()));
 				CardLayout cardLayout = (CardLayout) v.cards.getLayout();
 				cardLayout.next(v.cards);
+				v.controller.GameLoop();
 			}
 		};
 		okbutton.addActionListener(a);

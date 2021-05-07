@@ -32,6 +32,7 @@ import asteroid.logic.RawMaterial;
 import asteroid.logic.Robot;
 import asteroid.logic.SentientBeing;
 import asteroid.logic.Settler;
+import asteroid.logic.TeleportGate;
 import asteroid.logic.Ufo;
 import asteroid.logic.Uranium;
 
@@ -75,6 +76,138 @@ public class Game extends JPanel
 		this.setLayout(new BorderLayout());
 		this.add(buttons, BorderLayout.SOUTH);
 		//
+		ActionListener al_drill = new ActionListener()
+		{
+			
+			public void actionPerformed(ActionEvent e)
+			{
+				settler.Drill();
+			}
+		};
+		
+		drill.addActionListener(al_drill);
+		ActionListener al_mine = new ActionListener()
+		{
+			
+			public void actionPerformed(ActionEvent e)
+			{
+				settler.Mine();
+			}
+		};
+		
+		ActionListener al_noaction = new ActionListener()
+		{
+			
+			public void actionPerformed(ActionEvent e)
+			{
+				
+			}
+		};
+		
+		ActionListener buildtel = new ActionListener()
+		{
+			
+			public void actionPerformed(ActionEvent e)
+			{
+				settler.BuildTeleportGatePair();
+			}
+		};
+		
+		ActionListener al_buildrobot = new ActionListener()
+		{
+			
+			public void actionPerformed(ActionEvent e)
+			{
+				settler.BuildRobot("Robot");
+			}
+		};
+		ActionListener al_putteleport = new ActionListener()
+		{
+			
+			public void actionPerformed(ActionEvent e)
+			{
+				JFrame f = new JFrame();
+				JButton button = new JButton("Finalize Selection");
+				int index;
+				JPanel panel = new JPanel();
+				ArrayList<String> names = new ArrayList<String>();
+				for ( int i = 0; i < settler.getteleports().size();i++) {
+					TeleportGate tg = settler.getteleports().get(i);
+					names.add(tg.getName());
+				}
+				JComboBox AsteroidList = new JComboBox(names.toArray());
+				
+				panel.setBounds(40,80,200,200);    
+		        panel.setBackground(Color.gray); 
+				panel.add(AsteroidList);
+				panel.add(button);
+				f.add(panel);
+	            f.setSize(400,400);
+	            f.setLayout(null);    
+	            f.setVisible(true);
+	            
+				index = AsteroidList.getSelectedIndex();
+				System.out.print(index);
+				ActionListener al_move_fin = new ActionListener()
+				{
+					public void actionPerformed(ActionEvent e)
+					{
+						settler.PutTeleportGateOnAsteroid(settler.getteleports().get(index).getName(), index);
+						f.dispose();
+					}
+				};
+				button.addActionListener(al_move_fin);
+			
+			}
+			
+		};
+		
+		putdownteleport.addActionListener(al_putteleport);
+		ActionListener al_putmaterial = new ActionListener()
+		{
+			
+			public void actionPerformed(ActionEvent e)
+			{
+				JFrame f = new JFrame();
+				JButton button = new JButton("Finalize Selection");
+				int index;
+				JPanel panel = new JPanel();
+				ArrayList<String> names = new ArrayList<String>();
+				for ( int i = 0; i < settler.getInventory().size();i++) {
+					RawMaterial rm = settler.getInventory().get(i);
+					names.add(rm.GetUniqueID());
+				}
+				JComboBox AsteroidList = new JComboBox(names.toArray());
+				
+				panel.setBounds(40,80,200,200);    
+		        panel.setBackground(Color.gray); 
+				panel.add(AsteroidList);
+				panel.add(button);
+				f.add(panel);
+	            f.setSize(400,400);
+	            f.setLayout(null);    
+	            f.setVisible(true);
+	            
+				index = AsteroidList.getSelectedIndex();
+				System.out.print(index);
+				ActionListener al_move_fin = new ActionListener()
+				{
+					public void actionPerformed(ActionEvent e)
+					{
+						settler.FillAsteroid(settler.getInventory().get(index));
+						f.dispose();
+					}
+				};
+				button.addActionListener(al_move_fin);
+			
+			}
+		};
+		
+		putback.addActionListener(al_putmaterial);
+		buildrobot.addActionListener(al_buildrobot);
+		buildteleport.addActionListener(buildtel);
+		noaction.addActionListener(al_noaction);
+		mine.addActionListener(al_mine);
 		ActionListener al_move = new ActionListener()
 		{
 			
@@ -113,6 +246,7 @@ public class Game extends JPanel
 				button.addActionListener(al_move_fin);
 			}
 		};
+		
 		move.addActionListener(al_move);
 		//teszthez cuccok
 		/*Asteroid a = new Asteroid("asteroid", new Ice(), 10, 6);

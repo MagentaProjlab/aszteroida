@@ -30,7 +30,9 @@ public class Settler extends SentientBeing {
 	 */
 	private ArrayList<TeleportGate> carriedteleports;
 	
-	
+	public ArrayList<TeleportGate> getteleports(){
+		return this.carriedteleports;
+	}
 	/**
 	 * Vissza adja a leny nevet, amit letrehozaskor kapott es a tipusat
 	 * @return A leny neve

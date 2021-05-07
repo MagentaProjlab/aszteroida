@@ -38,9 +38,12 @@ import asteroid.logic.Uranium;
 public class Game extends JPanel
 {
 	private Settler settler;
+	private Boolean stepped;
 	
 	public Game(ActionListener al)
 	{
+		stepped = false;
+		
 		//gombok a parancsokhoz
 		JPanel buttons = new JPanel();
 		buttons.setLayout(new GridLayout(2, 4));
@@ -120,6 +123,11 @@ public class Game extends JPanel
 	{
 		settler = s;
 		this.repaint();
+		while(stepped == false)
+		{
+			
+		}
+		stepped = false;
 	}
 	
 	protected void paintComponent(Graphics g)

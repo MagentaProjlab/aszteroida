@@ -47,9 +47,7 @@ public class Robot extends SentientBeing
 	 */
 	public void Drill()
 	{
-		if(!location.isDrilled()) {
-			location.IncreaseHoleDepth();
-		}
+		location.IncreaseHoleDepth();
 	}	
 	/**
 	 * A robot meghal
@@ -79,17 +77,19 @@ public class Robot extends SentientBeing
 	 */
 	public void Step() 
 	{
-		if (!location.isDrilled())
-			this.Drill();
-		else {
-			ArrayList<Place> neighbors = location.getNeighbors();
-			int neighborSize = neighbors.size();
-			Random random = new Random();
-			int index = random.nextInt(neighborSize + 1);
-			Place place = neighbors.get(index);
-			this.Move(place);
+		if (this.getStepped()) {
+			if (!location.isDrilled())
+				this.Drill();
+			else {
+				ArrayList<Place> neighbors = location.getNeighbors();
+				int neighborSize = neighbors.size();
+				Random random = new Random();
+				int index = random.nextInt(neighborSize + 1);
+				Place place = neighbors.get(index);
+				this.Move(place);
+			}
+			this.setStepped(true);
 		}
-		this.setStepped(true);
 	}
 	
 	public String GetUniqueID()

@@ -77,7 +77,7 @@ public class Robot extends SentientBeing
 	 */
 	public void Step() 
 	{
-		if (this.getStepped()) {
+		if (!this.getStepped()) {
 			if (!location.isDrilled())
 				this.Drill();
 			else {

@@ -7,8 +7,8 @@ public class TeleportGate extends Place
 	private TeleportGate sibling;
 	private Asteroid asteroid;
 	private Settler owner;
-	private boolean Malfunctioning; 
-	String id;
+	private boolean malfunctioning; 
+	private String id;
 	private boolean stepped;
 	/**
 	 * A TeleportGate konstruktora
@@ -18,28 +18,30 @@ public class TeleportGate extends Place
 		this.asteroid = a;
 		this.owner = o;
 		this.id = name;
-		this.Malfunctioning = false;
+		this.malfunctioning = false;
 		stepped=false;
 	}
 	
-	public void setstepped(boolean azt) {
+	public void SetStepped(boolean azt) {
 		stepped=azt;
 	}
 	
-	public boolean getstepped() {
+	public boolean GetStepped() {
 		return stepped;
 	}
 	
 	public void SetName(String n) {
 		id = n;
 	}
+	/**
+	 * Teleportkapu mozgasa, ha mar erte napszel
+	 */
 	public void Move() 
-	{
-		if(this.GetMalfunction()==true) {
-			Logger.Message("[TeleportGate: "+this.getName()+"] has been selected to step.");
+	{		
+		if(this.GetMalfunction()==true && this.GetStepped()) {
 			Bill teleBill=new Bill();
 			teleBill.AddMaterialToBill(new TeleportGate(null, null, null));
-			ArrayList<ID> teleList=new ArrayList();
+			ArrayList<ID> teleList=new ArrayList<ID>();
 			int index = 0;
 			int max = this.asteroid.getNeighbors().size();
 			while(index < max) {
@@ -52,19 +54,21 @@ public class TeleportGate extends Place
 					asteroid.DropNeighbor(this);
 					this.asteroid = (Asteroid)this.asteroid.getNeighbors().get(index);
 					asteroid.AddNeighbor(this);
-					Logger.Message("[TeleportGate: "+this.getName()+"] has moved to "+this.asteroid.getName()+".");
 					break;
 				}
 			}
+			this.stepped=true;
 		}
-		stepped=true;
 	}
+	
+	/**
+	 * Visszaadja a teleportkapu nevet, amit a letrehozasakor kapott
+	 */
 	public String getName() {
 		return id;
 	}
 	/**
 	 * A teleportkapu tulajdonosat beallito fuggveny.
-	 *
 	 * @param s : a teleportkapu - t birtoklo telepes
 	 */
 	public void SetOwner(Settler s) 
@@ -86,7 +90,7 @@ public class TeleportGate extends Place
 	public void SetAsteroid(Asteroid asteroid) 
 	{
 		this.asteroid = asteroid;
-		//asteroid.AddNeighbor(this);
+		asteroid.AddNeighbor(this); //ez eredetileg ki volt kommentezve, de miert? szerintem szukseges, kiveve ha valamivel utkozik...
 	}
 	/**
 	 * A teleportkapu aszteroidajat visszaado fuggveny
@@ -113,6 +117,7 @@ public class TeleportGate extends Place
 	{
 		this.owner = null;
 	}
+	
 	/**
 	 * A teleportkapu parjat visszaado fuggveny
 	 * @return owner : A teleportkapu - t birtoklo telepes
@@ -121,21 +126,22 @@ public class TeleportGate extends Place
 	{
 		return this.owner;
 	}
+	
 	/**
 	 * A teleportkapu elmozdit egy telepest.
 	 */
 	public void RegisterBeing(SentientBeing being)
 	{
-		being.setAsteroid(this.sibling.GetAsteroid());
+		this.sibling.GetAsteroid().RegisterBeing(being);
 	}
+	
 	/**
 	 * A teleportkapu felrobban
 	 * Ha a teleportkapu aszteroidaja null, akkor telepesnel van
 	 * Ha a teleportkapu aszteroidaja nem null, akkor aszteroidan van
 	 */
 	public void Explode() 
-	{	Logger.Message("[TeleportGate: "+this.getName()+"] has exploded"+".");
-		Asteroid a = this.GetAsteroid();	
+	{	Asteroid a = this.GetAsteroid();	
 		if(a != null)
 		{
 			asteroid.DropNeighbor(this);
@@ -145,17 +151,19 @@ public class TeleportGate extends Place
 		}
 		
 		Asteroid a2 = this.sibling.GetAsteroid();
-		Logger.Message("[TeleportGate: "+this.sibling.getName()+"] has exploded"+".");
 		if(a2 != null)
 		{
-			sibling.GetAsteroid().DropNeighbor(sibling);
+			a2.DropNeighbor(sibling);
 			sibling.SetAsteroid(null);
 		}else
 		{
 			sibling.GetOwner().DropCarriedTeleport(sibling);
 		}
 	}
-
+	
+	/**
+	 * Visszaadja, hogy teleportgate tipusu
+	 */
 	public String GetUniqueID() {
 		return new String("teleportgate");
 	}
@@ -163,13 +171,13 @@ public class TeleportGate extends Place
 	 * Beallitja a malfunction valtozot
 	 */
 	public void Malfunction() {
-		this.Malfunctioning = true;
+		this.malfunctioning = true;
 	}
 	/**
 	 * lekerdezi a malfunction valtozot
 	 * @return Malfunctioning
 	 */
 	public boolean GetMalfunction() {
-		return this.Malfunctioning;
+		return this.malfunctioning;
 	}
 }

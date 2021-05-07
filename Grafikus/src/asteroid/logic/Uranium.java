@@ -2,7 +2,7 @@ package asteroid.logic;
 
 public class Uranium extends RawMaterial 
 {
-	int ReactionCount;
+	private int ReactionCount;
 	/**
 	 * Az uran konstruktora.
 	 *
@@ -43,6 +43,5 @@ public class Uranium extends RawMaterial
 			}
 		}
 	}
-	
-	}
+}
 

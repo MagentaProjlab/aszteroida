@@ -5,7 +5,7 @@ import java.util.Random;
 
 public class Ufo extends SentientBeing
 {
-	String id;
+	private String id;
 	private ArrayList<RawMaterial> carriedmaterials;
 	/**
 	 * Ufo konstruktora
@@ -94,6 +94,9 @@ public class Ufo extends SentientBeing
 		}
 	}
 	
+	/**
+	 * Visszaadja, hogy Ufo tipusu
+	 */
 	public String GetUniqueID()
 	{
 		return "Ufo";

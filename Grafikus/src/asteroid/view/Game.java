@@ -44,6 +44,7 @@ public class Game extends JPanel
 	public Game(ActionListener al)
 	{
 		stepped = false;
+		settler = null;
 		
 		//gombok a parancsokhoz
 		JPanel buttons = new JPanel();
@@ -280,6 +281,11 @@ public class Game extends JPanel
 	protected void paintComponent(Graphics g)
 	{
 		super.paintComponent(g);
+		
+		if(settler == null)
+		{
+			return;
+		}
 		
 		Color background = new Color(255, 255, 255);
 		Color dirt = new Color(139, 69, 19);

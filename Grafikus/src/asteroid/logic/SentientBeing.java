@@ -14,16 +14,28 @@ public abstract class SentientBeing implements ID
 		this.hasStepped = false;
 	}
 	
+	/**
+	 * Megadja, hogy melyik aszteroidan all a being
+	 * @return location: az aktív aszteroida
+	 */
 	public Asteroid getAsteroid()
 	{
 		return location;
 	}
 	
+	/**
+	 * Visszaadja, hogy a being lepett mar-e az aktiv korben
+	 * @return hasStepped: true, ha mar lepett az aktiv korben
+	 */
 	public boolean getStepped()
 	{
 		return hasStepped;
 	}
 	
+	/**
+	 * Beallitja, hogy adott korben lepett mar-e a being
+	 * @param arg: true, ha lepett a korben
+	 */
 	public void setStepped(boolean arg)
 	{
 		hasStepped = arg;

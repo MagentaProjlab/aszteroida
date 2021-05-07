@@ -172,9 +172,8 @@ public class Settler extends SentientBeing {
 			carriedteleports.get(iter).Explode();
 			max = carriedteleports.size();
 		}
-		//Doku szerint nem irat ki
-		//Logger.Message("[Settler: "+name+"] has died ");
 	}
+	
 	/**
 	 * AddCarriedMaterial metodus - Egy anyag hozzadasa a telepeshez.
 	 * Fontos, a telepes zsebenek telitettseget, az ezt a metodust meghivo, mine metodusban ellenorizzuk!
@@ -291,9 +290,9 @@ public class Settler extends SentientBeing {
 	public void Move(Place place) 
 	{
 		location.DropBeing(this);
-		place.RegisterBeing(this);
-		
+		place.RegisterBeing(this);	
 	}
+	
 	/**
 	 * PutTeleportGateOnAsteroid metodus - Teleportkapu lerakashoz
 	 * Az aszteroidahoz, amin eppen all a telepes lerakja az egyik teleportkaput.
@@ -353,11 +352,18 @@ public class Settler extends SentientBeing {
 		carriedteleports.remove(teleport);		
 	}
 	
+	/**
+	 * Hozzaad egy teleportkaput a telepes tarolojahoz
+	 * @param gate: a hozzaadando teleportkapu
+	 */
 	public void AddTeleportGate(TeleportGate gate)
 	{
 		carriedteleports.add(gate);
 	}
 	
+	/**
+	 * Visszaadja a telepes tipusat
+	 */
 	public String GetUniqueID()
 	{
 		return "Settler";

@@ -15,5 +15,9 @@ public abstract class Place implements ID
 	 * Felrobbantja az adott "helyszint"
 	 */
 	public abstract void Explode();
+	/**
+	 * Megadja az adott hely nevet
+	 * @return: a hely neve
+	 */
 	public abstract String getName();
 }

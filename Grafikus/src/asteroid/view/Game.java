@@ -115,7 +115,7 @@ public class Game extends JPanel
 		a.RegisterBeing(new Robot(null, null));
 		a.RegisterBeing(new Ufo(null, null));
 		
-		this.ShowSettler(s);
+		//this.ShowSettler(s);
 		//
 	}
 	

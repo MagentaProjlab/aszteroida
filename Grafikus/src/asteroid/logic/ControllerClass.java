@@ -2,21 +2,24 @@ package asteroid.logic;
 
 import java.util.ArrayList;
 
+import asteroid.view.View;
+
 
 public class ControllerClass
 {
 	private ArrayList<Asteroid> asteroids;
 	private SolarWind solarwind;
 	private Logger log;
+	private View view;
 	
 	/**
 	 * A controller konstruktora
 	 */
-	public ControllerClass(int teszteset)
+	public ControllerClass()
 	{
-		asteroids = new ArrayList<Asteroid>();
-		solarwind = new SolarWind();
-		log = new Logger(teszteset);
+		//asteroids = new ArrayList<Asteroid>();
+		//solarwind = new SolarWind();
+		//log = new Logger(teszteset);
 	}
 	
 	public void Command(String cmd)
@@ -465,5 +468,10 @@ public class ControllerClass
 	public Asteroid GetRandomAsteroid() 
 	{
 		return null;
+	}
+	
+	public void SetView(View v)
+	{
+		view = v;
 	}
 }

@@ -283,7 +283,7 @@ public class Game extends JPanel
 			list.add(beings.get(i));
 				
 			Toolkit t = Toolkit.getDefaultToolkit();
-			beingx += (int)(4.0 / 3.0 * ((float)beingsize));
+			beingx += beingsize;
 			
 			if(settler.CheckInventory(list))
 			{

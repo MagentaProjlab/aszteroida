@@ -273,7 +273,7 @@ public class ControllerClass
 			}
 		}else if(params[0].equals("nextround"))
 		{
-			for(int i = 0; i < asteroids.size(); i++)
+			/*for(int i = 0; i < asteroids.size(); i++)
 			{
 				if(asteroids.get(i).getExploded() == true)
 				{
@@ -312,7 +312,7 @@ public class ControllerClass
 					}
 				}
 				
-			}
+			}*/
 			
 		}else if(params[0].equals("endgame"))
 		{
@@ -418,7 +418,7 @@ public class ControllerClass
 	/**
 	 * A controller jatekciklusa
 	 */
-	public void GameLoop(int numberofsettlers)
+	public void GameLoop()
 	{
 		InitAsteroids();
 		InitSettlers();
@@ -426,34 +426,75 @@ public class ControllerClass
 		while(!CheckWin() || !CheckLose())
 		{
 			//fõ loop, egy nextround-nyi cucc lesz itt
+			for(int i = 0; i < asteroids.size(); i++)
+			{
+				if(asteroids.get(i).getExploded() == true)
+				{
+					asteroids.remove(i);
+					i--;
+				}else
+				{
+					asteroids.get(i).StepBeings();
+					for(int j = 0; j< asteroids.get(i).getNeighbors().size();j++) {
+						Bill teleBill=new Bill();
+						teleBill.AddMaterialToBill(new TeleportGate(null, null, null));
+						ArrayList<ID> teleList=new ArrayList<ID>();
+						teleList.add(asteroids.get(i).getNeighbors().get(j));
+						if(teleBill.CheckInventory(teleList)) {
+							TeleportGate tg = (TeleportGate)asteroids.get(i).getNeighbors().get(j);
+							if(!tg.getstepped())
+								tg.Move();
+							
+							//j--;
+						}
+					}
+				}
+			}
+			for(int i = 0; i < asteroids.size(); i++)
+			{
+				for(int j = 0; j< asteroids.get(i).getNeighbors().size();j++) {
+					Bill teleBill=new Bill();
+					teleBill.AddMaterialToBill(new TeleportGate(null, null, null));
+					ArrayList<ID> teleList=new ArrayList<ID>();
+					teleList.add(asteroids.get(i).getNeighbors().get(j));
+					if(teleBill.CheckInventory(teleList)) {
+						TeleportGate tg = (TeleportGate)asteroids.get(i).getNeighbors().get(j);
+						tg.setstepped(false);
+						
+						//j--;
+					}
+				}
+			}
 		}
 		
 		if(CheckWin())
 		{
 			//nyerés
+			System.out.println("win");
 		}else if(CheckLose())
 		{
 			//vesztés
+			System.out.println("lose");
 		}
 	}
 	/**
 	 * A controller inicializalja az aszteroidakat
 	 */
-	public void InitAsteroids()
+	private void InitAsteroids()
 	{
 		
 	}
 	/**
 	 * A controller inicializalja a telepeseket
 	 */
-	public void InitSettlers()
+	private void InitSettlers()
 	{
 		
 	}
 	/**
 	 * A controller osszekoti az aszteroidakat
 	 */
-	public void ConnectAsteroids() 
+	private void ConnectAsteroids() 
 	{
 		
 	}
@@ -461,7 +502,7 @@ public class ControllerClass
 	 * A controller visszaad egy random aszteroidat
 	 * @return asteroid : a visszaadando aszteroida - egyenlore null - t ad vissza
 	 */
-	public Asteroid GetRandomAsteroid() 
+	private Asteroid GetRandomAsteroid() 
 	{
 		return null;
 	}
@@ -570,5 +611,11 @@ public class ControllerClass
 		{
 			return false;
 		}
+	}
+	
+	public void Init(int numberofsettlers)
+	{
+		InitAsteroids();
+		InitSettlers();
 	}
 }

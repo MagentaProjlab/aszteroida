@@ -302,11 +302,13 @@ public class Settler extends SentientBeing {
 	 */
 	public void PutTeleportGateOnAsteroid(String name,int idx) 
 	{
-		if(carriedteleports.size()>=idx+1) {
+		if(carriedteleports.size()>=idx+1)
+		{
 			TeleportGate t=carriedteleports.get(idx);
 			//ezt a "t"-t csak azert  vettem fel, hogy a kovi sor ne legyen olyan 
 			//hosszu, es hogy konzisztens maradjak az eredeti koddal
-			if(t.GetSibling().GetAsteroid() ==null || !t.GetSibling().GetAsteroid().equals(location)) {
+			if(t.GetSibling().GetAsteroid() ==null || !t.GetSibling().GetAsteroid().equals(location))
+			{
 				t.SetName(name);
 				t.SetAsteroid(location);
 				location.AddNeighbor(t);
@@ -315,7 +317,8 @@ public class Settler extends SentientBeing {
 			}
 			Logger.Message("[Settler: "+name+"] has put down teleport "+t.getName()+".");
 		}
-		else {
+		else
+		{
 			Logger.Message("[Settler: "+name+"] has put down teleport "+".");
 		}
 	}

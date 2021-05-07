@@ -19,7 +19,7 @@ public class View extends JFrame
 	
 	private MainMenu mainmenu;
 	private Settings settings;
-	private Game game;
+	private static Game game;
 	private ControllerClass controller;
 
 	public View()
@@ -61,9 +61,9 @@ public class View extends JFrame
 		controller = c;
 	}
 	
-	public void ShowSettler(Settler s)
+	static public void ShowSettler(Settler s)
 	{
-		
+		game.ShowSettler(s);
 	}
 
 	public void CreateAndShowGUI()

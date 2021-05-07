@@ -115,7 +115,7 @@ public class Game extends JPanel
 		};
 		move.addActionListener(al_move);
 		//teszthez cuccok
-		Asteroid a = new Asteroid("asteroid", new Ice(), 10, 6);
+		/*Asteroid a = new Asteroid("asteroid", new Ice(), 10, 6);
 		Settler s = new Settler("settler", 3, 3, 2, 2, false);
 		s.setAsteroid(a);
 		a.RegisterBeing(s);
@@ -128,7 +128,7 @@ public class Game extends JPanel
 		a.RegisterBeing(new Robot(null, null));
 		a.RegisterBeing(new Ufo(null, null));
 		
-		//this.ShowSettler(s);
+		this.ShowSettler(s);*/
 		//
 	}
 	

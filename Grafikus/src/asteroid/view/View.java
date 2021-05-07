@@ -15,12 +15,12 @@ public class View extends JFrame
 {
 	private int width = 600;
 	private int height = 600;
-	private JPanel cards;
+	public JPanel cards;
 	
 	private MainMenu mainmenu;
 	private Settings settings;
 	private static Game game;
-	private ControllerClass controller;
+	public ControllerClass controller;
 
 	public View()
 	{
@@ -29,7 +29,7 @@ public class View extends JFrame
 		this.getContentPane().setPreferredSize(new Dimension(width, height));
 		this.setResizable(false);
 
-		ActionListener al = new ActionListener()
+		ActionListener mainmenual = new ActionListener()
 		{	
 			public void actionPerformed(ActionEvent e)
 			{
@@ -40,10 +40,10 @@ public class View extends JFrame
 		
 		cards = new JPanel(new CardLayout());
 
-		mainmenu = new MainMenu(al);
+		mainmenu = new MainMenu(mainmenual);
 		cards.add(mainmenu, "Main menu");
 
-		settings = new Settings(al);
+		settings = new Settings(this);
 		cards.add(settings, "Settings");
 
 		//kell majd action listener, egyel�re null

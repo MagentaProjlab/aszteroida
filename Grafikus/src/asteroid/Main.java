@@ -12,10 +12,9 @@ public class Main {
 	static public void main(String[] args)
 	{
 		View ablak = new View();
-		/*ControllerClass controller = new ControllerClass();
+		ControllerClass controller = new ControllerClass();
 		controller.SetView(ablak);
-		ablak.SetController(controller);*/
+		ablak.SetController(controller);
 		ablak.CreateAndShowGUI();
-		//controller.GameLoop();
 	}
 }

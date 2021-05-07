@@ -1,6 +1,7 @@
 package asteroid.logic;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Robot extends SentientBeing
 {
@@ -87,6 +88,19 @@ public class Robot extends SentientBeing
 	 */
 	public void Step() 
 	{
+		if (!location.isDrilled())
+			this.Drill();
+		else {
+			ArrayList<Place> neighbors = location.getNeighbors();
+			int neighborSize = neighbors.size();
+			Random random = new Random();
+			int index = random.nextInt(neighborSize + 1);
+			Place place = neighbors.get(index);
+			this.Move(place);
+		}
+		this.setStepped(true);
+		
+		/*
 		Logger.Message("[Robot: "+id+"] has been selected to step.");
 		String command=Logger.NextLine();
 		String[] command_parts=command.split(" ");
@@ -136,7 +150,7 @@ public class Robot extends SentientBeing
 				Logger.Message("Bad command for the Robot bucko"+".");
 				break;
 		}
-		this.setStepped(true);
+		*/
 	}
 	
 	public String GetUniqueID()

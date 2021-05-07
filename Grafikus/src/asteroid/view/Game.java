@@ -104,6 +104,10 @@ public class Game extends JPanel
 		s.setAsteroid(a);
 		a.RegisterBeing(s);
 		
+		Asteroid b = new Asteroid("szomszed", new Ice(), 10, 6);
+		a.AddNeighbor(b);
+		b.AddNeighbor(a);
+		
 		a.RegisterBeing(new Settler(null));
 		a.RegisterBeing(new Robot(null, null));
 		a.RegisterBeing(new Ufo(null, null));

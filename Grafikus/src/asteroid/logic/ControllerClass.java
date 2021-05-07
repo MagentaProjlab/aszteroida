@@ -442,7 +442,7 @@ public class ControllerClass
 						teleList.add(asteroids.get(i).getNeighbors().get(j));
 						if(teleBill.CheckInventory(teleList)) {
 							TeleportGate tg = (TeleportGate)asteroids.get(i).getNeighbors().get(j);
-							if(!tg.getstepped())
+							if(!tg.GetStepped())
 								tg.Move();
 							
 							//j--;
@@ -459,7 +459,7 @@ public class ControllerClass
 					teleList.add(asteroids.get(i).getNeighbors().get(j));
 					if(teleBill.CheckInventory(teleList)) {
 						TeleportGate tg = (TeleportGate)asteroids.get(i).getNeighbors().get(j);
-						tg.setstepped(false);
+						tg.SetStepped(false);
 						
 						//j--;
 					}

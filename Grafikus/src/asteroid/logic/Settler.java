@@ -2,6 +2,8 @@ package asteroid.logic;
 
 import java.util.ArrayList;
 
+import asteroid.view.View;
+
 
 /**
  * Settler osztaly 
@@ -300,11 +302,13 @@ public class Settler extends SentientBeing {
 	 */
 	public void PutTeleportGateOnAsteroid(String name,int idx) 
 	{
-		if(carriedteleports.size()>=idx+1) {
+		if(carriedteleports.size()>=idx+1)
+		{
 			TeleportGate t=carriedteleports.get(idx);
 			//ezt a "t"-t csak azert  vettem fel, hogy a kovi sor ne legyen olyan 
 			//hosszu, es hogy konzisztens maradjak az eredeti koddal
-			if(t.GetSibling().GetAsteroid() ==null || !t.GetSibling().GetAsteroid().equals(location)) {
+			if(t.GetSibling().GetAsteroid() ==null || !t.GetSibling().GetAsteroid().equals(location))
+			{
 				t.SetName(name);
 				t.SetAsteroid(location);
 				location.AddNeighbor(t);
@@ -313,7 +317,8 @@ public class Settler extends SentientBeing {
 			}
 			Logger.Message("[Settler: "+name+"] has put down teleport "+t.getName()+".");
 		}
-		else {
+		else
+		{
 			Logger.Message("[Settler: "+name+"] has put down teleport "+".");
 		}
 	}
@@ -321,105 +326,9 @@ public class Settler extends SentientBeing {
 	 * Step metodus - A telepes leptetesehez
 	 * Itt donteheti el a jatekos, hogy mit fog tenni ebben a korben a telepes.
 	 */
-	public void Step() 
+	public void Step()
 	{
-		Logger.Message("[Settler: "+name+"] has been selected to step.");
-		String command=Logger.NextLine();
-		String[] command_parts=command.split(" ");
-		switch (command_parts[0]) {
-			case "move":
-				if(command_parts.length!=2) {
-					Logger.Message("[Settler: "+name+"] failed to move"+".");
-				}
-				else {
-					ArrayList<Place> neighbors=location.getNeighbors();
-					int celzottIndex = -1;
-					for (int i = 0; i< neighbors.size(); i++) {
-						if(neighbors.get(i).getName().equals(command_parts[1])) {
-							celzottIndex = i;
-							Logger.Message("[Settler: "+name+"] has moved to "+neighbors.get(i).getName()+".");
-						}
-						Bill teleBill=new Bill();
-						teleBill.AddMaterialToBill(new TeleportGate(null, null, null));
-						ArrayList<ID> teleList=new ArrayList();
-						teleList.add(neighbors.get(i));
-						if(teleBill.CheckInventory(teleList)) {
-							TeleportGate t=(TeleportGate)neighbors.get(i);
-							if(t.GetSibling().GetAsteroid()!=null) {
-								if(t.GetSibling().GetAsteroid().getName().equals(command_parts[1])) {
-									celzottIndex = i;
-									Logger.Message("[Settler: "+name+"] has moved to "+t.GetSibling().GetAsteroid().getName()+".");
-								}
-							}
-						}
-						
-					}
-					if(celzottIndex != -1) {
-						Move(neighbors.get(celzottIndex));
-						
-					}
-					else {
-						Logger.Message("[Settler: "+name+"] failed to move"+".");
-					}
-				}
-				break;
-			case "drill":
-				this.Drill();
-				break;	
-			case "mine":
-				this.Mine();
-				break;
-			case "listinventory":
-				//teleport es nyersanyag!
-				for (int i = 0; i < carriedmaterials.size(); i++) {
-					Logger.Message(i+":"+carriedmaterials.get(i).GetUniqueID());
-				}
-				for (int i = 0; i < carriedmaterials.size(); i++) {
-					Logger.Message(i+":"+carriedteleports.get(i).GetUniqueID());
-				}
-				break;
-			case "buildteleport":
-				this.BuildTeleportGatePair();
-				break;
-			case "putdowntele":	
-				
-				if(command_parts.length!=3) {
-					Logger.Message("[Settler: "+name+"] failed to put down teleport.");
-				}
-				else {
-					//atadjuk a kiiratas alapjan megfelelo index-et es a nevet a teleportnak
-					//Az index a metodusban van ellenorizve
-					this.PutTeleportGateOnAsteroid(command_parts[1],Integer.parseInt(command_parts[2]));
-				}
-				break;
-			case "buildrobot":	
-				if(command_parts.length!=2) {
-					Logger.Message("[Settler: "+name+"] has failed to build a robot.");
-				}
-				else {
-					BuildRobot(command_parts[1]);
-				}
-				break;
-			case "putback":	
-				if(command_parts.length!=2) {
-					Logger.Message("[Settler: "+name+"] failed to put back material.");
-				}
-				else {
-					int celzottIndex=Integer.parseInt(command_parts[1]);
-					if(carriedmaterials.size()>=1+celzottIndex) {
-						FillAsteroid(carriedmaterials.get(celzottIndex));
-					}
-					else {
-						Logger.Message("[Settler: "+name+"] failed to move.");
-					}
-				}
-				break;
-			default:
-				Logger.Message("Bad command for the Settler bucko"+".");
-				break;
-			case "noaction":
-				break;
-		}
+		View.ShowSettler(this);
 		this.setStepped(true);
 		
 	}

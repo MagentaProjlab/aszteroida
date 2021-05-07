@@ -1,6 +1,7 @@
 package asteroid.logic;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Robot extends SentientBeing
 {
@@ -21,7 +22,6 @@ public class Robot extends SentientBeing
 	public  String getFullName() {
 		return "[Robot:"+id+"]";
 	}
-	
 	
 	/**
 	 * Vissza adja a leny nevet, amit letrehozaskor kapott
@@ -47,13 +47,7 @@ public class Robot extends SentientBeing
 	 */
 	public void Drill()
 	{
-		if(!location.isDrilled()) {
-			location.IncreaseHoleDepth();
-			Logger.Message("[Robot: "+id+"] has drilled "+location.getName()+".");
-		}
-		else {
-			Logger.Message("[Robot: "+id+"] has failed to drill "+location.getName()+".");
-		}
+		location.IncreaseHoleDepth();
 	}	
 	/**
 	 * A robot meghal
@@ -61,10 +55,8 @@ public class Robot extends SentientBeing
 	public void Die() 
 	{
 		location.DropBeing(this);
-		//Doku szerint nem irat ki
-		//Logger.Message("[Robot: "+id+"] has died ");
-
 	}
+	
 	/**
 	 * A robot felrobban
 	 * A tesztelo donti el, hogy van - e szomszedja az aszteroidanak.
@@ -73,8 +65,6 @@ public class Robot extends SentientBeing
 	 */
 	public void Explode()
 	{
-		Logger.Message("[Robot: "+id+"] has exploded.");
-
 		if(this.location.GetNeighbour() == null) {
 			Die();
 		} else {
@@ -87,56 +77,19 @@ public class Robot extends SentientBeing
 	 */
 	public void Step() 
 	{
-		Logger.Message("[Robot: "+id+"] has been selected to step.");
-		String command=Logger.NextLine();
-		String[] command_parts=command.split(" ");
-		switch (command_parts[0]) {
-			case "move":
-				if(command_parts.length!=2) {
-					Logger.Message("[Robot: "+id+"] failed to move"+".");
-				}
-				else {
-					ArrayList<Place> neighbors=location.getNeighbors();
-					int celzottIndex = -1;
-					for (int i = 0; i< neighbors.size(); i++) {
-						if(neighbors.get(i).getName().equals(command_parts[1])) {
-							celzottIndex = i;
-							Logger.Message("[Robot: "+id+"] has moved to "+neighbors.get(i).getName()+".");
-						}
-						Bill teleBill=new Bill();
-						teleBill.AddMaterialToBill(new TeleportGate(null, null, null));
-						ArrayList<ID> teleList=new ArrayList();
-						teleList.add(neighbors.get(i));
-						if(teleBill.CheckInventory(teleList)) {
-							TeleportGate t=(TeleportGate)neighbors.get(i);
-							if(t.GetSibling().GetAsteroid()!=null) {
-								if(t.GetSibling().GetAsteroid().getName().equals(command_parts[1])) {
-									celzottIndex = i;
-									Logger.Message("[Robot: "+id+"] has moved to "+t.GetSibling().GetAsteroid().getName()+".");
-								}
-							}
-						}
-						
-					}
-					if(celzottIndex != -1) {
-						Move(neighbors.get(celzottIndex));
-						
-					}
-					else {
-						Logger.Message("[Robot: "+id+"] failed to move"+".");
-					}
-				}
-				break;
-			case "drill":
+		if (this.getStepped()) {
+			if (!location.isDrilled())
 				this.Drill();
-				break;	
-			case "noaction":
-				break;
-			default:
-				Logger.Message("Bad command for the Robot bucko"+".");
-				break;
+			else {
+				ArrayList<Place> neighbors = location.getNeighbors();
+				int neighborSize = neighbors.size();
+				Random random = new Random();
+				int index = random.nextInt(neighborSize + 1);
+				Place place = neighbors.get(index);
+				this.Move(place);
+			}
+			this.setStepped(true);
 		}
-		this.setStepped(true);
 	}
 	
 	public String GetUniqueID()

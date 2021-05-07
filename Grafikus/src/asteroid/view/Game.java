@@ -1,6 +1,7 @@
 package asteroid.view;
 
 import java.awt.BorderLayout;
+import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.Graphics;
@@ -8,20 +9,25 @@ import java.awt.Graphics2D;
 import java.awt.GridLayout;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.geom.Arc2D;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
 import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import asteroid.logic.Asteroid;
 import asteroid.logic.Bill;
 import asteroid.logic.Coal;
+import asteroid.logic.ControllerClass;
 import asteroid.logic.ID;
 import asteroid.logic.Ice;
 import asteroid.logic.Iron;
+import asteroid.logic.Place;
 import asteroid.logic.RawMaterial;
 import asteroid.logic.Robot;
 import asteroid.logic.SentientBeing;
@@ -66,7 +72,32 @@ public class Game extends JPanel
 		this.setLayout(new BorderLayout());
 		this.add(buttons, BorderLayout.SOUTH);
 		//
-		
+		ActionListener al_move = new ActionListener()
+		{	
+			public void actionPerformed(ActionEvent e)
+			{
+				JFrame f = new JFrame();
+				JPanel panel = new JPanel();
+				ArrayList<String> names = new ArrayList<String>();
+				for ( int i = 0; i < settler.getAsteroid().getNeighbors().size();i++) {
+					Place actual = settler.getAsteroid().getNeighbors().get(i);
+					names.add(actual.getName());
+				}
+				
+				JComboBox AsteroidList = new JComboBox(names.toArray());
+				panel.setBounds(40,80,200,200);    
+		        panel.setBackground(Color.gray); 
+				panel.add(AsteroidList);
+				f.add(panel);  
+	            f.setSize(400,400);    
+	            f.setLayout(null);    
+	            f.setVisible(true);
+				int index = AsteroidList.getSelectedIndex();
+				settler.Move(settler.getAsteroid().getNeighbors().get(index));
+				
+			}
+		};
+		move.addActionListener(al_move);
 		//teszthez cuccok
 		Asteroid a = new Asteroid("asteroid", new Ice(), 10, 6);
 		Settler s = new Settler("settler", 3, 3, 2, 2, false);

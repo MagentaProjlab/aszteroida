@@ -73,28 +73,41 @@ public class Game extends JPanel
 		this.add(buttons, BorderLayout.SOUTH);
 		//
 		ActionListener al_move = new ActionListener()
-		{	
+		{
+			
 			public void actionPerformed(ActionEvent e)
 			{
 				JFrame f = new JFrame();
+				JButton button = new JButton("Finalize Selection");
+				int index;
 				JPanel panel = new JPanel();
 				ArrayList<String> names = new ArrayList<String>();
 				for ( int i = 0; i < settler.getAsteroid().getNeighbors().size();i++) {
 					Place actual = settler.getAsteroid().getNeighbors().get(i);
-					names.add(actual.getName());
+					names.add(actual.GetUniqueID());
 				}
-				
 				JComboBox AsteroidList = new JComboBox(names.toArray());
+				
 				panel.setBounds(40,80,200,200);    
 		        panel.setBackground(Color.gray); 
 				panel.add(AsteroidList);
-				f.add(panel);  
-	            f.setSize(400,400);    
+				panel.add(button);
+				f.add(panel);
+	            f.setSize(400,400);
 	            f.setLayout(null);    
 	            f.setVisible(true);
-				int index = AsteroidList.getSelectedIndex();
-				settler.Move(settler.getAsteroid().getNeighbors().get(index));
-				
+	            
+				index = AsteroidList.getSelectedIndex();
+				System.out.print(index);
+				ActionListener al_move_fin = new ActionListener()
+				{
+					public void actionPerformed(ActionEvent e)
+					{
+						//settler.Move(settler.getAsteroid().getNeighbors().get(index));
+						f.dispose();
+					}
+				};
+				button.addActionListener(al_move_fin);
 			}
 		};
 		move.addActionListener(al_move);

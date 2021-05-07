@@ -1,6 +1,8 @@
 package asteroid.logic;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Random;
 
 import asteroid.view.View;
 
@@ -18,7 +20,7 @@ public class ControllerClass
 	 */
 	public ControllerClass()
 	{
-		
+		asteroids = new ArrayList<Asteroid>();
 	}
 	
 	
@@ -420,9 +422,6 @@ public class ControllerClass
 	 */
 	public void GameLoop()
 	{
-		InitAsteroids();
-		InitSettlers();
-		
 		while(!CheckWin() || !CheckLose())
 		{
 			//fõ loop, egy nextround-nyi cucc lesz itt
@@ -480,23 +479,114 @@ public class ControllerClass
 	/**
 	 * A controller inicializalja az aszteroidakat
 	 */
-	private void InitAsteroids()
+	private void InitAsteroids(int numberofsettlers)
 	{
+		int asteroidcount = 0;
+		Random rand = new Random();
+		//3x4 aszteroida letrehozasa, kell minden anyagbol legalabb 1 hogy lehessen nyerni
+		for(int i = 0; i < 3; i++)
+		{
+			//random int 0-tol 15-ig
+			int crust = rand.nextInt(15 + 1);
+			//random int 0-tol crust-ig
+			int hole = rand.nextInt(crust + 1);
+			asteroidcount++;
+			Asteroid jeg = new Asteroid("asteroid" + String.valueOf(asteroidcount), new Ice(), crust, hole);
+			asteroids.add(jeg);
+			
+			crust = rand.nextInt(15 + 1);
+			hole = rand.nextInt(crust + 1);
+			asteroidcount++;
+			Asteroid vas = new Asteroid("asteroid" + String.valueOf(asteroidcount), new Iron(), crust, hole);
+			asteroids.add(vas);
+			
+			crust = rand.nextInt(15 + 1);
+			hole = rand.nextInt(crust + 1);
+			asteroidcount++;
+			Asteroid szen = new Asteroid("asteroid" + String.valueOf(asteroidcount), new Coal(), crust, hole);
+			asteroids.add(szen);
+			
+			crust = rand.nextInt(15 + 1);
+			hole = rand.nextInt(crust + 1);
+			asteroidcount++;
+			Asteroid uran = new Asteroid("asteroid" + String.valueOf(asteroidcount), new Uranium(0), crust, hole);
+			asteroids.add(uran);
+		}
 		
+		int numberofasteroids = (int) Math.pow(2, numberofsettlers);
+		for(int i = 0; i < numberofasteroids; i++)
+		{
+			RawMaterial core = null;
+			//random int 0-tol 5-ig
+			int corenum = rand.nextInt(4 + 1);
+			if(corenum == 0)
+			{
+				core = new Ice();
+			}else if(corenum == 1)
+			{
+				core = new Iron();
+			}else if(corenum == 2)
+			{
+				core = new Coal();
+			}else if(corenum == 2)
+			{
+				core = new Uranium(0);
+			}//ha 5 a corenum, akkor ures a mag
+			//random int 0-tol 15-ig
+			int crust = rand.nextInt(15 + 1);
+			//random int 0-tol crust-ig
+			int hole = rand.nextInt(crust + 1);
+			asteroidcount++;
+			Asteroid a = new Asteroid("asteroid" + String.valueOf(asteroidcount), core, crust, hole);
+			asteroids.add(a);
+		}
+		
+		ConnectAsteroids();
 	}
 	/**
 	 * A controller inicializalja a telepeseket
 	 */
-	private void InitSettlers()
+	private void InitSettlers(int numberofsettlers)
 	{
-		
+		int settlercount = 0;
+		Random rand = new Random();
+		for(int i = 0; i < numberofsettlers; i++)
+		{
+			settlercount++;
+			Settler s = new Settler("settler" + String.valueOf(settlercount), 0, 0, 0, 0, false);
+			//random szam 0 es asteroids.size() kozott
+			int asteroidindex = rand.nextInt(asteroids.size());
+			asteroids.get(asteroidindex).RegisterBeing(s);
+			s.setAsteroid(asteroids.get(asteroidindex));
+		}
 	}
 	/**
 	 * A controller osszekoti az aszteroidakat
 	 */
 	private void ConnectAsteroids() 
 	{
+		int[][] conmatrix = new int[asteroids.size()][asteroids.size()];
+		//Arrays.fill(conmatrix, 0);
 		
+		//utak generalasa
+		for(int i = 0; i < asteroids.size() - 1; i++)
+		{
+			conmatrix[i][i + 1] = 1;
+			conmatrix[i + 1][i] = 1;
+		}
+		
+		//utak osszekotese
+		for(int i = 1; i < asteroids.size(); i++)
+		{
+			for(int j = 0; j < i; j++)
+			{
+				if(conmatrix[i][j] == 1)
+				{
+					asteroids.get(i).AddNeighbor(asteroids.get(j));
+					asteroids.get(j).AddNeighbor(asteroids.get(i));
+				}
+			}
+		}
 	}
 	/**
 	 * A controller visszaad egy random aszteroidat
@@ -615,7 +705,7 @@ public class ControllerClass
 	
 	public void Init(int numberofsettlers)
 	{
-		InitAsteroids();
-		InitSettlers();
+		InitAsteroids(numberofsettlers);
+		InitSettlers(numberofsettlers);
 	}
 }

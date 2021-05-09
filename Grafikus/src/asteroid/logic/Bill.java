@@ -63,24 +63,6 @@ public class Bill
 	 */
 	public ArrayList<RawMaterial> DeleteFromInventory(ArrayList<RawMaterial> inventory) 
 	{
-		/*int i, size = inventory.size();
-		for(i = 0; i < size; i++)
-		{
-			int j, size2 = remove.size();
-			for(j = 0; j < size2; j++)
-			{
-				if(remove.get(j).GetUniqueID().compareTo(inventory.get(i).GetUniqueID()) == 0)
-				{
-					inventory.remove(i);
-					remove.remove(j);
-					i--;
-					j--;
-					size--;
-					size2--;
-				}
-			}
-		}*/
-		
 		for(ID item : remove)
 		{
 			for(int i = 0; i < inventory.size(); i++)

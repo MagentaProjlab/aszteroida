@@ -18,11 +18,7 @@ public class Settler extends SentientBeing {
 	 * A kezelesehez kulon metodusokat fogunk majd hasznalni.
 	 */
 	private ArrayList<RawMaterial> carriedmaterials;
-	/**
-	 * A Settler altal epitheto entitasokhoz szukseges BillOfMaterialok gyujtemenye.
-	 * Az osztaly konstruktoraban kerulnek feltoltesre a megfelelo "receptekkel".
-	 */
-	private ArrayList<Bill> bills;
+
 	/**
 	 * A telepes altal birtokolt teleportokat tartalmazo lista.
 	 * Az epito metodusban kerul ellenorzesre, hogy egyszerre
@@ -68,9 +64,6 @@ public class Settler extends SentientBeing {
 		carriedmaterials = new ArrayList<RawMaterial>();
 		carriedteleports = new ArrayList<TeleportGate>();
 
-		//FIXME Nincsenek neki bill-jei
-		bills = new ArrayList<Bill>();
-		
 		name=_name;
 	}
 	
@@ -120,7 +113,6 @@ public class Settler extends SentientBeing {
 	public void AddTeleport(TeleportGate tg) 
 	{
 		this.carriedteleports.add(tg);
-		//Masik metodus ir Logger-be elotte
 	}
 	/**
 	 * Drill metodus - A telepes aszteroidajanak furasara.
@@ -130,10 +122,6 @@ public class Settler extends SentientBeing {
 	{		
 		if(!location.isDrilled()) {
 			location.IncreaseHoleDepth();
-			Logger.Message("[Settler: "+name+"] has drilled "+location.getName()+".");
-		}
-		else {
-			Logger.Message("[Settler: "+name+"] has failed to drill "+location.getName()+".");
 		}
 	}
 	/**
@@ -147,10 +135,6 @@ public class Settler extends SentientBeing {
 			AddCarriedMaterial(rm);
 			rm.SetAsteroid(null);
 			location.DropMaterial();
-			Logger.Message("[Settler: "+name+"] has mined "+location.getName()+""+".");
-		}
-		else {
-			Logger.Message("[Settler: "+name+"] has failed to mine "+location.getName()+""+".");
 		}
 	}
 	/**
@@ -183,7 +167,6 @@ public class Settler extends SentientBeing {
 	public void AddCarriedMaterial(RawMaterial material)
 	{
 		carriedmaterials.add(material);
-		//ittnem kell kiirni, mert arrol az ezt meghivo metodus gondoskodnik
 	}
 	/**
 	 * Explode metodus - A telepes felrobbantasa
@@ -191,7 +174,6 @@ public class Settler extends SentientBeing {
 	 */
 	public void Explode() 
 	{
-		Logger.Message("[Settler: "+name+"] has exploded"+".");
 		Die();
 		
 	}
@@ -220,10 +202,6 @@ public class Settler extends SentientBeing {
 			Robot r = new Robot(location, robot_name);
 			location.RegisterBeing(r);
 			carriedmaterials = b.DeleteFromInventory(carriedmaterials);
-			Logger.Message("[Settler: "+name+"] has built robot"+".");
-		}
-		else {
-			Logger.Message("[Settler: "+name+"] has failed to build a robot"+".");
 		}
 	}
 	/**
@@ -259,11 +237,6 @@ public class Settler extends SentientBeing {
 			t2.SetSibling(t1);
 			AddTeleport(t1);
 			AddTeleport(t2);
-			Logger.Message("[Settler: "+name+"] has built a teleportgate pair.");
-
-		}
-		else {
-			Logger.Message("[Settler: "+name+"] has failed to build a teleportgate pair"+".");
 		}
 		
 	}
@@ -277,10 +250,6 @@ public class Settler extends SentientBeing {
 	{
 		if(location.isDrilled()&&location.IsEmpty()) {
 			location.SetMaterial(material, this);
-			Logger.Message("[Settler: "+name+"] has put material back to "+location.getName()+".");
-		}
-		else {
-			Logger.Message("[Settler: "+name+"] has failed to put material back to "+location.getName()+".");
 		}
 	}
 	
@@ -316,11 +285,6 @@ public class Settler extends SentientBeing {
 				t.DropOwner();
 				DropCarriedTeleport(t);
 			}
-			Logger.Message("[Settler: "+name+"] has put down teleport "+t.getName()+".");
-		}
-		else
-		{
-			Logger.Message("[Settler: "+name+"] has put down teleport "+".");
 		}
 	}
 	/**

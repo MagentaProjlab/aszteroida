@@ -251,7 +251,6 @@ public class Asteroid extends Place
 	 */
 	public void StepBeings()
 	{
-		Logger.Message("[Asteroid: "+this.name+"] has been selected to step.");
 		int maxnumber = sentientbeings.size();
 		int iter = 0;
 		while(iter < maxnumber) {

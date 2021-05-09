@@ -72,7 +72,7 @@ public class Asteroid extends Place
 	 */
 	public boolean IncreaseHoleDepth() 
 	{
-		if(HoleDepth != 0)
+		if(!this.isDrilled())
 		{
 			HoleDepth++;
 			CheckPerihelionReaction();

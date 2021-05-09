@@ -2,6 +2,10 @@ package asteroid.logic;
 
 import java.util.ArrayList;
 
+/**
+ * A recepteket kezelo osztaly
+ *
+ */
 public class Bill
 {
 	/**

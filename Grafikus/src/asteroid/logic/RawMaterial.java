@@ -1,5 +1,9 @@
 package asteroid.logic;
 
+/**
+ * Az aszteroidakban levo anyagok kozos ose
+ *
+ */
 public abstract class RawMaterial implements ID 
 {
 	protected Asteroid asteroid;

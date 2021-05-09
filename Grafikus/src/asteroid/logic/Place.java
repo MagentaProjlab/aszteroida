@@ -1,5 +1,9 @@
 package asteroid.logic;
 
+/**
+ * Az aszteroidak es teleportkapu kozos ose, szomszedsagi viszonyt letesit
+ *
+ */
 public abstract class Place implements ID
 {
 	/**

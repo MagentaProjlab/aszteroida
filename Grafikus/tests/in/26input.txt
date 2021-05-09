@@ -1,7 +1,0 @@
-asteroid a1 uranium 1 1 2
-asteroid a2 ice 3 3
-neighbor a1 a2
-settler s1 a1 1 2 0 0 0
-teleport2 t a1 s1
-perihelion a1
-nextround

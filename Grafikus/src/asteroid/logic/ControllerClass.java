@@ -181,19 +181,19 @@ public class ControllerClass
 			Asteroid jeg = new Asteroid("asteroid" + String.valueOf(asteroidcount), new Ice(), crust, hole);
 			asteroids.add(jeg);
 			
-			crust = rand.nextInt(15 + 1);
+			crust = rand.nextInt(15) + 1;
 			hole = rand.nextInt(crust + 1);
 			asteroidcount++;
 			Asteroid vas = new Asteroid("asteroid" + String.valueOf(asteroidcount), new Iron(), crust, hole);
 			asteroids.add(vas);
 			
-			crust = rand.nextInt(15 + 1);
+			crust = rand.nextInt(15) + 1;
 			hole = rand.nextInt(crust + 1);
 			asteroidcount++;
 			Asteroid szen = new Asteroid("asteroid" + String.valueOf(asteroidcount), new Coal(), crust, hole);
 			asteroids.add(szen);
 			
-			crust = rand.nextInt(15 + 1);
+			crust = rand.nextInt(15) + 1;
 			hole = rand.nextInt(crust + 1);
 			asteroidcount++;
 			Asteroid uran = new Asteroid("asteroid" + String.valueOf(asteroidcount), new Uranium(0), crust, hole);
@@ -226,6 +226,16 @@ public class ControllerClass
 			asteroidcount++;
 			Asteroid a = new Asteroid("asteroid" + String.valueOf(asteroidcount), core, crust, hole);
 			asteroids.add(a);
+		}
+		
+		int ufocount = 0;
+		for(int i = 0; i < numberofsettlers; i++)
+		{
+			ufocount++;
+			int asteroidindex = rand.nextInt(asteroids.size());
+			Ufo u = new Ufo(asteroids.get(asteroidindex), "ufo" + String.valueOf(ufocount));
+			asteroids.get(asteroidindex).RegisterBeing(u);
+			u.setAsteroid(asteroids.get(asteroidindex));
 		}
 		
 		ConnectAsteroids();

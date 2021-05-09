@@ -1,4 +1,0 @@
-asteroid asteroid1 iron 3 3
-settler settler1 asteroid1 3 3 3 1 0
-nextround
-mine

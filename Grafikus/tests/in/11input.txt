@@ -1,4 +1,0 @@
-asteroid asteroid1 iron 3 3
-settler settler1 asteroid1 1 0 0 0 0
-nextround
-putback 0

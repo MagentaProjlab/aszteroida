@@ -1,8 +1,0 @@
-asteroid a1 ice 3 0
-asteroid a2 ice 3 3
-neighbor a1 a2
-perihelion a1
-perihelion a2
-settler Marika a1 0 0 0 0 0
-nextround
-mine

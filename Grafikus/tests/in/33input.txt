@@ -1,6 +1,0 @@
-asteroid a1 null 1 0
-asteroid a2 null 1 0
-teleport t1 t2 a1 a2
-ufo Sandor a1
-nextround
-move a2

@@ -1,5 +1,0 @@
-asteroid asteroid1 iron 3 3
-settler settler1 asteroid1 1 0 1 1 0
-nextround
-buildrobot robot1
-noaction

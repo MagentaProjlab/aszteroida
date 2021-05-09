@@ -265,7 +265,7 @@ public class Game extends JPanel
 			return;
 		}
 		
-		Color background = new Color(255, 255, 255);
+		Color background = settler.getAsteroid().GetPerihelion() ? new Color(255, 0, 0) : new Color(255, 255, 255);
 			Color dirt = new Color(139, 69, 19);
 			Color hole = new Color(0, 0, 0);
 			

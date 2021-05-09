@@ -10,13 +10,14 @@ public class Asteroid extends Place
 	private RawMaterial corematerial;
 	private ArrayList<SentientBeing> sentientbeings;
 	private ArrayList<Place> neighbors;
-	private Bill radBill;
 	private String name;
+	private boolean AtPerihelion;
 	/**A prototipus miatt szukseges ez a cucc, de nagyon vaa
 	 * 
 	 */
 	private boolean exploded = false;
-	public boolean getExploded() {
+	public boolean getExploded()
+	{
 		return exploded;
 	}
 	
@@ -52,9 +53,14 @@ public class Asteroid extends Place
 	 * Beallitja az aszteroidahoz tartozo BillOfMaterials-t
 	 * @param radbill - BOM
 	 */
-	public void SetBill(Bill radbill)
+	public boolean GetPerihelion()
 	{
-		this.radBill = radbill;
+		return AtPerihelion;
+	}
+	
+	public void SetPerihelion(boolean p)
+	{
+		AtPerihelion = p;
 	}
 	
 	/**
@@ -63,8 +69,10 @@ public class Asteroid extends Place
 	 */
 	public void CheckPerihelionReaction()
 	{
-		if (corematerial != null)
+		if ((corematerial != null) && (AtPerihelion == true))
+		{
 			corematerial.PerihelionReaction();
+		}
 	}
 	
 	/**

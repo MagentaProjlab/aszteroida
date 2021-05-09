@@ -11,7 +11,6 @@ public class ControllerClass
 {
 	private ArrayList<Asteroid> asteroids;
 	private SolarWind solarwind;
-	private Logger log;
 	private View view;
 	private static LoopThread loopthread;
 	
@@ -66,6 +65,7 @@ public class ControllerClass
 	{
 		asteroids = new ArrayList<Asteroid>();
 		loopthread = new LoopThread();
+		solarwind = new SolarWind();
 	}
 	
 	/**
@@ -76,6 +76,39 @@ public class ControllerClass
 		while(!CheckWin() || !CheckLose())
 		{
 			//fõ loop, egy nextround-nyi cucc lesz itt
+			ArrayList<Integer> sw = new ArrayList<Integer>();
+			Random rand = new Random();
+			for(int i = 0; i < rand.nextInt(asteroids.size() + 1); i++)
+			{
+				Integer index = rand.nextInt(asteroids.size());
+				while(sw.contains(index));
+				{
+					index = rand.nextInt(asteroids.size());
+				}
+				sw.add(index);
+			}
+			ArrayList<Place> places = new ArrayList<Place>();
+			for(int i = 0; i < sw.size(); i++)
+			{
+				places.add(asteroids.get(sw.get(i)));
+			}
+			solarwind.solarWind(places);
+			
+			for(int i = 0; i < asteroids.size(); i++)
+			{
+				
+				if(asteroids.get(i).GetPerihelion())
+				{
+					asteroids.get(i).SetPerihelion(false);
+				}else
+				{
+					if(rand.nextInt(10) == 9)
+					{
+						asteroids.get(i).SetPerihelion(true);
+					}
+				}
+			}
+			
 			for(int i = 0; i < asteroids.size(); i++)
 			{
 				if(asteroids.get(i).getExploded() == true)
@@ -138,7 +171,7 @@ public class ControllerClass
 		for(int i = 0; i < 3; i++)
 		{
 			//random int 0-tol 15-ig
-			int crust = rand.nextInt(15 + 1);
+			int crust = rand.nextInt(15) + 1;
 			//random int 0-tol crust-ig
 			int hole = rand.nextInt(crust + 1);
 			asteroidcount++;
@@ -223,6 +256,16 @@ public class ControllerClass
 		{
 			conmatrix[i][i + 1] = 1;
 			conmatrix[i + 1][i] = 1;
+		}
+		
+		Random rand = new Random();
+		int db = rand.nextInt((asteroids.size() * (asteroids.size() - 1) / 2) + 1);
+		for(int i = 0; i < db; i++)
+		{
+			int index1 = rand.nextInt(asteroids.size());
+			int index2 = rand.nextInt(asteroids.size());
+			conmatrix[index1][index2] = 1;
+			conmatrix[index2][index1] = 1;
 		}
 		
 		//utak osszekotese

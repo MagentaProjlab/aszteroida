@@ -82,9 +82,8 @@ public class Robot extends SentientBeing
 				this.Drill();
 			else {
 				ArrayList<Place> neighbors = location.getNeighbors();
-				int neighborSize = neighbors.size();
 				Random random = new Random();
-				int index = random.nextInt(neighborSize + 1);
+				int index = random.nextInt(neighbors.size());
 				Place place = neighbors.get(index);
 				this.Move(place);
 			}

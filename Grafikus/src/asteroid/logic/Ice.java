@@ -1,5 +1,9 @@
 package asteroid.logic;
 
+/**
+ * A jeg viselkedeseert felelos osztaly
+ *
+ */
 public class Ice extends RawMaterial 
 {
 	/**

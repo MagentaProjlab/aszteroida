@@ -1,5 +1,9 @@
 package asteroid.logic;
 
+/**
+ * A vas viselkedeseert felelos osztaly
+ *
+ */
 public class Iron extends RawMaterial
 {
 	/**

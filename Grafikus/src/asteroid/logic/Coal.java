@@ -1,5 +1,9 @@
 package asteroid.logic;
 
+/**
+ * A szen viselkedeseert felelos osztaly
+ *
+ */
 public class Coal extends RawMaterial 
 {
 	/**

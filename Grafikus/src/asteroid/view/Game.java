@@ -36,7 +36,7 @@ import asteroid.logic.Ufo;
 import asteroid.logic.Uranium;
 
 /**
- * 
+ * A jatekert felelos osztaly
  *
  */
 public class Game extends JPanel

@@ -330,6 +330,7 @@ public class Settler extends SentientBeing {
 	public void Step()
 	{
 		View.ShowSettler(this);
+		ControllerClass.WaitLoop();
 		this.setStepped(true);
 		
 	}

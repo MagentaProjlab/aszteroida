@@ -11,10 +11,8 @@ import asteroid.view.View;
 public class Main {
 	static public void main(String[] args)
 	{
-		View ablak = new View();
 		ControllerClass controller = new ControllerClass();
-		controller.SetView(ablak);
-		ablak.SetController(controller);
+		View ablak = new View(controller);
 		ablak.CreateAndShowGUI();
 	}
 }

@@ -12,25 +12,12 @@ import javax.swing.JTextField;
 
 public class Settings extends JPanel
 {
-	public Settings(View v)
+	public Settings(ActionListener al, JTextField namefield)
 	{
 		this.setLayout(new FlowLayout());
-		JTextField namefield = new JTextField(5);
 		JLabel namelabel = new JLabel("Number of settlers:");
 		JButton okbutton = new JButton("OK");
-		
-		
-		ActionListener a = new ActionListener()
-		{	
-			public void actionPerformed(ActionEvent e)
-			{
-				v.controller.Init(Integer.parseInt(namefield.getText()));
-				CardLayout cardLayout = (CardLayout) v.cards.getLayout();
-				cardLayout.next(v.cards);
-				v.controller.GameLoop();
-			}
-		};
-		okbutton.addActionListener(a);
+		okbutton.addActionListener(al);
 		
 		this.add(namelabel);
 		this.add(namefield);

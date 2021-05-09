@@ -74,7 +74,7 @@ public class Asteroid extends Place
 	{
 		if(HoleDepth != 0)
 		{
-			HoleDepth--;
+			HoleDepth++;
 			CheckPerihelionReaction();
 			return true;
 		}

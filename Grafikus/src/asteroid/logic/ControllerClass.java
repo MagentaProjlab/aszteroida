@@ -13,18 +13,62 @@ public class ControllerClass
 	private SolarWind solarwind;
 	private Logger log;
 	private View view;
+	private static LoopThread loopthread;
 	
+	public class LoopThread extends Thread
+	{
+		private Object gamelock = new Object();
+		
+		public void WaitLoop()
+		{
+			synchronized(gamelock)
+			{
+				try
+				{
+					gamelock.wait();
+				} catch (InterruptedException e)
+				{
+					e.printStackTrace();
+				}
+			}
+		}
+		
+		public void NotifyLoop()
+		{
+			synchronized(gamelock)
+			{
+				gamelock.notify();
+			}
+		}
+		
+		public void run()
+	    {
+	    	GameLoop();
+	    }
+	}
 	
-	/**
-	 * A controller konstruktora
-	 */
+	static public void StartLoop()
+	{
+		loopthread.start();
+	}
+	
+	static public void WaitLoop()
+	{
+		loopthread.WaitLoop();
+	}
+	
+	static public void NotifyLoop()
+	{
+		loopthread.NotifyLoop();
+	}
+	
 	public ControllerClass()
 	{
 		asteroids = new ArrayList<Asteroid>();
+		loopthread = new LoopThread();
 	}
 	
-	
-	public void Command(String cmd)
+		public void Command(String cmd)
 	{
 		String[] params = cmd.split(" ");
 		
@@ -592,11 +636,6 @@ public class ControllerClass
 	 * A controller visszaad egy random aszteroidat
 	 * @return asteroid : a visszaadando aszteroida - egyenlore null - t ad vissza
 	 */
-	private Asteroid GetRandomAsteroid() 
-	{
-		return null;
-	}
-	
 	public void SetView(View v)
 	{
 		view = v;

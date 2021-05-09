@@ -1,8 +1,18 @@
 package asteroid.logic;
 
+/**
+ * A lenyek kozos ose
+ *
+ */
 public abstract class SentientBeing implements ID
 {
+	/**
+	 * Tarolja, hogy adott korben lepett-e mar
+	 */
 	private boolean hasStepped;
+	/**
+	 * Tarolja, hogy a leny melyik aszteroidan all eppen
+	 */
 	protected Asteroid location;
 	/**
 	 * A sentientbeing beallitja az aszteroidajat

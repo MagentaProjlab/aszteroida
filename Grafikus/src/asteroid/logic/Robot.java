@@ -3,8 +3,15 @@ package asteroid.logic;
 import java.util.ArrayList;
 import java.util.Random;
 
+/**
+ * A robot viselkedeset kezelo osztaly
+ *
+ */
 public class Robot extends SentientBeing
 {
+	/**
+	 * A robot neve
+	 */
 	String id;
 	/**
 	 * Robot konstruktora

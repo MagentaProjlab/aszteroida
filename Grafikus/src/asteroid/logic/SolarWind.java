@@ -3,6 +3,10 @@ package asteroid.logic;
 
 import java.util.ArrayList;
 
+/**
+ * A napszel viselkedeset kezelo osztaly
+ *
+ */
 public class SolarWind
 {
 	/**

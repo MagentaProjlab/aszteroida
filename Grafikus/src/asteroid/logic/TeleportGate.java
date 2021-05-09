@@ -2,13 +2,37 @@ package asteroid.logic;
 
 import java.util.ArrayList;
 
+/**
+ * A teleportkaput kezelo osztaly
+ *
+ */
 public class TeleportGate extends Place
 {
+	/**
+	 * A teleportkapu testvere, masik oldala
+	 */
 	private TeleportGate sibling;
+	/**
+	 * Tarolja, hogy melyik aszteroidan van a teleportkapu
+	 * null, ha meg telepesnel van, akkor allitodik be, amikor lerakjuk egy aszteroidara
+	 */
 	private Asteroid asteroid;
+	/**
+	 * Tarolja, hogy melyik telepesnel van a teleportkapu
+	 * null, ha a telepes mar lerakta egy aszteroida
+	 */
 	private Settler owner;
+	/**
+	 * Megadja, hogy megkergult-e a mar a teleportkapu
+	 */
 	private boolean malfunctioning; 
+	/**
+	 * Teleportkapu egyedi neve
+	 */
 	private String id;
+	/**
+	 * Megadja, hogy lepett-e mar a korben
+	 */
 	private boolean stepped;
 	/**
 	 * A TeleportGate konstruktora

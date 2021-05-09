@@ -40,6 +40,9 @@ public class Game extends JPanel
 {
 	private Settler settler;
 	
+	/**
+	 * Az osztaly konstruktora, a kepernyo aljan levo gombokat inicializalja
+	 */
 	public Game()
 	{
 		settler = null;
@@ -74,7 +77,8 @@ public class Game extends JPanel
 		
 		this.setLayout(new BorderLayout());
 		this.add(buttons, BorderLayout.SOUTH);
-		//
+		
+		//furas gomb logikaja
 		ActionListener al_drill = new ActionListener()
 		{
 			
@@ -84,8 +88,9 @@ public class Game extends JPanel
 				ControllerClass.NotifyLoop();
 			}
 		};
-		
 		drill.addActionListener(al_drill);
+		
+		//banyaszas gomb logikaja
 		ActionListener al_mine = new ActionListener()
 		{
 			
@@ -95,7 +100,9 @@ public class Game extends JPanel
 				ControllerClass.NotifyLoop();
 			}
 		};
+		mine.addActionListener(al_mine);
 		
+		//kor kihagyas gomb logikaja
 		ActionListener al_noaction = new ActionListener()
 		{
 			public void actionPerformed(ActionEvent e)
@@ -103,7 +110,9 @@ public class Game extends JPanel
 				ControllerClass.NotifyLoop();
 			}
 		};
+		noaction.addActionListener(al_noaction);
 		
+		//teleport epito gomb logikaja
 		ActionListener buildtel = new ActionListener()
 		{
 			
@@ -113,7 +122,9 @@ public class Game extends JPanel
 				ControllerClass.NotifyLoop();
 			}
 		};
+		buildteleport.addActionListener(buildtel);
 		
+		//robot epito gomb logikaja
 		ActionListener al_buildrobot = new ActionListener()
 		{
 			
@@ -123,6 +134,9 @@ public class Game extends JPanel
 				ControllerClass.NotifyLoop();
 			}
 		};
+		buildrobot.addActionListener(al_buildrobot);
+		
+		//teleport lerako gomb logikaja
 		ActionListener al_putteleport = new ActionListener()
 		{
 			
@@ -161,8 +175,9 @@ public class Game extends JPanel
 			}
 			
 		};
-		
 		putdownteleport.addActionListener(al_putteleport);
+		
+		//anyag visszarako gomb logikaja
 		ActionListener al_putmaterial = new ActionListener()
 		{
 			
@@ -202,12 +217,9 @@ public class Game extends JPanel
 				button.addActionListener(al_move_fin);
 			}
 		};
-		
 		putback.addActionListener(al_putmaterial);
-		buildrobot.addActionListener(al_buildrobot);
-		buildteleport.addActionListener(buildtel);
-		noaction.addActionListener(al_noaction);
-		mine.addActionListener(al_mine);
+		
+		//mozgas gomb logikaja
 		ActionListener al_move = new ActionListener()
 		{
 			
@@ -263,16 +275,22 @@ public class Game extends JPanel
 				button.addActionListener(al_move_fin);
 			}
 		};
-		
 		move.addActionListener(al_move);
 	}
 	
+	/**
+	 * Masik settlert jelenit meg a kepernyon
+	 * @param s: a megjelenitendo settler
+	 */
 	public void ShowSettler(Settler s)
 	{
 		settler = s;
 		this.repaint();
 	}
 	
+	/**
+	 * A kepernyon jatek kozben lathato dolgok kirajzolasat megvalosito fuggveny
+	 */
 	protected void paintComponent(Graphics g)
 	{
 		super.paintComponent(g);

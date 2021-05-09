@@ -12,6 +12,11 @@ import javax.swing.JTextField;
 
 public class Settings extends JPanel
 {
+	/**
+	 * Az osztaly konstruktora
+	 * @param al: az OK gomb logikaja
+	 * @param namefield: a textbox, ahova be kell irni a telepesek szamat
+	 */
 	public Settings(ActionListener al, JTextField namefield)
 	{
 		this.setLayout(new FlowLayout());

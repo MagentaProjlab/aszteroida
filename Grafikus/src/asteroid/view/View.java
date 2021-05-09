@@ -16,8 +16,8 @@ import asteroid.logic.Settler;
 
 public class View extends JFrame
 {
-	private int width = 600;
-	private int height = 600;
+	private final int width = 600;
+	private final int height = 600;
 	public JPanel cards;
 	
 	private MainMenu mainmenu;
@@ -25,6 +25,10 @@ public class View extends JFrame
 	private static Game game;
 	public ControllerClass controller;
 
+	/**
+	 * Az osztaly konstruktora, letrehozza az egyes kepernyokhoz tartozo kartyakat
+	 * @param c: a view-hoz tartozo kontroller
+	 */
 	public View(ControllerClass c)
 	{
 		SetController(c);
@@ -33,13 +37,22 @@ public class View extends JFrame
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.getContentPane().setPreferredSize(new Dimension(width, height));
 		this.setResizable(false);
-
-		ActionListener mainmenual = new ActionListener()
+		
+		ActionListener newgame = new ActionListener()
 		{	
 			public void actionPerformed(ActionEvent e)
 			{
 				CardLayout cardLayout = (CardLayout) cards.getLayout();
 				cardLayout.next(cards);
+			}
+		};
+		
+		JFrame window = this;
+		ActionListener quitgame = new ActionListener()
+		{	
+			public void actionPerformed(ActionEvent e)
+			{
+				window.dispose();
 			}
 		};
 		
@@ -58,7 +71,7 @@ public class View extends JFrame
 		
 		cards = new JPanel(new CardLayout());
 
-		mainmenu = new MainMenu(mainmenual);
+		mainmenu = new MainMenu(newgame, quitgame);
 		cards.add(mainmenu, "Main menu");
 
 		settings = new Settings(settingsal, namefield);
@@ -68,16 +81,27 @@ public class View extends JFrame
 		cards.add(game, "Game");	
 	}
 	
+	/**
+	 * Setter a controller mezohoz
+	 * @param c: a controller mezo kivant erteke
+	 */
 	public void SetController(ControllerClass c)
 	{
 		controller = c;
 	}
 	
+	/**
+	 * Masik settlert jelenit meg a kepernyon
+	 * @param a megjelenitendo settler
+	 */
 	static public void ShowSettler(Settler s)
 	{
 		game.ShowSettler(s);
 	}
 
+	/**
+	 * Lathatova teszi a grafikus feluletet
+	 */
 	public void CreateAndShowGUI()
 	{
 		this.add(cards);

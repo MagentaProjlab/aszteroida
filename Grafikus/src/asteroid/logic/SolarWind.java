@@ -12,6 +12,7 @@ public class SolarWind
 	{
 		
 	}
+	
 	/**
 	 * Napszel keletkezik
 	 * A napszel keletkezeset a felhasznalo donti el
@@ -19,11 +20,10 @@ public class SolarWind
 	 */
 	public void solarWind(ArrayList<Place> places)
 	{	
-		int maxplace = places.size();
-		int iter = 0;
-		while(iter < maxplace) {
+		for(int i = 0; i < places.size(); i++)
+		{
 			Bill a = new Bill();
-			Place p = places.get(iter);
+			Place p = places.get(i);
 			a.AddMaterialToBill(new Asteroid(null, null, 0, 0));
 			ArrayList<ID> l = new ArrayList<ID>();
 			l.add(p);
@@ -37,8 +37,6 @@ public class SolarWind
 				TeleportGate tg = (TeleportGate)p;
 				tg.Malfunction();
 			}
-			iter++;
-			maxplace = places.size();
-		}	
+		}
 	}
 }

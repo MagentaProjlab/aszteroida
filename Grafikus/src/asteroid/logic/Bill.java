@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class Bill
 {
 	/**
-	 * Tárolja a receptet
+	 * Tarolja a receptet
 	 */
 	private ArrayList<ID> check;
 	private ArrayList<ID> remove;

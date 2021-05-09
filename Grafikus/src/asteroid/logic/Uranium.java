@@ -1,7 +1,14 @@
 package asteroid.logic;
 
+/**
+ * Az uran viselkedeset kezelo osztaly
+ *
+ */
 public class Uranium extends RawMaterial 
 {
+	/**
+	 * Tarolja, mennyiszer volt mar napkozelben az anyag
+	 */
 	private int ReactionCount;
 	/**
 	 * Az uran konstruktora.

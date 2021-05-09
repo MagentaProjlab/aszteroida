@@ -26,6 +26,10 @@ public class Settler extends SentientBeing {
 	 */
 	private ArrayList<TeleportGate> carriedteleports;
 	
+	/**
+	 * Visszaadja a telepesnel levo teleportkapuk listajat
+	 * @return carriedteleports: teleportkapuk listaja
+	 */
 	public ArrayList<TeleportGate> getteleports(){
 		return this.carriedteleports;
 	}
@@ -48,6 +52,10 @@ public class Settler extends SentientBeing {
 		return name;
 	}
 	
+	/**
+	 * Visszaad egy listat arrol, hogy a telepesnel milyen anyagok vannak
+	 * @return carriedmaterials: anyagok listaja
+	 */
 	public ArrayList<RawMaterial> getInventory()
 	{
 		return carriedmaterials;
@@ -67,6 +75,15 @@ public class Settler extends SentientBeing {
 		name=_name;
 	}
 	
+	/**
+	 * Settler masik konstruktora
+	 * @param name: telepes neve
+	 * @param coal: telepesnel levo szen mennyisege
+	 * @param ice: telepesnel levo jeg mennyisege
+	 * @param iron: telepesnel levo vas mennyisege
+	 * @param uranium: telepesnel levo uran mennyisege
+	 * @param tg: telepesnel levo teleportkapu mennyisege
+	 */
 	public Settler(String name, int coal, int ice, int iron, int uranium, boolean tg)
 	{
 		carriedmaterials = new ArrayList<RawMaterial>();

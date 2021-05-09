@@ -1,7 +1,7 @@
 package asteroid.logic;
 
 /**
- * TeleportGate és RawMaterial közös interfésze
+ * TeleportGate es RawMaterial kozos interfesze
  */
 public interface ID {
 	/**

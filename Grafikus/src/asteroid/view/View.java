@@ -14,15 +14,40 @@ import asteroid.logic.ControllerClass;
 import asteroid.logic.Ice;
 import asteroid.logic.Settler;
 
+/**
+ * A jatek kirajzolasaert felelos osztaly
+ *
+ */
 public class View extends JFrame
 {
+	/**
+	 * A kepernyo szelessege
+	 */
 	private final int width = 600;
+	/**
+	 * A kepernyo magassaga
+	 */
 	private final int height = 600;
+	/**
+	 * Megjelenithez szukseges kartyak
+	 */
 	public JPanel cards;
 	
+	/**
+	 * Tarolt fomenu
+	 */
 	private MainMenu mainmenu;
+	/**
+	 * Tarolt beallitasok
+	 */
 	private Settings settings;
+	/**
+	 * Tarolt jatek
+	 */
 	private static Game game;
+	/**
+	 * Tarolt kontroller
+	 */
 	public ControllerClass controller;
 
 	/**

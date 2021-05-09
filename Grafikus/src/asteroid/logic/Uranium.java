@@ -1,5 +1,9 @@
 package asteroid.logic;
 
+/**
+ * Az uran viselkedeset kezelo osztaly
+ *
+ */
 public class Uranium extends RawMaterial 
 {
 	private int ReactionCount;

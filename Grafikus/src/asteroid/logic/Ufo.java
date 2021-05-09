@@ -3,6 +3,10 @@ package asteroid.logic;
 import java.util.ArrayList;
 import java.util.Random;
 
+/**
+ * Az ufo viselkedeset kezelo osztaly
+ *
+ */
 public class Ufo extends SentientBeing
 {
 	private String id;

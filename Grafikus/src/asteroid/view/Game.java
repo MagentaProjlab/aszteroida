@@ -3,7 +3,6 @@ package asteroid.view;
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import java.awt.Color;
-import java.awt.FlowLayout;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.GridLayout;
@@ -36,8 +35,15 @@ import asteroid.logic.TeleportGate;
 import asteroid.logic.Ufo;
 import asteroid.logic.Uranium;
 
+/**
+ * 
+ *
+ */
 public class Game extends JPanel
 {
+	/**
+	 * Egy darab telepest tarol el
+	 */
 	private Settler settler;
 	
 	/**

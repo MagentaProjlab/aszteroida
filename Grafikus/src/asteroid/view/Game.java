@@ -40,7 +40,7 @@ public class Game extends JPanel
 {
 	private Settler settler;
 	
-	public Game(ActionListener al)
+	public Game()
 	{
 		settler = null;
 		
@@ -81,6 +81,7 @@ public class Game extends JPanel
 			public void actionPerformed(ActionEvent e)
 			{
 				settler.Drill();
+				ControllerClass.NotifyLoop();
 			}
 		};
 		
@@ -91,6 +92,7 @@ public class Game extends JPanel
 			public void actionPerformed(ActionEvent e)
 			{
 				settler.Mine();
+				ControllerClass.NotifyLoop();
 			}
 		};
 		
@@ -98,7 +100,7 @@ public class Game extends JPanel
 		{
 			public void actionPerformed(ActionEvent e)
 			{
-				
+				ControllerClass.NotifyLoop();
 			}
 		};
 		
@@ -108,6 +110,7 @@ public class Game extends JPanel
 			public void actionPerformed(ActionEvent e)
 			{
 				settler.BuildTeleportGatePair();
+				ControllerClass.NotifyLoop();
 			}
 		};
 		
@@ -117,6 +120,7 @@ public class Game extends JPanel
 			public void actionPerformed(ActionEvent e)
 			{
 				settler.BuildRobot("Robot");
+				ControllerClass.NotifyLoop();
 			}
 		};
 		ActionListener al_putteleport = new ActionListener()
@@ -151,6 +155,7 @@ public class Game extends JPanel
 					public void actionPerformed(ActionEvent e)
 					{
 						settler.PutTeleportGateOnAsteroid(settler.getteleports().get(index).getName(), index);
+						ControllerClass.NotifyLoop();
 						f.dispose();
 					}
 				};
@@ -192,6 +197,7 @@ public class Game extends JPanel
 					public void actionPerformed(ActionEvent e)
 					{
 						settler.FillAsteroid(settler.getInventory().get(index));
+						ControllerClass.NotifyLoop();
 						f.dispose();
 					}
 				};
@@ -235,7 +241,8 @@ public class Game extends JPanel
 				{
 					public void actionPerformed(ActionEvent e)
 					{
-						//settler.Move(settler.getAsteroid().getNeighbors().get(index));
+						settler.Move(settler.getAsteroid().getNeighbors().get(index));
+						ControllerClass.NotifyLoop();
 						f.dispose();
 					}
 				};
@@ -244,22 +251,6 @@ public class Game extends JPanel
 		};
 		
 		move.addActionListener(al_move);
-		//teszthez cuccok
-		/*Asteroid a = new Asteroid("asteroid", new Ice(), 10, 6);
-		Settler s = new Settler("settler", 3, 3, 2, 2, false);
-		s.setAsteroid(a);
-		a.RegisterBeing(s);
-		
-		Asteroid b = new Asteroid("szomszed", new Ice(), 10, 6);
-		a.AddNeighbor(b);
-		b.AddNeighbor(a);
-		
-		a.RegisterBeing(new Settler(null));
-		a.RegisterBeing(new Robot(null, null));
-		a.RegisterBeing(new Ufo(null, null));
-		
-		ShowSettler(s);*/
-		//
 	}
 	
 	public void ShowSettler(Settler s)

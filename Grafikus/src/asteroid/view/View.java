@@ -62,14 +62,8 @@ public class View extends JFrame
 		settings = new Settings(settingsal, namefield);
 		cards.add(settings, "Settings");
 
-		//kell majd action listener, egyel�re null
-		game = new Game(null);
+		game = new Game();
 		cards.add(game, "Game");	
-	}
-	
-	private void Command(String s)
-	{
-		
 	}
 	
 	public void SetController(ControllerClass c)

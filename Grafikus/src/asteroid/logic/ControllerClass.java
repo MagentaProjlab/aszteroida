@@ -6,7 +6,10 @@ import java.util.Random;
 
 import asteroid.view.View;
 
-
+/**
+ * A jatek logikaja
+ *
+ */
 public class ControllerClass
 {
 	/**
@@ -101,7 +104,7 @@ public class ControllerClass
 	{
 		while(!CheckWin() || !CheckLose())
 		{
-			//fõ loop, egy nextround-nyi cucc lesz itt
+			//fï¿½ loop, egy nextround-nyi cucc lesz itt
 			ArrayList<Integer> sw = new ArrayList<Integer>();
 			Random rand = new Random();
 			for(int i = 0; i < rand.nextInt(asteroids.size() + 1); i++)
@@ -177,11 +180,11 @@ public class ControllerClass
 		
 		if(CheckWin())
 		{
-			//nyerés
+			//nyerï¿½s
 			System.out.println("win");
 		}else if(CheckLose())
 		{
-			//vesztés
+			//vesztï¿½s
 			System.out.println("lose");
 		}
 	}

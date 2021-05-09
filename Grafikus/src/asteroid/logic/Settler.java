@@ -10,7 +10,7 @@ import asteroid.view.View;
  * Kepessegei:mozgas, furas, banyaszas, robot vagy teleport epites, utobbi lehelyezese.
  * Viszont az o explode metodusa egyertelmuen a die metodust hivja tovabb.
  * A jatek vegere neki es vagy tarsainak kell osszegyujteni a szukseges nyersanyagokat.
- * 
+ * Kulonfele epito tevekenysegeit a tipus lekerdezes kapcsan, Billek segitsegevel vegezheti el.
  */
 public class Settler extends SentientBeing {
 	/**
@@ -62,16 +62,15 @@ public class Settler extends SentientBeing {
 	}
 	
 	/**
-	 * A Settler konstruktora
-	 * A tesztesetek miatt csupan ures BOM-ok vannak hozzaadva.
-	 * A jo mukodes vegett vannak inicializalva a listak ezekben 
-	 * egy adott teszteseten tul tarolast nem vegzunk.
+	 * Egy nagyon alap Settler konstruktor, 
+	 * ezzel a telepes minden "zsebe" ures kezdeskor. 
+	 * Viszont egy hivatkozasi nevet ekkor is megadhatunk.
+	 * @param _name: telepes neve
 	 */
 	public Settler(String _name) 
 	{
 		carriedmaterials = new ArrayList<RawMaterial>();
 		carriedteleports = new ArrayList<TeleportGate>();
-
 		name=_name;
 	}
 	
@@ -125,7 +124,7 @@ public class Settler extends SentientBeing {
 	
 	/**
 	 * AddTeleport metodus- egy teleportkapu hozzadasara
-	 * @param TeleportGate A hozzadni kivant teleportkapu
+	 * @param tg A hozzadni kivant teleportkapu
 	 */
 	public void AddTeleport(TeleportGate tg) 
 	{
@@ -144,6 +143,7 @@ public class Settler extends SentientBeing {
 	/**
 	 * Mine metodus - A mar lefurt aszteroida banyaszasahoz.
 	 * Akkor hajtja vegre a folymatot ha az aszteroidaban van is anyag.
+	 * Valamitn ha nem tomte meg tele a nyersanyag tarolojat.
 	 */
 	public void Mine() 
 	{
@@ -196,14 +196,12 @@ public class Settler extends SentientBeing {
 	}
 	/**
 	 * BuildRobot metodus - A robot epiteshez
-	 * Az anyagok megletet szigoruan a BOM ellenorzi.
-	 * A BOM-ok a prototipusban kerulnek rendesen feltoltesre
-	 *  jelenleg az ellenorzest az input altal dontjuk el.
+	 * Az anyagok megletet szigoruan a Bill ellenorzi.
+	 * A robot alapanyagait ellenorzo Bill a metodus elejen jon letre, feltoltjuk, 
+	 * majd alkalmazzuk a telepes inventoryjara.
 	 */
 	public void BuildRobot(String robot_name) 
 	{
-		//FIXME Nincsenek neki bill-jei!!! Amig ez nincs megoldva hagyd false-on, 
-		//ha meg van ird at a megfelelo bill check inventoryjara
 		Bill b = new Bill();
 		b.AddMaterialToBill(new Iron());
 		b.AddMaterialToBill(new Uranium(0));
@@ -224,14 +222,14 @@ public class Settler extends SentientBeing {
 	/**
 	 * BuildTeleportGatePair metodus - A teleportkapuk epiteshez
 	 * Az anyagok megletet szigoruan a BOM ellenorzi.
-	 * A BOM-ok a prototipusban kerulnek rendesen feltoltesre
-	 * jelenleg az ellenorzest az input altal dontjuk el.
+	 * A teleportkapu alapanyagait ellenorzo Bill a metodus elejen jon letre, feltoltjuk, 
+	 * majd alkalmazzuk a telepes inventoryjara.
 	 * A metodus futasakor ketto teleportkapu kerul a telepeshez.
+	 * A teleportgate-ek konstruktorai elegge minimalisan vannak feltoltve,
+	 * a protipusnal hasznosabb volt a sok parameter, de itt is hasznalhato ugyanaz a konstruktor.
 	 */
 	public void BuildTeleportGatePair() 
 	{
-		//FIXME Nincsenek neki bill-jei!!! Amig ez nincs megoldva hagyd false-on, 
-		//ha meg van ird at a megfelelo bill check inventoryjara
 		Bill b = new Bill();
 		b.AddMaterialToBill(new Iron());
 		b.AddMaterialToBill(new Iron());
@@ -245,8 +243,6 @@ public class Settler extends SentientBeing {
 		
 		if(b.CheckInventory(l) == true) 
 		{
-			//itt meg a teleportgate nem tud semmit, mivel nincs lerakva.
-			//Csak a tesojat
 			TeleportGate t1=new TeleportGate(null,this,null);
 			TeleportGate t2=new TeleportGate(null,this,null);
 			carriedmaterials = b.DeleteFromInventory(carriedmaterials);
@@ -292,8 +288,6 @@ public class Settler extends SentientBeing {
 		if(carriedteleports.size()>=idx+1)
 		{
 			TeleportGate t=carriedteleports.get(idx);
-			//ezt a "t"-t csak azert  vettem fel, hogy a kovi sor ne legyen olyan 
-			//hosszu, es hogy konzisztens maradjak az eredeti koddal
 			if(t.GetSibling().GetAsteroid() ==null || !t.GetSibling().GetAsteroid().equals(location))
 			{
 				t.SetName(name);
@@ -307,6 +301,8 @@ public class Settler extends SentientBeing {
 	/**
 	 * Step metodus - A telepes leptetesehez
 	 * Itt donteheti el a jatekos, hogy mit fog tenni ebben a korben a telepes.
+	 * A grafikus feluleten kivalasztott lepest a View-nak tovabb adjuk, beallitjuk, hogy a 
+	 * telepes mar lepett a korben, es utana varunk a user inputra a ControllerClass metodusaval.
 	 */
 	public void Step()
 	{
@@ -346,6 +342,8 @@ public class Settler extends SentientBeing {
 	
 	/**
 	 * Visszaadja a telepes tipusat
+	 * Erre a jatek befejezesenek tesztelesekor van szukseg, hiszen a nyereshez
+	 * csak a telepesek zsebeiben turkalhatunk.
 	 */
 	public String GetUniqueID()
 	{

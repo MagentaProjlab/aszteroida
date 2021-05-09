@@ -90,7 +90,7 @@ public class TeleportGate extends Place
 	public void SetAsteroid(Asteroid asteroid) 
 	{
 		this.asteroid = asteroid;
-		asteroid.AddNeighbor(this); //ez eredetileg ki volt kommentezve, de miert? szerintem szukseges, kiveve ha valamivel utkozik...
+		//asteroid.AddNeighbor(this); //ez eredetileg ki volt kommentezve, de miert? szerintem szukseges, kiveve ha valamivel utkozik...
 	}
 	/**
 	 * A teleportkapu aszteroidajat visszaado fuggveny

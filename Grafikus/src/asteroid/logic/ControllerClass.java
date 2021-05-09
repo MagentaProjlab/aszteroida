@@ -76,15 +76,11 @@ public class ControllerClass
 		while(!CheckWin() || !CheckLose())
 		{
 			//fõ loop, egy nextround-nyi cucc lesz itt
-			/*ArrayList<Integer> sw = new ArrayList<Integer>();
+			ArrayList<Integer> sw = new ArrayList<Integer>();
 			Random rand = new Random();
 			for(int i = 0; i < rand.nextInt(asteroids.size() + 1); i++)
 			{
 				Integer index = rand.nextInt(asteroids.size());
-				while(sw.contains(index));
-				{
-					index = rand.nextInt(asteroids.size());
-				}
 				sw.add(index);
 			}
 			ArrayList<Place> places = new ArrayList<Place>();
@@ -110,7 +106,7 @@ public class ControllerClass
 						asteroids.get(i).SetPerihelion(true);
 					}
 				}
-			}*/
+			}
 			
 			for(int i = 0; i < asteroids.size(); i++)
 			{

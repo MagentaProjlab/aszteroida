@@ -12,6 +12,9 @@ public class Bill
 	 * Tarolja a receptet
 	 */
 	private ArrayList<ID> check;
+	/**
+	 * Ezen lista alapjan torol az eredeti inventorybol
+	 */
 	private ArrayList<ID> remove;
 	
 	/**

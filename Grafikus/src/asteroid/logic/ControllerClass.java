@@ -220,7 +220,7 @@ public class ControllerClass
 				core = new Uranium(0);
 			}//ha 5 a corenum, akkor ures a mag
 			//random int 0-tol 15-ig
-			int crust = rand.nextInt(15 + 1);
+			int crust = rand.nextInt(15) + 1;
 			//random int 0-tol crust-ig
 			int hole = rand.nextInt(crust + 1);
 			asteroidcount++;
@@ -230,6 +230,7 @@ public class ControllerClass
 		
 		ConnectAsteroids();
 	}
+	
 	/**
 	 * A controller inicializalja a telepeseket
 	 */
@@ -247,6 +248,7 @@ public class ControllerClass
 			s.setAsteroid(asteroids.get(asteroidindex));
 		}
 	}
+	
 	/**
 	 * A controller osszekoti az aszteroidakat
 	 */

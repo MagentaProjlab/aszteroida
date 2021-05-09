@@ -26,7 +26,7 @@ public class Asteroid extends Place
 	 */
 	private ArrayList<SentientBeing> sentientbeings;
 	/**
-	 * Az aszteroida szomszédai
+	 * Az aszteroida szomszedai
 	 */
 	private ArrayList<Place> neighbors;
 	/**
@@ -39,12 +39,11 @@ public class Asteroid extends Place
 	private boolean AtPerihelion;
 	/**
 	 * Tarolja, hogy az aszteroida felrobbant-e
-	 * A prototipusnal volt szukseges
 	 */
 	private boolean exploded = false;
 	
 	/**
-	 * A prototipus miatt szukseges, megadja, hogy felrobbant-e
+	 * lekerdezi, hogy felrobbant e
 	 * @return exploded: true, ha felrobbant
 	 */
 	public boolean getExploded()
@@ -81,8 +80,8 @@ public class Asteroid extends Place
 	}
 	
 	/**
-	 * Beallitja az aszteroidahoz tartozo BillOfMaterials-t
-	 * @param radbill - BOM
+	 * Visszaadja, hogy napkozelben van - e
+	 * @param bool, true, ha napkozelben van
 	 */
 	public boolean GetPerihelion()
 	{
@@ -135,6 +134,7 @@ public class Asteroid extends Place
 	{
 		exploded = true;
 		Boolean exp = false;
+		//ha nem ures, akkor vizsgal
 		if(corematerial != null)
 		{
 			ArrayList<ID> corelist = new ArrayList<ID>();
@@ -143,15 +143,15 @@ public class Asteroid extends Place
 			radBill.AddMaterialToBill(new Uranium(0));
 			exp = radBill.CheckInventory(corelist);
 		}
-		
+		//ha felrobbant es nincsenek szomszedai
 		if((exp == true) && neighbors.isEmpty())
 		{
 			for(SentientBeing sb : sentientbeings)
 			{
 				sb.Explode();
 			}
-			//corematerial.Perish();
-		} else if ((exp == true) && !neighbors.isEmpty()) {
+		}//ha felrobbant es vannak szomszedai 
+		else if ((exp == true) && !neighbors.isEmpty()) {
 			int maxsize = sentientbeings.size();
 			int _maxsize = sentientbeings.size();
 			int iter = 0;
@@ -163,7 +163,7 @@ public class Asteroid extends Place
 					iter++;
 				
 				}
-			//corematerial.Perish();
+		//szomszedja aszteroida
 		}for(int i = 0; i< this.neighbors.size(); i++) {
 			if(this.neighbors.get(i).GetUniqueID().equals("Asteroid")) {
 				Asteroid a = (Asteroid)this.neighbors.get(i);
@@ -171,7 +171,7 @@ public class Asteroid extends Place
 					a.Explode();
 				}
 			}
-		}
+		}//szomszedja teleportkapu
 		for(int i = 0; i< this.neighbors.size(); i++) {
 			if(this.neighbors.get(i).GetUniqueID().equals("teleportgate")) {
 				TeleportGate a = (TeleportGate)this.neighbors.get(i);
@@ -289,10 +289,12 @@ public class Asteroid extends Place
 		int maxnumber = sentientbeings.size();
 		int iter = 0;
 		while(iter < maxnumber) {
+			//ha nem lepett, lep
 			if(sentientbeings.get(iter).getStepped() == false)
 			{
 				sentientbeings.get(iter).Step();
 			}
+			//megnezi, hogy mennyire valtozott a lenyek szama
 			int nmaxnumber = sentientbeings.size();
 			if(nmaxnumber < maxnumber) {
 				maxnumber = nmaxnumber;
@@ -300,6 +302,8 @@ public class Asteroid extends Place
 				iter++;
 			}
 		}
+		//visszaallitja a rajta maradt lenyeket, hogy a kovetkezo korben 
+		//lephessenek -> ebben a korben mar nem hivodik meg ez az aszteroida
 		this.resetStepped();
 	}
 	
@@ -315,7 +319,7 @@ public class Asteroid extends Place
 	}
 
 	/**
-	 * Szomszedok gettere
+	 * Szomszed gettere -> az elso szomszedot adja vissza: Robot lepese
 	 * @return - szomszed
 	 */
 	public Place GetNeighbour()

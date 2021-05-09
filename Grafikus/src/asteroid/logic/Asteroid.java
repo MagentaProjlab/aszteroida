@@ -12,10 +12,12 @@ public class Asteroid extends Place
 	private ArrayList<Place> neighbors;
 	private String name;
 	private boolean AtPerihelion;
-	/**A prototipus miatt szukseges ez a cucc, de nagyon vaa
-	 * 
-	 */
 	private boolean exploded = false;
+	
+	/**
+	 * A prototipus miatt szukseges, megadja, hogy felrobbant-e
+	 * @return exploded: true, ha felrobbant
+	 */
 	public boolean getExploded()
 	{
 		return exploded;

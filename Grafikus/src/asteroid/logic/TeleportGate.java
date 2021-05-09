@@ -22,17 +22,30 @@ public class TeleportGate extends Place
 		stepped=false;
 	}
 	
+	/**
+	 * Beallitja, hogy a teleportkapu a korben lepett-e
+	 * @param azt: true, ha lepett
+	 */
 	public void SetStepped(boolean azt) {
 		stepped=azt;
 	}
 	
+	/**
+	 * Megadja, hogy a teleportkapu adott korben lepett-e
+	 * @return boolean
+	 */
 	public boolean GetStepped() {
 		return stepped;
 	}
 	
+	/**
+	 * Beallitja a teleportkapu nevet
+	 * @param n: a teleportkapu neve
+	 */
 	public void SetName(String n) {
 		id = n;
 	}
+	
 	/**
 	 * Teleportkapu mozgasa, ha mar erte napszel
 	 */

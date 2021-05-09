@@ -92,7 +92,10 @@ public class ControllerClass
 			{
 				places.add(asteroids.get(sw.get(i)));
 			}
-			solarwind.solarWind(places);
+			if(rand.nextInt(50) == 49)
+			{
+				solarwind.solarWind(places);
+			}
 			
 			for(int i = 0; i < asteroids.size(); i++)
 			{
@@ -237,7 +240,7 @@ public class ControllerClass
 		for(int i = 0; i < numberofsettlers; i++)
 		{
 			settlercount++;
-			Settler s = new Settler("settler" + String.valueOf(settlercount), 3, 3, 2, 2, false);
+			Settler s = new Settler("settler" + String.valueOf(settlercount), 0, 0, 0, 0, false);
 			//random szam 0 es asteroids.size() kozott
 			int asteroidindex = rand.nextInt(asteroids.size());
 			asteroids.get(asteroidindex).RegisterBeing(s);

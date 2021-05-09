@@ -82,11 +82,14 @@ public class Ufo extends SentientBeing
 	 */
 	public void Step() 
 	{
-		if (!this.getStepped()) {
-			if(!location.IsEmpty()&&location.isDrilled()) {
+		if (!this.getStepped())
+		{
+			if(!location.IsEmpty() && location.isDrilled())
+			{
 				this.Mine();
 			}
-			else {
+			else
+			{
 				ArrayList<Place> neighbors = location.getNeighbors();
 				int neighborSize = neighbors.size();
 				Random random = new Random();

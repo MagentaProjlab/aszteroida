@@ -57,7 +57,6 @@ public class View extends JFrame
 	public View(ControllerClass c)
 	{
 		SetController(c);
-		controller.SetView(this);
 		this.setTitle("Aszteroidabanyaszat");
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.getContentPane().setPreferredSize(new Dimension(width, height));

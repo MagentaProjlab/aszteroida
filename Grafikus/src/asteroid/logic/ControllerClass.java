@@ -318,14 +318,6 @@ public class ControllerClass
 			}
 		}
 	}
-	/**
-	 * A controller visszaad egy random aszteroidat
-	 * @return asteroid : a visszaadando aszteroida - egyenlore null - t ad vissza
-	 */
-	public void SetView(View v)
-	{
-		view = v;
-	}
 	
 	/**
 	 * A vesztes felteteleit vizsgalo fuggveny

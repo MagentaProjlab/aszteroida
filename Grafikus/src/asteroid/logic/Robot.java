@@ -91,6 +91,9 @@ public class Robot extends SentientBeing
 		}
 	}
 	
+	/**
+	 * Megadja a robot tipusat
+	 */
 	public String GetUniqueID()
 	{
 		return "Robot";

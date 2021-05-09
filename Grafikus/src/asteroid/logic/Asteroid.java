@@ -3,19 +3,50 @@ package asteroid.logic;
 import java.util.ArrayList;
 import java.util.Random;
 
+/**
+ * A jatekban az aszteroida logikajaert felelos osztaly
+ *
+ */
 public class Asteroid extends Place 
 {
+	/**
+	 * Keregvastagsagot tarolja
+	 */
 	private Integer CrustThickness;
+	/**
+	 * Az aszteroidaba furt lyuk melyseget tarolja
+	 */
 	private Integer HoleDepth;
+	/**
+	 * Az aszteroidaban levo anyagot tartolja
+	 */
 	private RawMaterial corematerial;
+	/**
+	 * Az aszteroidan levo lenyek listaja
+	 */
 	private ArrayList<SentientBeing> sentientbeings;
+	/**
+	 * Az aszteroida szomszédai
+	 */
 	private ArrayList<Place> neighbors;
+	/**
+	 * Az aszteroida egyedi neve
+	 */
 	private String name;
+	/**
+	 * Tarolja, hogy az aszteroida adott korben napkozelben van-e
+	 */
 	private boolean AtPerihelion;
-	/**A prototipus miatt szukseges ez a cucc, de nagyon vaa
-	 * 
+	/**
+	 * Tarolja, hogy az aszteroida felrobbant-e
+	 * A prototipusnal volt szukseges
 	 */
 	private boolean exploded = false;
+	
+	/**
+	 * A prototipus miatt szukseges, megadja, hogy felrobbant-e
+	 * @return exploded: true, ha felrobbant
+	 */
 	public boolean getExploded()
 	{
 		return exploded;
@@ -58,6 +89,10 @@ public class Asteroid extends Place
 		return AtPerihelion;
 	}
 	
+	/**
+	 * Beallitja, hogy napkozelben van-e az aszteroida
+	 * @param p: ha napkozelben van, akkor erteke true
+	 */
 	public void SetPerihelion(boolean p)
 	{
 		AtPerihelion = p;
@@ -268,6 +303,9 @@ public class Asteroid extends Place
 		this.resetStepped();
 	}
 	
+	/**
+	 * Visszaallitja az osszes rajta levo leny stepped attributumat, hogy a kovetkezo korben tudjanak lepni
+	 */
 	public void resetStepped()
 	{
 		for(SentientBeing sb : sentientbeings)

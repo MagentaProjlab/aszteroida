@@ -46,21 +46,33 @@ public class ControllerClass
 	    }
 	}
 	
+	/**
+	 * Jelzes a loopot futtato szalnak az elindulasra
+	 */
 	static public void StartLoop()
 	{
 		loopthread.start();
 	}
 	
+	/**
+	 * Jelzes a loopot futtato szalnak az ideiglenes leallasra
+	 */
 	static public void WaitLoop()
 	{
 		loopthread.WaitLoop();
 	}
 	
+	/**
+	 * Jelzes a loopot futtato szalnak a folytatasra
+	 */
 	static public void NotifyLoop()
 	{
 		loopthread.NotifyLoop();
 	}
 	
+	/**
+	 * A controller konstruktora
+	 */
 	public ControllerClass()
 	{
 		asteroids = new ArrayList<Asteroid>();
@@ -301,6 +313,9 @@ public class ControllerClass
 		view = v;
 	}
 	
+	/**
+	 * A vesztes felteteleit vizsgalo fuggveny
+	 */
 	private boolean CheckLose()
 	{
 		ArrayList<ID> lose = new ArrayList<ID>();
@@ -350,6 +365,9 @@ public class ControllerClass
 		}
 	}
 	
+	/**
+	 * A gyozelem felteteleit vizsgalo fuggveny
+	 */
 	private boolean CheckWin()
 	{
 		boolean w = false;
@@ -402,6 +420,9 @@ public class ControllerClass
 		}
 	}
 	
+	/**
+	 * A jatekteret inicializalo fuggveny
+	 */
 	public void Init(int numberofsettlers)
 	{
 		InitAsteroids(numberofsettlers);

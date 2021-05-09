@@ -1,13 +1,16 @@
 package asteroid.view;
 
 import java.awt.Component;
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
+/**
+ * A fomenut kezelo osztaly
+ *
+ */
 public class MainMenu extends JPanel
 {
 	/**

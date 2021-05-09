@@ -152,7 +152,7 @@ public class Game extends JPanel
 					public void actionPerformed(ActionEvent e)
 					{
 						index = AsteroidList.getSelectedIndex();
-						settler.PutTeleportGateOnAsteroid(null, index);
+						settler.PutTeleportGateOnAsteroid("teleport", index);
 						ControllerClass.NotifyLoop();
 						f.dispose();
 					}
@@ -218,9 +218,24 @@ public class Game extends JPanel
 				int index;
 				JPanel panel = new JPanel();
 				ArrayList<String> names = new ArrayList<String>();
+				Bill teleBill=new Bill();
+				teleBill.AddMaterialToBill(new TeleportGate(null, null, null));
+				ArrayList<ID> teleList=new ArrayList<ID>();
+				
 				for ( int i = 0; i < settler.getAsteroid().getNeighbors().size();i++) {
 					Place actual = settler.getAsteroid().getNeighbors().get(i);
-					names.add(actual.getName());
+					teleList.add(settler.getAsteroid().getNeighbors().get(i));
+					if(teleBill.CheckInventory(teleList)) {
+						TeleportGate tg = (TeleportGate)settler.getAsteroid().getNeighbors().get(i);
+						if(tg.GetSibling().GetAsteroid() != null && tg.GetAsteroid() != null) {
+							names.add(tg.GetSibling().GetAsteroid().getName());
+						}
+						
+					}else {
+						names.add(actual.getName());
+					}
+					
+					
 				}
 				JComboBox AsteroidList = new JComboBox(names.toArray());
 				
@@ -232,9 +247,11 @@ public class Game extends JPanel
 	            f.setSize(400,400);
 	            f.setLayout(null);    
 	            f.setVisible(true);
+	            
 				ActionListener al_move_fin = new ActionListener()
 				{
 					int index = 0;
+				
 					public void actionPerformed(ActionEvent e)
 					{
 						index = AsteroidList.getSelectedIndex();

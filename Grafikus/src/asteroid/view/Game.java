@@ -147,14 +147,12 @@ public class Game extends JPanel
 	            f.setSize(400,400);
 	            f.setLayout(null);    
 	            f.setVisible(true);
-	            
-				index = AsteroidList.getSelectedIndex();
-				System.out.print(index);
 				ActionListener al_move_fin = new ActionListener()
-				{
+				{int index = 0;
 					public void actionPerformed(ActionEvent e)
 					{
-						settler.PutTeleportGateOnAsteroid(settler.getteleports().get(index).getName(), index);
+						index = AsteroidList.getSelectedIndex();
+						settler.PutTeleportGateOnAsteroid(settler.getteleports().get(index+1).getName(), index+1);
 						ControllerClass.NotifyLoop();
 						f.dispose();
 					}
@@ -189,13 +187,13 @@ public class Game extends JPanel
 	            f.setSize(400,400);
 	            f.setLayout(null);    
 	            f.setVisible(true);
-	            
-				index = AsteroidList.getSelectedIndex();
-				System.out.print(index);
 				ActionListener al_move_fin = new ActionListener()
 				{
+					int index = 0;
 					public void actionPerformed(ActionEvent e)
 					{
+					
+						index = AsteroidList.getSelectedIndex();
 						settler.FillAsteroid(settler.getInventory().get(index));
 						ControllerClass.NotifyLoop();
 						f.dispose();
@@ -222,7 +220,7 @@ public class Game extends JPanel
 				ArrayList<String> names = new ArrayList<String>();
 				for ( int i = 0; i < settler.getAsteroid().getNeighbors().size();i++) {
 					Place actual = settler.getAsteroid().getNeighbors().get(i);
-					names.add(actual.GetUniqueID());
+					names.add(actual.getName());
 				}
 				JComboBox AsteroidList = new JComboBox(names.toArray());
 				
@@ -234,13 +232,12 @@ public class Game extends JPanel
 	            f.setSize(400,400);
 	            f.setLayout(null);    
 	            f.setVisible(true);
-	            
-				index = AsteroidList.getSelectedIndex();
-				System.out.print(index);
 				ActionListener al_move_fin = new ActionListener()
 				{
+					int index = 0;
 					public void actionPerformed(ActionEvent e)
 					{
+						index = AsteroidList.getSelectedIndex();
 						settler.Move(settler.getAsteroid().getNeighbors().get(index));
 						ControllerClass.NotifyLoop();
 						f.dispose();

@@ -135,7 +135,7 @@ public class Game extends JPanel
 				ArrayList<String> names = new ArrayList<String>();
 				for ( int i = 0; i < settler.getteleports().size();i++) {
 					TeleportGate tg = settler.getteleports().get(i);
-					names.add(tg.getName());
+					names.add(tg.GetUniqueID());
 				}
 				JComboBox AsteroidList = new JComboBox(names.toArray());
 				
@@ -152,7 +152,7 @@ public class Game extends JPanel
 					public void actionPerformed(ActionEvent e)
 					{
 						index = AsteroidList.getSelectedIndex();
-						settler.PutTeleportGateOnAsteroid(settler.getteleports().get(index+1).getName(), index+1);
+						settler.PutTeleportGateOnAsteroid(null, index);
 						ControllerClass.NotifyLoop();
 						f.dispose();
 					}

@@ -6,6 +6,9 @@ package asteroid.logic;
  */
 public abstract class RawMaterial implements ID 
 {
+	/**
+	 * Tarolja, hogy az anyag melyik aszteroidaban van
+	 */
 	protected Asteroid asteroid;
 	
 	/**

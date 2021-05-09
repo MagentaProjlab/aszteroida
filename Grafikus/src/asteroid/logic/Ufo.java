@@ -9,7 +9,13 @@ import java.util.Random;
  */
 public class Ufo extends SentientBeing
 {
+	/**
+	 * Ufo egyedi neve
+	 */
 	private String id;
+	/**
+	 * Ufonal levo anyagok listaja
+	 */
 	private ArrayList<RawMaterial> carriedmaterials;
 	/**
 	 * Ufo konstruktora

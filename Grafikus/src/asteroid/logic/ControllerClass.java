@@ -9,11 +9,25 @@ import asteroid.view.View;
 
 public class ControllerClass
 {
+	/**
+	 * Az aszteroidakat tarolo ArrayList
+	 */
 	private ArrayList<Asteroid> asteroids;
+	
+	/**
+	 * A napszelert felelos SolarWind valtozo
+	 */
 	private SolarWind solarwind;
-	private View view;
+	
+	/**
+	 * A jatekciklust futtato szal
+	 */
 	private static LoopThread loopthread;
 	
+	/**
+	 * 
+	 * Kulon szal osztaly a jatekciklus futtatasahoz
+	 */
 	public class LoopThread extends Thread
 	{
 		private Object gamelock = new Object();

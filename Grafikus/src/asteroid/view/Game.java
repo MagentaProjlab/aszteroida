@@ -153,8 +153,8 @@ public class Game extends JPanel
 					{
 						index = AsteroidList.getSelectedIndex();
 						settler.PutTeleportGateOnAsteroid("teleport", index);
-						ControllerClass.NotifyLoop();
 						f.dispose();
+						ControllerClass.NotifyLoop();
 					}
 				};
 				button.addActionListener(al_move_fin);
@@ -195,8 +195,8 @@ public class Game extends JPanel
 					
 						index = AsteroidList.getSelectedIndex();
 						settler.FillAsteroid(settler.getInventory().get(index));
-						ControllerClass.NotifyLoop();
 						f.dispose();
+						ControllerClass.NotifyLoop();
 					}
 				};
 				button.addActionListener(al_move_fin);
@@ -256,8 +256,8 @@ public class Game extends JPanel
 					{
 						index = AsteroidList.getSelectedIndex();
 						settler.Move(settler.getAsteroid().getNeighbors().get(index));
-						ControllerClass.NotifyLoop();
 						f.dispose();
+						ControllerClass.NotifyLoop();
 					}
 				};
 				button.addActionListener(al_move_fin);

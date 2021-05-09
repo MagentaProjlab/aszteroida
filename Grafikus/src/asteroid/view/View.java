@@ -9,7 +9,9 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import asteroid.logic.Asteroid;
 import asteroid.logic.ControllerClass;
+import asteroid.logic.Ice;
 import asteroid.logic.Settler;
 
 public class View extends JFrame

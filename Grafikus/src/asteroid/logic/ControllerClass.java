@@ -36,7 +36,7 @@ public class ControllerClass
 		{
 			synchronized(gamelock)
 			{
-				gamelock.notify();
+				gamelock.notifyAll();
 			}
 		}
 		
@@ -200,7 +200,7 @@ public class ControllerClass
 			asteroids.add(uran);
 		}
 		
-		int numberofasteroids = (int) Math.pow(2, numberofsettlers);
+		int numberofasteroids = numberofsettlers * numberofsettlers;
 		for(int i = 0; i < numberofasteroids; i++)
 		{
 			RawMaterial core = null;
